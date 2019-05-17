@@ -1,0 +1,18 @@
+[submodule "docs/oh-my-js"]
+	path = docs/oh-my-js
+	url = https://github.com/wencaizhang/oh-my-js.git
+[submodule "docs/oh-my-vue"]
+	path = docs/oh-my-vue
+	url = https://github.com/wencaizhang/oh-my-vue.git
+[submodule "docs/oh-my-git"]
+	path = docs/oh-my-git
+	url = https://github.com/wencaizhang/oh-my-git.git
+[submodule "docs/oh-my-linux"]
+	path = docs/oh-my-linux
+	url = https://github.com/wencaizhang/oh-my-linux.git
+[submodule "docs/micro-code"]
+	path = docs/micro-code
+	url = https://github.com/wencaizhang/code.git
+[submodule "docs/underscore-analysis"]
+	path = docs/underscore-analysis
+	url = https://github.com/wencaizhang/underscore-analysis.git
