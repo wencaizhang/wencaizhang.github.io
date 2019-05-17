@@ -1,0 +1,34 @@
+{
+  "name": "www",
+  "version": "1.0.0",
+  "description": "前端杂货铺",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wencaizhang/www.git"
+  },
+  "keywords": [
+    "javascript",
+    "vue",
+    "git",
+    "linux",
+    "vuepress"
+  ],
+  "author": "wencaizhang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wencaizhang/www/issues"
+  },
+  "homepage": "https://github.com/wencaizhang/www#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "vuepress": "^0.14.8"
+  },
+  "directories": {
+    "doc": "docs"
+  }
+}

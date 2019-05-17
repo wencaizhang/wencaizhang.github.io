@@ -1,0 +1,72 @@
+.content pre, .content pre[class*="language-"]
+  position: relative;
+  padding: 3em 1.5em 1.5em;
+  margin: .5em 0;
+  overflow: auto;
+  border-radius: 6px;
+
+.content pre[class*=language-] code:before
+  position: absolute;
+  top: 16px;
+  left: 18px;
+  content: "";
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background-color: #ff5f56;
+  -webkit-box-shadow: 18px 0 0 0 #ffbd2e, 36px 0 0 0 #27c93f;
+  box-shadow: 18px 0 0 0 #ffbd2e, 36px 0 0 0 #27c93f;
+
+div[class*="language-"].line-numbers-mode::after
+  position: absolute;
+  top: 16px;
+  left: 18px;
+  content: "";
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background-color: #ff5f56;
+  -webkit-box-shadow: 18px 0 0 0 #ffbd2e, 36px 0 0 0 #27c93f;
+  box-shadow: 18px 0 0 0 #ffbd2e, 36px 0 0 0 #27c93f;
+
+div[class*=language-].line-numbers-mode .line-numbers-wrapper
+  top 1.6rem!important
+  border-right 1px solid rgba(0,0,0,0.66)
+  padding 0!important
+  margin 1.35rem 0
+
+div[class*="language-"]::before
+  top: 1em;
+  left: 6.4em;
+
+// 复制按钮
+.btn-copy
+  position: absolute;
+  z-index: 3;
+  top: 0.8em;
+  right: 1em;
+  font-size: 0.75rem;
+  cursor: pointer;
+  color: rgba(255,255,255,0.4);
+
+
+.text-popup {
+    animation: textPopup 1s;
+    color: red;
+    user-select: none;
+    white-space: nowrap;
+    position: absolute;
+    z-index: 99;
+}
+@keyframes textPopup {
+    0%,
+    100% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-50px);
+    }
+}

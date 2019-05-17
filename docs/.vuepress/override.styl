@@ -1,0 +1,69 @@
+.sidebar
+  .sidebar-heading
+    display flex
+    justify-content space-between
+    align-items center
+
+  .sidebar-sub-headers
+
+    a.sidebar-link
+      border-left 1px solid $borderColor
+    a.sidebar-link.active
+      color $accentColor
+      border-left 1px solid $accentColor
+      border-right none
+      background-color #fff
+
+  a.sidebar-link
+    border-right 0.12rem solid transparent
+    border-left 0
+    &.active
+      font-weight 600
+      color $accentColor
+      border-color $accentColor
+      background-color #dbf3e8
+
+
+@media (min-width: 719px)
+  .page
+    padding-right 20rem
+
+  .sidebar-sub-headers
+    font-size 15px
+    background-color #fff
+    width $sidebarWidth
+    position fixed
+    z-index 10
+    margin 0
+    top $navbarHeight
+    right 0
+    bottom 0
+    box-sizing border-box
+
+    overflow-y auto
+    padding-left 0
+@media (max-width: 719px)
+  .theme-container .page
+    padding-right 0
+
+.navbar .site-name
+  font-size 1.8rem
+  font-family x-locale-heading-primary,zillaslab,Palatino,"Palatino Linotype",x-locale-heading-secondary,'Source Han Serif SC', STZhongsong, "Source Han Sans CN", 'PingFang SC', 'Myriad Pro', 'Hiragino Sans GB', SimHei
+
+h1, h2, h3
+  font-family  x-locale-heading-primary,zillaslab,Palatino,"Palatino Linotype",x-locale-heading-secondary,'Source Han Serif SC', STZhongsong, "Source Han Sans CN", 'PingFang SC', 'Myriad Pro', 'Hiragino Sans GB', SimHei
+.page .content code
+  color #e96900
+  padding 3px 5px
+  margin 0 2px
+  border-radius 2px
+
+code, pre
+  font-family source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace
+  font-size 1em
+  background-color #f8f8f8
+  -webkit-font-smoothing initial
+  -moz-osx-font-smoothing initial
+
+body
+  letter-spacing .5px
