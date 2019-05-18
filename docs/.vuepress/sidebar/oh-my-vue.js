@@ -24,6 +24,7 @@ module.exports = [
       './vuejs-plugin/02-设置网页title.md',
       './vuejs-plugin/04-vuex状态管理.md',
       './vuejs-plugin/09-vuex 状态持久化.md',
+      './vuejs-plugin/vue.ls.md',
     ]
   },
 ]

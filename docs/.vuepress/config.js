@@ -24,6 +24,10 @@ module.exports = {
     lineNumbers: true
   },
   evergreen: true,
+
+  extraWatchFiles: [
+    '.vuepress/sidebar/underscore-analysis.js',
+  ],
   themeConfig: {
     // 百度统计
     baidu_tongji: "969e7a19e58c941d5db2a9bf87885340",
