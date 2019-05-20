@@ -1,4 +1,6 @@
 module.exports = [
+  '',
+  'some-concepts',
   {
     title: '集合 Collections',
     collapsable: true,
@@ -25,12 +27,14 @@ module.exports = [
     collapsable: true,
     children: [
       './Objects/_.keys',
+      './Objects/_.isArray',
     ]
   },
   {
     title: '工具函数 Utility',
     collapsable: true,
     children: [
+      './Utility/_.noConflict',
       './Utility/_.random',
     ]
   },
@@ -38,8 +42,9 @@ module.exports = [
     title: '链式语法 Chaining',
     collapsable: true,
     children: [
+      './Chaining/',
       './Chaining/_.chain',
-      './Chaining/_.value',
+      // './Chaining/_.prototype.value',
     ]
   },
 ]

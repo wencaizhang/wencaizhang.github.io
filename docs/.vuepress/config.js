@@ -26,7 +26,7 @@ module.exports = {
   evergreen: true,
 
   extraWatchFiles: [
-    '.vuepress/sidebar/underscore-analysis.js',
+    './**/*',
   ],
   themeConfig: {
     // 百度统计
