@@ -13,6 +13,7 @@ module.exports = [
     collapsable: true,
     children: [
       './Arrays/_.first',
+      './Arrays/_.uniq',
     ]
   },
   {
@@ -28,6 +29,9 @@ module.exports = [
     children: [
       './Objects/_.keys',
       './Objects/_.isArray',
+      './Objects/_.functions',
+      './Objects/_.isFunction',
+      './Objects/_.isUndefined',
     ]
   },
   {
@@ -36,6 +40,7 @@ module.exports = [
     children: [
       './Utility/_.noConflict',
       './Utility/_.random',
+      './Utility/_.mixin',
     ]
   },
   {
