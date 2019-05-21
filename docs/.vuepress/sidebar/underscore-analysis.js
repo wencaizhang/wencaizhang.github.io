@@ -49,7 +49,7 @@ module.exports = [
     children: [
       './Chaining/',
       './Chaining/_.chain',
-      // './Chaining/_.prototype.value',
+      './Chaining/_.prototype.value',
     ]
   },
 ]
