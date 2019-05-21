@@ -4,6 +4,8 @@ module.exports = [
     collapsable: true,
     children: [
       '',
+      './vuejs/00-vue组件通信',
+      './vuejs/the-difference-of-v-show-and-v-if-in-vue',
       './vuejs/01-用户登录状态管理.md',
       './vuejs/03-样式私有化.md',
       './vuejs/05-vue全局公用函数.md',

@@ -6,6 +6,8 @@ module.exports = [
     collapsable: true,
     children: [
       './Collections/_.each',
+      './Collections/_.sample',
+      './Collections/_.shuffle',
     ]
   },
   {
@@ -14,6 +16,8 @@ module.exports = [
     children: [
       './Arrays/_.first',
       './Arrays/_.uniq',
+      './Arrays/_.findIndex',
+      './Arrays/_.findLastIndex',
     ]
   },
   {
@@ -21,6 +25,10 @@ module.exports = [
     collapsable: true,
     children: [
       './Functions/_.memoize',
+      './Functions/_.partial',
+      './Functions/_.delay',
+      './Functions/_.debounce',
+      './Functions/_.throttle',
     ]
   },
   {
@@ -28,6 +36,7 @@ module.exports = [
     collapsable: true,
     children: [
       './Objects/_.keys',
+      './Objects/_.values',
       './Objects/_.isArray',
       './Objects/_.functions',
       './Objects/_.isFunction',
@@ -50,6 +59,14 @@ module.exports = [
       './Chaining/',
       './Chaining/_.chain',
       './Chaining/_.prototype.value',
+    ]
+  },
+  {
+    title: '辅助函数',
+    collapsable: true,
+    children: [
+      './helper/',
+      './helper/isArrayLike',
     ]
   },
 ]

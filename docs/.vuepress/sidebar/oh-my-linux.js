@@ -3,6 +3,7 @@ module.exports = [
     title: '常用命令',
     collapsable: true,
     children: [
+      './01-常用命令/docker-command',
       './01-常用命令/00-ls命令',
       './01-常用命令/01-查找命令',
       './01-常用命令/02-解压命令',
