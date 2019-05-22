@@ -26,7 +26,7 @@ yarn build
 
 5. 编译并发布到 master 分支
 
-利用 shell 脚本 [deploy.sh](https://github.com/wencaizhang/wencaizhang.github.io/blob/vuepress/deploy.sh)，可以帮助编译并将编译结果上传到 master 分支：
+利用 shell 脚本 [deploy.sh](https://github.com/wencaizhang/wencaizhang.github.io/blob/dev/deploy.sh)，可以帮助编译并将编译结果上传到 master 分支：
 
 ```bash
 # 设置可执行权限
