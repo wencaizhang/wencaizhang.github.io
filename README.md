@@ -16,3 +16,13 @@ yarn
 ```bash
 yarn dev
 ```
+
+4. 编译并发布到 master 分支
+
+```bash
+# 设置可执行权限
+chmod +x ./deploy.sh
+
+# 编译并提交
+./deploy.sh
+```
