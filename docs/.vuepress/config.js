@@ -334,8 +334,7 @@ module.exports = {
           children: [
             './js/sayHello',
             './js/downloadFile',
-            './js/getTimeDiff',
-            './js/time',
+            './js/about-time',
             './js/getStyles',
             './js/isMobile',
             './js/ajax',
