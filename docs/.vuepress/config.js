@@ -172,6 +172,7 @@ module.exports = {
           collapsable: true,
           children: [
             '',
+            './vuejs/000-findComponents',
             './vuejs/00-vue组件通信',
             './vuejs/the-difference-of-v-show-and-v-if-in-vue',
             './vuejs/01-用户登录状态管理.md',
@@ -342,6 +343,8 @@ module.exports = {
             './js/iframe',
             './js/textPopup',
             './js/bind',
+            './js/type',
+            './js/deepCopy',
           ]
         },
         {
