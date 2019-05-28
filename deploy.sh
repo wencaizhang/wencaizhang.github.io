@@ -7,6 +7,7 @@ set -e
 npm run build
 # 进入生成的文件夹
 cp ./README.md docs/.vuepress/dist
+cp ./Dockerfile docs/.vuepress/dist
 cd docs/.vuepress/dist
 
 
