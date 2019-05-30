@@ -13,7 +13,7 @@ module.exports = {
   description: '',
   head: [
     ['script', {
-      src: 'https://cdn.bootcss.com/clipboard.js/2.0.4/clipboard.min.js'
+      src: '//lib.baomitu.com/clipboard.js/2.0.4/clipboard.min.js'
     }],
     ['link', {
       rel: 'icon',
@@ -24,7 +24,6 @@ module.exports = {
     lineNumbers: true
   },
   evergreen: true,
-
   extraWatchFiles: [
     './**/*',
   ],
@@ -65,6 +64,10 @@ module.exports = {
         text: '代码片段',
         link: '/micro-code/'
       },
+      // {
+      //   text: '金光闪闪',
+      //   link: '/bling/'
+      // },
     ],
     sidebar: {
       '/oh-my-js/': [
@@ -342,6 +345,7 @@ module.exports = {
             './js/getParams',
             './js/iframe',
             './js/textPopup',
+            './js/rollTitle',
             './js/bind',
             './js/type',
             './js/deepCopy',
