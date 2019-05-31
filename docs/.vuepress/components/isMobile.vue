@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="padding: 10px 0;">
     <button @click="handleClickIsMobile" title="是否手机端浏览器">是否手机端浏览器</button>
     <button @click="handleClickIsWeChatBroswer" title="是否微信浏览器">是否微信浏览器</button>
     <button @click="handleViewUA" title="查看当前 userAgent ">查看当前 userAgent </button>
