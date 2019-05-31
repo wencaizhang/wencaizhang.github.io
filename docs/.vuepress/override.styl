@@ -156,3 +156,17 @@ div[class*="language-"] .highlight-lines
     transform: translateX(100%);
   }
 }
+.navbar-blank
+  animation: logo-blink 8s ease-in 1s infinite;
+
+.navbar-blank:before
+  position: absolute;
+  top: 15%;
+  left: 0;
+  content: "";
+  width: 11rem;
+  height: 3rem;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  background: radial-gradient(#fff,hsla(0,0%,100%,.2),hsla(0,0%,100%,0));
+  background: red;

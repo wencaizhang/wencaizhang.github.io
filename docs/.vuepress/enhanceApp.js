@@ -1,7 +1,7 @@
 import initCopyCode from "./public/js/use";
 import tongji from "./public/js/tongji";
 
-import Alert from "./components/alert";
+import Alert from "./components/package/alert";
 
 function createSpan () {
   const span = document.createElement("span");
