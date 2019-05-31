@@ -3,16 +3,50 @@ import tongji from "./public/js/tongji";
 
 import Alert from "./components/package/alert";
 
+function createQR() {
+  var url = window.location.href;
+  var qr = qrcode(0, "H");
+  var div;
+  qr.addData(url);
+  qr.make();
+
+  div = document.getElementById("qrcode")
+  if (!div) {
+    div = document.createElement("div");
+    div.setAttribute('id', 'qrcode');
+    document.body.appendChild(div);
+  }
+  div.innerHTML = qr.createImgTag();
+}
 function createSpan () {
   const span = document.createElement("span");
   span.classList.add('navbar-blank');
   document.querySelector('.home-link').appendChild(span);
 }
 
-function print () {
-  console.log("%cTalk is cheap. Show me the code", "color:#666;font-size:3em;")
-  console.log("%cwencaizhang.com", "display:block;color:#666;font-size:13px;background-color:#46bd87;color:#fff;padding:1px 3px;border-radius: 3px;")
+function dateFormat(timestamp, formats) {
+  formats = formats || "YYYY-MM-DD hh:mm:ss";
+  const date = timestamp ? new Date(timestamp) : new Date();
+  const obj = {
+    YYYY: date.getFullYear(),
+    MM: date.getMonth() + 1,
+    DD: date.getDate(),
+    hh: date.getHours(),
+    mm: date.getMinutes(),
+    ss: date.getSeconds(),
+  };
+
+  Object.keys(obj).forEach(key => {
+    obj[key] = String(obj[key]).padStart(2, 0)
+  })
+  return formats.replace(/YYYY|MM|DD|hh|mm|ss/gi, matches => {
+    return obj[matches];
+  });
 }
+function print () {
+  console.log("%cTalk is cheap, Show me the code.", "color:#666;font-size:2em;")
+  console.log(`%c ${dateFormat()} %c wencaizhang.com %c`,"background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff","background:#41b883 ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff","background:transparent")
+};
 
 export default ({
   Vue, // VuePress 正在使用的 Vue 构造函数
@@ -48,5 +82,8 @@ export default ({
       Vue.prototype.$bus.$emit('stopRollTitle');
     }
     next()
+  })
+  router.afterEach((to, from) => {
+    createQR();
   })
 };

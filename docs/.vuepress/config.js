@@ -15,6 +15,9 @@ module.exports = {
     ['script', {
       src: '//lib.baomitu.com/clipboard.js/2.0.4/clipboard.min.js'
     }],
+    ['script', {
+      src: 'https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.1/qrcode.min.js'
+    }],
     ['link', {
       rel: 'icon',
       href: '/images/js.jpg'
