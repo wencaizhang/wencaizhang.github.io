@@ -84,6 +84,6 @@ export default ({
     next()
   })
   router.afterEach((to, from) => {
-    createQR();
+    // createQR();
   })
 };
