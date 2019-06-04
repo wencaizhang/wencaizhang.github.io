@@ -23,6 +23,16 @@ function createSpan () {
   span.classList.add('navbar-blank');
   document.querySelector('.home-link').appendChild(span);
 }
+function appendMusic () {
+  const div = document.createElement("div");
+  div.innerHTML = `
+  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0"
+    style="width: 100%; height: 100%; min-height: 80px; min-width: 300px;"
+    src="//music.163.com/outchain/player?type=2&id=586299&auto=1&height=66"></iframe>
+  `;
+  div.classList.add('music-container')
+  document.querySelector('.sidebar').appendChild(div);
+}
 
 function dateFormat(timestamp, formats) {
   formats = formats || "YYYY-MM-DD hh:mm:ss";
@@ -44,7 +54,7 @@ function dateFormat(timestamp, formats) {
   });
 }
 function print () {
-  console.log("%cTalk is cheap, Show me the code.", "color:#666;font-size:2em;")
+  console.log("%cTalk is cheap, Show me the code.", "color:#666;font-size:1.4em;")
   console.log(`%c ${dateFormat()} %c wencaizhang.com %c`,"background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff","background:#41b883 ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff","background:transparent")
 };
 
@@ -65,6 +75,7 @@ export default ({
       });
       tongji(siteData.themeConfig.baidu_tongji);
       print();
+      appendMusic();
     },
     updated () {
       initCopyCode({
