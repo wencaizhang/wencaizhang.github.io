@@ -33,7 +33,14 @@ module.exports = {
   themeConfig: {
     // 百度统计
     baidu_tongji: "969e7a19e58c941d5db2a9bf87885340",
-
+    serviceWorker: {
+      // updatePopup: true, // Boolean | Object, 默认值是 undefined.
+      // 如果设置为 true, 默认的文本配置将是: 
+      updatePopup: { 
+         message: '发现新内容', 
+         buttonText: '刷新',
+      },
+    },
     nav: [{
         text: '主页',
         link: '/'
