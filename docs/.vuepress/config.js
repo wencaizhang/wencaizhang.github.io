@@ -144,8 +144,10 @@ module.exports = {
             './04-String/005-String.prototype.trim',
             './04-String/006-String.prototype.includes',
             './04-String/008-String.prototype.repeat',
-            './04-String/009-String.prototype-padstart-padend'
-      
+            './04-String/009-String.prototype-padstart-padend',
+            './04-String/04-String.prototype.search',
+            './04-String/05-String.prototype.match',
+            './04-String/06-String.prototype.replace',
           ]
         },
         {
@@ -171,10 +173,6 @@ module.exports = {
             './06-Regexp/01-Regexp.prototype.lastIndex',
             './06-Regexp/02-Regexp.prototype.test',
             './06-Regexp/03-Regexp.prototype.exec',
-            './06-Regexp/04-String.prototype.search',
-            './06-Regexp/05-String.prototype.match',
-            './06-Regexp/06-String.prototype.replace',
-            './06-Regexp/07-String.prototype.split',
             './06-Regexp/100-regexp-demos',
           ]
         },
