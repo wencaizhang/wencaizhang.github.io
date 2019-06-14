@@ -2,8 +2,7 @@
 
 1. 克隆代码（递归克隆，将子模块一并克隆下来）
 ```bash
-# 拉取代码，同时拉取子模块
-git clone --recursive -b dev https://github.com/wencaizhang/wencaizhang.github.io.git
+git clone-b dev https://github.com/wencaizhang/wencaizhang.github.io.git
 ```
 
 2. 安装 npm 依赖
@@ -36,11 +35,34 @@ chmod +x ./deploy.sh
 ./deploy.sh
 ```
 
-## 子模块
+## 代码目录结构
 
-这里使用了 **子模块** 的形式来组织项目，即 `oh-my-js` 等目录实际上是一个单独的仓库。
+～～这里使用了 **子模块** 的形式来组织项目，即 `oh-my-js` 等目录实际上是一个单独的仓库。～～
 
-如果想要在子模块中提交代码，记得首先切换到对应分支，因为默认情况下，子模块是处于某个特定版本的，无法进行提交。
+～～如果想要在子模块中提交代码，记得首先切换到对应分支，因为默认情况下，子模块是处于某个特定版本的，无法进行提交。～～
+
+这里使用了 git subtree 的方式来组织各部分文章的源文件。
+
+https://tech.youzan.com/git-subtree/
+
+
+```bash
+├── Dockerfile
+├── README.md
+├── assets
+│   └── qr.png
+├── deploy.sh
+├── docs
+│   ├── README.md
+│   ├── micro-code
+│   ├── oh-my-git
+│   ├── oh-my-js
+│   ├── oh-my-linux
+│   ├── oh-my-vue
+│   └── underscore-analysis
+├── package.json
+└── yarn.lock
+```
 
 ## 构建
 
