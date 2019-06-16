@@ -1,6 +1,6 @@
 # 前端锦囊
 
-1. 克隆代码（递归克隆，将子模块一并克隆下来）
+1. 克隆代码
 ```bash
 git clone-b dev https://github.com/wencaizhang/wencaizhang.github.io.git
 ```
@@ -23,18 +23,6 @@ yarn dev
 yarn build
 ```
 
-5. 编译并发布到 master 分支
-
-利用 shell 脚本 [deploy.sh](https://github.com/wencaizhang/wencaizhang.github.io/blob/dev/deploy.sh)，可以帮助编译并将编译结果上传到 master 分支：
-
-```bash
-# 设置可执行权限
-chmod +x ./deploy.sh
-
-# 编译并提交
-./deploy.sh
-```
-
 ## 代码目录结构
 
 ~~这里使用了 **子模块** 的形式来组织项目，即 `oh-my-js` 等目录实际上是一个单独的仓库。~~
@@ -43,7 +31,7 @@ chmod +x ./deploy.sh
 
 这里使用了 git subtree 的方式来组织各部分文章的源文件。
 
-https://tech.youzan.com/git-subtree/
+关于 git subtree 可以参考文章：[用 Git Subtree 在多个 Git 项目间双向同步子项目，附简明使用手册](https://tech.youzan.com/git-subtree/)
 
 
 ```bash
@@ -64,8 +52,16 @@ https://tech.youzan.com/git-subtree/
 └── yarn.lock
 ```
 
-## 构建
+## 部署步骤
 
-+ 使用 Vue 驱动的静态网站生成器 [vuepress](https://vuepress.vuejs.org/zh/) 进行构建
-+ 部署在自有主机：[https://wencaizhang.com/](https://wencaizhang.com/)
-+ 利用 GitHub Pages 作为备份：[https://wencaizhang.github.io/](https://wencaizhang.github.io/)
+1. 利用 shell 脚本 [deploy.sh](https://github.com/wencaizhang/wencaizhang.github.io/blob/dev/deploy.sh)，可以帮助编译并将编译结果上传到 master 分支（GitHub Pages 作为备份：[https://wencaizhang.github.io/](https://wencaizhang.github.io/)）
+
+```bash
+# 设置可执行权限
+chmod +x ./deploy.sh
+
+# 编译并提交
+./deploy.sh
+```
+
+2. 利用 [DaoCloud](https://dashboard.daocloud.io/) 提供的服务，监听 master 分支提交，然后自动构建 Docker 镜像，并发布到自有主机 [https://wencaizhang.com/](https://wencaizhang.com/)。
