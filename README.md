@@ -56,12 +56,12 @@ yarn build
 
 1. 利用 shell 脚本 [deploy.sh](https://github.com/wencaizhang/wencaizhang.github.io/blob/dev/deploy.sh)，可以帮助编译并将编译结果上传到 master 分支（GitHub Pages 作为备份：[https://wencaizhang.github.io/](https://wencaizhang.github.io/)）
 
-```bash
-# 设置可执行权限
-chmod +x ./deploy.sh
+  ```bash
+  # 设置脚本可执行权限
+  chmod +x ./deploy.sh
 
-# 编译并提交
-./deploy.sh
-```
+  # 编译并提交
+  ./deploy.sh
+  ```
 
 2. 利用 [DaoCloud](https://dashboard.daocloud.io/) 提供的服务，监听 master 分支提交，然后自动构建 Docker 镜像，并发布到自有主机 [https://wencaizhang.com/](https://wencaizhang.com/)。
