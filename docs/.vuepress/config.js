@@ -46,7 +46,7 @@ module.exports = {
         link: '/'
       },
       {
-        text: 'oh-my-x系列',
+        text: '目录',
         items: [{
             text: 'oh-my-js',
             link: '/oh-my-js/'
@@ -63,24 +63,31 @@ module.exports = {
             text: 'oh-my-linux',
             link: '/oh-my-linux/'
           },
-
+          {
+            text: 'undercore源码学习',
+            link: '/underscore-analysis/'
+          },
+          {
+            text: '代码片段',
+            link: '/micro-code/'
+          },
         ]
       },
-      {
-        text: 'undercore源码学习',
-        link: '/underscore-analysis/'
-      },
-      {
-        text: '代码片段',
-        link: '/micro-code/'
-      },
-      // {
-      //   text: '金光闪闪',
-      //   link: '/bling/'
-      // },
+      
     ],
     sidebar: {
       '/oh-my-js/': [
+        {
+          title: 'Array-ES3',
+          collapsable: true,
+          children: [
+            './00-other/this',
+            './00-other/prototype',
+            './00-other/bind',
+            './00-other/closure',
+            './00-other/call-and-apply',
+          ]
+        },
         {
           title: 'Array-ES3',
           collapsable: true,
@@ -184,6 +191,7 @@ module.exports = {
           children: [
             '',
             './vuejs/000-findComponents',
+            './vuejs/001-v-model',
             './vuejs/00-vue组件通信',
             './vuejs/the-difference-of-v-show-and-v-if-in-vue',
             './vuejs/01-用户登录状态管理.md',

@@ -1,25 +1,17 @@
-# Vue.js 中 v-show 与 v-if 区别
+# Vue.js 中 `v-show` 与 `v-if` 区别
 
 ## 区别
 
-问：v-show与 v-if 有什么区别？
+问：`v-show` 与 `v-if` 有什么区别？
 
-答：v-show只是 CSS 级别的 display: none; 和 display: block; 之间的切换，而 v-if 决定是否会渲染代码块的内容（或组件）
+答：`v-show` 只是 CSS 级别的 `display: none;` 和 `display: block;` 之间的切换，而 `v-if` 决定是否会渲染代码块的内容（或组件）
 
-## 使用时机
+## 进阶
 
-问：什么时候用 v-show，什么时候用 v-if ？
+利用上述区别，我们可以做些什么呢？
 
-答：频繁操作时，使用 v-show，一次性渲染完的，使用 v-if 。
++ `v-show` 不能作用于 `slot` 和 `template`，因为它们不是真实的 dom 元素，也就没有 `display` 属性，所以只能使用 `v-if` 来控制显示隐藏。
 
-## 性能
++ 创建 dom 的成本是大于改变 dom 样式属性的，因此对于频繁切换显示隐藏状态的操作，使用 `v-show` 性能更好
 
-问：什么时候用 v-show，什么时候用 v-if ？
-
-答：频繁操作时，使用 v-show，一次性渲染完的，使用 v-if 。
-
-## slot
-
-问：slot 的显示隐藏控制应该用 v-show 还是 v-if ？
-
-答：应该用 v-if。因为前面说过了，v-show 仅仅是 CSS 级别的 display: none; 和 display: block; 之间的切换，而 slot 是类似与 template 的抽象元素，而非真是的元素，并不具备 display 这个属性。
++ 当 `v-if="false"` 时，组件(dom) 是不会渲染的，因此可以利用这一点，优先渲染重要的组件，次要组件选择一个合适的时机进行渲染。
