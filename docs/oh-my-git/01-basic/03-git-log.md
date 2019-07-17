@@ -44,3 +44,8 @@ git show <commit-hash-id>
 ```bash
 git log -p <commit-hash-id>
 ```
+
+
+## 参考
+
+[更好的git Log](http://strivingboy.github.io/blog/2014/09/29/better-git-log/)

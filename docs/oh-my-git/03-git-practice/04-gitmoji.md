@@ -3,6 +3,41 @@
 <img :src="$withBase('/images/gitmoji.gif')" alt="gitmoji" style="max-width: 50%;">
 
 
+## 简介
+
+你是否已经受够了枯燥无味的 git commit message，这里介绍一个有趣的东西 - gitmoji。
+
+**`git + emoji -> gitmoji`**
+
+一句话概括，就是利用 emoji 表情来辅助说明不同的 commit 信息类型，让信息更加直观，更加有趣。
+
+然鹅 emoji 的数量非常庞大，而且 emoji 的含义并不是那么清晰，甚至每个人都有各自独特的理解。
+
+幸好有一个开源项目 [https://github.com/carloscuesta/gitmoji](https://github.com/carloscuesta/gitmoji) 筛选出了一部分用于提交信息的 emoji，并且帮我们解释和统一规范了 emoji 在提交时的含义。
+
+
+## 使用方法
+
+例如，你在提交代码时把 emoji 代码（`:tada:`) 当作普通提交信息使用：
+
+```bash
+git commit -m ":tada: 项目初始化"
+
+# or
+git commit -m ":memo: update README"
+```
+
+当你提交到远程就可以在 github 页面中看到如下效果：
+
+:tada: 项目初始化
+
+:memo: update README
+
+## 详细 emoji 代码
+
+根据[https://github.com/carloscuesta/gitmoji](https://github.com/carloscuesta/gitmoji)这个项目，我制作了一个表格（如下所示），您可以狠狠地点击“**代码**”列，对应的 emoji 代码将会自动复制到系统剪贴板中。
+
+enjoy yourself!
 
 
 | 表情                        | 代码                          | meaning (en)                                | 含义(zh)                   |
@@ -12,7 +47,6 @@
 | :fire:                      | `:fire:`                      | Removing code or files.                     | 移除代码或文件             |
 | :bug:                       | `:bug:`                       | Fixing a bug.                               | 修复 BUG                   |
 | :ambulance:                 | `:ambulance:`                 | Critical hotfix.                            | 核心代码修复               |
-|                             |
 | :sparkles:                  | `:sparkles:`                  | Introducing new features.                   | 添加新特性                 |
 | :memo:                      | `:memo:`                      | Writing docs.                               | 编写文档                   |
 | :rocket:                    | `:rocket:`                    | Deploying stuff.                            | 部署程序                   |
@@ -73,6 +107,12 @@
 | :wheel_of_dharma:           | `:wheel_of_dharma:`           | Work about Kubernetes                       | 在 Kubernetes 平台工作     |
 | :label:                     | `:label:`                     | Adding or updating types (Flow, TypeScript) | 添加或者更新类型系统       |
 
+
+## 更多关于 emoji
+
+这里只显示了 git commit 相关的 emoji 代码，除此之外，你还可以安装 chrome 插件 Chromoji - Emoji for Google Chrome 来查看更多的 emoji 代码。
+
+enjoy yourself again.
 
 <style>
 tr td:first-child {

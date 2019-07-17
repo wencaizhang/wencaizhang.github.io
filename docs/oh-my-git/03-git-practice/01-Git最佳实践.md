@@ -6,7 +6,7 @@
 
 2. 版本管理流程模型如下
 
-![git-model](http://nvie.com/img/git-model@2x.png)
+![git-model](../images/git-model@2x.png)
 
 
 ## 具体开发中的应用场景说明
