@@ -19,7 +19,7 @@ export default {
         e.clearSelection();
         console.log(e);
         this.$alert.success({
-          content: 'gitmoji 已经成功拷贝到剪切板 😜'
+          content: e.text + ' copied 😜'
         })
       });
 
