@@ -6,20 +6,27 @@ set -e
 # 生成静态文件
 npm run build
 
-# 进入生成的文件夹
-cp ./Dockerfile docs/.vuepress/dist
-cd docs/.vuepress/dist
-
-# 发布到自定义域名
-echo 'coolfe.fun' > CNAME
-
+# 定义变量
+destDir="articles/.vuepress/dist"
 currTime1=`date +%Y-%m-%d`
 currTime2=`date +%H:%M:%S`
+commit=":rocket: deploy @${currTime1} ${currTime2}"
+repo="https://github.com/wencaizhang/wencaizhang.github.io.git"
+branch="master"
+domain="coolfe.fun"
 
+# 进入生成的文件夹
+cd $destDir
+
+# 发布到自定义域名
+echo $domain > CNAME
+
+# 将前端静态文件初始化为 git 仓库并提交
 git init
 git add -A
-git commit -m ":rocket: deploy @${currTime1} ${currTime2}"
+git commit -m $commit
 
-git push -f https://github.com/wencaizhang/wencaizhang.github.io.git master
+git push -f $repo $branch
 
+# 回到上次工作目录
 cd -
