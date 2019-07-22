@@ -1,12 +1,11 @@
 const path = require('path');
 
-const ohmyjs = require('./sidebar/oh-my-js');
-const ohmyvue = require('./sidebar/oh-my-vue');
-const ohmygit = require('./sidebar/oh-my-git');
-// const ohmylinux = require('./sidebar/oh-my-linux');
-const ohmylinux = require('../articles/oh-my-linux/tree');
-const undercore = require('./sidebar/underscore-analysis');
-const microCode = require('./sidebar/micro-code');
+const ohmyjs = require('../oh-my-js/tree');
+const ohmyvue = require('../oh-my-vue/tree');
+const ohmygit = require('../oh-my-git/tree');
+const undercore = require('../underscore-analysis/tree');
+const ohmylinux = require('../oh-my-linux/tree');
+const microCode = require('../micro-code/tree');
 
 module.exports = {
   base: '/',
@@ -31,14 +30,12 @@ module.exports = {
   sidebarDepth: 2, // 同时提取 h2 h3
   evergreen: true,
   extraWatchFiles: [
-    '.vuepress/sidebar/oh-my-js.js',
-    '.vuepress/sidebar/oh-my-vue.js',
-    '.vuepress/sidebar/oh-my-git.js',
-    '.vuepress/sidebar/oh-my-linux.js',
-    '.vuepress/sidebar/underscore-analysis.js',
-    '.vuepress/sidebar/micro-code.js',
-
-    '../articles/oh-my-linux/tree',
+    '/articles/oh-my-js.js',
+    '/articles/oh-my-vue.js',
+    '/articles/oh-my-git.js',
+    '/articles/oh-my-linux.js',
+    '/articles/underscore-analysis.js',
+    '/articles/micro-code.js',
   ],
   themeConfig: {
     // 百度统计
@@ -90,12 +87,12 @@ module.exports = {
       
     ],
     sidebar: {
-      '/articles/oh-my-js/': ohmyjs,
-      '/articles/oh-my-vue/': ohmyvue,
-      '/articles/oh-my-git/': ohmygit,
-      '/articles/oh-my-linux/': ohmylinux,
-      '/articles/underscore-analysis/': undercore,
-      '/articles/micro-code/': microCode,
+      '/oh-my-js/': ohmyjs,
+      '/oh-my-vue/': ohmyvue,
+      '/oh-my-git/': ohmygit,
+      '/oh-my-linux/': ohmylinux,
+      '/underscore-analysis/': undercore,
+      '/micro-code/': microCode,
     },
   },
 }
