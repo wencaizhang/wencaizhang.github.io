@@ -24,7 +24,7 @@ echo $domain > CNAME
 # 将前端静态文件初始化为 git 仓库并提交
 git init
 git add -A
-git commit -m $commit
+git commit -m "$commit"
 
 git push -f $repo $branch
 
