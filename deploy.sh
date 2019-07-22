@@ -5,11 +5,10 @@ set -e
 
 # 生成静态文件
 npm run build
+
 # 进入生成的文件夹
-cp ./README.md docs/.vuepress/dist
 cp ./Dockerfile docs/.vuepress/dist
 cd docs/.vuepress/dist
-
 
 # 发布到自定义域名
 echo 'coolfe.fun' > CNAME

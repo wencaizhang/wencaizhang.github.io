@@ -64,4 +64,4 @@ yarn build
   ./deploy.sh
   ```
 
-2. 利用 [DaoCloud](https://dashboard.daocloud.io/) 提供的服务，监听 master 分支提交，然后自动构建 Docker 镜像，并发布到自有主机 [https://wencaizhang.com/](https://wencaizhang.com/)。
+2. 利用 [DaoCloud](https://dashboard.daocloud.io/) 提供的服务，监听 master 分支提交，然后自动构建 Docker 镜像，并发布到自有主机 [https://coolfe.fun/](https://coolfe.fun/)。

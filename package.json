@@ -1,39 +1,16 @@
 {
-  "name": "wencaizhang.github.io",
+  "name": "vuepress1.0",
   "version": "1.0.0",
-  "description": "前端杂货铺",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "vuepress dev docs",
-    "build": "vuepress build docs",
-    "js": "git subtree push --prefix=docs/oh-my-js https://github.com/wencaizhang/oh-my-js master --squash",
-    "vue": "git subtree push --prefix=docs/oh-my-vue https://github.com/wencaizhang/oh-my-vue master --squash",
-    "git": "git subtree push --prefix=docs/oh-my-git https://github.com/wencaizhang/oh-my-git master --squash",
-    "linux": "git subtree push --prefix=docs/oh-my-linux https://github.com/wencaizhang/oh-my-linux master --squash",
-    "code": "git subtree push --prefix=docs/micro-code https://github.com/wencaizhang/code master --squash"
+    "build": "vuepress build docs"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wencaizhang/wencaizhang.github.io.git"
-  },
-  "keywords": [
-    "javascript",
-    "vue",
-    "git",
-    "linux",
-    "vuepress"
-  ],
-  "author": "wencaizhang",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/wencaizhang/wencaizhang.github.io/issues"
-  },
-  "homepage": "https://github.com/wencaizhang/wencaizhang.github.io#readme",
-  "dependencies": {},
   "devDependencies": {
-    "vuepress": "^0.14.8"
-  },
-  "directories": {
-    "doc": "docs"
+    "vuepress": "^1.0.0-rc.1"
   }
 }
