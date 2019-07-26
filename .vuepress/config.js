@@ -3,17 +3,11 @@ const sidebar = require('./sidebar');
 
 const sidebarTree = sidebar();
 
-//const ohmyjs = require('../oh-my-js/tree');
-//const ohmyvue = require('../oh-my-vue/tree');
-//const ohmygit = require('../oh-my-git/tree');
-//const undercore = require('../underscore-analysis/tree');
-//const ohmylinux = require('../oh-my-linux/tree');
-//const microCode = require('../micro-code/tree');
-
 module.exports = {
   base: '/',
   title: '前端锦囊',
   description: '',
+  plugins: ['@vuepress/pwa', '@vuepress/back-to-top'],
   head: [
     ['script', {
       src: '//lib.baomitu.com/clipboard.js/2.0.4/clipboard.min.js'
@@ -36,8 +30,8 @@ module.exports = {
   ],
   themeConfig: {
     // 百度统计
-    baidu_tongji: "969e7a19e58c941d5db2a9bf87885340",
-    sidebarDepth: 2, // 同时提取 h2 h3
+    // baidu_tongji: "969e7a19e58c941d5db2a9bf87885340",
+    // sidebarDepth: 2, // 同时提取 h2 h3
     serviceWorker: {
       // updatePopup: true, // Boolean | Object, 默认值是 undefined.
       // 如果设置为 true, 默认的文本配置将是: 
