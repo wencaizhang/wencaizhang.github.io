@@ -45,7 +45,7 @@ currTime1=`date +%Y-%m-%d`
 currTime2=`date +%H:%M:%S`
 commit=":rocket: deploy @${currTime1} ${currTime2}"
 repo="https://github.com/wencaizhang/wencaizhang.github.io.git"
-branch="master"
+remoteBranch="master"
 domain="coolfe.fun"
 
 # 进入生成的文件夹
@@ -57,9 +57,9 @@ echo $domain > CNAME
 # 将前端静态文件初始化为 git 仓库并提交
 git init
 git add -A
-git commit -m $commit
+git commit -m "$commit"
 
-git push -f $repo $branch
+git push -f $repo master:$remoteBranch
 
 # 回到上次工作目录
 cd -
