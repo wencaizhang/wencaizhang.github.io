@@ -1,67 +1,36 @@
-# 前端锦囊
+---
+home: true
+tagline: good good study
+actionText: 随便看看 →
+actionLink: /oh-my-js/
 
-1. 克隆代码
-```bash
-git clone-b dev https://github.com/wencaizhang/wencaizhang.github.io.git
-```
+footer: MIT Licensed | Copyright © 2018-present wencaizhang
+---
 
-2. 安装 npm 依赖
+<div class="features">
+  <div class="feature">
+    <h2><a href="/oh-my-js/">oh-my-js</a></h2>
+    <p>前端开发基础技能，只记录一些 JS 内置函数。</p>
+  </div>
+  <div class="feature">
+    <h2><a href="/oh-my-vue/">oh-my-vue</a></h2>
+    <p>Vue.js </p>
+  </div>
+  <div class="feature">
+    <h2><a href="/oh-my-linux/">oh-my-linux</a></h2>
+    <p>一些 Linux 命令，备忘。</p>
+  </div>
+  <div class="feature">
+    <h2><a href="/oh-my-git/">oh-my-git</a></h2>
+    <p>git 命令何其多，备忘。</p>
+  </div>
+  <div class="feature">
+    <h2><a href="/underscore-analysis/">underscore-analysis</a></h2>
+    <p>underscore 作为一个经典的工具函数库，值得一看</p>
+  </div>
+  <div class="feature">
+    <h2><a href="/micro-code/">代码片段</a></h2>
+    <p>平时封装的一些工具函数，记录下来，用到时直接拷贝</p>
+  </div>
+</div>
 
-```bash
-yarn
-```
-
-3. 本地预览模式
-
-```bash
-yarn dev
-```
-
-4. 生成静态网站
-
-```bash
-yarn build
-```
-
-## 代码目录结构
-
-~~这里使用了 **子模块** 的形式来组织项目，即 `oh-my-js` 等目录实际上是一个单独的仓库。~~
-
-~~如果想要在子模块中提交代码，记得首先切换到对应分支，因为默认情况下，子模块是处于某个特定版本的，无法进行提交。~~
-
-这里使用了 git subtree 的方式来组织各部分文章的源文件。
-
-关于 git subtree 可以参考文章：[用 Git Subtree 在多个 Git 项目间双向同步子项目，附简明使用手册](https://tech.youzan.com/git-subtree/)
-
-
-```bash
-├── Dockerfile
-├── README.md
-├── assets
-│   └── qr.png
-├── deploy.sh
-├── docs
-│   ├── README.md
-│   ├── micro-code
-│   ├── oh-my-git
-│   ├── oh-my-js
-│   ├── oh-my-linux
-│   ├── oh-my-vue
-│   └── underscore-analysis
-├── package.json
-└── yarn.lock
-```
-
-## 部署步骤
-
-1. 利用 shell 脚本 [deploy.sh](https://github.com/wencaizhang/wencaizhang.github.io/blob/dev/deploy.sh)，可以帮助编译并将编译结果上传到 master 分支（GitHub Pages 作为备份：[https://wencaizhang.github.io/](https://wencaizhang.github.io/)）
-
-  ```bash
-  # 设置脚本可执行权限
-  chmod +x ./deploy.sh
-
-  # 编译并提交
-  ./deploy.sh
-  ```
-
-2. 利用 [DaoCloud](https://dashboard.daocloud.io/) 提供的服务，监听 master 分支提交，然后自动构建 Docker 镜像，并发布到自有主机 [https://coolfe.fun/](https://coolfe.fun/)。

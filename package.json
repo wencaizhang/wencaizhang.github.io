@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "vuepress dev articles",
-    "build": "vuepress build articles"
+    "dev": "vuepress dev .",
+    "build": "vuepress build ."
   },
   "keywords": [],
   "author": "",
