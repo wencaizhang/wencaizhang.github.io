@@ -1,4 +1,4 @@
-# git branch --set-upstream 本地分支关联远程分支
+# git branch --set-upstream
 
 在创建新分支后，使用 `git pull` 的时候多次碰见下面的情况：
 

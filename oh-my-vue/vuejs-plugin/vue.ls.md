@@ -1,7 +1,5 @@
 # Vue.ls
 
-[[toc]]
-
 ## Vue.ls 插件介绍
 
 vue-ls 官网地址：[https://www.npmjs.com/package/vue-ls](https://www.npmjs.com/package/vue-ls)
