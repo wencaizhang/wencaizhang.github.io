@@ -54,7 +54,6 @@ function travel (dir, callback) {
         return;
       }
       sidebar[`/${arr[0]}/`] = sidebar[`/${arr[0]}/`] || [];
-      console.log(sidebar)
     }
     else if (deep === 1) {
       // arr: [ 'oh-my-js', '01-Array-ES3' ]
@@ -71,7 +70,6 @@ function travel (dir, callback) {
     else {
       // arr: [ oh-my-js, 01-Array-ES3, 01-Array.prototype.concat.md ]
       // file: 01-Array.prototype.concat.md
-      console.log(arr + '---' + file);
       const base = '/';
       const item = sidebar[`/${arr[0]}/`].find(item => {
         return item.title === arr[1];
@@ -93,7 +91,7 @@ function travel (dir, callback) {
 function run () {
   let dir = './'
   travel(dir, () => {})
-  fs.writeFileSync('db.js', 'var sidebar = ' + JSON.stringify(sidebar),"utf-8")
+  // fs.writeFileSync('db.js', 'var sidebar = ' + JSON.stringify(sidebar),"utf-8")
   return sidebar;
 }
 // run();
