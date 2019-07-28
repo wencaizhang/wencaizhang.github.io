@@ -61,21 +61,21 @@ underscore 内部正是通过这一功能将 `_` 的所有静态方法，添加�
 
 ## 链接式调用
 
-jQuery 的链接式调用
+用过 jQuery 的同学都知道，利用 jQuery 链式调用的模式，可以对同一个 DOM 元素进行多次操作，例如
 
 ```js
-$('.div').css('color', 'red').show();
+$('.div').css('color', 'red').addClass('active').show();
 ```
 
-而 underscore 也可以链式调用：
+事实上 underscore 也是支持链式调用的，但是调用方式和我们平常使用 underscore 有所区别，而是类似 jQuery。
 
 ```js
-var result = _([-1, 1, 2, 3])
-  .chain()
-  .filter(function (value, index) {
+var result = _([-1, 1, 2, 3])  // 首先生成 underscore 对象
+  .chain()                     // 然后通过 chain 方法声明链式调用
+  .filter(function (value, index) {  // filter 过滤符合条件的元素
     return value > 0;
   })
-  .map(function (value, index) {
+  .map(function (value, index) {     // map 映射为需要的数据
     return value * value;
   })
   .value();
