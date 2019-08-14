@@ -1,0 +1,33 @@
+
+// ---------
+// 警告：此文件名不能命名为 code.styl
+// 否则会覆盖主题默认的 code.styl 文件
+// ---------
+
+// 左上角 3 个彩色原点
+div[class*="language-"].line-numbers-mode::after
+  position: absolute;
+  top: 16px;
+  left: 18px;
+  content: "";
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background-color: #ff5f56;
+  box-shadow: 18px 0 0 0 #ffbd2e, 36px 0 0 0 #27c93f;
+
+// 原右上角，代码块语言类型，转移到左侧，
+div[class*="language-"]::before
+  top: 1.2em;
+  left: 6.5em;
+
+div[class*="language-"].line-numbers-mode
+  overflow: hidden;
+  margin-top: 1rem;
+
+  pre, pre[class*="language-"]
+    margin 0
+    
+  pre, pre[class*="language-"],
+  .line-numbers-wrapper
+    padding-top 2.5rem
