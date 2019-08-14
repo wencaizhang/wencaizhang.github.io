@@ -5,7 +5,7 @@ const sidebarTree = sidebar();
 
 module.exports = {
   base: '/',
-  title: '前端锦囊',
+  title: '酷前端',
   description: '',
   plugins: ['@vuepress/pwa', '@vuepress/back-to-top'],
   head: [
@@ -28,7 +28,9 @@ module.exports = {
   extraWatchFiles: [
 
   ],
+  extend: '@vuepress/theme-default',
   themeConfig: {
+    repo: 'wencaizhang/wencaizhang.github.io',
     // 百度统计
     // baidu_tongji: "969e7a19e58c941d5db2a9bf87885340",
     // sidebarDepth: 2, // 同时提取 h2 h3
