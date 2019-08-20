@@ -28,6 +28,30 @@ _.isMatch(stooge, {age: 32});
 ## isEmpty
 ## isElement
 
+> 用法：`_.isElement(object)`
+
+判断 object 是否是一个 DOM 元素
+
+```js
+_.isElement(jQuery('body')[0]);
+// true
+```
+
+### 源码
+
+```js
+_.isElement = function(obj) {
+  return !!(obj && obj.nodeType === 1);
+};
+```
+
+nodeType 属性返回以数字值返回指定节点的节点类型。
+
+如果节点是元素节点，则 nodeType 属性将返回 1。
+
+如果节点是属性节点，则 nodeType 属性将返回 2。
+
+
 ## isArray
 
 类型检测，用于判断一个值是否是 Array 类型
@@ -57,6 +81,46 @@ _.isArray =  Array.isArray || function(obj) {
 ```
 
 ## isObject
+
+> 用法：`_.isObject(value)`
+
+```js
+_.isObject({});
+// true
+_.isObject(1);
+// false
+```
+
+### 源码
+
+```js
+_.isObject = function(obj) {
+  var type = typeof obj;
+  return type === 'function' || type === 'object' && !!obj;
+};
+```
+
+这里需要注意两点：
+
+1. `function` 是 `Object` 类型，但是通过 `typeof` 操作符得到的结果是 `function`
+2. `null` 不是 `Object` 类型，但是通过 `typeof` 操作符号得到的结果却是 `object`
+
+其实这里也可以使用 `toString` 方法来实现，下面是我的实现方法：
+
+```js
+var isObject = function (obj) {
+  var objToString = Object.prototype.toString.call(obj);
+  return objToString === '[object Function]' || objToString === '[object Object]'
+}
+```
+
+同样的来看下 `toString` 方法对 `function` 和 `null` 的处理结果
+
+```js
+Object.prototype.toString.call(function () {}); // '[object Function]'
+Object.prototype.toString.call(null); // '[object Null]'
+```
+
 ## isArguments
 
 
@@ -76,6 +140,34 @@ if (typeof /./ !== 'function') {
 ## isNumber
 ## isFinite
 ## isBoolean
+
+> 用法：`_.isBoolean(object)`
+
+如果 `object` 是一个布尔值，返回 `true`，否则返回 `false`。
+
+```js
+_.isBoolean(null);
+// false
+```
+
+### 源码
+
+```js
+_.isBoolean = function(obj) {
+  return obj === true || obj === false || toString.call(obj) === '[object Boolean]';
+};
+```
+
+布尔值除了 `true` 和 `false`，还有一种情况，就是使用 `new` 操作符创建的实例
+
+```js
+var bool = new Boolean();
+
+Object.prototype.toString.call(bool);
+// "[object Boolean]"
+```
+
+
 ## isDate
 ## isRegExp
 ## isError
@@ -85,7 +177,64 @@ if (typeof /./ !== 'function') {
 ## isSet
 ## isWeakSet
 ## isNaN
+
+> 用法：`_.isNaN(object)`
+
+如果 `object` 是 `NaN`，返回 `true`。 
+
+```js
+_.isNaN(NaN);
+// true
+isNaN(undefined);
+// true
+_.isNaN(undefined);
+// false
+```
+
+### 源码
+
+```js
+_.isNaN = function(obj) {
+  return _.isNumber(obj) && isNaN(obj);
+};
+```
+如果 `obj` 是 `undefined`，原生的 `isNaN` 函数也会返回 `true`，underscore 中将 `undefined` 排除掉。
+
+```js
+isNaN(undefined);
+// true
+_.isNaN(undefined);
+// false
+```
+
+
 ## isNull
+
+> 用法：`_.isNull(object)`
+
+如果object的值是 null，返回true。
+
+```js
+_.isNull(null);
+// true
+_.isNull(undefined);
+// false
+```
+
+### 源码
+
+```js
+_.isNull = function(obj) {
+  return obj === null;
+};
+```
+
+注意：用 `===` 来判断
+
+```js
+null == undefined;
+// true
+```
 
 ## isUndefined
 
