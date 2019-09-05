@@ -45,11 +45,11 @@ _.isElement = function(obj) {
 };
 ```
 
-nodeType 属性返回以数字值返回指定节点的节点类型。
+`nodeType` 属性返回以数字值返回指定节点的节点类型。
 
-如果节点是元素节点，则 nodeType 属性将返回 1。
+如果节点是元素节点，则 `nodeType` 属性将返回 `1`。
 
-如果节点是属性节点，则 nodeType 属性将返回 2。
+如果节点是属性节点，则 `nodeType` 属性将返回 `2`。
 
 
 ## isArray
@@ -229,7 +229,7 @@ _.isNull = function(obj) {
 };
 ```
 
-注意：用 `===` 来判断
+注意：用 `===` 来判断，原因请看下面代码：
 
 ```js
 null == undefined;

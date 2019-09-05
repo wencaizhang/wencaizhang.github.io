@@ -71,8 +71,6 @@ export default {
 </script>
 
 <style lang="stylus">
-body
-  // background: linear-gradient(to right,#003973 0,#e5e5be 100%);
 .home
   padding $navbarHeight 2rem 0
   max-width 960px

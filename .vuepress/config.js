@@ -5,7 +5,7 @@ const sidebarTree = sidebar();
 
 module.exports = {
   base: '/',
-  title: '酷前端',
+  title: 'cool-fe',
   description: '',
   plugins: ['@vuepress/pwa', '@vuepress/back-to-top'],
   head: [
