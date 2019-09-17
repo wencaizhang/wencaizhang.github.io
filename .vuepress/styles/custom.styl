@@ -77,19 +77,19 @@ header.navbar .links
 
 // 首页a链接
 // 标题/导航 a 链接
-.theme-default-content a,
+.custom a,
 .nav-links a {
   position: relative;
   display: inline-block;
   border-bottom: 0!important;
 }
 
-.theme-default-content a:before,
+.custom a:before,
 .nav-links a:before {
   content: '';
   position: absolute;
   z-index: 1;
-  height: 2px;
+  height: 1px;
   bottom: 0;
   left: 51%;
   right: 51%;
@@ -98,7 +98,7 @@ header.navbar .links
   transition-property: right, left;
   transition-timing-function: ease-out;
 }
-.theme-default-content a:hover:before,
+.custom a:hover:before,
 .nav-links a:hover:before {
   left: 0;
   right: 0;
