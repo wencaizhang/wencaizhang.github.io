@@ -59,3 +59,47 @@ body
 
 header.navbar .links 
   right: 6.5rem;
+
+
+// 文章内部 a 链接
+// CSS实现文字下面波浪线动画效果
+// https://www.zhangxinxu.com/wordpress/2019/04/css-wave-wavy-animation/
+.theme-default-content:not(.custom) a:hover:hover {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 4'%3E%3Cpath fill='none' stroke='%233eaf7c' d='M0 3.5c5 0 5-3 10-3s5 3 10 3 5-3 10-3 5 3 10 3'/%3E%3C/svg%3E") repeat-x 0 100%; 
+  background-size: 20px auto;
+  animation: waveMove 1s infinite linear;
+  text-decoration: none;
+}
+@keyframes waveMove {
+    from { background-position: 0 100%; }
+    to   { background-position: -20px 100%; }
+}
+
+// 首页a链接
+// 标题/导航 a 链接
+.theme-default-content a,
+.nav-links a {
+  position: relative;
+  display: inline-block;
+  border-bottom: 0!important;
+}
+
+.theme-default-content a:before,
+.nav-links a:before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  height: 2px;
+  bottom: 0;
+  left: 51%;
+  right: 51%;
+  background-color: #46bd87;
+  transition-duration: 0.2s;
+  transition-property: right, left;
+  transition-timing-function: ease-out;
+}
+.theme-default-content a:hover:before,
+.nav-links a:hover:before {
+  left: 0;
+  right: 0;
+}
