@@ -39,6 +39,7 @@ git commit -m ":memo: update README"
 
 enjoy yourself!
 
+<div class="gitmoji-table">
 
 | 表情                        | 代码                          | meaning (en)                                | 含义(zh)                   |
 | :-------------------------- | :---------------------------- | :------------------------------------------ | :------------------------- |
@@ -107,6 +108,7 @@ enjoy yourself!
 | :wheel_of_dharma:           | `:wheel_of_dharma:`           | Work about Kubernetes                       | 在 Kubernetes 平台工作     |
 | :label:                     | `:label:`                     | Adding or updating types (Flow, TypeScript) | 添加或者更新类型系统       |
 
+</div>
 
 ## 更多关于 emoji
 
@@ -115,13 +117,13 @@ enjoy yourself!
 enjoy yourself again.
 
 <style>
-tr td:first-child {
+.gitmoji-table tr td:first-child {
   font-size: 1.5em;
 }
-tr td:nth-child(2) {
+.gitmoji-table tr td:nth-child(2) {
   cursor: pointer;
 }
-tr td:nth-child(2):hover {
+.gitmoji-table tr td:nth-child(2):hover {
   background-color: lightblue;
 }
 </style>
