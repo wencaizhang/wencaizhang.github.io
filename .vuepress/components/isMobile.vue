@@ -30,17 +30,17 @@ export default {
     },
 
     handleClickIsMobile() {
-      this.$alert.info({
+      this.$message.info({
         content: "是否手机端浏览器: " + this.isMobile(),
       });
     },
     handleClickIsWeChatBroswer() {
-      this.$alert.info({
+      this.$message.info({
         content: "是否微信浏览器: " + this.isWeChatBroswer(),
       });
     },
     handleViewUA () {
-      this.$alert.info({
+      this.$message.info({
         content: navigator.userAgent
       });
     }

@@ -18,8 +18,16 @@ export default {
       initCopyCode.clip.on("success", e => {
         e.clearSelection();
         console.log(e);
-        this.$alert.success({
-          content: e.text + ' copied 😜'
+        this.$message.success({
+          message: `<code style="
+                      color: #476582;
+                      padding: 0.25rem 0.5rem;
+                      margin: 0;
+                      font-size: 0.85em;
+                      background-color: rgba(27,31,35,0.05);
+                      border-radius: 3px;"
+                    >${e.text}</code> copied 😜`,
+          supportHTML: true,
         })
       });
 
