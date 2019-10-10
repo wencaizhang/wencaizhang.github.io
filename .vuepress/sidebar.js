@@ -58,13 +58,15 @@ function travel (dir, callback) {
     else if (deep === 1) {
       // arr: [ 'oh-my-js', '01-Array-ES3' ]
       if (file == 'README.md') {
-        sidebar[`/${arr[0]}/`].unshift(`/${arr[0]}/`);
+        !sidebar[`/${arr[0]}/`].includes(`/${arr[0]}/`) && sidebar[`/${arr[0]}/`].unshift(`/${arr[0]}/`);
       } else {
-        sidebar[`/${arr[0]}/`].push({
+        let obj = {
           title: arr[1],
-          collapsable: false,
+          collapsable: true,
           children: []
-        })
+        }
+        !sidebar[`/${arr[0]}/`].includes(item => item.title === obj.title)
+        && sidebar[`/${arr[0]}/`].push(obj)
       }
     }
     else {
@@ -75,11 +77,13 @@ function travel (dir, callback) {
         return item.title === arr[1];
       })
       if (file == 'README.md') {
-        item && item.children.unshift(base + arr.join('/').replace(file, ''));
+        let path = base + arr.join('/').replace(file, '');
+        item && !item.children.includes(path) && item.children.unshift(path);
         return;
       }
       // arr.shift();
-      item && item.children.push( base + arr.join('/'));
+      let path = base + arr.join('/');
+      item && !item.children.includes(path) && item.children.push(path);
     }
 
     if (fs.statSync(pathname).isDirectory()) {
