@@ -47,6 +47,10 @@ module.exports = {
         link: '/'
       },
       {
+        text: 'ActionVue',
+        link: '/ActionVue'
+      },
+      {
         text: 'gitmoji',
         link: '/oh-my-git/03-git-practice/04-gitmoji.html'
       },
