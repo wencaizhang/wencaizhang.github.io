@@ -27,3 +27,18 @@ alias toroot="cd /data/wwwroot/default"
 
 这两个文件的区别是：`~/.bashrc` 只对当前用户有效，对其他用户无效，而 `/etc/bashrc` 对所有用户都有效。
 
+<!-- more -->
+
+### 修改普通用户对目录的读写权限
+普通用户是没有文件的读写权限的，需要每次都临时获取 root 权限，但这样比较麻烦。
+方便的做法是，修改/var/www目录的读写权限（777是linux中的最高权限，表示可读，可写，可执行）
+```bash
+sudo chmod 777 /var/www
+```
+
+### 设置别名 `alias`
+编辑配置文件 `vim /etc/profile`，在文件中添加配置代码，例如：
+```bash
+alias tofe="cd /var/www/rmp/spms/front-end/"
+alias gs="git status"
+```
