@@ -1,4 +1,4 @@
-# README
+# 说明
 
 ## 写给自己看的 JavaScript 参考手册
 
@@ -15,7 +15,7 @@
 
 所有内容均为手打，且为个人见解，难免存在各种各样的问题。
 
-如果您对本站点有一些疑惑，或发现了一些 bug，或建议增加新的 feature，或对系统有一些改进时，欢迎在 [issue board](https://github.com/wencaizhang/oh-my-js/issues)（项目地址为：[oh-my-js· GitHub](https://github.com/wencaizhang/oh-my-js)） 中讨论。如果发现有重大问题可发 Email 至 <a href="mailto:1052642137@qq.com">1052642137@qq.com</a>
+如果您对本站点有一些疑惑，或发现了一些问题，或有什么建议，欢迎在 [issue board](https://github.com/wencaizhang/oh-my-js/issues) 中讨论。如果发现有重大问题可发 Email 至 <a href="mailto:1052642137@qq.com">1052642137@qq.com</a> 
 
 ### 地址
 
