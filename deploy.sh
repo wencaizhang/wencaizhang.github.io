@@ -13,13 +13,16 @@ currTime2=`date +%H:%M:%S`
 commit=":rocket: deploy @${currTime1} ${currTime2}"
 repo="https://github.com/wencaizhang/wencaizhang.github.io.git"
 remoteBranch="master"
-domain="coolfe.fun"
+# domain="coolfe.fun"
 
+cp ./_redirects $destDir
 # 进入生成的文件夹
 cd $destDir
 
 # 发布到自定义域名
 echo $domain > CNAME
+
+
 
 # 将前端静态文件初始化为 git 仓库并提交
 git init
