@@ -20,7 +20,7 @@ cp ./_redirects $destDir
 cd $destDir
 
 # 发布到自定义域名
-# echo $domain > CNAME
+echo $domain > CNAME
 
 
 
