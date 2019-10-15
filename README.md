@@ -9,6 +9,8 @@ footer: MIT Licensed | Copyright © 2018-present wencaizhang
   
 ## ✍️ 一些文章
 
+😂
+
 ## 🌐 前端方向
 
 + [oh-my-js](/oh-my-js/): 前端开发基础技能，只记录一些 JS 内置函数。
