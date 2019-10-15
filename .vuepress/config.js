@@ -17,7 +17,7 @@ module.exports = {
     }],
     ['link', {
       rel: 'icon',
-      href: '/images/js.jpg'
+      href: 'https://gitee.com/wencaizhang_admin/images/raw/master/primary/js.jpg'
     }],
   ],
   markdown: {
