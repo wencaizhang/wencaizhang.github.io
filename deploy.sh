@@ -15,7 +15,7 @@ repo="https://github.com/wencaizhang/wencaizhang.github.io.git"
 remoteBranch="master"
 domain="coolfe.fun"
 
-cp ./_redirects $destDir
+cp ./Dockerfile $destDir
 # 进入生成的文件夹
 cd $destDir
 

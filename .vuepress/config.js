@@ -9,9 +9,8 @@ module.exports = {
   description: '',
   plugins: ['@vuepress/pwa', '@vuepress/back-to-top'],
   head: [
-    ['link', {
-      rel: 'prefetch',
-      href: '//lib.baomitu.com/clipboard.js/2.0.4/clipboard.min.js'
+    ['script', {
+      src: '//lib.baomitu.com/clipboard.js/2.0.4/clipboard.min.js'
     }],
     // ['script', {
     //   src: 'https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.1/qrcode.min.js'
