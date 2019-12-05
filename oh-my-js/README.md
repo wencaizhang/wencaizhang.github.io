@@ -9,7 +9,6 @@
 - [JavaScript · MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript)
 - [ECMAScript 6 入门](http://es6.ruanyifeng.com/)
 - [JavaScript 高级程序设计](https://book.douban.com/subject/10546125/)
-- [菜鸟教程](http://www.runoob.com/js/js-tutorial.html)
 
 ### Contributing
 

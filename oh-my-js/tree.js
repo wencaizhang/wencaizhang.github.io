@@ -97,8 +97,8 @@ module.exports = [
     title: 'Regexp',
     collapsable: true,
     children: [
+      './06-Regexp/00-Regexp-basic',
       './06-Regexp/0-正则表达式预查',
-      './06-Regexp/00-Regexp',
       './06-Regexp/01-Regexp.prototype.lastIndex',
       './06-Regexp/02-Regexp.prototype.test',
       './06-Regexp/03-Regexp.prototype.exec',

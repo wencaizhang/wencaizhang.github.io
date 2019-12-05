@@ -16,6 +16,7 @@
     "vuepress": "^1.0.0-rc.1"
   },
   "dependencies": {
-    "vue-m-message": "^2.0.0"
+    "vue-m-message": "^2.0.0",
+    "vuepress-plugin-dehydrate": "^1.0.3"
   }
 }

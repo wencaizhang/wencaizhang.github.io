@@ -1,12 +1,12 @@
-# 正则表达式
+# 正则表达式基础知识
 
->正则表达式验证工具： https://regexper.com/
+>正则表达式验证工具： [https://regexper.com/](https://regexper.com/)
 
-> https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md
+> [正则表达式教程](https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md)
 
 ## 创建正则表达式
 
-### 构造函数
+### 通过构造函数创建
 
 ```js
 var reg1 = new RegExp('a');
@@ -14,7 +14,7 @@ var reg2 = new RegExp('[a-zA-Z]', 'gi');
 var reg3 = new RegExp(/[a-zA-Z]/, 'gi');
 ```
 
-### 字面量
+### 通过字面量创建
 
 ```js
 var reg = /[a-zA-Z]/gi;
@@ -141,4 +141,4 @@ console.log(ans); // world hello
 
 5. 可以使用 `|` 来表示或的关系，例如 `[z|j|q]` 表示匹配 `z` 、 `j` 、 `q` 之中的任意一个字母。
 
-6. 正则验证工具： https://regexper.com/ 
+6. 正则验证工具： [https://regexper.com/](https://regexper.com/)
