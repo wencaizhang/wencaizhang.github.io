@@ -15,10 +15,10 @@ module.exports = [
     title: '数组 Arrays',
     collapsable: true,
     children: [
-      './Arrays/_.first',
+      './Arrays/index-of-item',
       './Arrays/_.uniq',
-      './Arrays/_.findIndex',
-      './Arrays/_.findLastIndex',
+      './Arrays/intersection.md',
+      './Arrays/slice-functions',
     ]
   },
   {
@@ -36,12 +36,10 @@ module.exports = [
     title: '对象 Objects',
     collapsable: true,
     children: [
-      './Objects/_.keys',
-      './Objects/_.values',
-      './Objects/_.isArray',
-      './Objects/_.functions',
-      './Objects/_.isFunction',
-      './Objects/_.isUndefined',
+      './Objects/_.functions.md',
+      './Objects/judge-type.md',
+      './Objects/keys-and-values.md',
+      './Objects/property.md',
     ]
   },
   {

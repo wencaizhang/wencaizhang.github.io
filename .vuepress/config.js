@@ -1,14 +1,21 @@
 const path = require('path');
 const sidebar = require('./sidebar');
 
-const sidebarTree = sidebar();
+// const sidebarTree = sidebar();
+
+const ohmyjs = require('../oh-my-js/tree')
+const ohmygit = require('../oh-my-git/tree')
+const ohmyvue = require('../oh-my-vue/tree')
+const ohmylinux = require('../oh-my-linux/tree')
+const microCode = require('../micro-code/tree')
+const underscore = require('../underscore-analysis/tree')
 
 module.exports = {
   base: '/',
   title: 'cool-fe',
   description: '',
   plugins: ['@vuepress/pwa', '@vuepress/back-to-top',[
-    'vuepress-plugin-dehydrate',
+    // 'vuepress-plugin-dehydrate',
     {
       // 禁用 SSR
       noSSR: '404.html',
@@ -61,7 +68,7 @@ module.exports = {
       },
       {
         text: 'ActionVue',
-        link: '/ActionVue'
+        link: '/ActionVue/'
       },
       {
         text: 'gitmoji',
@@ -97,14 +104,14 @@ module.exports = {
       },
       
     ],
-    sidebar: sidebarTree,
-    // sidebar: {
-    //   '/oh-my-js/': ohmyjs,
-    //   '/oh-my-vue/': ohmyvue,
-    //   '/oh-my-git/': ohmygit,
-    //   '/oh-my-linux/': ohmylinux,
-    //   '/underscore-analysis/': undercore,
-    //   '/micro-code/': microCode,
-    // },
+    // sidebar: sidebarTree,
+    sidebar: {
+      '/oh-my-js/': ohmyjs,
+      '/oh-my-vue/': ohmyvue,
+      '/oh-my-git/': ohmygit,
+      '/oh-my-linux/': ohmylinux,
+      '/underscore-analysis/': underscore,
+      '/micro-code/': microCode,
+    },
   },
 }

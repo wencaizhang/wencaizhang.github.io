@@ -9,7 +9,7 @@ const ret = {
     '/oh-my-js/': [
       {
         title: 'Array-ES3',
-        collapsable: true,
+        // collapsable: true,
         children: [
           './00-other/this',
           './00-other/prototype',
@@ -62,7 +62,7 @@ function travel (dir, callback) {
       } else {
         let obj = {
           title: arr[1],
-          collapsable: true,
+          // collapsable: true,
           children: []
         }
         !sidebar[`/${arr[0]}/`].includes(item => item.title === obj.title)

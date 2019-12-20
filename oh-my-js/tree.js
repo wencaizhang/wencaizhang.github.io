@@ -1,16 +1,5 @@
 module.exports = [
   {
-    title: '00-other',
-    collapsable: true,
-    children: [
-      './00-other/this',
-      './00-other/prototype',
-      './00-other/bind',
-      './00-other/closure',
-      './00-other/call-and-apply',
-    ]
-  },
-  {
     title: 'Array-ES3',
     collapsable: true,
     children: [

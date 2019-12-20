@@ -1,7 +1,7 @@
 module.exports = [
   {
     title: 'JS相关',
-    collapsable: true,
+    // collapsable: true,
     children: [
       './js/sayHello',
       './js/downloadFile',
@@ -22,7 +22,7 @@ module.exports = [
   },
   {
     title: '样式相关',
-    collapsable: true,
+    // collapsable: true,
     children: [
       './styles/reset',
       './styles/common',

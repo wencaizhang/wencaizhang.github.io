@@ -10,6 +10,8 @@
 - [ECMAScript 6 入门](http://es6.ruanyifeng.com/)
 - [JavaScript 高级程序设计](https://book.douban.com/subject/10546125/)
 
+除去学习每个 API 的使用之外，还尽量考虑「不用eval的前提下用JS实现一次JS」。
+
 ### Contributing
 
 所有内容均为手打，且为个人见解，难免存在各种各样的问题。
