@@ -1,5 +1,5 @@
-const path = require('path');
-const fs = require('fs');
+const path = require('path')
+const fs = require('fs')
 
 /**
 // 最终要得到 sidebar 属性值的数据结构
@@ -23,9 +23,9 @@ const ret = {
 }
  */
 
-const sidebar = {};
+const sidebar = {}
 // 会跳过下列文件夹
-const blacklistReg = /(imgs)|(images)|(^\.)|(\.js)/;
+const blacklistReg = /(imgs)|(images)|(^\.)|(\.js)/
 const includeDir = [
   'oh-my-js',
   'oh-my-vue',
@@ -36,54 +36,51 @@ const includeDir = [
 ]
 function travel (dir, callback) {
   fs.readdirSync(dir).forEach(file => {
-
-    let pathname = path.join(dir, file);
+    const pathname = path.join(dir, file)
     if (!includeDir.some(dir => pathname.includes(dir))) {
       // 如果不是指定的目录，代码执行结束
-      return;
+      return
     }
     if (blacklistReg.test(file)) {
-      return;
+      return
     }
     const arr = pathname.split('/')
-    let deep = arr.indexOf(file);
+    const deep = arr.indexOf(file)
 
     if (deep === 0) {
       // arr: [ 'oh-my-js' ]
       if (file == 'README.md') {
-        return;
+        return
       }
-      sidebar[`/${arr[0]}/`] = sidebar[`/${arr[0]}/`] || [];
-    }
-    else if (deep === 1) {
+      sidebar[`/${arr[0]}/`] = sidebar[`/${arr[0]}/`] || []
+    } else if (deep === 1) {
       // arr: [ 'oh-my-js', '01-Array-ES3' ]
       if (file == 'README.md') {
-        !sidebar[`/${arr[0]}/`].includes(`/${arr[0]}/`) && sidebar[`/${arr[0]}/`].unshift(`/${arr[0]}/`);
+        !sidebar[`/${arr[0]}/`].includes(`/${arr[0]}/`) && sidebar[`/${arr[0]}/`].unshift(`/${arr[0]}/`)
       } else {
-        let obj = {
+        const obj = {
           title: arr[1],
           // collapsable: true,
-          children: []
+          children: [],
         }
-        !sidebar[`/${arr[0]}/`].includes(item => item.title === obj.title)
-        && sidebar[`/${arr[0]}/`].push(obj)
+        !sidebar[`/${arr[0]}/`].includes(item => item.title === obj.title) &&
+        sidebar[`/${arr[0]}/`].push(obj)
       }
-    }
-    else {
+    } else {
       // arr: [ oh-my-js, 01-Array-ES3, 01-Array.prototype.concat.md ]
       // file: 01-Array.prototype.concat.md
-      const base = '/';
+      const base = '/'
       const item = sidebar[`/${arr[0]}/`].find(item => {
-        return item.title === arr[1];
+        return item.title === arr[1]
       })
       if (file == 'README.md') {
-        let path = base + arr.join('/').replace(file, '');
-        item && !item.children.includes(path) && item.children.unshift(path);
-        return;
+        const path = base + arr.join('/').replace(file, '')
+        item && !item.children.includes(path) && item.children.unshift(path)
+        return
       }
       // arr.shift();
-      let path = base + arr.join('/');
-      item && !item.children.includes(path) && item.children.push(path);
+      const path = base + arr.join('/')
+      item && !item.children.includes(path) && item.children.push(path)
     }
 
     if (fs.statSync(pathname).isDirectory()) {
@@ -93,10 +90,10 @@ function travel (dir, callback) {
 }
 
 function run () {
-  let dir = './'
+  const dir = './'
   travel(dir, () => {})
   // fs.writeFileSync('db.js', 'var sidebar = ' + JSON.stringify(sidebar),"utf-8")
-  return sidebar;
+  return sidebar
 }
 // run();
-module.exports = run;
+module.exports = run
