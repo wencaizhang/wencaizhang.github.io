@@ -9,7 +9,7 @@ module.exports = [
       './01-basic/04-git-branch',
       './01-basic/05-git-tag',
       './01-basic/06-查看修改和撤销修改',
-    ]
+    ],
   },
   {
     title: '常见问题',
@@ -20,7 +20,7 @@ module.exports = [
       './02-git-issues/03-git-stash',
       './02-git-issues/04-修改commit信息',
       './02-git-issues/git-submodule',
-    ]
+    ],
   },
   {
     title: 'Git实践',
@@ -30,6 +30,6 @@ module.exports = [
       './03-git-practice/02-Git基本工作流程',
       './03-git-practice/03-git-commit-guide',
       './03-git-practice/04-gitmoji',
-    ]
+    ],
   },
 ]

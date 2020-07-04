@@ -18,7 +18,7 @@ module.exports = [
       './js/deepCopy',
       './js/get-ele-position',
       // './js/uniq',
-    ]
+    ],
   },
   {
     title: '样式相关',
@@ -30,6 +30,6 @@ module.exports = [
       './styles/loading',
       './styles/loading2',
       './styles/loop-of-less-and-scss',
-    ]
-  }
+    ],
+  },
 ]

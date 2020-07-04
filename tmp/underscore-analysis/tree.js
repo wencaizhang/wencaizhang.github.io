@@ -9,7 +9,7 @@ module.exports = [
       './Collections/_.each',
       './Collections/_.sample',
       './Collections/_.shuffle',
-    ]
+    ],
   },
   {
     title: '数组 Arrays',
@@ -19,7 +19,7 @@ module.exports = [
       './Arrays/_.uniq',
       './Arrays/intersection.md',
       './Arrays/slice-functions',
-    ]
+    ],
   },
   {
     title: '函数 Functions',
@@ -30,7 +30,7 @@ module.exports = [
       './Functions/_.delay',
       './Functions/_.debounce',
       './Functions/_.throttle',
-    ]
+    ],
   },
   {
     title: '对象 Objects',
@@ -40,7 +40,7 @@ module.exports = [
       './Objects/judge-type.md',
       './Objects/keys-and-values.md',
       './Objects/property.md',
-    ]
+    ],
   },
   {
     title: '工具函数 Utility',
@@ -49,7 +49,7 @@ module.exports = [
       './Utility/_.noConflict',
       './Utility/_.random',
       './Utility/_.mixin',
-    ]
+    ],
   },
   {
     title: '链式语法 Chaining',
@@ -58,7 +58,7 @@ module.exports = [
       './Chaining/',
       './Chaining/_.chain',
       './Chaining/_.prototype.value',
-    ]
+    ],
   },
   {
     title: '辅助函数',
@@ -66,6 +66,6 @@ module.exports = [
     children: [
       './helper/',
       './helper/isArrayLike',
-    ]
+    ],
   },
 ]

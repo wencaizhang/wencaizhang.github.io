@@ -14,7 +14,7 @@ module.exports = [
       './01-Array-ES3/08-Array.prototype.splice',
       './01-Array-ES3/09-Array.prototype.reverse',
       './01-Array-ES3/10-Array.prototype.sort',
-    ]
+    ],
   },
   {
     title: 'Array-ES5',
@@ -30,7 +30,7 @@ module.exports = [
       './02-Array-ES5/07-Array.prototype.lastIndexOf',
       './02-Array-ES5/08-Array.prototype.reduce',
       './02-Array-ES5/09-Array.prototype.reduceRight',
-    ]
+    ],
   },
   {
     title: 'Array-ES6',
@@ -48,7 +48,7 @@ module.exports = [
       './03-Array-ES6/08-Array.prototype.keys',
       './03-Array-ES6/09-Array.prototype.values',
       './03-Array-ES6/10-Array.prototype.includes',
-    ]
+    ],
   },
   {
     title: 'String',
@@ -66,7 +66,7 @@ module.exports = [
       './04-String/04-String.prototype.search',
       './04-String/05-String.prototype.match',
       './04-String/06-String.prototype.replace',
-    ]
+    ],
   },
   {
     title: 'Object',
@@ -80,7 +80,7 @@ module.exports = [
       './05-Object/06-Object.is',
       './05-Object/07-Object.defineProperty',
       './05-Object/08-Object.create',
-    ]
+    ],
   },
   {
     title: 'Regexp',
@@ -92,6 +92,6 @@ module.exports = [
       './06-Regexp/02-Regexp.prototype.test',
       './06-Regexp/03-Regexp.prototype.exec',
       './06-Regexp/100-regexp-demos',
-    ]
+    ],
   },
 ]

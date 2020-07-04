@@ -20,8 +20,8 @@ module.exports = [
       './vuejs/11-键盘弹起优化',
       './vuejs/12-vscode自定义代码段',
       './vuejs/13-header-and-footer组件化',
-      './vuejs/permission-via-custom-directive'
-    ]
+      './vuejs/permission-via-custom-directive',
+    ],
   },
   {
     title: 'vuejs插件',
@@ -31,6 +31,6 @@ module.exports = [
       './vuejs-plugin/04-vuex',
       './vuejs-plugin/09-vuex 状态持久化',
       './vuejs-plugin/vue.ls',
-    ]
+    ],
   },
 ]

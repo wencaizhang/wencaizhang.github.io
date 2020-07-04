@@ -13,7 +13,7 @@ module.exports = [
       './01-常用命令/05-grep',
       './01-常用命令/06-软链接',
       './01-常用命令/tree',
-    ]
+    ],
   },
   {
     title: '实用tips',
@@ -21,7 +21,7 @@ module.exports = [
     children: [
       './02-实用tips/01-设置alias',
       './02-实用tips/02-设置全局环境变量',
-    ]
+    ],
   },
   {
     title: '常用脚本',
@@ -29,6 +29,6 @@ module.exports = [
     children: [
       './03-shell-scripts/deploy',
       './03-shell-scripts/login-remote-server',
-    ]
+    ],
   },
 ]
