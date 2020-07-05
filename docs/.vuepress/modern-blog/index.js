@@ -1,6 +1,22 @@
+
+const getSidebarData = require('./util/getSidebarData')
 const removeMd = require('remove-markdown')
+const log = console.log
 
 module.exports = (themeConfig, ctx) => {
+  const { sourceDir } = ctx
+  themeConfig.sidebar = themeConfig.sidebar || { collapsable: true }
+  const collapsable = themeConfig.sidebar.collapsable !== false
+  const sidebarData = getSidebarData(sourceDir, collapsable)
+
+  if (sidebarData) {
+    themeConfig.sidebar = sidebarData
+    log('tip: add sidebar data. 侧边栏数据成功生成。')
+  } else {
+    themeConfig.sidebar = 'auto'
+    log('warning: fail to add sidebar data, switch to "auto". 未能添加侧边栏数据，将切换为“auto”。')
+  }
+
   themeConfig = Object.assign(themeConfig, {
     summary: themeConfig.summary || true,
     summaryLength:
