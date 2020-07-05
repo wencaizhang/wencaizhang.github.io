@@ -60,6 +60,7 @@ import DropdownTransition from '@theme/components/DropdownTransition.vue'
 export default {
   name: 'SidebarGroup',
   components: { DropdownTransition },
+  // eslint-disable-next-line
   props: ['item', 'open', 'collapsable', 'depth'],
   // ref: https://vuejs.org/v2/guide/components-edge-cases.html#Circular-References-Between-Components
   beforeCreate () {

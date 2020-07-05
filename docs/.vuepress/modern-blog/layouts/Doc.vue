@@ -44,7 +44,7 @@
         >
           {{ $page.frontmatter.title || $page.title }}
         </h1>
-        <Content />
+        <Content :key="$page.frontmatter.title" />
       </el-card>
     </main>
   </div>
