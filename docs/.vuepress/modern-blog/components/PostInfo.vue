@@ -37,6 +37,7 @@
 import { NavigationIcon, ClockIcon, CalendarIcon } from 'vue-feather-icons'
 
 export default {
+  name: 'PostInfo',
   components: { NavigationIcon, ClockIcon, CalendarIcon },
   props: {
     date: { type: String, default: '2019-10-14' },

@@ -23,6 +23,7 @@
 
 <script>
 export default {
+  name: 'Menu',
   computed: {
     activeIndex () {
       return this.$route.path

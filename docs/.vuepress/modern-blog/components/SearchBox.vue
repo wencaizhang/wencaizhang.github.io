@@ -25,6 +25,7 @@
 import Flexsearch from 'flexsearch'
 
 export default {
+  name: 'SearchBox',
   data () {
     return {
       index: null,

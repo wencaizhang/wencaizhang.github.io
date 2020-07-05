@@ -12,6 +12,7 @@
 <script>
 import { findContainerInVm } from './util'
 export default {
+  name: 'Sticker',
   // eslint-disable-next-line
   props: ['stick', 'tag'],
 

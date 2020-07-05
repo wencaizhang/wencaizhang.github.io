@@ -16,6 +16,7 @@
 import PostCard from '@theme/components/PostCard.vue'
 
 export default {
+  name: 'PostsList',
   components: {
     'post-card': PostCard,
   },

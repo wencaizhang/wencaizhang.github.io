@@ -33,6 +33,8 @@ function getAbsoluteTop (dom) {
 }
 
 export default {
+  name: 'Toc',
+
   components: {
     Sticker,
   },
@@ -218,6 +220,7 @@ export default {
 @media (min-width: 1300px) {
   .vuepress-toc {
     display: block;
+    right: 220px;
   }
 }
 </style>

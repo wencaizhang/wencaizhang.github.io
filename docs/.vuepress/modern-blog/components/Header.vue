@@ -54,6 +54,7 @@ import SearchBox from './SearchBox'
 import Toggle from './Toggle'
 
 export default {
+  name: 'Header',
   components: {
     Menu,
     SearchBox,

@@ -21,6 +21,7 @@
 import { isExternal, isMailto, isTel, ensureExt } from '../components/util'
 
 export default {
+  name: 'GlobalNavLink',
   props: {
     link: {
       required: true,

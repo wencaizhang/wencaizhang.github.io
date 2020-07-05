@@ -54,6 +54,7 @@ import {
 } from 'vue-feather-icons'
 
 export default {
+  name: 'Footer',
   components: {
     GithubIcon,
     FacebookIcon,
