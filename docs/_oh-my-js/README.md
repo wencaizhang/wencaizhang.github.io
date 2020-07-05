@@ -1,5 +1,5 @@
 ---
-title: README
+title: 说明
 date: 2020-06-30 14:01:46
 
 categories: 
@@ -7,7 +7,6 @@ categories:
   
 group: README
 ---
-# 说明
 
 ## 写给自己看的 JavaScript 参考手册
 
