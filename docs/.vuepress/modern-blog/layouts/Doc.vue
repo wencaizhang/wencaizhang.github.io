@@ -95,17 +95,5 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.languages-list {
-  list-style: none;
-  display: flex;
-  padding: 0;
-  margin: 0;
-  color: lighten($accentColor, 40%);
-  font-family: monospace;
 
-  li {
-    padding: 0 5px;
-  }
-}
 </style>
-<style src="prismjs/themes/prism-okaidia.css"></style>

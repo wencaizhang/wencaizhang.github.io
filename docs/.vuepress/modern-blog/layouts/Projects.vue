@@ -137,7 +137,7 @@ export default {
       padding: 0;
       margin: 0;
       color: lighten($accentColor, 40%);
-      font-family: monospace;
+      font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 
       li {
         padding: 0 5px;
