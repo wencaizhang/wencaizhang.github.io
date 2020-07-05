@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'VuePress Blog Example',
+  title: '酷前端',
   description: 'This is a blog example built by VuePress',
   theme: require.resolve('./modern-blog/'), // replace it with ==> theme: 'modern-blog' to use this example project as a boilerplate.
   summaryLength: 700,
@@ -125,7 +125,7 @@ module.exports = {
           title: 'Array-ES3',
           collapsable: true,
           children: [
-            './01-array-es3/00-README',
+            './01-array-es3/00-indexxx',
             './01-array-es3/01-Array.prototype.concat',
             './01-array-es3/02-Array.prototype.join',
             './01-array-es3/03-Array.prototype.push',
@@ -142,7 +142,7 @@ module.exports = {
           title: 'Array-ES5',
           collapsable: true,
           children: [
-            './02-array-es5/00-README',
+            './02-array-es5/00-index',
             './02-array-es5/01-Array.prototype.forEach',
             './02-array-es5/02-Array.prototype.map',
             './02-array-es5/03-Array.prototype.filter',
@@ -158,7 +158,7 @@ module.exports = {
           title: 'Array-ES6',
           collapsable: true,
           children: [
-            './03-array-es6/00-README',
+            './03-array-es6/00-home',
             './03-array-es6/01-Array.from',
             './03-array-es6/02-Array.of',
             './03-array-es6/10-Array.isArray',
