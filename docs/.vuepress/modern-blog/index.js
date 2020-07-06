@@ -59,9 +59,19 @@ module.exports = (themeConfig, ctx) => {
       {
         id: 'tag',
         keys: ['tag', 'tags'],
-        path: '/tag/',
-        // layout: 'Tag',  defaults to `FrontmatterKey.vue`
+        path: '/tags/',
+        layout: 'Tags', // defaults to `FrontmatterKey.vue`
         frontmatter: { title: 'Tag' },
+        pagination: {
+          lengthPerPage: 5,
+        },
+      },
+      {
+        id: 'category',
+        keys: ['category', 'categories'],
+        path: '/categories/',
+        layout: 'Categories',
+        frontmatter: { title: 'category' },
         pagination: {
           lengthPerPage: 5,
         },

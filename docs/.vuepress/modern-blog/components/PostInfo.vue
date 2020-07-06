@@ -61,6 +61,7 @@ div.ui-post-info {
 }
 
 div.post-info-item {
+  display: flex;
   margin-right: 1rem;
   font-size: .8rem;
 
@@ -73,6 +74,7 @@ div.post-info-item {
   svg {
     width: 17px;
     height: 17px;
+    margin-right: 3px;
   }
 }
 </style>

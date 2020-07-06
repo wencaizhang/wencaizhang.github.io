@@ -25,11 +25,10 @@
       </div>
     </header>
     <featured-posts class="my-5 d-sm-none d-lg-block" />
-    <el-container class="row px-lg-4">
-      <aside class="tags col-md-12 col-lg-3  py-0 py-lg-5">
-        <About v-if="$themeConfig.about" />
-        <BlogTags :tags="tags" />
-      </aside>
+    <el-container
+      class="container row px-lg-4"
+      style="margin: 0 auto;"
+    >
       <div
         id="posts"
         class="col-md-12 col-lg-9 py-3 py-lg-5"
@@ -43,6 +42,11 @@
           />
         </div>
       </div>
+      <aside class="tags col-md-12 col-lg-3  py-0 py-lg-5">
+        <About v-if="$themeConfig.about" />
+        <BlogCates :list="category" />
+        <BlogTags :list="tags" />
+      </aside>
     </el-container>
   </div>
 </template>
@@ -68,6 +72,9 @@ export default {
     tags () {
       return this.$tag.list
     },
+    category () {
+      return this.$category.list
+    },
   },
   created () {
     this.paginationComponent = this.getPaginationComponent()
@@ -87,13 +94,11 @@ export default {
 }
 </script>
 
-<style src="prismjs/themes/prism-okaidia.css"></style>
-
 <style lang="stylus">
 header.home-hero {
   background-color: #999;
   background-blend-mode: multiply;
-  padding: 10rem 0rem;
+  padding: 4rem 0rem;
   background-repeat: none;
   background-size: cover;
 }

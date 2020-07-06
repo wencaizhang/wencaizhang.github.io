@@ -165,5 +165,3 @@ export default {
   margin-top: 0rem;
 }
 </style>
-
-<style src="prismjs/themes/prism-okaidia.css"></style>

@@ -22,7 +22,10 @@
             class="w-100 rounded"
           >
         </div>
-        <div class="col-sm-12 col-md-6 col-lg-7 py-4">
+        <div
+          class="col-sm-12 col-md-6 col-lg-7 py-4"
+          :class="post | clazz"
+        >
           <div>
             <h3 class="h3">
               <router-link
@@ -39,19 +42,21 @@
           >
             <!-- eslint-disable-next-line -->
             <p align="justify" v-html="post.summary"/>
-            <router-link
-              :to="post.path"
-              class="read-more"
-            >
-              {{
-                $t("read_more")
-              }}
-            </router-link>
+            <p align="right">
+              <router-link
+                :to="post.path"
+                class="read-more"
+              >
+                {{
+                  $t("read_more")
+                }}
+              </router-link>
+            </p>
           </div>
         </div>
       </div>
       <div
-        class="post-info d-flex justify-content-end text-secondary p-4 border-top border-light"
+        class="post-info d-flex text-secondary p-4 border-top border-light"
       >
         <PostInfo
           :date="post.frontmatter.date"
@@ -69,6 +74,15 @@ export default {
   name: 'PostCard',
   components: {
     PostInfo,
+  },
+  filters: {
+    clazz (post) {
+      if (post.frontmatter.postcard_image || post.frontmatter.image) {
+        return []
+      } else {
+        return ['col-md-12', 'col-lg-12']
+      }
+    },
   },
   props: {
     post: {

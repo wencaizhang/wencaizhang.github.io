@@ -27,7 +27,7 @@
 
 <script>
 export default {
-  name: 'BlogTags',
+  name: 'BlogCates',
   props: {
     list: {
       type: Array,

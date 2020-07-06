@@ -109,6 +109,7 @@ export default {
 <style lang="stylus" scoped>
 .about-card {
   max-width 35rem;
+  min-width: 16rem;
   .card-header {
     min-height: 220px;
     background-color: darken($accentColor, 10%);

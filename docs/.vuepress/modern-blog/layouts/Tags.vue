@@ -3,3 +3,11 @@
     <BlogTags :tags="$frontmatterKey.list" />
   </div>
 </template>
+
+<script>
+export default {
+  created () {
+    console.log(this)
+  },
+}
+</script>

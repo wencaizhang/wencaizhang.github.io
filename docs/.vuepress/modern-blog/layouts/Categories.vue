@@ -1,7 +1,6 @@
 <template>
-  <div>
-    <BaseListLayout v-if="$pagination" />
-    <Content v-else />
+  <div id="vuperess-theme-blog__tags-layout">
+    <BlogCates :list="$frontmatterKey.list" />
   </div>
 </template>
 
