@@ -45,22 +45,22 @@
     "root": true
   },
   "dependencies": {
-    "vue-m-message": "^2.0.0",
-    "vuepress-plugin-dehydrate": "^1.0.3",
     "@vuepress/plugin-blog": "^1.9.2",
     "bootstrap": "^4.4.1",
     "core-js": "2",
     "element-ui": "^2.13.0",
     "vue-cookie-law": "1.12.0",
     "vue-feather-icons": "^4.21.0",
+    "vue-m-message": "^2.0.0",
+    "vuepress-plugin-dehydrate": "^1.0.3",
     "vuepress-plugin-disqus": "^0.1.1",
     "vuepress-plugin-flexsearch": "0.1.0",
     "vuepress-plugin-reading-time": "^0.1.1"
   },
   "devDependencies": {
-    "@vuepress/plugin-back-to-top": "^1.0.0-rc.1",
     "@commitlint/cli": "8.3.5",
     "@commitlint/config-conventional": "8.3.4",
+    "@vuepress/plugin-back-to-top": "^1.0.0-rc.1",
     "@vuepress/plugin-google-analytics": "^1.4.0",
     "@vuepress/plugin-medium-zoom": "1.0.0",
     "@vuepress/plugin-nprogress": "1.0.0",
