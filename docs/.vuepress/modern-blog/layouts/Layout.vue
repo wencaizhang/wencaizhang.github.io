@@ -7,8 +7,8 @@
 
 <script>
 export default {
-  created () {
-    console.log(this)
-  },
+  // created () {
+  //   console.log(this)
+  // },
 }
 </script>

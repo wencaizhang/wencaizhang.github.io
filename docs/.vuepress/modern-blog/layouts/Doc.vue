@@ -73,15 +73,15 @@ export default {
         this.$site,
         this.$localePath,
       )
-      console.log('sidebarItems', data)
+      // console.log('sidebarItems', data)
       return data
     },
   },
-  created () {
-    console.log(this)
-  },
+  // created () {
+  //   console.log(this)
+  // },
   mounted () {
-    console.log(this)
+    // console.log(this)
     this.$router.afterEach(() => {
       this.isSidebarOpen = false
     })
