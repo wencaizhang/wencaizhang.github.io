@@ -8,10 +8,11 @@ jobs:
     steps:
     # 设置阿里云OSS的 id/secret，存储到 github 的 secrets 中
       - name: setup aliyun oss
-      - uses: actions/checkout@master
-      - uses: manyuanrong/setup-ossutil@v1.0
+        uses: actions/checkout@master
+        uses: manyuanrong/setup-ossutil@v1.0
         with:
           endpoint: oss-cn-beijing.aliyuncs.com
           access-key-id: ${{ secrets.OSS_KEY_ID }}
           access-key-secret: ${{ secrets.OSS_KEY_SECRET }}
-      - run: ossutil cp -rf ./ oss://website-zwc/
+      - name: copy
+        run: ossutil cp -rf ./ oss://website-zwc/
