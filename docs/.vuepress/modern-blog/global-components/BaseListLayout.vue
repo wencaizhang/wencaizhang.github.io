@@ -6,7 +6,7 @@
     <header
       class="home-hero"
       :style="{
-        backgroundImage: 'url(' + $withBase($themeConfig.heroImage) + ')'
+        backgroundImage: $themeConfig.heroImage ? 'url(' + $withBase($themeConfig.heroImage) + ')' : ''
       }"
     >
       <div class="p-3 text-center text-light">

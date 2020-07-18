@@ -1,32 +1,34 @@
 <template>
   <main class="page">
-    <slot name="top"/>
-
-    <Content class="theme-default-content"/>
+    <slot name="top" />
+    <Content class="theme-default-content" />
 
     <footer class="page-edit">
       <div
-        class="edit-link"
         v-if="editLink"
+        class="edit-link"
       >
         <a
           :href="editLink"
           target="_blank"
           rel="noopener noreferrer"
         >{{ editLinkText }}</a>
-        <OutboundLink/>
+        <OutboundLink />
       </div>
 
       <div
-        class="last-updated"
         v-if="lastUpdated"
+        class="last-updated"
       >
         <span class="prefix">{{ lastUpdatedText }}: </span>
         <span class="time">{{ lastUpdated }}</span>
       </div>
     </footer>
 
-    <div class="page-nav" v-if="prev || next">
+    <div
+      v-if="prev || next"
+      class="page-nav"
+    >
       <p class="inner">
         <span
           v-if="prev"
@@ -57,7 +59,7 @@
       </p>
     </div>
 
-    <slot name="bottom"/>
+    <slot name="bottom" />
   </main>
 </template>
 
@@ -85,7 +87,7 @@ export default {
     prev () {
       const prev = this.$page.frontmatter.prev
       if (prev === false) {
-        return
+
       } else if (prev) {
         return resolvePage(this.$site.pages, prev, this.$route.path)
       } else {
@@ -96,7 +98,7 @@ export default {
     next () {
       const next = this.$page.frontmatter.next
       if (next === false) {
-        return
+
       } else if (next) {
         return resolvePage(this.$site.pages, next, this.$route.path)
       } else {
@@ -113,7 +115,7 @@ export default {
         editLinks,
         docsDir = '',
         docsBranch = 'master',
-        docsRepo = repo
+        docsRepo = repo,
       } = this.$site.themeConfig
 
       if (docsRepo && editLinks && this.$page.relativePath) {
@@ -123,11 +125,11 @@ export default {
 
     editLinkText () {
       return (
-        this.$themeLocaleConfig.editLinkText
-        || this.$site.themeConfig.editLinkText
-        || `Edit this page`
+        this.$themeLocaleConfig.editLinkText ||
+        this.$site.themeConfig.editLinkText ||
+        'Edit this page'
       )
-    }
+    },
   },
 
   methods: {
@@ -138,12 +140,12 @@ export default {
           ? docsRepo
           : repo
         return (
-          base.replace(endingSlashRE, '')
-           + `/src`
-           + `/${docsBranch}/`
-           + (docsDir ? docsDir.replace(endingSlashRE, '') + '/' : '')
-           + path
-           + `?mode=edit&spa=0&at=${docsBranch}&fileviewer=file-view-default`
+          base.replace(endingSlashRE, '') +
+           '/src' +
+           `/${docsBranch}/` +
+           (docsDir ? docsDir.replace(endingSlashRE, '') + '/' : '') +
+           path +
+           `?mode=edit&spa=0&at=${docsBranch}&fileviewer=file-view-default`
         )
       }
 
@@ -151,14 +153,14 @@ export default {
         ? docsRepo
         : `https://github.com/${docsRepo}`
       return (
-        base.replace(endingSlashRE, '')
-        + `/edit`
-        + `/${docsBranch}/`
-        + (docsDir ? docsDir.replace(endingSlashRE, '') + '/' : '')
-        + path
+        base.replace(endingSlashRE, '') +
+        '/edit' +
+        `/${docsBranch}/` +
+        (docsDir ? docsDir.replace(endingSlashRE, '') + '/' : '') +
+        path
       )
-    }
-  }
+    },
+  },
 }
 
 function resolvePrev (page, items) {

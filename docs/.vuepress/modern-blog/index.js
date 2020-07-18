@@ -25,8 +25,9 @@ module.exports = (themeConfig, ctx) => {
         : 400,
   })
 
-  themeConfig.heroImage =
-    themeConfig.heroImage || 'https://source.unsplash.com/random/800x600'
+  // 首页 Banner 图片，速度太慢，所以取消
+  // themeConfig.heroImage =
+  //   themeConfig.heroImage || 'https://source.unsplash.com/random/800x600'
 
   const defaultBlogPluginOptions = {
     directories: [

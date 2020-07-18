@@ -7,7 +7,7 @@ set -e
 npm run build
 
 # 定义变量
-destDir=".vuepress/dist"
+destDir="docs/.vuepress/dist"
 currTime1=`date +%Y-%m-%d`
 currTime2=`date +%H:%M:%S`
 commit=":rocket: deploy @${currTime1} ${currTime2}"

@@ -3,7 +3,7 @@
 <script>
 export default {
   mounted () {
-    this.copy()
+    // this.copy()
   },
   methods: {
     copy () {

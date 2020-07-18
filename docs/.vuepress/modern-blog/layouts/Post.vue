@@ -77,7 +77,7 @@
             <router-link
               v-for="tag in $page.frontmatter.tags"
               :key="tag"
-              :to="'/tag/' + tag"
+              :to="'/tags/' + tag"
               class="el-button el-button--small text-decoration-none d-inline-block mb-3"
             >
               #{{ tag }}

@@ -43,10 +43,8 @@ module.exports = {
       append: "📖",
     },
     */
-    modifyBlogPluginOptions (defaultBlogPluginOptions) {
-      defaultBlogPluginOptions.directories.find(item => item.id === 'post')
-        .itemPermalink = '/:year-:month/:slug'
-      defaultBlogPluginOptions.directories.push({
+    directories: [
+      {
         id: 'ohmyjs',
         dirname: '_oh-my-js',
         path: '/oh-my-js/',
@@ -59,7 +57,51 @@ module.exports = {
         pagination: {
           lengthPerPage: 10,
         },
-      })
+      },
+      {
+        id: 'api',
+        dirname: '_api',
+        path: '/api',
+        layout: 'ApiLayout',
+        itemLayout: 'ApiPage',
+        frontmatter: { title: 'Api' },
+        itemPermalink: '/:slug',
+        pagination: {
+          lengthPerPage: 10,
+        },
+      },
+    ],
+    modifyBlogPluginOptions (defaultBlogPluginOptions) {
+      defaultBlogPluginOptions.directories.find(item => item.id === 'post')
+        .itemPermalink = '/:year-:month/:slug'
+      defaultBlogPluginOptions.directories.push(
+        {
+          id: 'ohmyjs',
+          dirname: '_oh-my-js',
+          path: '/oh-my-js/',
+          layout: 'Docs',
+          itemLayout: 'Doc',
+          // layout: 'Projects',
+          // itemLayout: 'Project',
+          frontmatter: { title: 'docs' },
+          itemPermalink: '/oh-my-js/:slug',
+          pagination: {
+            lengthPerPage: 10,
+          },
+        },
+        {
+          id: 'api',
+          dirname: '_api',
+          path: '/api',
+          layout: 'ApiLayout',
+          itemLayout: 'ApiPage',
+          frontmatter: { title: 'Api' },
+          itemPermalink: '/api/:slug',
+          pagination: {
+            lengthPerPage: 10,
+          },
+        },
+      )
       return defaultBlogPluginOptions
     },
     nav: [
@@ -85,11 +127,11 @@ module.exports = {
       prepend: "Hi, I hope you'll <i>enjoy</i> this post!",
       append: "Hi, I hope you've <b>enjoyed</b> this post!",
     },
-    disqus: 'disquswebsiteshortname', // if you want to incorporate Disqus for comments replace this value else just get rid of it
+    // disqus: 'disquswebsiteshortname', // if you want to incorporate Disqus for comments replace this value else just get rid of it
     about: {
       fullName: '前端果酱',
       bio: 'I am a passionate Software Engineer, I love HTML ♥ CSS ♥ JavaScript ♥ Vue.js ♥ ...',
-      image: 'https://www.ahmadmostafa.com/images/bg_1.png',
+      image: 'https://cdn.jsdelivr.net/gh/wencaizhang/static/avatar.png',
     },
     footer: {
       contact: [
@@ -121,113 +163,13 @@ module.exports = {
         },
       ],
     },
-    // sidebar: {},
-    // sidebar: {
-    //   '/_oh-my-js/': [
-    //   // './',
-    //     {
-    //       title: 'Array-ES3',
-    //       collapsable: true,
-    //       children: [
-    //         './01-array-es3/00-indexxx',
-    //         './01-array-es3/01-Array.prototype.concat',
-    //         './01-array-es3/02-Array.prototype.join',
-    //         './01-array-es3/03-Array.prototype.push',
-    //         './01-array-es3/04-Array.prototype.pop',
-    //         './01-array-es3/05-Array.prototype.shift',
-    //         './01-array-es3/06-Array.prototype.unshift',
-    //         './01-array-es3/07-Array.prototype.slice',
-    //         './01-array-es3/08-Array.prototype.splice',
-    //         './01-array-es3/09-Array.prototype.reverse',
-    //         './01-array-es3/10-Array.prototype.sort',
-    //       ],
-    //     },
-    //     {
-    //       title: 'Array-ES5',
-    //       collapsable: true,
-    //       children: [
-    //         './02-array-es5/00-index',
-    //         './02-array-es5/01-Array.prototype.forEach',
-    //         './02-array-es5/02-Array.prototype.map',
-    //         './02-array-es5/03-Array.prototype.filter',
-    //         './02-array-es5/04-Array.prototype.some',
-    //         './02-array-es5/05-Array.prototype.every',
-    //         './02-array-es5/06-Array.prototype.indexOf',
-    //         './02-array-es5/07-Array.prototype.lastIndexOf',
-    //         './02-array-es5/08-Array.prototype.reduce',
-    //         './02-array-es5/09-Array.prototype.reduceRight',
-    //       ],
-    //     },
-    //     {
-    //       title: 'Array-ES6',
-    //       collapsable: true,
-    //       children: [
-    //         './03-array-es6/00-home',
-    //         './03-array-es6/01-Array.from',
-    //         './03-array-es6/02-Array.of',
-    //         './03-array-es6/03-Array.prototype.copyWithin',
-    //         './03-array-es6/04-Array.prototype.find',
-    //         './03-array-es6/05-Array.prototype.findIndex',
-    //         './03-array-es6/06-Array.prototype.fill',
-    //         './03-array-es6/07-Array.prototype.entries',
-    //         './03-array-es6/08-Array.prototype.keys',
-    //         './03-array-es6/09-Array.prototype.values',
-    //         './03-array-es6/10-Array.prototype.includes',
-    //         './03-array-es6/11-Array.isArray',
-    //       ],
-    //     },
-    //     {
-    //       title: 'String',
-    //       collapsable: true,
-    //       children: [
-    //         './04-string/00-transform-string-to-tag',
-    //         './04-string/01-String.prototype-toLowerCase-toUpperCase',
-    //         './04-string/02-String.prototype.slice',
-    //         './04-string/03.String.prototype.split',
-    //         './04-string/04.String.prototype.match',
-    //         './04-string/05-String.prototype.trim',
-    //         './04-string/06-String.prototype.includes',
-    //         './04-string/07-String.prototype.replace',
-    //         './04-string/08-String.prototype.repeat',
-    //         './04-string/09-String.prototype-padstart-padend',
-    //         './04-string/10-String.prototype.search',
-    //       ],
-    //     },
-    //     {
-    //       title: 'Object',
-    //       collapsable: true,
-    //       children: [
-    //         './05-object/01-Object.prototype.hasOwnProperty',
-    //         './05-object/02-Object.keys',
-    //         './05-object/03-Object.values',
-    //         './05-object/04-Object.entries',
-    //         './05-object/05-Object.assign',
-    //         './05-object/06-Object.is',
-    //         './05-object/07-Object.defineProperty',
-    //         './05-object/08-Object.create',
-    //       ],
-    //     },
-    //     {
-    //       title: 'Regexp',
-    //       collapsable: true,
-    //       children: [
-    //         './06-regexp/00-Regexp-basic',
-    //         './06-regexp/01-Regexp.prototype.lastIndex',
-    //         './06-regexp/02-Regexp.prototype.test',
-    //         './06-regexp/03-Regexp.prototype.exec',
-    //         './06-regexp/04-正则表达式预查',
-    //         './06-regexp/100-regexp-demos',
-    //       ],
-    //     },
-    //   ]
-    //   ,
-    // },
   },
   plugins: [
     'crisp',
     'seo',
     'smooth-scroll',
     'reading-progress',
+    'back-to-top',
     '@vuepress/medium-zoom',
     '@vuepress/nprogress',
     'social-share',

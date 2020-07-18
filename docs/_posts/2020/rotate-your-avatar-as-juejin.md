@@ -55,7 +55,7 @@ img:hover {
 
 请将你的鼠标移入下图查看效果（鼠标移入 1 秒之后开始执行动画）
 
-<img id="rotate-demo" style="width: 100px; height: 100px; border-radius: 50%;" src="https://webjam.cn/wp-content/uploads/2020/04/%E5%89%8D%E7%AB%AF%E6%9E%9C%E9%85%B1.png"/>
+<img id="rotate-demo" style="width: 100px; height: 100px; border-radius: 50%;" src="https://cdn.jsdelivr.net/gh/wencaizhang/static/avatar.png"/>
 <style>
 #rotate-demo:hover {
   transition-delay: 1s;
