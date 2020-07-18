@@ -30,6 +30,7 @@ git add -A
 git commit -m "$commit"
 
 git push -f $repo master:$remoteBranch
+git push -f $repo master:gh-pages
 
 # 回到上次工作目录
 cd -
