@@ -1,7 +1,5 @@
 name: Deploy to aliyun oss
-on:
-  push:
-    branches: [ master ]
+on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
