@@ -8,7 +8,7 @@ title: 使用 Node.js 构建自己的脚手架
 description: 使用 Node.js 构建自己的脚手架
 author: wencaizhang
 location: Beijing
-image: https://cli.vuejs.org/cli-select-features.png
+image: /images/cli-select-features.png
 meta:
   - name: title
     content: 使用 Node.js 构建自己的脚手架
@@ -55,4 +55,4 @@ console.log(chalk.red.bgBlue('hello, chalk'))
 4. 根据用户指令下载模板
 5. 模板下载完成
 
-![](https://cli.vuejs.org/cli-select-features.png)
+![](/images/cli-select-features.png)
