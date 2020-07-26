@@ -8,13 +8,19 @@ draft: false
 group: Regexp
 ---
 
->正则表达式验证工具： [https://regexper.com/](https://regexper.com/)
+>正则表达式验证工具： [https://regexper.com/](https://regexper.com/) 或者 [http://regexper.cn/](http://regexper.cn/)
 
 > [正则表达式教程](https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md)
 
 ## 创建正则表达式
 
-### 通过构造函数创建
+最简单的方式是通过字面量创建：
+
+```js
+var reg = /[a-zA-Z]/gi;
+```
+
+也可以通过 `RegExp` 构造函数来创建：
 
 ```js
 var reg1 = new RegExp('a');
@@ -22,11 +28,6 @@ var reg2 = new RegExp('[a-zA-Z]', 'gi');
 var reg3 = new RegExp(/[a-zA-Z]/, 'gi');
 ```
 
-### 通过字面量创建
-
-```js
-var reg = /[a-zA-Z]/gi;
-```
 
 ## 修饰符
 
@@ -149,4 +150,4 @@ console.log(ans); // world hello
 
 5. 可以使用 `|` 来表示或的关系，例如 `[z|j|q]` 表示匹配 `z` 、 `j` 、 `q` 之中的任意一个字母。
 
-6. 正则验证工具： [https://regexper.com/](https://regexper.com/)
+6. 正则验证工具： [https://regexper.com/](https://regexper.com/) 或者 [http://regexper.cn/](http://regexper.cn/)
