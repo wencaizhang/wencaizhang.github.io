@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[28],{583:function(t,e,s){"use strict";s.r(e);var a={},n=s(6),l=Object(n.a)(a,(function(){var t=this.$createElement,e=this._self._c||t;return e("div",{attrs:{id:"vuperess-theme-blog__tags-layout"}},[e("BlogTags",{attrs:{tags:this.$frontmatterKey.list}})],1)}),[],!1,null,null,null);e.default=l.exports}}]);
