@@ -25,10 +25,21 @@ weight: 25
 
 ## 示例
 
++ `shift()` 删除并返回第一个元素
+
 ```js
-var arr = [1, 2, 3];
+var arr = [1, 2, 3]
 
-var delEle = arr.shift(); // 1
+var delEle = arr.shift() // 返回被删除的第一个元素 1
 
-[].shift(); // undefined
+console.log(arr) // [2, 3] 原数组已被修改
+```
+
+
++ 数组为空时返回 undefined
+
+
+```js
+[].shift()
+// undefined
 ```
