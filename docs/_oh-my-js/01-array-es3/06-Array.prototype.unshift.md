@@ -19,21 +19,36 @@ weight: 30
 
 | 参数     | 描述                                         |
 | -------- | -------------------------------------------- |
-| elementN | 必需，个数为至少一个。要添加到数组开头的元素 |
+| elementN | 非必需。要添加到数组开头的元素 |
 
 ## 示例
 
-```js
-[].unshift(); // undefined
 
+- 将参数插入到数组开头
+
+```js
 var arr = [1, 2, 3];
 
-var newLength1 = arr.unshift(4); // 4
+var newLen1 = arr.unshift(4); // 4
 console.log(arr); // [ 4, 1, 2, 3 ]
 
-var newLength2 = arr.unshift(5, 6); // 6
+var newLen2 = arr.unshift(5, 6); // 6
 console.log(arr); // [ 5, 6, 4, 1, 2, 3 ]
 
-var newLength3 = arr.unshift([7, 8]); // 7
+var newLen3 = arr.unshift([7, 8]); // 7
 console.log(arr); // [ [7, 8], 5, 6, 4, 1, 2, 3 ]
+```
+
+
+- 没有参数的情况
+
+```js
+var arr = [1, 2, 3];
+arr.unshift(); 
+// 3
+// 返回数组的长度
+
+console.log(arr); 
+// [1, 2, 3]
+// 并未改变原数组
 ```

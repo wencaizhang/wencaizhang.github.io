@@ -5,12 +5,7 @@ toc: true
 type: "docs"
 date: "2019-05-05T00:00:00+01:00"
 draft: false
-
-
 group: ES3 Array
-
-
-
 weight: 50
 ---
 
@@ -34,39 +29,33 @@ weight: 50
 
 ## 示例
 
+**这几个例子在实际开发中很常见，建议熟记**
+
 ### 一维数组排序
 
 - 不指定排序方法
 
 ```js
-var scores = [1, 10, 21, 2];
-scores.sort();
-console.log(scores); // [ 1, 10, 2, 21 ]
+var scores = [1, 10, 21, 2]
+scores.sort()
+console.log(scores) // [ 1, 10, 2, 21 ]
 // 10 在 2 之前，这是因为在 Unicode 指针顺序中"10"在"2"之前
 ```
 
 - 按数字大小升序
 
 ```js
-var numbers = [4, 2, 5, 1, 3];
-
-numbers.sort(function(a, b) {
-  return a - b;
-});
-
-console.log(numbers); // [ 1, 2, 3, 4, 5 ]
+const numbers = [4, 2, 5, 1, 3]
+numbers.sort((a, b) => (a - b))
+console.log(numbers) // [ 1, 2, 3, 4, 5 ]
 ```
 
 - 按数字大小降序
 
 ```js
-var numbers = [4, 2, 5, 1, 3];
-
-numbers.sort(function(a, b) {
-  return b - a;
-});
-
-console.log(numbers); // [ 1, 2, 3, 4, 5 ]
+const numbers = [4, 2, 5, 1, 3]
+numbers.sort((a, b) => (b - a))
+console.log(numbers) // [ 1, 2, 3, 4, 5 ]
 ```
 
 ### 二维数组排序
@@ -86,13 +75,11 @@ var arr = [
   { sortNo: 9 },
   { sortNo: 4 },
   { sortNo: 0 }
-];
+]
 
-arr.sort(function(a, b) {
-  return a.sortNo - b.sortNo;
-});
+arr.sort((a, b) => a.sortNo - b.sortNo)
 
-console.log(arr);
+console.log(arr)
 //输出结果
 //{ 'sortNo': 0}
 //{ 'sortNo': 1}
@@ -123,16 +110,16 @@ var arr = [
   { sortNo: 8, sortNo2: 3 },
   { sortNo: 4, sortNo2: 1 },
   { sortNo: 4, sortNo2: 2 }
-];
+]
 
-arr.sort(function(a, b) {
+arr.sort((a, b) => {
   if (a.sortNo == b.sortNo) {
-    return b.sortNo2 - a.sortNo2;
+    return b.sortNo2 - a.sortNo2
   }
-  return a.sortNo - b.sortNo;
-});
+  return a.sortNo - b.sortNo
+})
 
-console.log(arr);
+console.log(arr)
 // [
 //  {sortNo: 1, sortNo2: 3}
 //  {sortNo: 2, sortNo2: 3}
@@ -154,10 +141,10 @@ console.log(arr);
 将下面代码在 chrome 开发工具的 console 控制台执行，每次执行都会打印不同的结果。
 
 ```js
-var arr = [ 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ];
-arr.sort(function(a, b) {
-  return Math.random() > 0.5 ? 1 : -1;
-});
-console.log(arr);
+var arr = [ 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ]
+arr.sort((a, b) => {
+  return Math.random() > 0.5 ? 1 : -1
+})
+console.log(arr)
 // [9, 7, 10, 5, 4, 13, 3, 8, 6, 12, 11]
 ```
