@@ -1,5 +1,5 @@
 ---
-title: 正则表达式基础知识
+title: 正则基础知识
 linktitle: 正则表达式基础知识
 toc: true
 type: "docs"

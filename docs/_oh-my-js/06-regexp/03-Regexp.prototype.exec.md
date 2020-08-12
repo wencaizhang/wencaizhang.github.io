@@ -33,6 +33,17 @@ string | 必需。要匹配正则表达式的字符串。
 ### 返回值
 
 ```js
+var date = '2020-05-20'
+
+// 获取年份
+var yearReg = /\d{4}/
+
+yearReg.exec(date)
+```
+
+---
+
+```js
 var str = 'leftTop';
 
 var reg = /^([a-z]*)([A-Z]\w*)*/;
@@ -63,7 +74,10 @@ console.log( result );
 
 数组的 `input` 属性：用于匹配正则表达式的原始字符串
 
-### 返回 null
+### 未匹配到就返回 null
+
+如果没有未匹配到正则中的内容就返回 `null`，因此从严谨的角度来讲，需要对 `exec` 的结果进行是否为 `null` 的判断才能进行下一步
+
 ```js
 var reg = /abc/;
 var str = 'javascript';

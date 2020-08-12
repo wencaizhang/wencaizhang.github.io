@@ -1,4 +1,14 @@
-# 正则表达式工具篇
+---
+title: 正则工具篇
+linktitle: 正则工具篇
+toc: true
+type: "docs"
+date: 2020-05-05T00:00:00+01:00
+draft: false
+group: Regexp
+---
+
+# 正则工具篇
 
 ## 正则表达式可视化
 
