@@ -11,7 +11,7 @@
           :key="key"
           :sm="24"
           :md="12"
-          style="margin-bottom: 20px;"
+          class="docs-box"
         >
           <h3>{{ key }}</h3>
           <el-col
@@ -112,6 +112,20 @@ export default {
         padding: 0 5px;
       }
     }
+  }
+
+
+  .docs-box {
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    
+  }
+  .docs-box:hover {
+    border: 1px solid #0084ff;
+
+
+    // border-bottom: 1px solid transparent;
+    // border-image: linear-gradient(to bottom, transparent 50%, #ccc 50%) 0 0 100%/1px 0;
   }
 }
 </style>

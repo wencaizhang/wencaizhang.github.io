@@ -220,7 +220,8 @@ export default {
 @media (min-width: 1300px) {
   .vuepress-toc {
     display: block;
-    right: 220px;
+    // right: 220px;
+    right: 20px;
   }
 }
 </style>
