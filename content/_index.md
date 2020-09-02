@@ -25,7 +25,7 @@ header:
     paddingY: 0
     align: center
     title:
-      - HUGO
+      - 文章
     subtitle:
       - The world’s fastest framework for building websites
     titleColor: 
