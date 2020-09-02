@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>Tags on Hugo Zzo Theme</title>
+    <link>http://example.org/en/tags/</link>
+    <description>Recent content in Tags on Hugo Zzo Theme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>1052642137@qq.com (wencaizhang)</managingEditor>
+    <webMaster>1052642137@qq.com (wencaizhang)</webMaster>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Sun, 26 Jul 2020 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="http://example.org/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>blog</title>
+        <link>http://example.org/en/tags/blog/</link>
+        <pubDate>Sun, 26 Jul 2020 00:00:00 +0000</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>http://example.org/en/tags/blog/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>python</title>
+        <link>http://example.org/en/tags/python/</link>
+        <pubDate>Sun, 26 Jul 2020 00:00:00 +0000</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>http://example.org/en/tags/python/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>dart-sass</title>
+        <link>http://example.org/en/tags/dart-sass/</link>
+        <pubDate>Wed, 08 Jul 2020 00:00:00 +0000</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>http://example.org/en/tags/dart-sass/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>node-sass</title>
+        <link>http://example.org/en/tags/node-sass/</link>
+        <pubDate>Wed, 08 Jul 2020 00:00:00 +0000</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>http://example.org/en/tags/node-sass/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>sass</title>
+        <link>http://example.org/en/tags/sass/</link>
+        <pubDate>Wed, 08 Jul 2020 00:00:00 +0000</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>http://example.org/en/tags/sass/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>nodejs</title>
+        <link>http://example.org/en/tags/nodejs/</link>
+        <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>http://example.org/en/tags/nodejs/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>脚手架</title>
+        <link>http://example.org/en/tags/%E8%84%9A%E6%89%8B%E6%9E%B6/</link>
+        <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>http://example.org/en/tags/%E8%84%9A%E6%89%8B%E6%9E%B6/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>CDN</title>
+        <link>http://example.org/en/tags/cdn/</link>
+        <pubDate>Thu, 02 Jul 2020 19:58:34 +0800</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>http://example.org/en/tags/cdn/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>前端</title>
+        <link>http://example.org/en/tags/%E5%89%8D%E7%AB%AF/</link>
+        <pubDate>Thu, 02 Jul 2020 19:58:34 +0800</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>http://example.org/en/tags/%E5%89%8D%E7%AB%AF/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>shortcode</title>
+        <link>http://example.org/en/tags/shortcode/</link>
+        <pubDate>Sat, 25 Jan 2020 06:40:51 +0900</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>http://example.org/en/tags/shortcode/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>css</title>
+        <link>http://example.org/en/tags/css/</link>
+        <pubDate>Fri, 20 Dec 2019 12:00:06 +0900</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>http://example.org/en/tags/css/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>html</title>
+        <link>http://example.org/en/tags/html/</link>
+        <pubDate>Fri, 20 Dec 2019 12:00:06 +0900</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>http://example.org/en/tags/html/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>markdown</title>
+        <link>http://example.org/en/tags/markdown/</link>
+        <pubDate>Fri, 20 Dec 2019 12:00:06 +0900</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>http://example.org/en/tags/markdown/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>themes</title>
+        <link>http://example.org/en/tags/themes/</link>
+        <pubDate>Fri, 20 Dec 2019 12:00:06 +0900</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>http://example.org/en/tags/themes/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>amoji</title>
+        <link>http://example.org/en/tags/amoji/</link>
+        <pubDate>Mon, 16 Dec 2019 12:00:06 +0900</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>http://example.org/en/tags/amoji/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>bamoji</title>
+        <link>http://example.org/en/tags/bamoji/</link>
+        <pubDate>Mon, 16 Dec 2019 12:00:06 +0900</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>http://example.org/en/tags/bamoji/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>emoji</title>
+        <link>http://example.org/en/tags/emoji/</link>
+        <pubDate>Mon, 16 Dec 2019 12:00:06 +0900</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>http://example.org/en/tags/emoji/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>gamoji</title>
+        <link>http://example.org/en/tags/gamoji/</link>
+        <pubDate>Mon, 16 Dec 2019 12:00:06 +0900</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>http://example.org/en/tags/gamoji/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>namoji</title>
+        <link>http://example.org/en/tags/namoji/</link>
+        <pubDate>Mon, 16 Dec 2019 12:00:06 +0900</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>http://example.org/en/tags/namoji/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>plugin</title>
+        <link>http://example.org/en/tags/plugin/</link>
+        <pubDate>Thu, 28 Nov 2019 15:39:43 +0800</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>http://example.org/en/tags/plugin/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>vue.js</title>
+        <link>http://example.org/en/tags/vue.js/</link>
+        <pubDate>Thu, 28 Nov 2019 15:39:43 +0800</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>http://example.org/en/tags/vue.js/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>ajax</title>
+        <link>http://example.org/en/tags/ajax/</link>
+        <pubDate>Fri, 22 Nov 2019 15:46:45 +0800</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>http://example.org/en/tags/ajax/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>axios</title>
+        <link>http://example.org/en/tags/axios/</link>
+        <pubDate>Fri, 22 Nov 2019 15:46:45 +0800</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>http://example.org/en/tags/axios/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>momentjs</title>
+        <link>http://example.org/en/tags/momentjs/</link>
+        <pubDate>Tue, 19 Nov 2019 17:04:31 +0800</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>http://example.org/en/tags/momentjs/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>diagram</title>
+        <link>http://example.org/en/tags/diagram/</link>
+        <pubDate>Sun, 17 Nov 2019 12:00:06 +0900</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>http://example.org/en/tags/diagram/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>ubuntu</title>
+        <link>http://example.org/en/tags/ubuntu/</link>
+        <pubDate>Sun, 17 Nov 2019 09:49:31 +0800</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>http://example.org/en/tags/ubuntu/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>nginx</title>
+        <link>http://example.org/en/tags/nginx/</link>
+        <pubDate>Sat, 16 Nov 2019 11:16:00 +0800</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>http://example.org/en/tags/nginx/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>js</title>
+        <link>http://example.org/en/tags/js/</link>
+        <pubDate>Sun, 29 Sep 2019 14:49:00 +0000</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>http://example.org/en/tags/js/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>this指向</title>
+        <link>http://example.org/en/tags/this%E6%8C%87%E5%90%91/</link>
+        <pubDate>Sun, 29 Sep 2019 14:49:00 +0000</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>http://example.org/en/tags/this%E6%8C%87%E5%90%91/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>index</title>
+        <link>http://example.org/en/tags/index/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>http://example.org/en/tags/index/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>
