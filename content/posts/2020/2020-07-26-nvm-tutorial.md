@@ -2,8 +2,8 @@
 date: '2020-07-26'
 slug: nvm-tutorial
 tags:
-- blog
-- python
+- nodejs
+- nvm
 title: nvm 安装使用说明
 description: Create a modern vuepress blog in 5 minutes!
 author: wencaizhang
