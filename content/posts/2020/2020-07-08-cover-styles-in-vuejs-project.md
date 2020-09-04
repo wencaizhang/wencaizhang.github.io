@@ -1,7 +1,7 @@
 ---
 date: '2020-07-08'
 title: 优雅覆盖 Vue.js 组件内部样式
-slug: node-sass-to-dart-sass
+slug: cover-styles-in-vuejs-project
 tags:
 - sass
 - node-sass
@@ -26,7 +26,7 @@ featured: true
 
 在 Vue.js 组件中使用 scoped 后，父组件的样式将不会渗透到子组件中。不过一个子组件的根节点会同时受其父组件的 scoped CSS 和子组件的 scoped CSS 的影响。这样设计是为了让父组件可以从布局的角度出发，调整其子组件根元素的样式。
 
-如果你希望 scoped 样式中的一个选择器能够作用得“更深”，例如影响子组件，你可以使用 >>> 操作符：
+如果你希望 scoped 样式中的一个选择器能够作用得“更深”，例如影响子组件，你可以使用 `>>>` 操作符：
 
 ```html
 <style scoped>
