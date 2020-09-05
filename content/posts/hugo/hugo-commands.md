@@ -6,9 +6,15 @@ categories:
 - hugo
 tags:
 - hugo
+series:
+- Hugo Guide
 ---
 
-与 hexo clean 类似的命令是 hugo --gc --cleanDestinationDir
+与 hexo clean 类似的命令是
+
+```bash
+hugo --gc --cleanDestinationDir
+```
 
 在 Hugo 中，没有 hexo d 一键部署 public 文件夹到 GitHub 的操作，你需要自己新建脚本，但我建议使用 Git 管理整个站点，然后上传整个站点到 GitHub 以通过持续集成的方式部署，而非用 Git 直接部署 public 生产版代码，因为这其实是非常可笑的——Git 是用来管理源码的。
 

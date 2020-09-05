@@ -17,7 +17,7 @@ categories:
 - themes
 - syntax
 series:
-- Themes Guide
+- Hugo Guide
 image: images/feature1/markdown.png
 ---
 

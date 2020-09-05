@@ -13,6 +13,8 @@ categories:
 - diagram
 libraries:
 - wavedrom
+series:
+- Hugo Guide
 image: images/feature1/wave.png
 ---
 

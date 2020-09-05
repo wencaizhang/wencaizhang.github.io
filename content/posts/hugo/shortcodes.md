@@ -13,6 +13,8 @@ series:
 -
 categories:
 -
+series:
+- Hugo Guide
 image: images/feature3/code-file.png
 ---
 

@@ -14,6 +14,8 @@ categories:
 - diagram
 libraries:
 - flowchartjs
+series:
+- Hugo Guide
 image: images/feature1/flowchart.png
 ---
 

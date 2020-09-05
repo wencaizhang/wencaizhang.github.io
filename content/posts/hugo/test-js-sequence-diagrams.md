@@ -13,6 +13,8 @@ categories:
 - diagram
 libraries:
 - msc
+series:
+- Hugo Guide
 image: images/feature2/transfer.png
 ---
 

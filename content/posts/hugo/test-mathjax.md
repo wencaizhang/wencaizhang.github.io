@@ -13,6 +13,8 @@ categories:
 - math
 libraries:
 - mathjax
+series:
+- Hugo Guide
 image: images/feature1/infinity.png
 ---
 

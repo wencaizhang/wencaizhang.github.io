@@ -13,6 +13,8 @@ categories:
 - diagram
 libraries:
 - mermaid
+series:
+- Hugo Guide
 image: images/feature2/workflow.png
 ---
 

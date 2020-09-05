@@ -11,6 +11,8 @@ author: Park
 authorEmoji: 👽
 libraries:
 - katex
+series:
+- Hugo Guide
 ---
 
 {{< box >}}

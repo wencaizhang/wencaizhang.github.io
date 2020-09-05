@@ -13,6 +13,8 @@ categories:
 - math
 libraries:
 - katex
+series:
+- Hugo Guide
 image: images/feature2/mathbook.png
 ---
 
