@@ -1,7 +1,7 @@
 logoText = "菠萝头的 7 秒记忆"
 logoType = "short" # long, short
 description = "The Zzo theme for Hugo example site."
-custom_css = []
+custom_css = ["sass/_custom.css"]
 custom_js = []
 useFaviconGenerator = true # https://www.favicon-generator.org/
 meta_image = ""
