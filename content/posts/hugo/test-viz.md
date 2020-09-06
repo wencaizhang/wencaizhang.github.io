@@ -13,6 +13,8 @@ categories:
 - diagram
 libraries:
 - viz
+series:
+- Hugo Guide
 image: images/feature2/graph.png
 ---
 

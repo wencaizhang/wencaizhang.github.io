@@ -6,6 +6,8 @@ categories:
 - hugo
 tags:
 - hugo
+series:
+- Hugo Guide
 ---
 
 ## 安装 Hugo
@@ -55,7 +57,7 @@ $ hugo new about.md
 
 `about.md` 自动生成到了 `content/about.md` ，打开 `about.md` 看下：
 
-```md
+```markdown
 +++
 date = "2015-10-25T08:36:54-07:00"
 draft = true
@@ -76,7 +78,7 @@ $ hugo new post/first.md
 
 打开编辑 `post/first.md` ：
 
-```md
+```markdown
 ---
 date: "2015-10-25T08:36:54-07:00"
 title: "first"
@@ -95,7 +97,7 @@ title: "first"
 
 到 皮肤列表 挑选一个心仪的皮肤，比如你觉得 Hyde 皮肤不错，找到相关的 GitHub 地址，创建目录 themes，在 themes 目录里把皮肤 git clone 下来：
 
-```md
+```markdown
 # 创建 themes 目录
 $ cd themes
 $ git clone https://github.com/spf13/hyde.git
@@ -123,7 +125,7 @@ $ hugo server --theme=hyde --buildDrafts
 $ hugo --theme=hyde --baseUrl="http://coderzh.github.io/"
 ```
 
-（注意，以上命令并不会生成草稿页面，如果未生成任何文章，请去掉文章头部的 draft=true 再重新生成。）
+（注意，以上命令并不会生成草稿页面，如果未生成任何文章，请去掉文章头部的 `draft=true` 再重新生成。）
 
 如果一切顺利，所有静态页面都会生成到 public 目录，将pubilc目录里所有文件 push 到刚创建的 Repository 的 master 分支。
 
