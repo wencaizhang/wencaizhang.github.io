@@ -1,5 +1,5 @@
 ---
-title: "JavaScript 浮点数的精度问题"
+title: "JavaScript 中不可靠的浮点数精度"
 date: 2020-06-28T14:30:51+08:00
 draft: false
 categories:

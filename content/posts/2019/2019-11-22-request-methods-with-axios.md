@@ -50,7 +50,7 @@ import axios from "axios";
 // 创建 axios 实例
 const request = axios.create({
   baseURL: "https://api.example.com",
-  timeout: 2000, // 请求超时时间
+  timeout: 2000, // 请求超时时间(单位：毫秒)
 });
 ```
 
@@ -76,7 +76,7 @@ import axios from "axios";
 // 创建 axios 实例
 const request = axios.create({
   baseURL: "https://api.example.com",
-  timeout: 2000 // 请求超时时间
+  timeout: 2000 // 请求超时时间(单位：毫秒)
 });
 
 
@@ -273,7 +273,7 @@ import axios from "axios";
 // 创建 axios 实例
 const request = axios.create({
   baseURL: "https://api.example.com",
-  timeout: 2000, // 请求超时时间
+  timeout: 2000, // 请求超时时间(单位：毫秒)
 });
 
 // request 拦截器
