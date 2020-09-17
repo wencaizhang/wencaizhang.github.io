@@ -1,0 +1,26 @@
+.single__contents blockquote p {
+  margin: 0 0 0.3rem;
+}
+body {
+  letter-spacing: 1px;
+}
+
+.single__contents p {
+  margin: 1.5rem 0;
+}
+
+.single h1, h2, h3 {
+  padding: 0 0 .2em 0!important;
+  letter-spacing: 0;
+  border-bottom: 1px solid #d3d3d3;
+}
+body {
+  font-family: -apple-system, "Noto Sans", "Helvetica Neue", Helvetica,
+  "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB",
+  "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN",
+  "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti",
+  SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+}
+code {
+  font-family: source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace;
+}
