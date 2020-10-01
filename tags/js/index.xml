@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>js on 菠萝头的 7 秒记忆</title>
+    <link>https://webjam.cn/tags/js/</link>
+    <description>Recent content in js on 菠萝头的 7 秒记忆</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>1052642137@qq.com (wencaizhang)</managingEditor>
+    <webMaster>1052642137@qq.com (wencaizhang)</webMaster>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Sun, 28 Jun 2020 14:30:51 +0800</lastBuildDate>
+    
+        <atom:link href="https://webjam.cn/tags/js/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>JavaScript 之深浅拷贝</title>
+        <link>https://webjam.cn/posts/2020/clone-object-in-javascript/</link>
+        <pubDate>Sun, 28 Jun 2020 14:30:51 +0800</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        <atom:modified>Sun, 28 Jun 2020 14:30:51 +0800</atom:modified>
+        <guid>https://webjam.cn/posts/2020/clone-object-in-javascript/</guid>
+        <description>[toc] 基本类型和引用类型 先来看看 JavaScript 中两种数据类型有何异同。 基本类型和引用类型的保存方式不同。 基本数据类型是按值访问的。基本数据类型的值保存在栈内</description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>js</category>
+            
+          
+        
+        
+          
+            
+              <category>JavaScript</category>
+            
+          
+        
+        
+      </item>
+      
+      <item>
+        <title>不可靠的 undefined</title>
+        <link>https://webjam.cn/posts/2020/2020-05-14-undefined-untrustworthy/</link>
+        <pubDate>Thu, 14 May 2020 00:00:00 +0000</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        <atom:modified>Thu, 14 May 2020 00:00:00 +0000</atom:modified>
+        <guid>https://webjam.cn/posts/2020/2020-05-14-undefined-untrustworthy/</guid>
+        <description>JavaScript 中有六种基本数据类型：Number, String, Boolean, Undefined, Null, Symbol(在 ES6 中新增)，除此之外还有一种复杂数据类型 Object。 今天我们聊聊其中的一种类</description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>js</category>
+            
+          
+            
+              <category>undefined</category>
+            
+          
+        
+        
+          
+            
+              <category>JavaScript</category>
+            
+          
+        
+        
+      </item>
+      
+      <item>
+        <title>JavaScript 中 this 总结</title>
+        <link>https://webjam.cn/posts/2019/2019-09-29-this-in-javascript/</link>
+        <pubDate>Sun, 29 Sep 2019 14:49:00 +0000</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        <atom:modified>Sun, 29 Sep 2019 14:49:00 +0000</atom:modified>
+        <guid>https://webjam.cn/posts/2019/2019-09-29-this-in-javascript/</guid>
+        <description>JavaScript 中的 this 总是指向一个对象，而具体指向哪个对象是在函数运行时的环境动态绑定的，而非函数被声明时的环境。 但是 ES6 标准新增的箭头函数中的 this 却是由被声</description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>js</category>
+            
+          
+            
+              <category>this指向</category>
+            
+          
+        
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

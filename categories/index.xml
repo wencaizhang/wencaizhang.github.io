@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>Categories on 菠萝头的 7 秒记忆</title>
+    <link>https://webjam.cn/categories/</link>
+    <description>Recent content in Categories on 菠萝头的 7 秒记忆</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>1052642137@qq.com (wencaizhang)</managingEditor>
+    <webMaster>1052642137@qq.com (wencaizhang)</webMaster>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Sun, 28 Jun 2020 15:56:51 +0800</lastBuildDate>
+    
+        <atom:link href="https://webjam.cn/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>hugo</title>
+        <link>https://webjam.cn/categories/hugo/</link>
+        <pubDate>Sun, 28 Jun 2020 15:56:51 +0800</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>https://webjam.cn/categories/hugo/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>CSS</title>
+        <link>https://webjam.cn/categories/css/</link>
+        <pubDate>Sun, 28 Jun 2020 14:30:51 +0800</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>https://webjam.cn/categories/css/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>docker</title>
+        <link>https://webjam.cn/categories/docker/</link>
+        <pubDate>Sun, 28 Jun 2020 14:30:51 +0800</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>https://webjam.cn/categories/docker/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>JavaScript</title>
+        <link>https://webjam.cn/categories/javascript/</link>
+        <pubDate>Sun, 28 Jun 2020 14:30:51 +0800</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>https://webjam.cn/categories/javascript/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>Node</title>
+        <link>https://webjam.cn/categories/node/</link>
+        <pubDate>Sun, 28 Jun 2020 14:30:51 +0800</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>https://webjam.cn/categories/node/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>Vue.js</title>
+        <link>https://webjam.cn/categories/vue.js/</link>
+        <pubDate>Sun, 28 Jun 2020 14:30:51 +0800</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>https://webjam.cn/categories/vue.js/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>ES6</title>
+        <link>https://webjam.cn/categories/es6/</link>
+        <pubDate>Sat, 20 Jun 2020 00:00:00 +0000</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>https://webjam.cn/categories/es6/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>syntax</title>
+        <link>https://webjam.cn/categories/syntax/</link>
+        <pubDate>Fri, 20 Dec 2019 12:00:06 +0900</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>https://webjam.cn/categories/syntax/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>themes</title>
+        <link>https://webjam.cn/categories/themes/</link>
+        <pubDate>Fri, 20 Dec 2019 12:00:06 +0900</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>https://webjam.cn/categories/themes/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>diagram</title>
+        <link>https://webjam.cn/categories/diagram/</link>
+        <pubDate>Mon, 18 Nov 2019 21:00:06 +0900</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>https://webjam.cn/categories/diagram/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>math</title>
+        <link>https://webjam.cn/categories/math/</link>
+        <pubDate>Sat, 16 Nov 2019 12:00:06 +0900</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        
+        <guid>https://webjam.cn/categories/math/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

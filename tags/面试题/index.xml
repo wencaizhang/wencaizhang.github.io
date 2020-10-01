@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>面试题 on 菠萝头的 7 秒记忆</title>
+    <link>https://webjam.cn/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/</link>
+    <description>Recent content in 面试题 on 菠萝头的 7 秒记忆</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>1052642137@qq.com (wencaizhang)</managingEditor>
+    <webMaster>1052642137@qq.com (wencaizhang)</webMaster>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Tue, 03 Dec 2019 10:12:31 +0800</lastBuildDate>
+    
+        <atom:link href="https://webjam.cn/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>Arguments in Javascript</title>
+        <link>https://webjam.cn/posts/2020/arguments-in-javascript/</link>
+        <pubDate>Tue, 03 Dec 2019 10:12:31 +0800</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        <atom:modified>Tue, 03 Dec 2019 10:12:31 +0800</atom:modified>
+        <guid>https://webjam.cn/posts/2020/arguments-in-javascript/</guid>
+        <description>JavaScript 的参数研究 缘起 在一次群聊中看到如下的一段代码，要求判断最终的打印结果是什么： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 function getObj (obj) { obj.age = 18; obj = { name: &amp;#39;jason&amp;#39;, age: 26, }</description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>参数</category>
+            
+          
+            
+              <category>面试题</category>
+            
+          
+        
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

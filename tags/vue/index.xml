@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>vue on 菠萝头的 7 秒记忆</title>
+    <link>https://webjam.cn/tags/vue/</link>
+    <description>Recent content in vue on 菠萝头的 7 秒记忆</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>1052642137@qq.com (wencaizhang)</managingEditor>
+    <webMaster>1052642137@qq.com (wencaizhang)</webMaster>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Sun, 28 Jun 2020 14:30:51 +0800</lastBuildDate>
+    
+        <atom:link href="https://webjam.cn/tags/vue/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>Vue 项目中权限控制的几种方法</title>
+        <link>https://webjam.cn/posts/2020/manage-permission-in-vue-project/</link>
+        <pubDate>Sun, 28 Jun 2020 14:30:51 +0800</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        <atom:modified>Sun, 28 Jun 2020 14:30:51 +0800</atom:modified>
+        <guid>https://webjam.cn/posts/2020/manage-permission-in-vue-project/</guid>
+        <description>按钮级别权限控制 路由（页面）级别权限控制 路由级别的权限控制，主要依赖 vue-router 的几个路由钩子函数。vue-router 的路由钩子主要有以下几项</description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>vue</category>
+            
+          
+            
+              <category>permission</category>
+            
+          
+            
+              <category>权限</category>
+            
+          
+        
+        
+          
+            
+              <category>JavaScript</category>
+            
+          
+            
+              <category>Vue.js</category>
+            
+          
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

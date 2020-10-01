@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>undefined on 菠萝头的 7 秒记忆</title>
+    <link>https://webjam.cn/tags/undefined/</link>
+    <description>Recent content in undefined on 菠萝头的 7 秒记忆</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>1052642137@qq.com (wencaizhang)</managingEditor>
+    <webMaster>1052642137@qq.com (wencaizhang)</webMaster>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Thu, 14 May 2020 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="https://webjam.cn/tags/undefined/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>不可靠的 undefined</title>
+        <link>https://webjam.cn/posts/2020/2020-05-14-undefined-untrustworthy/</link>
+        <pubDate>Thu, 14 May 2020 00:00:00 +0000</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        <atom:modified>Thu, 14 May 2020 00:00:00 +0000</atom:modified>
+        <guid>https://webjam.cn/posts/2020/2020-05-14-undefined-untrustworthy/</guid>
+        <description>JavaScript 中有六种基本数据类型：Number, String, Boolean, Undefined, Null, Symbol(在 ES6 中新增)，除此之外还有一种复杂数据类型 Object。 今天我们聊聊其中的一种类</description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>js</category>
+            
+          
+            
+              <category>undefined</category>
+            
+          
+        
+        
+          
+            
+              <category>JavaScript</category>
+            
+          
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>CSS on 菠萝头的 7 秒记忆</title>
+    <link>https://webjam.cn/categories/css/</link>
+    <description>Recent content in CSS on 菠萝头的 7 秒记忆</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>1052642137@qq.com (wencaizhang)</managingEditor>
+    <webMaster>1052642137@qq.com (wencaizhang)</webMaster>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Sun, 28 Jun 2020 14:30:51 +0800</lastBuildDate>
+    
+        <atom:link href="https://webjam.cn/categories/css/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>CSS 中的 BFC 到底是什么？</title>
+        <link>https://webjam.cn/posts/2020/what-is-the-bfc-in-css/</link>
+        <pubDate>Sun, 28 Jun 2020 14:30:51 +0800</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        <atom:modified>Sun, 28 Jun 2020 14:30:51 +0800</atom:modified>
+        <guid>https://webjam.cn/posts/2020/what-is-the-bfc-in-css/</guid>
+        <description>什么是 BFC BFC 是 Block Formatting Context 的缩写，翻译成中文就是“块格式化上下文” BFC 是一种规则，隔离保护作用 BFC 是用来解决各种问题的 例如，很多网站的广告部分就是 BFC 布局</description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>css</category>
+            
+          
+            
+              <category>bfc</category>
+            
+          
+        
+        
+          
+            
+              <category>CSS</category>
+            
+          
+        
+        
+      </item>
+      
+      <item>
+        <title>CSS多行文本溢出省略</title>
+        <link>https://webjam.cn/posts/2020/css-text-overflow-ellipsis/</link>
+        <pubDate>Sun, 28 Jun 2020 14:30:51 +0800</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        <atom:modified>Sun, 28 Jun 2020 14:30:51 +0800</atom:modified>
+        <guid>https://webjam.cn/posts/2020/css-text-overflow-ellipsis/</guid>
+        <description>先说单行省略 1 2 3 &amp;lt;div class=&amp;#34;elip w100&amp;#34; style=&amp;#34;border: 1px solid #5184f6;&amp;#34;&amp;gt; 先说单行省略先说单行省略先说单行省略先说单行省略 &amp;lt;/div&amp;gt; 1 2 3 4 5 6 7 8 9 /* 单行文本溢出省略 */ .elip { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; } .w100</description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>css</category>
+            
+          
+            
+              <category>文本溢出</category>
+            
+          
+        
+        
+          
+            
+              <category>CSS</category>
+            
+          
+        
+        
+      </item>
+      
+      <item>
+        <title>代码段 | 自定义浏览器滚动条样式</title>
+        <link>https://webjam.cn/posts/2020/custom-styles-of-browser-scroll-bar/</link>
+        <pubDate>Sun, 28 Jun 2020 14:30:51 +0800</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        <atom:modified>Sun, 28 Jun 2020 14:30:51 +0800</atom:modified>
+        <guid>https://webjam.cn/posts/2020/custom-styles-of-browser-scroll-bar/</guid>
+        <description>滚动条相关伪类 可以使用以下伪元素选择器去修改各式webkit浏览器的滚动条样式: ::-webkit-scrollbar — 整个滚动条 ::-webkit-scrollbar-button — 滚动条上的按钮 (上下箭头) ::-webkit-scrollbar-thumb — 滚动条上的滚</description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>css</category>
+            
+          
+            
+              <category>滚动条</category>
+            
+          
+        
+        
+          
+            
+              <category>CSS</category>
+            
+          
+        
+        
+      </item>
+      
+      <item>
+        <title>掘金头像旋转动画实现</title>
+        <link>https://webjam.cn/posts/2020/rotate-your-avatar-as-juejin/</link>
+        <pubDate>Sun, 28 Jun 2020 14:30:51 +0800</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        <atom:modified>Sun, 28 Jun 2020 14:30:51 +0800</atom:modified>
+        <guid>https://webjam.cn/posts/2020/rotate-your-avatar-as-juejin/</guid>
+        <description>&lt;p&gt;经常出入掘金社区 (&lt;a href=&#34;https://juejin.im/&#34;&gt;juejin.im&lt;/a&gt;) 的朋友可能会留意到个人主页的个人头像上面有一个动画效果，是一个旋转动画，而且能越转越快。感觉这个动画挺有意思，所以就专门研究学习一下。&lt;/p&gt;</description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>css</category>
+            
+          
+            
+              <category>动画</category>
+            
+          
+        
+        
+          
+            
+              <category>CSS</category>
+            
+          
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

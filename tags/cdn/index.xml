@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>cdn on 菠萝头的 7 秒记忆</title>
+    <link>https://webjam.cn/tags/cdn/</link>
+    <description>Recent content in cdn on 菠萝头的 7 秒记忆</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>1052642137@qq.com (wencaizhang)</managingEditor>
+    <webMaster>1052642137@qq.com (wencaizhang)</webMaster>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Thu, 02 Jul 2020 19:58:34 +0800</lastBuildDate>
+    
+        <atom:link href="https://webjam.cn/tags/cdn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>说一下我常用的前端 CDN 加速服务</title>
+        <link>https://webjam.cn/posts/2020/cdn-hosts-for-front-end-projects/</link>
+        <pubDate>Thu, 02 Jul 2020 19:58:34 +0800</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        <atom:modified>Thu, 02 Jul 2020 19:58:34 +0800</atom:modified>
+        <guid>https://webjam.cn/posts/2020/cdn-hosts-for-front-end-projects/</guid>
+        <description>搭建（开发）过网站的同学应该都知道，一个网站往往要依赖一些第三方库，例如 jQuery、BootStrap、Vue.js 等等，但是依赖的第三方</description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>前端</category>
+            
+          
+            
+              <category>CDN</category>
+            
+          
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>Speed Up Your Website With Cdn</title>
+        <link>https://webjam.cn/posts/2019/2019-11-29-speed-up-your-website-with-cdn/</link>
+        <pubDate>Fri, 29 Nov 2019 16:13:27 +0800</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        <atom:modified>Fri, 29 Nov 2019 16:13:27 +0800</atom:modified>
+        <guid>https://webjam.cn/posts/2019/2019-11-29-speed-up-your-website-with-cdn/</guid>
+        <description>使用 cdn 加速你的网站！ 在知乎看到下面两个问题： 阿里云服务器1M带宽能承受多少人在线？ 阿里云ECS服务器1M带宽表示什么意思，如何选择服务器带宽</description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>cdn</category>
+            
+          
+            
+              <category>前端优化</category>
+            
+          
+            
+              <category>网站加速</category>
+            
+          
+        
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>暗黑模式 on 菠萝头的 7 秒记忆</title>
+    <link>https://webjam.cn/tags/%E6%9A%97%E9%BB%91%E6%A8%A1%E5%BC%8F/</link>
+    <description>Recent content in 暗黑模式 on 菠萝头的 7 秒记忆</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>1052642137@qq.com (wencaizhang)</managingEditor>
+    <webMaster>1052642137@qq.com (wencaizhang)</webMaster>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Thu, 05 Dec 2019 10:41:03 +0800</lastBuildDate>
+    
+        <atom:link href="https://webjam.cn/tags/%E6%9A%97%E9%BB%91%E6%A8%A1%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>Dark Mode on MacOS</title>
+        <link>https://webjam.cn/posts/2020/dark-mode-on-macos/</link>
+        <pubDate>Thu, 05 Dec 2019 10:41:03 +0800</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        <atom:modified>Thu, 05 Dec 2019 10:41:03 +0800</atom:modified>
+        <guid>https://webjam.cn/posts/2020/dark-mode-on-macos/</guid>
+        <description>让你的网站支持macOS和IOS的深色模式 1 2 3 4 5 6 7 @media (prefers-color-scheme: light) { /* 浅色模式样式 */ } @media (prefers-color-scheme: dark) { /* 深色模式样式 */ } 参考文章 https://zhih.me/website-darkmode-on-macos/#</description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>暗黑模式</category>
+            
+          
+        
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

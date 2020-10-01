@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>Showcase overview on 菠萝头的 7 秒记忆</title>
+    <link>https://webjam.cn/showcase/</link>
+    <description>Recent content in Showcase overview on 菠萝头的 7 秒记忆</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>1052642137@qq.com (wencaizhang)</managingEditor>
+    <webMaster>1052642137@qq.com (wencaizhang)</webMaster>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Sun, 19 Jan 2020 15:43:38 +0900</lastBuildDate>
+    
+        <atom:link href="https://webjam.cn/showcase/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>JavaScript</title>
+        <link>https://webjam.cn/showcase/javascript/</link>
+        <pubDate>Sun, 19 Jan 2020 21:04:11 +0900</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        <atom:modified>Sun, 19 Jan 2020 21:04:11 +0900</atom:modified>
+        <guid>https://webjam.cn/showcase/javascript/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>Vue.js</title>
+        <link>https://webjam.cn/showcase/vue.js/</link>
+        <pubDate>Sun, 19 Jan 2020 21:04:11 +0900</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        <atom:modified>Sun, 19 Jan 2020 21:04:11 +0900</atom:modified>
+        <guid>https://webjam.cn/showcase/vue.js/</guid>
+        <description></description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

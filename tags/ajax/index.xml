@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>ajax on 菠萝头的 7 秒记忆</title>
+    <link>https://webjam.cn/tags/ajax/</link>
+    <description>Recent content in ajax on 菠萝头的 7 秒记忆</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>1052642137@qq.com (wencaizhang)</managingEditor>
+    <webMaster>1052642137@qq.com (wencaizhang)</webMaster>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Fri, 22 Nov 2019 15:46:45 +0800</lastBuildDate>
+    
+        <atom:link href="https://webjam.cn/tags/ajax/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>Request Methods With Axios</title>
+        <link>https://webjam.cn/posts/2019/2019-11-22-request-methods-with-axios/</link>
+        <pubDate>Fri, 22 Nov 2019 15:46:45 +0800</pubDate>
+        <author>1052642137@qq.com (wencaizhang)</author>
+        <atom:modified>Fri, 22 Nov 2019 15:46:45 +0800</atom:modified>
+        <guid>https://webjam.cn/posts/2019/2019-11-22-request-methods-with-axios/</guid>
+        <description>Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中。 Axios 有以下特点： 支持浏览器和node.js 支持promise 能拦截请求和响应 能转换请求和响应数据 能</description>
+        
+        <dc:creator>wencaizhang</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>ajax</category>
+            
+          
+            
+              <category>axios</category>
+            
+          
+        
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

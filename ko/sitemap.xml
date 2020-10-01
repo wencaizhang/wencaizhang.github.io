@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://webjam.cn/ko/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://webjam.cn/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="https://webjam.cn/ko/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://webjam.cn/ko/series/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://webjam.cn/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="https://webjam.cn/ko/series/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://webjam.cn/ko/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://webjam.cn/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="https://webjam.cn/ko/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://webjam.cn/ko/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://webjam.cn/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="https://webjam.cn/ko/"
+                />
+  </url>
+  
+</urlset>
