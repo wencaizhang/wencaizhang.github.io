@@ -18,4 +18,8 @@ jobs:
           access-key-secret: ${{ secrets.OSS_KEY_SECRET }}
 
       - name: copy
-        run: ossutil cp -rf ./ oss://website-zwc/
+        run: ossutil cp -rf ./content/ oss://website-zwc/ -u
+
+# oosutil 用法
+# https://help.aliyun.com/document_detail/179388.html?spm=a2c4g.11186623.6.845.7a1b5d22RORYl5
+

@@ -1,5 +1,5 @@
-baseURL = "https://webjam.cn"
-title = "菠萝头的 7 秒记忆"
+baseURL = "/"
+title = "菠萝头的记忆"
 theme = "zzo"
 
 defaultContentLanguage = "en"
@@ -17,6 +17,8 @@ rssLimit = 100
 
 enableGitInfo = false
 googleAnalytics = ""
+
+publishDir = "public/content"
 
 [markup]
   [markup.goldmark]

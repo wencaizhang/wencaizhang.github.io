@@ -4,7 +4,7 @@
 set -e
 
 # 生成静态文件
-hugo
+hugo --minify
 
 # 定义变量
 destDir="public"
