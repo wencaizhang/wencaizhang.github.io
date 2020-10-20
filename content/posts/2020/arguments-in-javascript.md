@@ -1,5 +1,5 @@
 ---
-title: "Arguments in Javascript"
+title: "JavaScript 的参数研究"
 date: 2019-12-03T10:12:31+08:00
 draft: false
 toc: true
@@ -9,7 +9,6 @@ tags:
   - 面试题
 ---
 
-JavaScript 的参数研究
 
 
 ## 缘起

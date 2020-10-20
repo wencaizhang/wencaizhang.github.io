@@ -1,5 +1,5 @@
 ---
-title: "Speed Up Your Website With Cdn"
+title: "Speed Up Your Website With CDN"
 date: 2019-11-29T16:13:27+08:00
 draft: false
 toc: true
