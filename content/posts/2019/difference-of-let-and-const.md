@@ -1,14 +1,15 @@
 ---
 title: js 中使用 let 和 const 的总结 
 draft: false
-tag:
+tags:
   - js
   - es6
+  - let
+  - const
 category: javascript
 date: 2018-10-14 11:51:14
 ---
 
-# js 中使用 let 和 const 的总结
 
 ES6 引入了 `let` 命令用于声明**变量**，引入了 `const` 命令用于声明**常量**。然而仅仅知道这些是不够的，具体哪些场景下使用 `let`，哪些场景使用 `const` 仍然令人感到疑惑。
 

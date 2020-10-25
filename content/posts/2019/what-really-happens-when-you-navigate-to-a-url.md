@@ -1,5 +1,5 @@
 ---
-title: 「译」从 URL 输入到页面展现发生了什么 
+title: 「译」从 URL 输入到页面展现发生了什么？
 author: wencaizhang
 draft: false
 toc: true
@@ -9,8 +9,6 @@ tag:
 category:  []
 date: 2018-05-22 11:26:00
 ---
-
-# 「译」从 URL 输入到页面展现发生了什么
 
 > 本文翻译自：[What really happens when you navigate to a URL](http://igoro.com/archive/what-really-happens-when-you-navigate-to-a-url/#)
 >
