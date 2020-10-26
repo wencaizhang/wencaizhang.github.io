@@ -1,13 +1,13 @@
 [[main]]
   identifier = "about"
   name = "About"
-  url = "about"
+  url = "about/"
   weight = 1
 
 [[main]]
   identifier = "archive"
   name = "Archive"
-  url = "archive"
+  url = "archive/"
   weight = 2
 
 # [[main]]
@@ -19,29 +19,29 @@
 [[main]]
   identifier = "gallery"
   name = "Gallery"
-  url = "gallery"
+  url = "gallery/"
   weight = 4
     
 [[main]]
   parent = "gallery"
   name = "Cartoon"
-  url = "gallery/cartoon"
+  url = "gallery/cartoon/"
 
 [[main]]
   parent = "gallery"
   name = "Photo"
-  url = "gallery/photo"
+  url = "gallery/photo/"
 
 [[main]]
   identifier = "posts"
   name = "Posts"
-  url = "posts"
+  url = "posts/"
   weight = 5
 
 [[main]]
   identifier = "showcase"
   name = "Showcase"
-  url = "showcase"
+  url = "showcase/"
   weight = 6
 
 # [[main]]
