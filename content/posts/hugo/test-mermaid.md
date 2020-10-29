@@ -15,7 +15,7 @@ libraries:
 - mermaid
 series:
 - Hugo Guide
-image: images/feature2/workflow.png
+image: https://static.webjam.cn/images/workflow.png
 ---
 
 ```mermaid

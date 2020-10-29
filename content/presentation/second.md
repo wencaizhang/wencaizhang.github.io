@@ -8,7 +8,7 @@ series:
 -
 categories:
 -
-image: images/feature1/number-two.png
+image: https://static.webjam.cn/images/number-two.png
 revealBackgroundColor: "" # #fff or rgba() or hsl()
 revealBackgroundImage: "" # /images/myImage.png   <= static folder path
 revealBackgroundPosition: "" # left top, left center, left bottom, right top, right center ...

@@ -15,7 +15,7 @@ libraries:
 - chart
 series:
 - Hugo Guide
-image: images/feature1/graph.png
+image: https://static.webjam.cn/images/graph.png
 ---
 
 ```chart

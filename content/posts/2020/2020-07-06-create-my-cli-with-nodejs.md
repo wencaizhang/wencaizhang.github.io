@@ -8,7 +8,6 @@ title: 使用 Node.js 构建自己的脚手架
 description: 使用 Node.js 构建自己的脚手架
 author: wencaizhang
 location: Beijing
-image: /images/cli-select-features.png
 meta:
   - name: title
     content: 使用 Node.js 构建自己的脚手架

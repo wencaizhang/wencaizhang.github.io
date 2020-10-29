@@ -6,5 +6,5 @@ weight: 1
 link: https://coolfe.fun/ActionVue
 repo: https://github.com/wencaizhang/ActionVue
 pinned: true
-thumb: showcase/actionvue.png
+thumb: https://static.webjam.cn/icons/actionvue.png
 ---

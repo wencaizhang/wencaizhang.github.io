@@ -15,7 +15,7 @@ libraries:
 - viz
 series:
 - Hugo Guide
-image: images/feature2/graph.png
+image: https://static.webjam.cn/images/graph.png
 ---
 
 ```viz-dot

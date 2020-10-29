@@ -15,7 +15,7 @@ categories:
 -
 series:
 - Hugo Guide
-image: images/feature3/code-file.png
+image: https://static.webjam.cn/icons/code-file.png
 ---
 
 ## Markdownify box
@@ -23,6 +23,8 @@ image: images/feature3/code-file.png
 {{< boxmd >}}
 This is **boxmd** shortcode
 {{< /boxmd >}}
+
+![](https://static.webjam.cn/wallpaper/20201028211922.png)
 
 ## Simple box
 
@@ -33,6 +35,8 @@ This is **box** shortcode
 ## Code tabs
 
 Make it easy to switch between different code
+
+可以切换不同的语言
 
 {{< codes java javascript >}}
   {{< code >}}

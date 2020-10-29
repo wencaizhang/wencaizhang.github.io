@@ -8,7 +8,7 @@ series:
 -
 categories:
 -
-image: images/feature1/number-three.png
+image: https://static.webjam.cn/images/number-three.png
 plugins:
 - highlight
 - zoom

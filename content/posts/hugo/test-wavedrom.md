@@ -15,7 +15,7 @@ libraries:
 - wavedrom
 series:
 - Hugo Guide
-image: images/feature1/wave.png
+image: https://static.webjam.cn/images/wave.png
 ---
 
 ```wave

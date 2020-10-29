@@ -15,7 +15,7 @@ libraries:
 - katex
 series:
 - Hugo Guide
-image: images/feature2/mathbook.png
+image: https://static.webjam.cn/images/mathbook.png
 ---
 
 The following

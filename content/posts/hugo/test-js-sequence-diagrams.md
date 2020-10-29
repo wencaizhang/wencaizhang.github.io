@@ -15,7 +15,7 @@ libraries:
 - msc
 series:
 - Hugo Guide
-image: images/feature2/transfer.png
+image: https://static.webjam.cn/images/transfer.png
 ---
 
 ```msc

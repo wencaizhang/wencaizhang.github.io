@@ -15,7 +15,7 @@ libraries:
 - mathjax
 series:
 - Hugo Guide
-image: images/feature1/infinity.png
+image: https://static.webjam.cn/images/infinity.png
 ---
 
 When $a \ne 0$, there are two solutions to $\(ax^2 + bx + c = 0\)\$ and they are

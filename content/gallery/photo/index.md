@@ -14,7 +14,7 @@ images:
     caption: man
   - image: child.jpg
     caption: child
-image: images/feature2/gallery.png
+image: https://static.webjam.cn/images/gallery.png
 ---
 
 Sample images from [Pixabay](https://pixabay.com)

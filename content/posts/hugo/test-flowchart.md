@@ -16,7 +16,7 @@ libraries:
 - flowchartjs
 series:
 - Hugo Guide
-image: images/feature1/flowchart.png
+image: https://static.webjam.cn/images/flowchart.png
 ---
 
 ```flowchart
