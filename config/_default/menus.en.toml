@@ -49,3 +49,9 @@
 #   name = "Pub"
 #   url = "publication"
 #   weight = 7
+
+# [[main]]
+#   identifier = "resume"
+#   name = "resume"
+#   url = "resume/"
+#   weight = 8
