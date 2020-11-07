@@ -10,7 +10,7 @@ categories: []
 date: 2020-07-02T19:58:34+08:00
 lastmod: 2020-07-02T19:58:34+08:00
 featured: false
-draft: false
+draft: true
 ---
 
 搭建（开发）过网站的同学应该都知道，一个网站往往要依赖一些第三方库，例如 jQuery、BootStrap、Vue.js 等等，但是依赖的第三方库数量多了之后，难免会拖慢网站的打开速度，这时候适当的引入 CDN 服务是一个很好的策略。

@@ -1,7 +1,7 @@
 ---
 title: "深入理解 Promise（一）— Promise/A+ 规范"
 date: 2020-06-18
-draft: false
+draft: true
 categories:
 - JavaScript
 - ES6

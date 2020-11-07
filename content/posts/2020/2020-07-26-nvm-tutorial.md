@@ -1,6 +1,7 @@
 ---
 date: '2020-07-26'
 slug: nvm-tutorial
+draft: true
 tags:
 - nodejs
 - nvm

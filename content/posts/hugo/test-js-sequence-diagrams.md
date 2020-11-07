@@ -2,7 +2,7 @@
 title: "JS Sequence Diagram support"
 date: 2019-11-18T12:00:06+09:00
 description: "Generates UML sequence diagrams from simple text"
-draft: false
+draft: true
 enableToc: false
 enableTocContent: false
 tags:
@@ -15,7 +15,7 @@ libraries:
 - msc
 series:
 - Hugo Guide
-image: https://static.webjam.cn/images/transfer.png
+image: https://static.webjam.cn/images/feature2/transfer.png
 ---
 
 ```msc

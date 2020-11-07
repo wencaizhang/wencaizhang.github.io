@@ -8,7 +8,7 @@ series:
 -
 categories:
 -
-image: https://static.webjam.cn/images/number-four.png
+image: https://static.webjam.cn/images/feature2/number-four.png
 plugins:
 - highlight
 - zoom

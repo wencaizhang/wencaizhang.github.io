@@ -1,7 +1,7 @@
 ---
 title: "深入理解 Promise（二）— ES6 Promise API"
 date: 2020-06-19
-draft: false
+draft: true
 categories:
 - JavaScript
 - ES6

@@ -2,7 +2,7 @@
 title: "Shortcodes"
 date: 2020-01-25T06:40:51+09:00
 description: tabs, code-tabs, expand, alert, warning, notice, img, box
-draft: false
+draft: true
 hideToc: false
 enableToc: true
 enableTocContent: true
@@ -15,7 +15,7 @@ categories:
 -
 series:
 - Hugo Guide
-image: https://static.webjam.cn/icons/code-file.png
+image: https://static.webjam.cn/images/icons/code-file.png
 ---
 
 ## Markdownify box
@@ -24,7 +24,7 @@ image: https://static.webjam.cn/icons/code-file.png
 This is **boxmd** shortcode
 {{< /boxmd >}}
 
-![](https://static.webjam.cn/wallpaper/20201028211922.png)
+![](https://static.webjam.cn/images/wallpaper/20201028211922.png)
 
 ## Simple box
 

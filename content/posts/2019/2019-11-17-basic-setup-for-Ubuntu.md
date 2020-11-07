@@ -1,7 +1,7 @@
 ---
 title: "Basic Setup for Ubuntu"
 date: 2019-11-17T09:49:31+08:00
-draft: false
+draft: true
 toc: true
 images:
   - "./images/ubuntu.jpg"

@@ -1,7 +1,7 @@
 ---
 title: "Basic Usage of Nginx"
 date: 2019-11-16T11:16:00+08:00
-draft: false 
+draft: true 
 toc: true
 images:
 tags: 

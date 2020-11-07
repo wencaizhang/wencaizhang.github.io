@@ -1,6 +1,7 @@
 ---
 date: '2020-09-04'
 slug: git-submodule
+draft: true
 tags:
 - nodejs
 - nvm

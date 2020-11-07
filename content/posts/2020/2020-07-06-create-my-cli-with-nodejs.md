@@ -1,6 +1,7 @@
 ---
 date: '2020-07-06'
 slug: create-my-cli-with-nodejs
+draft: true
 tags:
 - nodejs
 - 脚手架

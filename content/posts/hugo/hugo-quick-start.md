@@ -1,14 +1,14 @@
 ---
 title: "Hugo Quick Start"
 date: 2020-06-27T14:30:51+08:00
-draft: false
+draft: true
 categories:
 - hugo
 tags:
 - hugo
 series:
 - Hugo Guide
-image: https://static.webjam.cn/logos/hugo-logo-wide.svg
+image: https://static.webjam.cn/images/logos/hugo-logo-wide.svg
 ---
 
 ## Hugo 是什么

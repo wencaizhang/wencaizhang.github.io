@@ -1,6 +1,6 @@
 ---
 title: 切换浏览器 tab 标签时动态设置网页 
-draft: false
+draft: true
 tag:
   - js
 category: javascript

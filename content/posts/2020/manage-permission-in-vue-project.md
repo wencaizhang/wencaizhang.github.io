@@ -1,7 +1,7 @@
 ---
 title: "Vue 项目中权限控制的几种方法"
 date: 2020-06-28T14:30:51+08:00
-draft: false
+draft: true
 categories:
 - JavaScript
 - Vue.js

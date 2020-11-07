@@ -6,5 +6,5 @@ weight: 1
 link: https://webjam.cn/oh-my-js/
 repo: https://github.com/wencaizhang/oh-my-js
 pinned: true
-thumb: https://static.webjam.cn/icons/js.png
+thumb: https://static.webjam.cn/images/icons/js.png
 ---

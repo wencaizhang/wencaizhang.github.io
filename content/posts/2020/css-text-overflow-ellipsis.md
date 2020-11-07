@@ -1,7 +1,7 @@
 ---
 title: "CSS多行文本溢出省略"
 date: 2020-06-28T14:30:51+08:00
-draft: false
+draft: true
 categories:
 - CSS
 tags:

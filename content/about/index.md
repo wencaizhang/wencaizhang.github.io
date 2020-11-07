@@ -11,4 +11,28 @@ date = "2019-02-28"
 
 ## 关于我
 
-我的中文名是张文才，网上代号习惯用 wencaizhang，2016 年毕业于郑州轻工业学院，河南平顶山人。目前专注于 Web 前端开发，有时间也会研究 Node 和 Linux。
+我的中文名是张文才，网上代号习惯用 `wencaizhang` ，2016 年毕业于郑州轻工业学院（现已改名为郑州轻工业大学），河南平顶山人。目前专注于 Web 前端开发，有时间也会研究 Node 和 Linux。
+
+## 业余代码
+
+##### 2020 年
+
+- 2020.11 [ ] <mark>Doing</mark> 填坑学习 [underscore 源码](https://github.com/wencaizhang/underscore-analysis)
+- 2020.09 [ ] <mark>Doing</mark> [Vue3.0 组件库](https://github.com/wencaizhang/ActionVue/tree/vite-vuejs3.x)
+- 2020.09 [ ] [学习 Angular 基本用法](https://github.com/wencaizhang/angular-tour-of-heroes)
+- 2020.06 [nodejs  开发批量查询成语含义的爬虫](https://github.com/wencaizhang/express-spider-multi-explain-words)
+
+##### 2019 年
+
+- 2019.12 [Vue2.x 组件库](https://github.com/wencaizhang/ActionVue/tree/dev)，包含 20+ 常用组件
+- 2019.07 学习 Docker，并[使用 Docker 多阶段构建前端项目镜像](https://github.com/wencaizhang/best-Dockerfile-for-spa)
+- 2019.05 jQuery [表单验证插件](https://github.com/wencaizhang/jquery.formValidate)（API 思路受 layui 启发），使用**策略模式**封装验证规则
+- 2019.05 jQuery [懒加载插件](https://github.com/wencaizhang/jquery.lazyload)
+
+##### 2018 年
+
+- 2018.05 [原生造轮子](https://github.com/wencaizhang/wheels)，右键菜单 + 单复选框
+- 2018.02 jQuery [工具提示插件](https://github.com/wencaizhang/jquery.zToolTip)
+
+
+**还需继续努力。**

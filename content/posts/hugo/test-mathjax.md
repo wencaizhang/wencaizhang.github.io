@@ -2,7 +2,7 @@
 title: "MathJax support"
 date: 2019-11-16T12:00:06+09:00
 description: "A JavaScript display engine for mathematics that works in all browsers.No more setup for readers. It just works."
-draft: false
+draft: true
 enableToc: false
 enableTocContent: false
 tags:
@@ -15,7 +15,7 @@ libraries:
 - mathjax
 series:
 - Hugo Guide
-image: https://static.webjam.cn/images/infinity.png
+image: https://static.webjam.cn/images/feature1/infinity.png
 ---
 
 When $a \ne 0$, there are two solutions to $\(ax^2 + bx + c = 0\)\$ and they are

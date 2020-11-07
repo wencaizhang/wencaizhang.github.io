@@ -1,7 +1,7 @@
 ---
 title: "Hugo 常用命令备忘"
 date: 2020-06-28T15:56:51+08:00
-draft: false
+draft: true
 categories:
 - hugo
 tags:
@@ -24,7 +24,7 @@ hugo --gc --cleanDestinationDir
 hugo server
 ```
 
-由于默认生成的文章模板里面有 `draft: false`，故需加上 `-D` 参数才能渲染草稿：
+由于默认生成的文章模板里面有 `draft: true`，故需加上 `-D` 参数才能渲染草稿：
 
 ```bash
 hugo server -D 

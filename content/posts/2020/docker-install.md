@@ -1,7 +1,7 @@
 ---
 title: "docker 和 docker-compose 的安装"
 date: 2020-06-28T14:30:51+08:00
-draft: false
+draft: true
 categories:
 - docker
 tags:

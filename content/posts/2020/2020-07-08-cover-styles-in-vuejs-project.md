@@ -2,6 +2,7 @@
 date: '2020-07-08'
 title: 优雅覆盖 Vue.js 组件内部样式
 slug: cover-styles-in-vuejs-project
+draft: true
 tags:
 - sass
 - node-sass
