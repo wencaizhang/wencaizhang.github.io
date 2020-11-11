@@ -64,57 +64,6 @@ export NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
 
 ## 常用命令
 
-**(1) 列出已安装 node 版本**
-
-这个命令只会列出通过 nvm 安装的 node 版本，如果是自行安装的 node 并不会被列出来。
-
-```bash
-nvm ls
-```
-
-
-你可以通过以下命令来列出远程服务器上所有的可用版本：
-
-```bash
-nvm ls-remote
-```
-
-
-Windows 的话，就是：
-
-```bash
-nvm ls available
-```
-
-
-**(2) 安装多版本 node**
-
-安装指定版本 node 的命令格式如下：
-
-```bash
-nvm install <version>
-```
-
-例如，我们要安装4.2.2版本，可以用如下命令：
-
-```bash
-nvm install 4.22
-```
-
-另外 nvm 遵守语义化版本命名规则。例如，你想安装最新的 4.2 系列的最新一个版本的话，可以运行：
-
-```bash
-nvm install 4.2
-```
-
-那么 nvm 会自动寻找 4.2.x 中最高的版本来安装。
-
-**(3) 切换 node 版本**
-
-```bash
-nvm use <version>
-```
-
 
 
 ## .nvmrc

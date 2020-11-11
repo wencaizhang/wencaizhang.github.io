@@ -2,7 +2,7 @@
 title: 切换浏览器 tab 标签时动态设置网页 
 draft: true
 tag:
-  - js
+  - JavaScript
 category: javascript
 abbrlink: 4e4f3b4e
 date: 2017-12-22 21:50:23

@@ -10,6 +10,40 @@ series:
 - Hugo Guide
 ---
 
+
+
+我的网站静态网站生产工具
+
+
+
+## 安装
+
+
+
+如果系统是 MacOS，你可以使用 `brew` 来安装：
+
+
+
+```bash
+brew install hugo
+```
+
+
+
+如果系统是 Windows 或 Linux，可以去 [hugo/releases](https://github.com/spf13/hugo/releases) 页面下载相应的二进制文件（记得设置环境变量）
+
+## 初始化一个网站
+
+
+
+```bash
+hugo new <site-name> <path>
+```
+
+
+
+
+
 与 hexo clean 类似的命令是
 
 ```bash
@@ -43,3 +77,12 @@ hugo
 ```bash
 hugo --minify 
 ```
+
+但是这种方法压缩出来的 HTML 中属性值是没有引号的，只有当属性值是多个值当时候才有引号，像下面这样：
+
+```html
+<html lang=en>
+  <meta name=viewport content="width=device-width,initial-scale=1">
+</html>
+```
+

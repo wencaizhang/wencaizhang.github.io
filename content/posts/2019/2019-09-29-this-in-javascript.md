@@ -5,15 +5,15 @@ draft: false
 toc: true
 images:
 tags:
-  - js
+  - JavaScript
   - this指向
 category: JS API
 date: 2019-09-29 14:49:00
 ---
 
-初学 JavaScript 的时候，总是对于代码中 `this` 的值感到困惑，总是需要将 `this` 的值打印出来才能放心。
+初学 JavaScript 的时候，时常对于代码中 `this` 的值感到困惑，因为 JavaScript 中的 `this` 的值总是不确定的，每次都要将 `this` 的值打印出来才能放心。
 
-这是因为 JavaScript 中的 `this` 的值总是不确定的，而具体指向哪个对象是在函数运行时的环境动态绑定的，而非函数被声明时的环境。
+实际上 `this` 具体指向哪个对象是在函数运行时的环境动态绑定的，而非函数被声明时的环境。
 
 尽管如此，总还是有规律可循的，我们可以将 `this` 的场景大致分为下面 5 种：
 
@@ -178,7 +178,7 @@ var obj = new MyClass()
 obj.printName() // "myclass"
 ```
 
-## 情况四：显式指定 `this`
+## 情况四：显式指定 this
 
 前面的几种方法都是被动地根据代码执行时的环境来判断 `this` 具体指向哪里，那么有没有办法主动指定 `this` 指向呢。
 

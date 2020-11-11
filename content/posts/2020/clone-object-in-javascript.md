@@ -5,7 +5,7 @@ draft: true
 categories:
 - JavaScript
 tags:
-- js
+- JavaScript
 
 ---
 

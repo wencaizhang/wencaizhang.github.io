@@ -3,7 +3,7 @@ title: 小tips-使用正则获取查询字符串参数
 author: wencaizhang
 draft: true
 tag:
-  - js
+  - JavaScript
   - querystring
   - regexp
 category: javascript
