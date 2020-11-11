@@ -4,8 +4,8 @@
   "short_name": "Hugo Zzo theme",
   "version": "1.0.0",
   "default_locale": "en",
-  "description": "Hugo blog theme with rich features",
-  "start_url": "https://themes.gohugo.io/theme/hugo-theme-zzo/",
+  "description": "菠萝头的记忆",
+  "start_url": "https://webjam.cn/",
   "icons": [
     {
       "src": "favicon/android-icon-36x36.png",
