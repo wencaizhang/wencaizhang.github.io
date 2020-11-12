@@ -1,10 +1,10 @@
 {
   "manifest_version": 2,
-  "name": "Hugo Zzo theme",
-  "short_name": "Hugo Zzo theme",
+  "name": "菠萝头的记忆",
+  "short_name": "菠萝头的记忆",
   "version": "1.0.0",
   "default_locale": "en",
-  "description": "菠萝头的记忆",
+  "description": "张文才的个人网站，这里是他网络记忆空间",
   "start_url": "https://webjam.cn/",
   "icons": [
     {

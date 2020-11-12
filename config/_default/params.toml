@@ -1,6 +1,6 @@
 logoText = "菠萝头的记忆"
 logoType = "short" # long, short
-description = "The Zzo theme for Hugo example site."
+description = "张文才的个人网站，这里是他网络记忆空间."
 custom_css = []
 custom_js = []
 useFaviconGenerator = true # https://www.favicon-generator.org/
@@ -64,7 +64,7 @@ enableHomeSidebarTitles = true
 enableListSidebarTitles = true
 enableToc = true
 hideToc = false
-tocFolding = true
+tocFolding = false
 tocPosition = "outer" # inner, outer
 enableTocSwitch = true
 itemsPerCategory = 5
