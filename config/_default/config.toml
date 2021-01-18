@@ -2,7 +2,7 @@ baseURL = "https://webjam.cn"
 title = "此间少年"
 theme = "zzo"
 
-defaultContentLanguage = "en"
+defaultContentLanguage = "zh"
 defaultContentLanguageInSubdir = false
 hasCJKLanguage = true
 
@@ -19,6 +19,11 @@ enableGitInfo = true
 googleAnalytics = ""
 
 publishDir = "public"
+
+# 永久链接
+[permalinks]
+    posts = "/p/:slug/"
+    page = "/:slug/"
 
 [markup]
   [markup.goldmark]
