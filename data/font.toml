@@ -1,0 +1,12 @@
+# title_font = "\"Montserrat\", sans-serif"
+# content_font = "\"Muli\", sans-serif"
+# content_font = "\"Merriweather\", serif"
+# content_font = "\"Source Sans Pro\", sans-serif"
+# content_font = "\"League Gothic\", sans-serif"
+# cursive_font = "\"Courgette\", cursive"
+
+
+title_font = '"Raleway","Yuanti SC","Yuanti SC Regular","Youyuan","You Yuan","幼圆","PingFang SC","Microsoft Yahei",sans-serif'
+content_font = "\"Muli\", raleway, sans-serif"
+cursive_font = "\"Muli\", raleway, sans-serif"
+# raleway, "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
