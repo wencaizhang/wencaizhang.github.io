@@ -1,7 +1,7 @@
 ---
 title: "Basic Usage of Docker"
 date: 2019-11-16T11:16:00+08:00
-draft: true
+draft: false
 toc: true
 images:
 tags: 
@@ -51,11 +51,11 @@ sudo systemctl restart docker
 ### 三个概念
 
 > Docker三个基本概念：Registry注册中心，Image镜像，Container容器
-
+>
 > + Registry包含多个Repo（仓库）和Tag(标签)，从Registry下载Image的方式是pull <仓库名>:<标签名>，如pull ubuntu:16.04
-
+>
 > + Image是一个静态概念，相当于面向对象中的类，类不能直接使用，需要实例化。
-
+>
 > + Container是一个动态概念，相当于面向对象中的实例化，启动镜像生成容器就是实例化类的过程。只有容器才能被用户使用。
 
 ### 查看命令
