@@ -4,6 +4,8 @@ date: 2021-01-27
 draft: false
 categories:
 - 短代码
+type:
+- code
 tags:
 - JavaScript
 - 日期

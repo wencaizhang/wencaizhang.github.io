@@ -23,7 +23,7 @@ staticDir = ["study", "static2"]
 
 # 永久链接
 [permalinks]
-    posts = "/p/:slug/"
+    # posts = "/p/:slug/"
     page = "/:slug/"
 
 [markup]

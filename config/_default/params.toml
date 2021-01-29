@@ -178,10 +178,10 @@ commento = false
 
 [donationOptions]
   enable = false
-  alipay = "https://static.webjam.cn/images/whoami/boluotou.jpg" 
-  wechat = "https://static.webjam.cn/images/whoami/boluotou.jpg"
-  paypal = "https://static.webjam.cn/images/whoami/boluotou.jpg"
-  patreon = "https://static.webjam.cn/images/whoami/boluotou.jpg"
+  # alipay = "https://static.webjam.cn/images/whoami/boluotou.jpg" 
+  # wechat = "https://static.webjam.cn/images/whoami/boluotou.jpg"
+  # paypal = "https://static.webjam.cn/images/whoami/boluotou.jpg"
+  # patreon = "https://static.webjam.cn/images/whoami/boluotou.jpg"
 
 # possible share name: ["facebook","twitter", "reddit", "linkedin", "tumblr", "weibo", "douban", "line"]
 # [[share]]

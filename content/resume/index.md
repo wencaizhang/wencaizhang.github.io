@@ -6,7 +6,7 @@ type: resume
 enableToc: true
 header:
   image: 
-    src: https://static.webjam.cn/images/whoami/boluotou.jpg
+    # src: https://static.webjam.cn/images/whoami/boluotou.jpg
     height: 100
     alt: resume image
   infos:

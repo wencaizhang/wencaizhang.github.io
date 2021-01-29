@@ -4,6 +4,8 @@ date: 2020-12-29
 draft: false
 categories:
 - 短代码
+type:
+- code
 tags:
 - JavaScript
 
