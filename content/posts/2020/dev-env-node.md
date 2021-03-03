@@ -4,7 +4,7 @@ title: "打造高效的 Node.js 开发环境"
 date: 2020-11-09
 draft: true
 toc: true
-description: Node.js 是前端开发必不可少的环境，本文介绍如何打造高效的 Node.js 开发环境
+description: Node.js 是前端开发必不可少的环境，本文介绍如何打造高效的 Node.js 开发环境。
 tags: 
   - node
   - npm

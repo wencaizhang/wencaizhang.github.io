@@ -10,7 +10,9 @@ tags:
 - JavaScript
 ---
 
+想让你的网页可以 blingbling 地闪耀吗？
 
+<!--more-->
 
 ```css
 .flash-wrap {
