@@ -19,7 +19,7 @@ enableGitInfo = true
 googleAnalytics = ""
 
 publishDir = "public"
-staticDir = ["study", "static2"]
+staticDir = ["static", "study", "static2"]
 
 # 永久链接
 [permalinks]
