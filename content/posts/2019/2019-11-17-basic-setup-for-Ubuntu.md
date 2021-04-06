@@ -1,7 +1,7 @@
 ---
 title: "Basic Setup for Ubuntu"
 date: 2019-11-17T09:49:31+08:00
-draft: true
+draft: false
 toc: true
 images:
   - "./images/ubuntu.jpg"
@@ -40,7 +40,7 @@ sudo vim /etc/apt/sources.list
 **先更新**
 
 ``` bash
-sudo apt update && apt upgrade -y
+sudo apt update -y && sudo apt upgrade -y
 ```
 
 + [Linux中apt与apt-get命令的区别与解释](https://www.sysgeek.cn/apt-vs-apt-get/)
@@ -69,7 +69,7 @@ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - 
 或者手动安装:
 
 ```bash
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+git clone https://github.com/ohmyzsh/ohmyzsh.git  ~/.oh-my-zsh
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 ```
 
