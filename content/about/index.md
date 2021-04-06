@@ -13,6 +13,17 @@ date = "2019-02-28"
 
 我的中文名是张文才，网上代号习惯用 `wencaizhang` ，2016 年毕业于郑州轻工业学院（现已改名为郑州轻工业大学），河南平顶山人。目前专注于 Web 前端开发，有时间也会研究 Node 和 Linux。
 
+## 个人项目
+
+大多个人所做项目都开源在 Github，你可以通过 Issues / Pull Request 表达你的认同
+
+Github Contribution Chart
+
+![Github Contribution Chart](https://ghchart.rshah.org/wencaizhang)
+
+Github：[https://github.com/wencaizhang](https://github.com/wencaizhang)
+图片生成：[https://github.com/2016rshah/githubchart-api](https://github.com/2016rshah/githubchart-api)
+
 ## 业余代码
 
 ##### 2020 年
