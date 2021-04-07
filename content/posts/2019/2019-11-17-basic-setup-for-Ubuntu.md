@@ -266,6 +266,20 @@ alias grep="grep --color=auto"
 alias tree="tree -I '*svn|*node_module*'"
 ```
 
+## Python3
+
+系统升级到 ubuntu 20.04 之后，移除了 Python 2，只保留了 Python 3。
+
+因此默认不能执行 Python 命令，但可以执行 python3。
+
+因此我们可以在 `/usr/bin` 下创建一个软链接，指向 python3。
+
+```bash
+sudo ln -s /usr/bin/python3 /usr/bin/python
+```
+
+注意：避免某些软件需要用的 python3，所以不建议把 python3 的软连接删除
+
 
 ---
 
