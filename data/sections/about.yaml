@@ -1,0 +1,77 @@
+# section information
+section:
+  name: 关于
+  id: about
+  enable: true
+  weight: 1
+  showOnNavbar: true
+
+# your designation
+designation: 前端开发工程师
+# your company information
+company:
+  name: 某公司
+  url: "#"
+
+# your resume. this file path should be relative to you "static" directory
+# resume: "files/resume.pdf"
+
+# a summary about you
+summary: '我是一名拥有 5 年工作经验的前端开发工程师. 我目前主要的技术栈是 **HTML** + **CSS** + **JavaScript**，最常用的框架是 **Vue.js**，工作之余喜欢开发一些有趣的工具。'
+
+# your social links
+# give as many as you want. use font-awesome for the icons.
+socialLinks:
+- name: Email
+  icon: "fas fa-envelope"
+  url: "1052642137@qq.com"
+
+- name: Github
+  icon: "fab fa-github"
+  url: "https://www.github.com/wencaizhang"
+
+# - name: Stackoverflow
+#   icon: "fab fa-stack-overflow"
+#   url: "#"
+
+# - name: LinkedIn
+#   icon: "fab fa-linkedin"
+#   url: "#"
+
+# - name: Twitter
+#   icon: "fab fa-twitter"
+#   url: "#"
+
+# - name: Facebook
+#   icon: "fab fa-facebook"
+#   url: "#"
+
+# your soft skills
+# give the percentage between 50 to 100 with 5 intervals.
+# currently supported colors: blue, yellow, pink, green, sky, orange
+softSkills:
+- name: 团队协作
+  percentage: 90
+  color: yellow
+- name: 沟通交流
+  percentage: 85
+  color: pink
+- name: 努力工作
+  percentage: 85
+  color: green
+- name: 快速学习
+  percentage: 85
+  color: sky
+- name: 问题解决
+  percentage: 85
+  color: orange
+- name: 领导力
+  percentage: 85
+  color: blue
+# you can also provide color code instead of pre-defined color name
+# - name: Example 1
+#   percentage: 75
+#   color: "#00adb5"
+# - name: Example 2
+#   percentage: 65
+#   color: "#8b8383"

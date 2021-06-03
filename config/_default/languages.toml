@@ -1,0 +1,12 @@
+[en]
+  title = "菠萝头的记忆"
+  languageName = "English"
+  weight = 1
+  languagedir = "ltr"
+  contentdir = "content"
+[zh]
+  title = "菠萝头的记忆"
+  languageName = "中文"
+  weight = 1
+  languagedir = "ltr"
+  contentdir = "content"
