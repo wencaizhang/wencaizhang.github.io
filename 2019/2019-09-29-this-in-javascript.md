@@ -7,9 +7,6 @@ images:
 tags:
   - JavaScript
   - this指向
-outputs:
-  - html
-  - markdown
 category: JS API
 date: 2019-09-29 14:49:00
 ---

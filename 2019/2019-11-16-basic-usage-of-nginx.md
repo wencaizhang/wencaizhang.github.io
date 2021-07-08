@@ -7,9 +7,6 @@ description: Nginx 的安装和基本命令 | Basic Usage of Nginx
 images:
 tags: 
   - nginx
-outputs:
-  - html
-  - markdown
 ---
 
 
