@@ -1,0 +1,22 @@
+{
+  "name": "wencaizhang.github.io",
+  "version": "1.0.0",
+  "description": "这是我的个人网站源码仓库。",
+  "main": "index.js",
+  "scripts": {
+    "dev": "hugo server -D",
+    "build": "hugo --minify",
+    "upx": "./bin/upx.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wencaizhang/wencaizhang.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wencaizhang/wencaizhang.github.io/issues"
+  },
+  "homepage": "https://github.com/wencaizhang/wencaizhang.github.io#readme"
+}

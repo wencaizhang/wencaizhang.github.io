@@ -1,7 +1,7 @@
 ---
-title: "Nginx 常用配置备忘清单"
+title: "Nginx 常用配置备忘清单 | nginx-cheatsheet"
 date: 2021-05-18
-draft: true
+draft: false
 categories:
 - 其他
 tags:
@@ -9,7 +9,7 @@ tags:
 - 备忘
 ---
 
-作为软件开发工程师多多少少都该懂一些 nginx 的使用和配置，下面是一些常用的配置，记录下来以防遗忘，用到的时候也可以直接过来拷贝。
+作为软件开发工程师多多少少都该懂一些 nginx 的使用和配置，下面是 nginx 的几个经典应用场景下的配置写法，记录下来以防遗忘，用到的时候也可以直接过来拷贝。
 
 
 <!--more-->
@@ -55,6 +55,8 @@ server {
 ```
 
 ## 域名
+
+指定域名和对应的网站根目录位置，`server_name` 可以是域名、二级域名，也可以是 ip 地址。
 
 ```nginx
 server {
@@ -184,4 +186,4 @@ server {
 
 ## 感谢
 
-文中用到的配置几乎都出自 [https://vishnu.hashnode.dev/nginx-cheatsheet](https://vishnu.hashnode.dev/nginx-cheatsheet) 这篇文章，在此基础上经过个人理解添加了一些解释说明。
+文中用到的配置几乎都出自 [https://vishnu.hashnode.dev/nginx-cheatsheet](https://vishnu.hashnode.dev/nginx-cheatsheet) 这篇文章，在此基础上经过个人理解添加了一些解释说明，特此说明。

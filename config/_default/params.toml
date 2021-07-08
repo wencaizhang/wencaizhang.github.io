@@ -193,8 +193,8 @@ commento = false
 #   username = "xxx"
 
 [[footerLinks]]
-  name = ""
-  link = ""
+  name = "baidu"
+  link = "https://baidu.com"
 [[footerLinks]]
-  name = ""
-  link = ""
+  name = "google"
+  link = "https://google.com"
