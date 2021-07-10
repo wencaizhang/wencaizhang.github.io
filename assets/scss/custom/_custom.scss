@@ -1,0 +1,40 @@
+.icon.outbound {
+	color: #aaa;
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	top: -1px;
+}
+
+body {
+	text-rendering: optimizelegibility;
+	// font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+	// font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+	font-family: JetBrains Mono, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+// 
+.brand {
+	font-size: 1.3em;
+}
+
+article.content.post.home {
+	margin-top: 2em;
+	padding: 1.5em 2em;
+	border: 1px solid #f2f2f2;
+	border-radius: 4px;
+}
+article.content.post.home:hover {
+	border-color: #ddd;
+}
+article > .post-meta .post-meta-item:first-child {
+	margin-left: 0;
+}
+.read-more-container,
+.post-meta,
+.post-title {
+	text-align: left;
+}
+.post-title {
+	margin-top: .5em;
+}
