@@ -1,3 +1,119 @@
+img.error {
+  display: inline-block;
+  transform: scale(1);
+  content: '';
+  color: transparent;
+}
+img.error::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+}
+img.error::after {
+  content: attr(alt);
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 100%;
+  line-height: 2;
+  background-color: rgba(0,0,0,.5);
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+img.error::before {
+  background: #f5f5f5 url("data:image/svg+xml,%3Csvg class='icon' viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cpath d='M304.128 456.192c48.64 0 88.064-39.424 88.064-88.064s-39.424-88.064-88.064-88.064-88.064 39.424-88.064 88.064 39.424 88.064 88.064 88.064zm0-116.224c15.36 0 28.16 12.288 28.16 28.16s-12.288 28.16-28.16 28.16-28.16-12.288-28.16-28.16 12.288-28.16 28.16-28.16z' fill='%23e6e6e6'/%3E%3Cpath d='M887.296 159.744H136.704C96.768 159.744 64 192 64 232.448v559.104c0 39.936 32.256 72.704 72.704 72.704h198.144L500.224 688.64l-36.352-222.72 162.304-130.56-61.44 143.872 92.672 214.016-105.472 171.008h335.36C927.232 864.256 960 832 960 791.552V232.448c0-39.936-32.256-72.704-72.704-72.704zm-138.752 71.68v.512H857.6c16.384 0 30.208 13.312 30.208 30.208v399.872L673.28 408.064l75.264-176.64zM304.64 792.064H165.888c-16.384 0-30.208-13.312-30.208-30.208v-9.728l138.752-164.352 104.96 124.416-74.752 79.872zm81.92-355.84l37.376 228.864-.512.512-142.848-169.984c-3.072-3.584-9.216-3.584-12.288 0L135.68 652.8V262.144c0-16.384 13.312-30.208 30.208-30.208h474.624L386.56 436.224zm501.248 325.632c0 16.896-13.312 30.208-29.696 30.208H680.96l57.344-93.184-87.552-202.24 7.168-7.68 229.888 272.896z' fill='%23e6e6e6'/%3E%3C/svg%3E") no-repeat center / 50% 50%;
+}
+.justify-around {
+	justify-content: space-around;
+}
+.justify-center {
+	justify-content: center;
+}
+.items-center {
+	align-items: center;
+}
+.flex-wrap {
+	flex-wrap: wrap;
+}
+.flex {
+	display: flex;
+}
+.h-full {
+	height: 100%;
+}
+img, video {
+	max-width: 100%;
+	height: auto;
+}
+.absolute {
+	position: absolute;
+}
+.bg-no-repeat {
+	background-repeat: no-repeat;
+}
+
+.relative {
+	position: relative;
+}
+.text-center {
+	text-align: center;
+}
+.max-w-2xl {
+	max-width: 42rem;
+}
+
+.max-w-2xl {
+	max-width: 42rem;
+}
+.mb-8 {
+	margin-bottom: 2rem;
+}
+.overflow-hidden {
+	overflow: hidden;
+}
+.mt-6 {
+	margin-top: 1.5rem;
+}
+.mx-auto {
+	margin-left: auto;
+	margin-right: auto;
+}
+.font-bold {
+	font-weight: 700;
+}
+.text-left {
+	text-align: left;
+}
+
+.text-xl {
+	font-size: 1.25rem;
+}
+
+.max-w-3xl {
+	max-width: 48rem;
+}
+
+.max-w-4xl {
+	max-width: 56rem;
+}
+.px-4 {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+.py-8 {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+// tool css - end
+
+
+
+// -------
 .icon.outbound {
 	color: #aaa;
 	display: inline-block;
@@ -17,24 +133,45 @@ body {
 .brand {
 	font-size: 1.3em;
 }
+html {
+	article.content.post.home {
+		border-color: #f2f2f2;
+	}
+	article.content.post.home:hover {
+		border-color: #ddd;
+	}
+	&[data-theme="dark"] {
+		article.content.post.home {
+			border-color: hsla(var(--color-contrast-medium-h), var(--color-contrast-medium-s), var(--color-contrast-medium-l), 0.5);
+		}
+		article.content.post.home:hover {
+			border-color: hsla(var(--color-contrast-medium-h), var(--color-contrast-medium-s), var(--color-contrast-medium-l), 0.6);
+		}
+	}
+}
 
 article.content.post.home {
 	margin-top: 2em;
 	padding: 1.5em 2em;
-	border: 1px solid #f2f2f2;
+	border-width: 1px;
+	border-style: solid;
 	border-radius: 4px;
-}
-article.content.post.home:hover {
-	border-color: #ddd;
-}
-article > .post-meta .post-meta-item:first-child {
-	margin-left: 0;
-}
-.read-more-container,
-.post-meta,
-.post-title {
-	text-align: left;
-}
-.post-title {
-	margin-top: .5em;
+	transition: all .2s ease-out;
+
+	.post-meta .post-meta-item:first-child {
+		margin-left: 0;
+	}
+	.read-more-container,
+	.post-meta,
+	.post-title {
+		text-align: left;
+	}
+	.read-more-container,
+	.post-title {
+		margin-top: .5em;
+	}
+	.summary {
+		color: var(--color-contrast-medium);
+	}
+
 }
