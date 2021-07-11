@@ -1,0 +1,102 @@
+{{ define "main" }}
+<style>
+
+html .friends-li {
+  border-color: #f2f2f2;
+}
+html .friends-li:hover {
+  border-color: #ddd;
+}
+
+html[data-theme="dark"] .friends-li {
+  border-color: hsla(var(--color-contrast-medium-h), var(--color-contrast-medium-s), var(--color-contrast-medium-l), 0.5);
+}
+html[data-theme="dark"] .friends-li:hover {
+  border-color: hsla(var(--color-contrast-medium-h), var(--color-contrast-medium-s), var(--color-contrast-medium-l), 0.6);
+}
+
+.friends-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.friends-li {
+  display: flex;
+  flex-direction: row;
+  transition: all 0.2s ease-out;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+}
+.friends-li:hover {
+  transform: translateY(-2px);
+}
+.friends-li .link-list-left {
+  font-size: 0;
+}
+.friends-li .link-list-left img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+.friends-li .link-list-right {
+  padding-left: 1em;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.friends-li .link-list-right .friends-title {
+  font-size: 1.4em;
+}
+.friends-li .link-list-right .friends-p {
+  margin: -10px 0 5px !important;
+  font-size: 15px !important;
+  color: rgba(97, 91, 91, 0.7) !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+  overflow: hidden !important;
+  max-width: 140px !important;
+}
+</style>
+    <main class="main single" id="main">
+        <div class="main-inner">
+            {{ if .Site.Params.displayListTitle }}
+                {{ if (eq .Kind "section") }}
+                        <h1 class="list-title">{{ .Title | default (delimit (last 1 (split (strings.TrimSuffix "/_index.md" .Path) "/")) " ") }}</h1>
+                {{ end }}
+                {{ if (eq .Kind "term") }}
+                        <h1 class="list-title">{{ .Title | default .Data.Term | default (delimit (last 1 (split (strings.TrimSuffix "/_index.md" .Path) "/")) " ") }}</h1>
+                {{ end }}
+            {{ end }}
+            <div class="grid grid-centered">
+                <div id="grid-cell" class="grid-cell">
+                    <ul class="article-list friends-table">
+                        {{ with .Site.Data.Links }}
+                            {{- range .links -}}
+                                <li class="article-list-item reveal index-post-list friends-li" style="display: flex;">
+                                    <div class="link-list-left">
+                                        <img src="{{ .image }}" class="link-list-img friends-img img-none-line" alt="{{ .name }}" rel="noopener" referer="" onerror="this.classList.add('error');">
+                                    </div>
+                                    <div class="link-list-right friends-right">
+                                        <a href="{{ .link }}" target="_blank" style="text-decoration: none;">
+                                            <span class="friends-title">
+                                                {{ .name }}
+                                            </span>
+                                        </a>
+                                        <p class="cate-link-item-p cate-link-p friends-p" title="{{ .bio }}">
+                                            {{ .bio }}
+                                        </p>
+                                    </div>
+                                </li>
+                            {{- end -}}
+                        {{ end }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+{{ end }}

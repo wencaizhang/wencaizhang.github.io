@@ -1,0 +1,15 @@
+[[links]]
+    name = "果酱前端博客"
+    image = "/favicon.ico"
+    link = "https://webjam.cn"
+    bio = "这是一个分享技术的博客。我将在这里分享一些前端领域的开发心得，我努力让我的每篇博客都是思考之后的作品。希望这里的内容能对你有所启发。"
+[[links]]
+    name = "示例1: Vue.js"
+    image = "https://cn.vuejs.org/images/logo.svg"
+    link = "https://cn.vuejs.org/v2/guide/"
+    bio = "一套用于构建用户界面的渐进式框架"
+[[links]]
+    name = "示例2: uniapp"
+    image = "https://img-cdn-qiniu.dcloud.net.cn/uniapp/doc/icon.png?v=1556263038786"
+    link = "https://uniapp.dcloud.io/README"
+    bio = "uni-app 是一个使用 Vue.js 开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、Web（响应式）、以及各种小程序（微信/支付宝/百度/头条/QQ/钉钉/淘宝）、快应用等多个平台。"
