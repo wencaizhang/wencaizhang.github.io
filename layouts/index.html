@@ -19,7 +19,7 @@
     <!-- Layout custom Page -->
     {{ if eq .Site.Params.homeLayout "custom" }}
         {{ partial "pages/custom-home.html" . }}
-        {{ partial "pages/home-posts.html" . }}
+        {{ partial "pages/recent-posts.html"  (dict "Site" $.Site "Page" .)  }}
     {{ end }}
 
 {{ end }}

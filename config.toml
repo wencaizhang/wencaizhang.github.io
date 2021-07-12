@@ -22,7 +22,7 @@ defaultContentLanguageInSubdir = false
 pluralizeListTitles = false
 
 # 摘要的字数限制
-summaryLength = 42
+summaryLength = 48
 
 # 是否开启 GitHub 风格的 Emoji 书写方式
 enableEmoji = false
@@ -48,11 +48,11 @@ uglyURLs = false
     # 修改时间
     lastmod = ["lastmod", ":git", ":fileModTime", ":default"]
     # 优先从文件名中获取 date 时间信息
-    date  = [":filename", ":default"]
+    date = [":filename", ":default"]
 
 # URL 结构
 [permalinks]
-    posts = "/:year-:month-:day/:filename/"
+    posts = "/:year--:month--:day/:slug/"
     categories = "/categories/:slug/"
     tags = "/tags/:slug/"
 
@@ -60,6 +60,7 @@ uglyURLs = false
 [taxonomies]
     category = "categories"
     tag = "tags"
+    series = "series"
 
 # Markdown 渲染器
 [markup]
@@ -152,8 +153,8 @@ uglyURLs = false
 # Hugo 的输出控制
 [outputs]
     page = ["HTML"]
-    # home = ["HTML", "SectionsAtom", "SectionsRSS", "SearchIndex", "Algolia"]
-    home = ["HTML", "SectionsAtom", "SectionsRSS"]
+    home = ["HTML", "SectionsAtom", "SectionsRSS", "SearchIndex", "Algolia"]
+    # home = ["HTML", "SectionsAtom", "SectionsRSS"]
     section = ["HTML"]
     taxonomy = ["HTML"]
     term = ["HTML"]
@@ -230,10 +231,10 @@ uglyURLs = false
     [[menu.main]]
         weight = 7
         identifier = "lang-switcher"
-    # [[menu.main]]
-    #     weight = 8
-    #     identifier = "search"
-    #     post = "search"
+    [[menu.main]]
+        weight = 8
+        identifier = "search"
+        post = "search"
 
 
 
@@ -313,8 +314,9 @@ uglyURLs = false
     # 2. footage   视频片段
     # 3. posts     文章摘要
     # 4. page      普通页面
+    # 5. custom    自定义
 
-    homeLayout = "posts"
+    homeLayout = "custom"
 
     ## 「诗意人生」
     # 诗句，支持 Markdown
@@ -343,12 +345,12 @@ uglyURLs = false
     # 说明：用于 JSON-LD、Open Graph
 
     # 站点的描述
-    siteDescription = "MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。"
+    siteDescription = "这是一个分享技术的博客。我将在这里分享一些前端领域的开发心得，我努力让我的每篇博客都是思考之后的作品。希望这里的内容能对你有所启发。"
     # 说明：用于 HTML 的头部元数据、JSON-LD、
     #      Open Graph、Atom、RSS
 
     # 站点的创建时间
-    siteCreatedTime = "1969-07-20T20:17:43+00:00"
+    siteCreatedTime = "2018-07-20T20:17:43+00:00"
     # 注意：请保持此格式，更改数字
 
     # 站点的推特帐号
@@ -417,8 +419,8 @@ uglyURLs = false
     # 列表页面
 
     # 宽度
-    listWidth = 36
-    # 说明：如果留空（""），则用 42 作为默认值
+    listWidth = 48
+    # 说明：如果留空（""），则用 48 作为默认值
     #      单位：em
 
     # 是否显示列表标题
@@ -467,6 +469,7 @@ uglyURLs = false
     #      的文件夹的名字。
 
     # mainSections = ["posts"]
+    # mainSections = ["life", "posts"]
 
 
     ######################################
@@ -528,6 +531,8 @@ uglyURLs = false
     #      最后将 site.webmanifest 重命名为
     #      manifest.json，并检查和修改相关内容
     #      （图标的路径）。
+    
+    # <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%220.9em%22  font-size=%2290%22>酱</text></svg>" type="image/x-icon" />
 
     themeColor = "#fff"
     themeColorDark = "#16171d"
@@ -716,8 +721,8 @@ uglyURLs = false
     # 注意：只支持 HSL 颜色值
 
     # 文章的内容宽度
-    postWidth = 36
-    # 说明：如果留空（""），则用 42 作为默认值
+    postWidth = 48
+    # 说明：如果留空（""），则用 48 作为默认值
     #      单位：em
 
     # 文章是否为原创（全局设置）
@@ -1368,7 +1373,7 @@ uglyURLs = false
 
     algoliaAppId = ""
     algoliaApiKey = ""
-    algoliaIndexName = ""
+    algoliaIndexName = "webjam.cn"
     # 说明：https://www.algolia.com/
 
 
