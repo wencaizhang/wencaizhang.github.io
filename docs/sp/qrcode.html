@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,user-scalable=no"
+    />
+    <meta
+      http-equiv="description"
+      content="在线转二维码小工具 » 果酱前端"
+    />
+    <meta
+      name="description"
+      content="可以把任意的字符内容转换成二维码格式的小工具"
+    />
+    <meta name="keywords" content="工具, 二维码, canvas" />
+    <meta name="author" content="果酱前端, wencaizhang" />
+    <title>在线转二维码小工具 &raquo; 果酱前端</title>
+    <style>
+      html {
+        font-size: 100px;
+      }
+      h1 {
+        font-size: 0.6rem;
+        text-align: center;
+      }
+      .box {
+        width: 8rem;
+        max-width: 96%;
+        font-size: 0.36rem;
+        font-family: "microsoft yahei";
+        margin: auto;
+      }
+      .input {
+        width: 100%;
+        line-height: 1.5;
+        font-size: 100%;
+        padding: 0.1rem;
+        border: 0.1rem solid #a0b3d6;
+        border-radius: 0.05rem;
+        font-family: inherit;
+        box-sizing: border-box;
+        resize: none;
+        outline: none;
+      }
+      .submit {
+        float: right;
+        width: 1.8rem;
+        line-height: 0.72rem;
+        border-radius: 0.05rem;
+        margin-left: 0.2rem;
+        border: 0.1rem solid #a0b3d6;
+        text-align: center;
+        background-color: #f0f3f9;
+        background-image: -webkit-linear-gradient(top, #f0f3f9, #cad5eb);
+        background-image: linear-gradient(to bottom, #f0f3f9, #cad5eb);
+        color: #34538b;
+        text-decoration: none;
+      }
+
+      .number {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 100%;
+        border: 0.1rem solid #a0b3d6;
+        margin-left: 0.2rem;
+        border-radius: 0.05rem;
+        padding: 0.1rem;
+        visibility: hidden;
+      }
+      .submit:active {
+        background-image: none;
+      }
+      .follow {
+        overflow: hidden;
+      }
+      .output-x {
+        text-align: center;
+        margin: 0.3rem 0;
+      }
+      .output-x p {
+        color: red;
+        font-size: 0.24rem;
+      }
+      @media screen and (max-width: 800px) {
+        html {
+          font-size: calc(100px + (100vw - 800px) / 7);
+        }
+        .number {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>在线转二维码小工具</h1>
+    <div class="box">
+      <form id="form" class="input-x">
+        <input
+          id="number"
+          class="number"
+          type="number"
+          step="50"
+          min="100"
+          max="800"
+          value="600"
+          required
+        />
+        <label class="submit" for="submit">生成</label>
+        <input type="submit" id="submit" hidden="" />
+        <div class="follow">
+          <input
+            id="input"
+            class="input"
+            required
+            maxlength="20"
+            autocomplete="off"
+            autofocus
+          />
+        </div>
+      </form>
+      <div id="output" class="output-x"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+    <script>
+      var elForm = document.getElementById("form");
+      var elOutput = document.getElementById("output");
+      var elInput = document.getElementById("input");
+      var elNumber = document.getElementById("number");
+
+      elForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        createQRCode(getInputValue(), elOutput);
+      });
+
+      elNumber.addEventListener("change", function (event) {
+        var size = elNumber.value;
+        localStorage.setItem("qrcodeSize", size);
+        createQRCode(getInputValue(), elOutput);
+      });
+      initQRSize();
+      function initQRSize() {
+        var qrcodeSize = localStorage.getItem("qrcodeSize");
+        if (qrcodeSize) {
+          elNumber.value = qrcodeSize;
+        } else if (screen.width <= 800) {
+          elNumber.value = 300;
+        }
+        elNumber.style.visibility = "visible";
+      }
+
+      function createQRCode(content, el) {
+        if(!content) {
+          return;
+        }
+        var el = el || elOutput;
+        var typeNumber = 0;
+        var errorCorrectionLevel = "L";
+        var width = elNumber.value;
+        localStorage.setItem("qrcodeSize", width);
+        var margin = 2;
+        var qr = qrcode(typeNumber, errorCorrectionLevel);
+        qr.addData(content);
+        qr.make();
+        var moduleCount = qr.getModuleCount();
+        var cell = (width - margin * 2) / moduleCount;
+        el.innerHTML = qr.createSvgTag(cell, margin);
+      }
+
+      function getInputValue() {
+        var inputValue = elInput.value;
+        if (inputValue == "") {
+          elOutput.innerHTML = "<p>请输入需要转换的内容！</p>"
+          elInput.focus();
+          return;
+        }
+
+        return inputValue;
+      }
+    </script>
+  </body>
+</html>
