@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>其他 on Clarity</title><link>https://example.com/categories/%E5%85%B6%E4%BB%96/</link><description>Recent content in 其他 on Clarity</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright © 2018-2021, wencaizhang and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Wed, 21 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/categories/%E5%85%B6%E4%BB%96/index.xml" rel="self" type="application/rss+xml"/><item><title>封装简易 DOM 选择器</title><link>https://example.com/2021-07-21/custom-dom-selector-api/</link><pubDate>Wed, 21 Jul 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-07-21/custom-dom-selector-api/</guid><description>
+&lt;p>JavaScript 原生的 DOM 选择器代码写起来太长了，我们像一个简单的办法来简化一下吧。&lt;/p>
+&lt;p>偶然间发现 Chrome 开发工具的 console 面板内置了两个方法 &lt;code>$&lt;/code> 和 &lt;code>$$&lt;/code>，作用和 &lt;code>document.querySelector&lt;/code> 以及 &lt;code>document.querySelectorAll&lt;/code> 这两个方法类似。&lt;/p>
+&lt;p>测试后发现这两个变量只在开发工具的 console 面板中才能使用，如果想要在代码中使用，就需要我们自己来封装了。但是要注意确保不会和 jQuery 的符号 &lt;code>$&lt;/code> 冲突。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln">1&lt;/span>&lt;span class="kr">const&lt;/span> &lt;span class="nx">$&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">document&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">querySelector&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">bind&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">document&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">2&lt;/span>&lt;span class="kr">const&lt;/span> &lt;span class="nx">$$&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">document&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">querySelectorAll&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">bind&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">document&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>测试代码：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln">1&lt;/span>&lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">$&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;body&amp;#39;&lt;/span>&lt;span class="p">));&lt;/span>
+&lt;span class="ln">2&lt;/span>
+&lt;span class="ln">3&lt;/span>&lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">$$&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;div&amp;#39;&lt;/span>&lt;span class="p">));&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="思考题">思考题&lt;/h2>
+&lt;p>思考一下，为什么不能像下面这样用直接赋值的方式来封装？&lt;/p>
+&lt;div class="notices tip">
+&lt;div class="label">Tip&lt;/div>
+&lt;p>提示：思考封装前后 &lt;code>this&lt;/code> 的分别指向谁？&lt;/p>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln">1&lt;/span>&lt;span class="c1">// 方式一
+&lt;/span>&lt;span class="ln">2&lt;/span>&lt;span class="c1">&lt;/span>&lt;span class="kr">const&lt;/span> &lt;span class="nx">$&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">document&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">querySelector&lt;/span>
+&lt;span class="ln">3&lt;/span>&lt;span class="kr">const&lt;/span> &lt;span class="nx">$$&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">document&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">querySelectorAll&lt;/span>
+&lt;span class="ln">4&lt;/span>
+&lt;span class="ln">5&lt;/span>&lt;span class="c1">// 方式二
+&lt;/span>&lt;span class="ln">6&lt;/span>&lt;span class="c1">&lt;/span>&lt;span class="kr">const&lt;/span> &lt;span class="nx">$&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">document&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">querySelector&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">bind&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">document&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">7&lt;/span>&lt;span class="kr">const&lt;/span> &lt;span class="nx">$$&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">document&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">querySelectorAll&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">bind&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">document&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>git subtree 使用记录</title><link>https://example.com/series/git/git-subtree/</link><pubDate>Fri, 09 Jul 2021 00:00:00 +0000</pubDate><guid>https://example.com/series/git/git-subtree/</guid><description>
+&lt;p>参考文章：
+&lt;a
+href = "https://segmentfault.com/a/1190000012002151"
+target="_blank" rel ="noopener"
+>git subtree教程&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="ln">1&lt;/span>git subtree push --prefix&lt;span class="o">=&lt;/span>content/posts post master
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>目前主要使用这三个命令即可，分别是添加、更新和推送远程。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="ln">1&lt;/span>git subtree add --prefix&lt;span class="o">=&lt;/span>&amp;lt;prefix&amp;gt; &amp;lt;repository&amp;gt; &amp;lt;ref&amp;gt;
+&lt;span class="ln">2&lt;/span>git subtree pull --prefix&lt;span class="o">=&lt;/span>&amp;lt;prefix&amp;gt; &amp;lt;repository&amp;gt; &amp;lt;ref&amp;gt;
+&lt;span class="ln">3&lt;/span>git subtree push --prefix&lt;span class="o">=&lt;/span>&amp;lt;prefix&amp;gt; &amp;lt;repository&amp;gt; &amp;lt;ref&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>其中 &lt;code>&amp;lt;prefix&amp;gt;&lt;/code> 是子模块的路径，&lt;code>&amp;lt;repository&amp;gt;&lt;/code> 是子模块自身的 git 地址。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="ln">1&lt;/span>&lt;span class="p">{&lt;/span>
+&lt;span class="ln">2&lt;/span> &lt;span class="nt">&amp;#34;scripts&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">3&lt;/span> &lt;span class="nt">&amp;#34;set:posts&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;git remote add posts git@github.com:wencaizhang/wencaizhang.github.io.git&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="ln">4&lt;/span> &lt;span class="nt">&amp;#34;add:posts&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;git subtree add --prefix=content/posts post master &amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="ln">5&lt;/span> &lt;span class="nt">&amp;#34;pull:posts&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;git subtree pull --prefix=content/posts post master &amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="ln">6&lt;/span> &lt;span class="nt">&amp;#34;push:posts&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;git subtree push --prefix=content/posts post master&amp;#34;&lt;/span>
+&lt;span class="ln">7&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">8&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>一个合并分支的新姿势</title><link>https://example.com/series/git/git-merge-squash/</link><pubDate>Fri, 09 Jul 2021 00:00:00 +0000</pubDate><guid>https://example.com/series/git/git-merge-squash/</guid><description>
+&lt;p>Git 是程序员日常开发离不开的工具，合并分支也是多人开发协作过程中必不可少的环节。&lt;/p></description></item><item><title>Nginx 常用配置备忘清单 | nginx-cheatsheet</title><link>https://example.com/2021-05-18/nginx-cheatsheet/</link><pubDate>Tue, 18 May 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-05-18/nginx-cheatsheet/</guid><description>
+&lt;p>作为软件开发工程师多多少少都该懂一些 nginx 的使用和配置，下面是 nginx 的几个经典应用场景下的配置写法，记录下来以防遗忘，用到的时候也可以直接过来拷贝。&lt;/p>
+&lt;h2 id="端口监听">端口监听&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-nginx" data-lang="nginx">&lt;span class="ln"> 1&lt;/span>&lt;span class="k">server&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 2&lt;/span> &lt;span class="c1"># Standard HTTP Protocol
+&lt;/span>&lt;span class="ln"> 3&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="c1"># 标准的 HTTP 协议
+&lt;/span>&lt;span class="ln"> 4&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kn">listen&lt;/span> &lt;span class="mi">80&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 5&lt;/span>
+&lt;span class="ln"> 6&lt;/span> &lt;span class="c1"># Standard HTTPS Protocol
+&lt;/span>&lt;span class="ln"> 7&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="c1"># 标准的 HTTPS 协议
+&lt;/span>&lt;span class="ln"> 8&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kn">listen&lt;/span> &lt;span class="mi">443&lt;/span> &lt;span class="s">ssl&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 9&lt;/span>
+&lt;span class="ln">10&lt;/span> &lt;span class="c1"># For http2
+&lt;/span>&lt;span class="ln">11&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kn">listen&lt;/span> &lt;span class="mi">443&lt;/span> &lt;span class="s">ssl&lt;/span> &lt;span class="s">http2&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">12&lt;/span>
+&lt;span class="ln">13&lt;/span> &lt;span class="c1"># Listen on 80 using IPv6
+&lt;/span>&lt;span class="ln">14&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="c1"># 使用 IPv6 监听 80 端口
+&lt;/span>&lt;span class="ln">15&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kn">listen&lt;/span> &lt;span class="s">[::]:80&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">16&lt;/span>
+&lt;span class="ln">17&lt;/span> &lt;span class="c1"># Listen only on using IPv6
+&lt;/span>&lt;span class="ln">18&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="c1"># 仅使用 IPv6 监听 80 端口
+&lt;/span>&lt;span class="ln">19&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kn">listen&lt;/span> &lt;span class="s">[::]:80&lt;/span> &lt;span class="s">ipv6only=on&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">20&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="访问日志">访问日志&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-nginx" data-lang="nginx">&lt;span class="ln">1&lt;/span>&lt;span class="k">server&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">2&lt;/span> &lt;span class="c1"># Relative or full path to log file
+&lt;/span>&lt;span class="ln">3&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="c1"># 为日志文件指定一个相对或绝对路径
+&lt;/span>&lt;span class="ln">4&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kn">access_log&lt;/span> &lt;span class="s">/path/to/file.log&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">5&lt;/span>
+&lt;span class="ln">6&lt;/span> &lt;span class="c1"># Turn &amp;#39;on&amp;#39; or &amp;#39;off&amp;#39;
+&lt;/span>&lt;span class="ln">7&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="c1"># 通过 &amp;#39;on&amp;#39; 或者 &amp;#39;off&amp;#39; 控制是否启用
+&lt;/span>&lt;span class="ln">8&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kn">access_log&lt;/span> &lt;span class="no">on&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">9&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="域名">域名&lt;/h2>
+&lt;p>指定域名和对应的网站根目录位置，&lt;code>server_name&lt;/code> 可以是域名、二级域名，也可以是 ip 地址。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-nginx" data-lang="nginx">&lt;span class="ln"> 1&lt;/span>&lt;span class="k">server&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 2&lt;/span> &lt;span class="c1"># Listen to yourdomain.com
+&lt;/span>&lt;span class="ln"> 3&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="c1"># 监听来自域名 yourdomain.com 的访问
+&lt;/span>&lt;span class="ln"> 4&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kn">server_name&lt;/span> &lt;span class="s">yourdomain.com&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 5&lt;/span>
+&lt;span class="ln"> 6&lt;/span> &lt;span class="c1"># Listen to multiple domains
+&lt;/span>&lt;span class="ln"> 7&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="c1"># 监听来自多个域名的访问
+&lt;/span>&lt;span class="ln"> 8&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kn">server_name&lt;/span> &lt;span class="s">yourdomain.com&lt;/span> &lt;span class="s">www.yourdomain.com&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 9&lt;/span>
+&lt;span class="ln">10&lt;/span> &lt;span class="c1"># Listen to all domains
+&lt;/span>&lt;span class="ln">11&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="c1"># 监听 yourdomain.com 的所有二级域名
+&lt;/span>&lt;span class="ln">12&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kn">server_name&lt;/span> &lt;span class="s">*.yourdomain.com&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">13&lt;/span>
+&lt;span class="ln">14&lt;/span> &lt;span class="c1"># Listen to all top-level domains
+&lt;/span>&lt;span class="ln">15&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="c1"># 监听所有 yourdomain 的顶级域名
+&lt;/span>&lt;span class="ln">16&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kn">server_name&lt;/span> &lt;span class="s">yourdomain.*&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">17&lt;/span>
+&lt;span class="ln">18&lt;/span> &lt;span class="c1"># Listen to unspecified Hostnames (Listens to IP address itself)
+&lt;/span>&lt;span class="ln">19&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="c1"># 不指定域名，监听自身 IP 的访问
+&lt;/span>&lt;span class="ln">20&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kn">server_name&lt;/span> &lt;span class="s">&amp;#34;&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">21&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="静态资源访问">静态资源访问&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-nginx" data-lang="nginx">&lt;span class="ln">1&lt;/span>&lt;span class="k">server&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">2&lt;/span> &lt;span class="kn">listen&lt;/span> &lt;span class="mi">80&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">3&lt;/span> &lt;span class="kn">server_name&lt;/span> &lt;span class="s">yourdomain.com&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">4&lt;/span>
+&lt;span class="ln">5&lt;/span> &lt;span class="kn">location&lt;/span> &lt;span class="s">/&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">6&lt;/span> &lt;span class="kn">root&lt;/span> &lt;span class="s">/path/to/website&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">7&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">8&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="重定向">重定向&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-nginx" data-lang="nginx">&lt;span class="ln">1&lt;/span>&lt;span class="k">server&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">2&lt;/span> &lt;span class="kn">listen&lt;/span> &lt;span class="mi">80&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">3&lt;/span> &lt;span class="kn">server_name&lt;/span> &lt;span class="s">www.yourdomain.com&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">4&lt;/span> &lt;span class="kn">return&lt;/span> &lt;span class="mi">301&lt;/span> &lt;span class="s">http://yourdomain.com&lt;/span>&lt;span class="nv">$request_uri&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">5&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-nginx" data-lang="nginx">&lt;span class="ln">1&lt;/span>&lt;span class="k">server&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">2&lt;/span> &lt;span class="kn">listen&lt;/span> &lt;span class="mi">80&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">3&lt;/span> &lt;span class="kn">server_name&lt;/span> &lt;span class="s">www.yourdomain.com&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">4&lt;/span>
+&lt;span class="ln">5&lt;/span> &lt;span class="kn">location&lt;/span> &lt;span class="s">/redirect-url&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">6&lt;/span> &lt;span class="kn">return&lt;/span> &lt;span class="mi">301&lt;/span> &lt;span class="s">http://otherdomain.com&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">7&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">8&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="反向代理">反向代理&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-nginx" data-lang="nginx">&lt;span class="ln"> 1&lt;/span>&lt;span class="k">server&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 2&lt;/span> &lt;span class="kn">listen&lt;/span> &lt;span class="mi">80&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 3&lt;/span> &lt;span class="kn">server_name&lt;/span> &lt;span class="s">yourdomain.com&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 4&lt;/span>
+&lt;span class="ln"> 5&lt;/span> &lt;span class="kn">location&lt;/span> &lt;span class="s">/&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 6&lt;/span> &lt;span class="kn">proxy_pass&lt;/span> &lt;span class="s">http://0.0.0.0:3000&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 7&lt;/span> &lt;span class="c1"># where 0.0.0.0:3000 is your application server (Ex: node.js) bound on 0.0.0.0 listening on port 3000
+&lt;/span>&lt;span class="ln"> 8&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln"> 9&lt;/span>
+&lt;span class="ln">10&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="负载均衡">负载均衡&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-nginx" data-lang="nginx">&lt;span class="ln"> 1&lt;/span>&lt;span class="k">upstream&lt;/span> &lt;span class="s">node_js&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 2&lt;/span> &lt;span class="kn">server&lt;/span> &lt;span class="n">0.0.0.0&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">3000&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 3&lt;/span> &lt;span class="kn">server&lt;/span> &lt;span class="n">0.0.0.0&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">4000&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 4&lt;/span> &lt;span class="kn">server&lt;/span> &lt;span class="mi">123&lt;/span>&lt;span class="s">.131.121.122&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 5&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln"> 6&lt;/span>
+&lt;span class="ln"> 7&lt;/span>&lt;span class="k">server&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 8&lt;/span> &lt;span class="kn">listen&lt;/span> &lt;span class="mi">80&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 9&lt;/span> &lt;span class="kn">server_name&lt;/span> &lt;span class="s">yourdomain.com&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">10&lt;/span>
+&lt;span class="ln">11&lt;/span> &lt;span class="kn">location&lt;/span> &lt;span class="s">/&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">12&lt;/span> &lt;span class="kn">proxy_pass&lt;/span> &lt;span class="s">http://node_js&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">13&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">14&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="ssl-证书">SSL 证书&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-nginx" data-lang="nginx">&lt;span class="ln"> 1&lt;/span>&lt;span class="k">server&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 2&lt;/span> &lt;span class="kn">listen&lt;/span> &lt;span class="mi">443&lt;/span> &lt;span class="s">ssl&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 3&lt;/span> &lt;span class="kn">server_name&lt;/span> &lt;span class="s">yourdomain.com&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 4&lt;/span>
+&lt;span class="ln"> 5&lt;/span> &lt;span class="kn">ssl&lt;/span> &lt;span class="no">on&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 6&lt;/span>
+&lt;span class="ln"> 7&lt;/span> &lt;span class="kn">ssl_certificate&lt;/span> &lt;span class="s">/path/to/cert.pem&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 8&lt;/span> &lt;span class="kn">ssl_certificate_key&lt;/span> &lt;span class="s">/path/to/privatekey.pem&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 9&lt;/span>
+&lt;span class="ln">10&lt;/span> &lt;span class="kn">ssl_stapling&lt;/span> &lt;span class="no">on&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">11&lt;/span> &lt;span class="kn">ssl_stapling_verify&lt;/span> &lt;span class="no">on&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">12&lt;/span> &lt;span class="kn">ssl_trusted_certificate&lt;/span> &lt;span class="s">/path/to/fullchain.pem&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">13&lt;/span>
+&lt;span class="ln">14&lt;/span> &lt;span class="kn">ssl_protocols&lt;/span> &lt;span class="s">TLSv1&lt;/span> &lt;span class="s">TLSv1.1&lt;/span> &lt;span class="s">TLSv1.2&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">15&lt;/span> &lt;span class="kn">ssl_session_timeout&lt;/span> &lt;span class="s">1h&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">16&lt;/span> &lt;span class="kn">ssl_session_cache&lt;/span> &lt;span class="s">shared:SSL:50m&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">17&lt;/span> &lt;span class="kn">add_header&lt;/span> &lt;span class="s">Strict-Transport-Security&lt;/span> &lt;span class="s">max-age=15768000&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">18&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln">19&lt;/span>
+&lt;span class="ln">20&lt;/span>&lt;span class="c1"># Permanent Redirect for HTTP to HTTPS
+&lt;/span>&lt;span class="ln">21&lt;/span>&lt;span class="c1"># 将 HTTP 访问永久重定向到 HTTPS
+&lt;/span>&lt;span class="ln">22&lt;/span>&lt;span class="c1">&lt;/span>&lt;span class="k">server&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">23&lt;/span> &lt;span class="kn">listen&lt;/span> &lt;span class="mi">80&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">24&lt;/span> &lt;span class="kn">server_name&lt;/span> &lt;span class="s">yourdomain.com&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">25&lt;/span> &lt;span class="kn">return&lt;/span> &lt;span class="mi">301&lt;/span> &lt;span class="s">https://&lt;/span>&lt;span class="nv">$host$request_uri&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">26&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="感谢">感谢&lt;/h2>
+&lt;p>文中用到的配置几乎都出自
+&lt;a
+href = "https://vishnu.hashnode.dev/nginx-cheatsheet"
+target="_blank" rel ="noopener"
+>&lt;a href="https://vishnu.hashnode.dev/nginx-cheatsheet">https://vishnu.hashnode.dev/nginx-cheatsheet&lt;/a>&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+这篇文章，在此基础上经过个人理解添加了一些解释说明，特此说明。&lt;/p></description></item><item><title>推荐 JavaScript 中处理数字计算精度问题的开源库</title><link>https://example.com/2021-01-10/calculate-of-number-in-js/</link><pubDate>Sun, 10 Jan 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-01-10/calculate-of-number-in-js/</guid><description>
+&lt;p>在 JavaScript 中彻底解决你0.1+0.2!==0.3的精度问题，还可以给小数按条件取值。是开发计算项目的必备良品&lt;/p>
+&lt;p>本篇推荐三个可用于 JavaScript 中数字计算不丢失精度的开源库，均由
+&lt;a
+href = "https://github.com/MikeMcl"
+target="_blank" rel ="noopener"
+>MikeMcl&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+开源（给大佬点赞👍），三个库的 API 保持一致，但侧重点不同，下面一一解释。&lt;/p>
+&lt;h2 id="一bigjs">一、big.js&lt;/h2>
+&lt;p>传送门：
+&lt;a
+href = "https://github.com/MikeMcl/big.js"
+target="_blank" rel ="noopener"
+>&lt;a href="https://github.com/MikeMcl/big.js">https://github.com/MikeMcl/big.js&lt;/a>&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/p>
+&lt;p>文档：
+&lt;a
+href = "https://mikemcl.github.io/big.js/"
+target="_blank" rel ="noopener"
+>&lt;a href="https://mikemcl.github.io/big.js/">https://mikemcl.github.io/big.js/&lt;/a>&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/p>
+&lt;p>适合只需要简单计算的项目&lt;/p>
+&lt;h2 id="二bignumberjs">二、bignumber.js&lt;/h2>
+&lt;p>传送门：
+&lt;a
+href = "https://github.com/MikeMcl/bignumber.js"
+target="_blank" rel ="noopener"
+>&lt;a href="https://github.com/MikeMcl/bignumber.js">https://github.com/MikeMcl/bignumber.js&lt;/a>&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/p>
+&lt;p>文档：
+&lt;a
+href = "https://mikemcl.github.io/bignumber.js/"
+target="_blank" rel ="noopener"
+>&lt;a href="https://mikemcl.github.io/bignumber.js/">https://mikemcl.github.io/bignumber.js/&lt;/a>&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/p>
+&lt;p>可以对小数进行向上或向下取值，适合金融类项目&lt;/p>
+&lt;h2 id="三decimaljs">三、decimal.js&lt;/h2>
+&lt;p>传送门：
+&lt;a
+href = "https://github.com/MikeMcl/decimal.js"
+target="_blank" rel ="noopener"
+>&lt;a href="https://github.com/MikeMcl/decimal.js">https://github.com/MikeMcl/decimal.js&lt;/a>&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/p>
+&lt;p>文档：
+&lt;a
+href = "%ef%bc%9ahttp://mikemcl.github.io/decimal.js"
+target="_blank" rel ="noopener"
+>&lt;a href="http://mikemcl.github.io/decimal.js">http://mikemcl.github.io/decimal.js&lt;/a>&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/p>
+&lt;p>decimal.js 提供了很多数学计算相关的函数，例如正弦余弦对数等函数，非常适合数学计算类需要运行很多数学函数的项目。&lt;/p></description></item><item><title>给博客搭配随机图片</title><link>https://example.com/2021-01-08/random-image-for-blog/</link><pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-01-08/random-image-for-blog/</guid><description>
+&lt;p>每次写文章给博文配图是一件很麻烦的事情，一张张地找，有时候质量还不好，于是乎，我就去寻找了一波背景图api接口，这下妈妈再也不用担心我文章不会配图了，&lt;/p>
+&lt;p>API 调用方式很简单，就是直接把 api 地址当做图片地址来访问，当服务器接收到访问时会自动重定向到一个随机的图片地址。&lt;/p>
+&lt;p>下面列举几个&lt;/p>
+&lt;h2 id="一小歪api">一、小歪API&lt;/h2>
+&lt;p>网址:
+&lt;a
+href = "https://api.ixiaowai.cn/"
+target="_blank" rel ="noopener"
+>&lt;a href="https://api.ixiaowai.cn/">https://api.ixiaowai.cn/&lt;/a>&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/p>
+&lt;blockquote>
+&lt;p>目前系统共收录 1000+ 张图片 API最后更新时间:2020-03-25&lt;/p>
+&lt;p>图片均为https，采用新浪图片，&lt;strong>高速访问&lt;/strong>&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="11-直接使用">1.1 直接使用&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>图片API基本调用格式：&lt;/p>
+&lt;ul>
+&lt;li>二次元动漫:
+&lt;a
+href = "https://api.ixiaowai.cn/api/api.php"
+target="_blank" rel ="noopener"
+>&lt;a href="https://api.ixiaowai.cn/api/api.php">https://api.ixiaowai.cn/api/api.php&lt;/a>&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>mc酱动漫:
+&lt;a
+href = "https://api.ixiaowai.cn/mcapi/mcapi.php"
+target="_blank" rel ="noopener"
+>&lt;a href="https://api.ixiaowai.cn/mcapi/mcapi.php">https://api.ixiaowai.cn/mcapi/mcapi.php&lt;/a>&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>高清壁纸:
+&lt;a
+href = "https://api.ixiaowai.cn/gqapi/gqapi.php"
+target="_blank" rel ="noopener"
+>&lt;a href="https://api.ixiaowai.cn/gqapi/gqapi.php">https://api.ixiaowai.cn/gqapi/gqapi.php&lt;/a>&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>文字API基本调用格式：&lt;/p>
+&lt;ul>
+&lt;li>一言语录:
+&lt;a
+href = "https://api.ixiaowai.cn/api/ylapi.php"
+target="_blank" rel ="noopener"
+>&lt;a href="https://api.ixiaowai.cn/ylapi/index.php">https://api.ixiaowai.cn/ylapi/index.php&lt;/a>&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>舔狗日记:
+&lt;a
+href = "https://api.ixiaowai.cn/tgrj/index.php"
+target="_blank" rel ="noopener"
+>&lt;a href="https://api.ixiaowai.cn/tgrj/index.php">https://api.ixiaowai.cn/tgrj/index.php&lt;/a>&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="12-json-格式">1.2 JSON 格式&lt;/h3>
+&lt;p>访问上面的 api 会直接重定向到一个随机图片地址，你可以在 api 后面添加参数 &lt;code>type=json&lt;/code> 来得到一个 JSON 格式的结果：&lt;/p>
+&lt;p>例如：&lt;/p>
+&lt;ul>
+&lt;li>图片列：
+&lt;a
+href = "https://api.ixiaowai.cn/api/api.php?return=json"
+target="_blank" rel ="noopener"
+>&lt;a href="https://api.ixiaowai.cn/api/api.php?return=json">https://api.ixiaowai.cn/api/api.php?return=json&lt;/a>&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>文字列：
+&lt;a
+href = "https://api.ixiaowai.cn/ylapi/index.php/?code=js"
+target="_blank" rel ="noopener"
+>&lt;a href="https://api.ixiaowai.cn/ylapi/index.php/?code=js">https://api.ixiaowai.cn/ylapi/index.php/?code=js&lt;/a>&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;p>返回 JSON 数据示例&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="ln">1&lt;/span>&lt;span class="p">{&lt;/span>
+&lt;span class="ln">2&lt;/span> &lt;span class="nt">&amp;#34;code&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;200&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="ln">3&lt;/span> &lt;span class="nt">&amp;#34;imgurl&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;https://tva3.sinaimg.cn/large/0072Vf1pgy1fodqoysytvj31hc0u0qcq.jpg&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="ln">4&lt;/span> &lt;span class="nt">&amp;#34;width&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;1920&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="ln">5&lt;/span> &lt;span class="nt">&amp;#34;height&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;1080&amp;#34;&lt;/span>
+&lt;span class="ln">6&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="二动漫星空">二、动漫星空&lt;/h2>
+&lt;p>目前 动漫星空 共收录 8千万+ 张4K精美图片
+动漫星空随机图片API，高速，免费，无广告
+注意： 目前仅提供1080P接口，2K和4K接口后续开放，更多动态请持续关注 动漫星空API官网 及 动漫星空微信公众号 ，第一时间获取官方更新信息
+HTML调用格式
+1080P：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="ln">1&lt;/span>https://api.dongmanxingkong.com/suijitupian/acg/1080p/index.php
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>参数： type=json
+JSON调用格式
+1080P：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="ln">1&lt;/span>https://api.dongmanxingkong.com/suijitupian/acg/1080p/index.php?return=json
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>JSON数据&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="ln">1&lt;/span>&lt;span class="p">{&lt;/span>
+&lt;span class="ln">2&lt;/span> &lt;span class="nt">&amp;#34;code&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;200&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="ln">3&lt;/span> &lt;span class="nt">&amp;#34;imgurl&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;https://tvax2.sinaimg.cn/large/0072Vf1pgy1fodqpio0roj31kw0v47wh.jpg&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="ln">4&lt;/span> &lt;span class="nt">&amp;#34;width&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;2048&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="ln">5&lt;/span> &lt;span class="nt">&amp;#34;height&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;1120&amp;#34;&lt;/span>
+&lt;span class="ln">6&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="三秋api接口站">三秋API接口站&lt;/h2>
+&lt;p>目前系统共收录 3k9+ 张图片 API最后更新时间:2020-07-14&lt;/p>
+&lt;p>图片均为https，采用又拍云存储，高速访问&lt;/p>
+&lt;ul>
+&lt;li>自判断二次元API：
+&lt;a
+href = "https://api.ghser.com/random/api.php"
+target="_blank" rel ="noopener"
+>&lt;a href="https://api.ghser.com/random/api.php">https://api.ghser.com/random/api.php&lt;/a>&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>PC随机二次元API：
+&lt;a
+href = "https://api.ghser.com/random/pc.php"
+target="_blank" rel ="noopener"
+>&lt;a href="https://api.ghser.com/random/pc.php">https://api.ghser.com/random/pc.php&lt;/a>&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>PE随机二次元API：
+&lt;a
+href = "https://api.ghser.com/random/pe.php"
+target="_blank" rel ="noopener"
+>&lt;a href="https://api.ghser.com/random/pe.php">https://api.ghser.com/random/pe.php&lt;/a>&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>随机二次元风景API：
+&lt;a
+href = "https://api.ghser.com/random/bg.php"
+target="_blank" rel ="noopener"
+>&lt;a href="https://api.ghser.com/random/bg.php">https://api.ghser.com/random/bg.php&lt;/a>&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;/ul></description></item></channel></rss>

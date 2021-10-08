@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>bug-fix on Clarity</title><link>https://example.com/categories/bug-fix/</link><description>Recent content in bug-fix on Clarity</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright © 2018-2021, wencaizhang and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Thu, 15 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/categories/bug-fix/index.xml" rel="self" type="application/rss+xml"/><item><title>解决 uView Parse 富文本解析器 ready 事件触发时机不准确的问题</title><link>https://example.com/2021-07-15/temp/</link><pubDate>Thu, 15 Jul 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-07-15/temp/</guid><description>
+&lt;p>
+&lt;a
+href = "https://github.com/jin-yufeng/mp-html/issues/195"
+target="_blank" rel ="noopener"
+>监听事件bindready，获取高度有时不准确 #195&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/p>
+&lt;p>
+&lt;a
+href = "https://github.com/jin-yufeng/mp-html/blob/master/src/miniprogram/index.js#L336"
+target="_blank" rel ="noopener"
+>对应的源码部分&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/p>
+&lt;blockquote>
+&lt;p>判断 ready 的标准是每 350ms 检查一次高度，两次高度不变化就认为加载完毕，然后返回大小，处理的地方在 这里&lt;/p>
+&lt;p>这个处理方式确实可能在某些情况下不准确，如果 350ms 总高度不变化就会触发，但这个很难权衡，因为要确保一定准确的话可能这个时间间隔要更长或者多次不变化后再触发，这样的话触发的就会很慢，某些情况下会带来问题（比如进入页面后等待图片加载完要跳转到某个锚点，等待时间过长就会影响体验），所以这里如果要求很高的话可能需要自行调整一下&lt;/p>
+&lt;p>ps：对于这个问题最准确的获取时机应该是所有图片都触发 load 事件的时候，但由于开启懒加载后，一些图片不会立即加载，所以无法判断是否全部加载完毕，以及另外一些原因这个方法不适用，所以只能通过高度变化判断&lt;/p>
+&lt;/blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln"> 1&lt;/span>&lt;span class="kr">export&lt;/span> &lt;span class="k">default&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 2&lt;/span> &lt;span class="nx">data&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 3&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 4&lt;/span> &lt;span class="mi">_&lt;/span>&lt;span class="nx">timer&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="kc">null&lt;/span>
+&lt;span class="ln"> 5&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln"> 6&lt;/span> &lt;span class="p">},&lt;/span>
+&lt;span class="ln"> 7&lt;/span> &lt;span class="nx">method&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 8&lt;/span> &lt;span class="cm">/**
+&lt;/span>&lt;span class="ln"> 9&lt;/span>&lt;span class="cm"> * @description 获取内容大小和位置
+&lt;/span>&lt;span class="ln">10&lt;/span>&lt;span class="cm"> * @return {Promise}
+&lt;/span>&lt;span class="ln">11&lt;/span>&lt;span class="cm"> */&lt;/span>
+&lt;span class="ln">12&lt;/span> &lt;span class="nx">getRect&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">selector&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">13&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="nb">Promise&lt;/span>&lt;span class="p">((&lt;/span>&lt;span class="nx">resolve&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">reject&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">14&lt;/span> &lt;span class="nx">uni&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">createSelectorQuery&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;span class="ln">15&lt;/span> &lt;span class="c1">// #ifndef MP-ALIPAY
+&lt;/span>&lt;span class="ln">16&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="k">in&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">this&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">17&lt;/span> &lt;span class="c1">// #endif
+&lt;/span>&lt;span class="ln">18&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="nx">select&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">selector&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">boundingClientRect&lt;/span>&lt;span class="p">().&lt;/span>&lt;span class="nx">exec&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">res&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="nx">res&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">?&lt;/span> &lt;span class="nx">resolve&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">res&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">])&lt;/span> &lt;span class="o">:&lt;/span> &lt;span class="nx">reject&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">Error&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Root label not found&amp;#39;&lt;/span>&lt;span class="p">)))&lt;/span>
+&lt;span class="ln">19&lt;/span> &lt;span class="p">})&lt;/span>
+&lt;span class="ln">20&lt;/span> &lt;span class="p">},&lt;/span>
+&lt;span class="ln">21&lt;/span>
+&lt;span class="ln">22&lt;/span> &lt;span class="nx">watchGoodsDetail&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">23&lt;/span> &lt;span class="kd">let&lt;/span> &lt;span class="nx">times&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">// 监听次数
+&lt;/span>&lt;span class="ln">24&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kd">let&lt;/span> &lt;span class="nx">maxTimes&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">10&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">// 连续 10 获取高度相同视为加载完毕
+&lt;/span>&lt;span class="ln">25&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kd">let&lt;/span> &lt;span class="nx">wait&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">350&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">// 间隔
+&lt;/span>&lt;span class="ln">26&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kd">let&lt;/span> &lt;span class="nx">height&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">// 详情高度
+&lt;/span>&lt;span class="ln">27&lt;/span>&lt;span class="c1">&lt;/span>
+&lt;span class="ln">28&lt;/span> &lt;span class="nx">clearInterval&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="mi">_&lt;/span>&lt;span class="nx">timer&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">29&lt;/span> &lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="mi">_&lt;/span>&lt;span class="nx">timer&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">setInterval&lt;/span>&lt;span class="p">(()&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">30&lt;/span> &lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">getRect&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;#tab3&amp;#39;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">then&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">rect&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">31&lt;/span> &lt;span class="c1">// 350ms 总高度无变化就触发 ready 事件
+&lt;/span>&lt;span class="ln">32&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">rect&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">height&lt;/span> &lt;span class="o">===&lt;/span> &lt;span class="nx">height&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">33&lt;/span> &lt;span class="nx">times&lt;/span>&lt;span class="o">++&lt;/span>
+&lt;span class="ln">34&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">times&lt;/span> &lt;span class="o">&amp;gt;=&lt;/span> &lt;span class="nx">maxTimes&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">35&lt;/span> &lt;span class="nx">clearInterval&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="mi">_&lt;/span>&lt;span class="nx">timer&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">36&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">37&lt;/span> &lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">38&lt;/span> &lt;span class="nx">times&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>
+&lt;span class="ln">39&lt;/span> &lt;span class="nx">height&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">rect&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">height&lt;/span>
+&lt;span class="ln">40&lt;/span> &lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">onNavTargetChange&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;span class="ln">41&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">42&lt;/span> &lt;span class="p">}).&lt;/span>&lt;span class="k">catch&lt;/span>&lt;span class="p">(()&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="p">})&lt;/span>
+&lt;span class="ln">43&lt;/span> &lt;span class="p">},&lt;/span> &lt;span class="nx">wait&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">44&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">45&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">46&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

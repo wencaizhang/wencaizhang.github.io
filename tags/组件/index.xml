@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>组件 on Clarity</title><link>https://example.com/tags/%E7%BB%84%E4%BB%B6/</link><description>Recent content in 组件 on Clarity</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright © 2018-2021, wencaizhang and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Wed, 28 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/%E7%BB%84%E4%BB%B6/index.xml" rel="self" type="application/rss+xml"/><item><title>Vue.js 项目中二次封装一个按钮组件</title><link>https://example.com/2021-07-28/%E4%BA%8C%E6%AC%A1%E5%B0%81%E8%A3%85%E4%B8%80%E4%B8%AA%E6%8C%89%E9%92%AE%E7%BB%84%E4%BB%B6/</link><pubDate>Wed, 28 Jul 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-07-28/%E4%BA%8C%E6%AC%A1%E5%B0%81%E8%A3%85%E4%B8%80%E4%B8%AA%E6%8C%89%E9%92%AE%E7%BB%84%E4%BB%B6/</guid><description>
+&lt;h2 id="vue2-中容易被忽略的两个重要的-api-介绍">Vue2 中容易被忽略的两个重要的 API 介绍&lt;/h2>
+&lt;h2 id="vue2-中封装">Vue2 中封装&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="ln"> 1&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">template&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;span class="ln"> 2&lt;/span> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">a-button&lt;/span>
+&lt;span class="ln"> 3&lt;/span> &lt;span class="na">icon&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;sync&amp;#34;&lt;/span>
+&lt;span class="ln"> 4&lt;/span> &lt;span class="na">title&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;刷新&amp;#34;&lt;/span>
+&lt;span class="ln"> 5&lt;/span> &lt;span class="na">v-bind&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;$attrs&amp;#34;&lt;/span>
+&lt;span class="ln"> 6&lt;/span> &lt;span class="na">v-on&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;$listeners&amp;#34;&lt;/span>
+&lt;span class="ln"> 7&lt;/span> &lt;span class="p">/&amp;gt;&lt;/span>
+&lt;span class="ln"> 8&lt;/span>&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">template&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;span class="ln"> 9&lt;/span>
+&lt;span class="ln">10&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">script&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;span class="ln">11&lt;/span>&lt;span class="cm">/**
+&lt;/span>&lt;span class="ln">12&lt;/span>&lt;span class="cm"> * 和 a-button 外观、行为完全一致
+&lt;/span>&lt;span class="ln">13&lt;/span>&lt;span class="cm"> * 区别是预设 icon 和 title 属性
+&lt;/span>&lt;span class="ln">14&lt;/span>&lt;span class="cm"> */&lt;/span>
+&lt;span class="ln">15&lt;/span>&lt;span class="kr">export&lt;/span> &lt;span class="k">default&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">16&lt;/span> &lt;span class="nx">inheritAttrs&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="ln">17&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln">18&lt;/span>&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">script&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="vue3-中有了一些变化">Vue3 中有了一些变化&lt;/h2>
+&lt;p>
+&lt;a
+href = "https://v3.cn.vuejs.org/guide/migration/listeners-removed.html"
+target="_blank" rel ="noopener"
+>移除 $listeners (非兼容)&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="ln"> 1&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">template&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;span class="ln"> 2&lt;/span> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">a-button&lt;/span>
+&lt;span class="ln"> 3&lt;/span> &lt;span class="na">icon&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;sync&amp;#34;&lt;/span>
+&lt;span class="ln"> 4&lt;/span> &lt;span class="na">title&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;刷新&amp;#34;&lt;/span>
+&lt;span class="ln"> 5&lt;/span> &lt;span class="na">v-bind&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;$attrs&amp;#34;&lt;/span>
+&lt;span class="ln"> 6&lt;/span> &lt;span class="p">/&amp;gt;&lt;/span>
+&lt;span class="ln"> 7&lt;/span>&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">template&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;span class="ln"> 8&lt;/span>
+&lt;span class="ln"> 9&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">script&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;span class="ln">10&lt;/span>&lt;span class="cm">/**
+&lt;/span>&lt;span class="ln">11&lt;/span>&lt;span class="cm"> * 和 a-button 外观、行为完全一致
+&lt;/span>&lt;span class="ln">12&lt;/span>&lt;span class="cm"> * 区别是预设 icon 和 title 属性
+&lt;/span>&lt;span class="ln">13&lt;/span>&lt;span class="cm"> */&lt;/span>
+&lt;span class="ln">14&lt;/span>&lt;span class="kr">export&lt;/span> &lt;span class="k">default&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">15&lt;/span> &lt;span class="nx">inheritAttrs&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="ln">16&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln">17&lt;/span>&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">script&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>升级到 Vue3.x 之后，&lt;code>$attrs&lt;/code> 和 &lt;code>$listeners&lt;/code> 合并到 &lt;code>$attrs&lt;/code> 中，因此直接删除 &lt;code>$listeners&lt;/code> 即可，但是要保留 &lt;code>$attrs&lt;/code>。&lt;/p>
+&lt;h2 id="uniapp-中的一个坑">uniapp 中的一个坑&lt;/h2>
+&lt;p>uni-app 仅在 H5 端和 App端V3 中支持 $listeners, &lt;strong>小程序不支持 $listeners&lt;/strong> ，这就导致了&lt;/p>
+&lt;p>
+&lt;a
+href = "https://uniapp.dcloud.io/use?id=%e5%ae%9e%e4%be%8b%e5%b1%9e%e6%80%a7"
+target="_blank" rel ="noopener"
+>实例属性 - uni-app&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/p></description></item></channel></rss>

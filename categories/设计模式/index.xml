@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>设计模式 on Clarity</title><link>https://example.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link><description>Recent content in 设计模式 on Clarity</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright © 2018-2021, wencaizhang and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Sat, 12 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/index.xml" rel="self" type="application/rss+xml"/><item><title>责任链模式</title><link>https://example.com/series/design-patterns/chain-of-responsibility-pattern/</link><pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate><guid>https://example.com/series/design-patterns/chain-of-responsibility-pattern/</guid><description>
+&lt;h2 id="背景交代">背景交代&lt;/h2>
+&lt;p>最近负责的一个前端项目随着需求和功能的升级，代码越写越复杂，尤其是登录模块的判断逻辑，就像是那老太太的缠脚布——又臭又长!&lt;/p>
+&lt;p>刚好趁着登录的需求变更，使用&lt;strong>责任链模式&lt;/strong>把相关代码重构了一番，重构之后再看代码，啧啧，代码之整洁且逻辑清晰，忍不住要给自己送一朵小红花 🌺 —— 优秀！&lt;/p>
+&lt;!--
+先介绍一下需求，在登录页面提交数据得到响应后需要进行多重判断，如下：
+-->
+&lt;h2 id="撸起袖子加油干">撸起袖子加油干&lt;/h2>
+&lt;p>我们约定好，将单个判断逻辑封装成一个函数，函数接收相同的参数，返回值的统一为一个 promise。&lt;/p>
+&lt;p>如果判断通过，可以进行下一步判断，返回 fulfill 状态的 promise，如果未通过需要结束后续判断，则返回 rejected 状态的 promise。&lt;/p>
+&lt;p>这里的代码均为示意代码，其中的判断逻辑都进行了简化。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln"> 1&lt;/span>&lt;span class="kd">function&lt;/span> &lt;span class="nx">handlePwdExpired&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">resp&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 2&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">resp&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">expired&lt;/span> &lt;span class="o">===&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 3&lt;/span> &lt;span class="c1">// 密码过期处理逻辑
+&lt;/span>&lt;span class="ln"> 4&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;密码过期，请修改密码后重新登录&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln"> 5&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="nb">Promise&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">rejected&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;密码过期&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln"> 6&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln"> 7&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="nb">Promise&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">resolve&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">resp&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln"> 8&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln"> 9&lt;/span>
+&lt;span class="ln">10&lt;/span>&lt;span class="kd">function&lt;/span> &lt;span class="nx">handleAuthStatus&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">resp&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">11&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">resp&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">status&lt;/span> &lt;span class="o">===&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">12&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="nb">Promise&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">resolve&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">resp&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">13&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">14&lt;/span> &lt;span class="c1">// 实名认证未通过处理逻辑
+&lt;/span>&lt;span class="ln">15&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;实名认证未通过，请耐心等待&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">16&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="nb">Promise&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">rejected&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;实名认证未通过&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">17&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln">18&lt;/span>
+&lt;span class="ln">19&lt;/span>&lt;span class="kd">function&lt;/span> &lt;span class="nx">handleDefault&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">resp&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">20&lt;/span> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;逻辑判断结束，进入系统&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">21&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>定义好上面处理策略之后，我们来调用&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln"> 1&lt;/span>&lt;span class="c1">// 假定我们已经拿到了响应
+&lt;/span>&lt;span class="ln"> 2&lt;/span>&lt;span class="c1">&lt;/span>&lt;span class="kr">const&lt;/span> &lt;span class="nx">resp&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 3&lt;/span> &lt;span class="nx">status&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="ln"> 4&lt;/span> &lt;span class="nx">expired&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="ln"> 5&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln"> 6&lt;/span>
+&lt;span class="ln"> 7&lt;/span>&lt;span class="nb">Promise&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">resolve&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">resp&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln"> 8&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="nx">then&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">resp&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 9&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="nx">handlePwdExpired&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">resp&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">10&lt;/span> &lt;span class="p">})&lt;/span>
+&lt;span class="ln">11&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="nx">then&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">resp&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">12&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="nx">handleAuthStatus&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">resp&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">13&lt;/span> &lt;span class="p">})&lt;/span>
+&lt;span class="ln">14&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="nx">then&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">resp&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">15&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="nx">handleDefault&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">resp&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">16&lt;/span> &lt;span class="p">})&lt;/span>
+&lt;span class="ln">17&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="k">catch&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">err&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">18&lt;/span> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">err&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="ln">19&lt;/span> &lt;span class="p">})&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>适配器模式</title><link>https://example.com/series/design-patterns/adapter-pattern/</link><pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate><guid>https://example.com/series/design-patterns/adapter-pattern/</guid><description>
+&lt;h2 id="背景交代">背景交代&lt;/h2>
+&lt;h2 id="场景一转换数据格式">场景一：转换数据格式&lt;/h2>
+&lt;p>Vue 中的 computed 属性就是现成的一个适配器：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln"> 1&lt;/span>&lt;span class="kr">const&lt;/span> &lt;span class="nx">vm&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="nx">Vue&lt;/span>&lt;span class="p">({&lt;/span>
+&lt;span class="ln"> 2&lt;/span> &lt;span class="nx">data&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 3&lt;/span> &lt;span class="nx">authors&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">[&lt;/span> &lt;span class="s1">&amp;#39;张教授&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;王教授&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;span class="ln"> 4&lt;/span> &lt;span class="p">},&lt;/span>
+&lt;span class="ln"> 5&lt;/span> &lt;span class="nx">computed&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 6&lt;/span> &lt;span class="nx">authorsText&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 7&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">authors&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">join&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;、&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln"> 8&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln"> 9&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">10&lt;/span>&lt;span class="p">})&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>又比如&lt;/p>
+&lt;h2 id="撸起袖子加油干">撸起袖子加油干&lt;/h2></description></item></channel></rss>

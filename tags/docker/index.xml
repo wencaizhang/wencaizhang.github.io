@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>docker on Clarity</title><link>https://example.com/tags/docker/</link><description>Recent content in docker on Clarity</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright © 2018-2021, wencaizhang and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Wed, 29 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/docker/index.xml" rel="self" type="application/rss+xml"/><item><title>用 Docker 快速架设一个 Anki 同步服务器</title><link>https://example.com/2021-09-29/anki-sync-server-with-docker/</link><pubDate>Wed, 29 Sep 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-09-29/anki-sync-server-with-docker/</guid><description>
+&lt;p>Anki 是一个辅助记忆软件，{{ 简介}}。最近打算用它来快速记忆一些知识，但是 Anki 的服务器架设在国外，导致同步速度很慢，为了解决这个问题，我参考
+&lt;a
+href = "https://github.com/ankicommunity/anki-devops-services"
+target="_blank" rel ="noopener"
+>文档地址&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+打算自己架设一个 Anki 同步服务器。&lt;/p>
+&lt;p>&lt;div class="image-container" style="text-align: center;">
+&lt;style>
+.image_view img {
+margin: 1em auto;
+}
+.image-caption {
+min-width: 20%;
+max-width: 80%;
+text-align: center;
+display: inline-block;
+padding: 10px;
+margin: 0 auto;
+border-bottom: 1px solid #eee;
+font-size: 12px;
+color: #999;
+}
+&lt;/style>
+&lt;div class="image_view">
+&lt;img
+loading='lazy'
+src="https://static.webjam.cn/images/anki-sync-server-with-docker.png"
+alt=""
+onerror="this.classList.add('error');"
+/>
+&lt;/div>
+&lt;div class="image-caption">&lt;/div>
+&lt;/div>
+&lt;/p>
+&lt;p>要求：&lt;/p>
+&lt;ul>
+&lt;li>技术要求：了解终端（命令行工具）、理解 IP 和域名的概念、docker 以及 docker-compose 的基本使用&lt;/li>
+&lt;li>硬件要求：一台电脑或者一个虚拟机或者一个云服务器（总之要能够满足相关软件要求）&lt;/li>
+&lt;li>软件要求：docker + docker-compose&lt;/li>
+&lt;/ul>
+&lt;h2 id="启动服务">启动服务&lt;/h2>
+&lt;p>新建一个 &lt;code>docker-anki-server&lt;/code> 目录，在此目录下创建一个 &lt;code>docker-compose.yml&lt;/code> 文件，文件内容如下。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-yml" data-lang="yml">&lt;span class="ln"> 1&lt;/span>&lt;span class="nt">version&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;3&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="ln"> 2&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="ln"> 3&lt;/span>&lt;span class="w">&lt;/span>&lt;span class="nt">services&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="ln"> 4&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">anki-container&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="ln"> 5&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">image&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">kuklinistvan/anki-sync-server:latest&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="ln"> 6&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">container_name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">anki-container&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="ln"> 7&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="ln"> 8&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">restart&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">always&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="ln"> 9&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">ports&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="ln">10&lt;/span>&lt;span class="w"> &lt;/span>- &lt;span class="s2">&amp;#34;27701:27701&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="ln">11&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">volumes&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="ln">12&lt;/span>&lt;span class="w"> &lt;/span>- &lt;span class="l">data:/app/data&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="ln">13&lt;/span>&lt;span class="w">&lt;/span>&lt;span class="nt">volumes&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="ln">14&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">data&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后在当前路径下的终端执行命令&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="ln">1&lt;/span>docker-compose up -d
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>执行 &lt;code>docker-compose ps&lt;/code> 命令可以看到&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="ln">1&lt;/span> Name Command State Ports
+&lt;span class="ln">2&lt;/span>-----------------------------------------------------------------------------------------
+&lt;span class="ln">3&lt;/span>anki-container /bin/sh -c /app/scripts/st ... Up &lt;span class="o">(&lt;/span>healthy&lt;span class="o">)&lt;/span> 0.0.0.0:27701-&amp;gt;27701/tcp
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>这就说明服务已经正常启动了，对应的服务地址是 &lt;code>http://&amp;lt;ip&amp;gt;:27701&lt;/code>，这个 &lt;code>&amp;lt;ip&amp;gt;&lt;/code> 是你物理机（宿主机）的 &lt;code>ip&lt;/code> 而非 docker 容器 ip。&lt;/p>
+&lt;h2 id="域名设置">域名设置&lt;/h2>
+&lt;p>启动服务之后，就可以通过链接 &lt;code>http://&amp;lt;ip&amp;gt;:27701&lt;/code> 访问了。&lt;/p>
+&lt;p>但是由于安卓版 anki 要求同步地址为 &lt;code>https&lt;/code> 协议，因此我又启动了一个代理服务。&lt;/p>
+&lt;p>我使用的
+&lt;a
+href = "https://caddyserver.com/"
+target="_blank" rel ="noopener"
+>Caddy&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+启动服务，这是一款使用 Go 语言开发的 web 服务器，选用 Caddy 的一个重要原因就是它使用 Let’s Encrypt 让你的站点全自动变成 HTTPS，除此之外它的配置简单很容易上手使用。&lt;/p>
+&lt;p>我的配置就这么简单：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="ln">1&lt;/span>anki.example.com {
+&lt;span class="ln">2&lt;/span> tls example@qq.com
+&lt;span class="ln">3&lt;/span> reverse_proxy 127.0.0.1:27701
+&lt;span class="ln">4&lt;/span>}
+&lt;/code>&lt;/pre>&lt;/div>&lt;ol>
+&lt;li>第一行声明一个二级域名 &lt;code>anki.example.com&lt;/code>&lt;/li>
+&lt;li>第二行告诉 caddy 为网站开启 https 并自动申请证书，后面的 email 参数是告知 CA 申请人的邮箱，&lt;/li>
+&lt;li>第三行则是反向代理，此时访问 &lt;code>anki.example.com&lt;/code>，实际访问的是 &lt;code>127.0.0.1:27701&lt;/code> 的内容&lt;/li>
+&lt;/ol>
+&lt;h2 id="客户端设置">客户端设置&lt;/h2>
+&lt;h3 id="桌面端">桌面端&lt;/h3>
+&lt;p>如果是桌面端(Windows\MacOS\Linux)，需要安装
+&lt;a
+href = "https://ankiweb.net/shared/info/2124817646"
+target="_blank" rel ="noopener"
+>SyncRedirector&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+插件。&lt;/p>
+&lt;p>SyncRedirector 插件要求 Anki 版本低于 &lt;code>2.1.19&lt;/code>，推荐使用 &lt;code>2.1.0&lt;/code> 和 &lt;code>2.1.15&lt;/code> 版本。
+你可以在
+&lt;a
+href = "https://apps.ankiweb.net/downloads/archive/"
+target="_blank" rel ="noopener"
+>这里&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+下载 Anki 所有版本的安装包&lt;/p>
+&lt;p>插件安装之后，在其设置中填写对应的地址即可&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="ln">1&lt;/span>&lt;span class="p">{&lt;/span>
+&lt;span class="ln">2&lt;/span> &lt;span class="nt">&amp;#34;msyncUrl&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;https://anki.zhangwencai.com/msync&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="ln">3&lt;/span> &lt;span class="nt">&amp;#34;syncUrl&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;https://anki.zhangwencai.com/sync&amp;#34;&lt;/span>
+&lt;span class="ln">4&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="安卓端">安卓端&lt;/h3>
+&lt;p>如果是安卓端 AnkiDroid 则可以直接配置，我的 AnkiDroid 版本是 &lt;code>2.13.1&lt;/code>。你可以通过「设置 -&amp;gt; 高级设置 -&amp;gt; 自定义同步服务器」找到配置页面。&lt;/p>
+&lt;p>&lt;div class="image-container" style="text-align: center;">
+&lt;style>
+.image_view img {
+margin: 1em auto;
+}
+.image-caption {
+min-width: 20%;
+max-width: 80%;
+text-align: center;
+display: inline-block;
+padding: 10px;
+margin: 0 auto;
+border-bottom: 1px solid #eee;
+font-size: 12px;
+color: #999;
+}
+&lt;/style>
+&lt;div class="image_view">
+&lt;img
+loading='lazy'
+src="https://static.webjam.cn/images/ankidroid-sync-server.png"
+alt=""
+onerror="this.classList.add('error');"
+/>
+&lt;/div>
+&lt;div class="image-caption">&lt;/div>
+&lt;/div>
+&lt;/p>
+&lt;p>安卓下载地址：
+&lt;a
+href = "https://github.com/ankidroid/Anki-Android/releases"
+target="_blank" rel ="noopener"
+>Anki-Android · github&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/p>
+&lt;h2 id="相关命令">相关命令&lt;/h2>
+&lt;p>启动服务之后，我们需要新建用户以便在客户端登录时使用。&lt;/p>
+&lt;p>首先需要进入 docker 容器的终端：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="ln">1&lt;/span>docker &lt;span class="nb">exec&lt;/span> -it anki-container /bin/sh
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>命令格式：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="ln">1&lt;/span>./ankisyncctl.py &amp;lt;command&amp;gt; &lt;span class="o">[&lt;/span>&amp;lt;args&amp;gt;&lt;span class="o">]&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>可用的命令：&lt;/p>
+&lt;ul>
+&lt;li>增加一个新用户：&lt;code>./ankisyncctl.py adduser &amp;lt;username&amp;gt;&lt;/code>&lt;/li>
+&lt;li>删除一个用户：&lt;code>./ankisyncctl.py deluser &amp;lt;username&amp;gt;&lt;/code>&lt;/li>
+&lt;li>列出所有用户：&lt;code>./ankisyncctl.py lsuser&lt;/code>&lt;/li>
+&lt;li>修改密码：&lt;code>./ankisyncctl.py passwd &amp;lt;username&amp;gt;&lt;/code>&lt;/li>
+&lt;li>查看帮助：&lt;code>./ankisyncctl.py --help&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>示例：增加一个用户 userA&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="ln">1&lt;/span>./ankisyncctl.py adduser userA
+&lt;span class="ln">2&lt;/span>Enter password &lt;span class="k">for&lt;/span> userA:
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Basic Usage of Docker</title><link>https://example.com/2019-11-16/basic-usage-of-docker/</link><pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate><guid>https://example.com/2019-11-16/basic-usage-of-docker/</guid><description>
+&lt;h2 id="使用脚本快速安装">使用脚本快速安装&lt;/h2>
+&lt;p>&lt;strong>安装 Docker:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="ln">1&lt;/span>curl -fsSL https://get.docker.com -o get-docker.sh &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> sudo sh get-docker.sh
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>安装 docker-compose&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="ln">1&lt;/span>sudo curl -L &lt;span class="s2">&amp;#34;https://github.com/docker/compose/releases/download/1.22.0/docker-compose-&lt;/span>&lt;span class="k">$(&lt;/span>uname -s&lt;span class="k">)&lt;/span>&lt;span class="s2">-&lt;/span>&lt;span class="k">$(&lt;/span>uname -m&lt;span class="k">)&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> &lt;span class="se">\
+&lt;/span>&lt;span class="ln">2&lt;/span>&lt;span class="se">&lt;/span>-o /usr/local/bin/docker-compose
+&lt;span class="ln">3&lt;/span>
+&lt;span class="ln">4&lt;/span>&lt;span class="c1"># 给Docker Compose 执行权限&lt;/span>
+&lt;span class="ln">5&lt;/span>sudo chmod +x /usr/local/bin/docker-compose
+&lt;span class="ln">6&lt;/span>
+&lt;span class="ln">7&lt;/span>&lt;span class="c1"># 查看Docker和Docker Compose的版本&lt;/span>
+&lt;span class="ln">8&lt;/span>sudo docker version
+&lt;span class="ln">9&lt;/span>sudo docker-compose version
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="设置阿里云镜像">设置阿里云镜像&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="ln">1&lt;/span>sudo mkdir -p /etc/docker
+&lt;span class="ln">2&lt;/span>sudo tee /etc/docker/daemon.json &lt;span class="s">&amp;lt;&amp;lt;-&amp;#39;EOF&amp;#39;
+&lt;/span>&lt;span class="ln">3&lt;/span>&lt;span class="s">{
+&lt;/span>&lt;span class="ln">4&lt;/span>&lt;span class="s"> &amp;#34;registry-mirrors&amp;#34;: [&amp;#34;https://oojjt1xs.mirror.aliyuncs.com&amp;#34;]
+&lt;/span>&lt;span class="ln">5&lt;/span>&lt;span class="s">}
+&lt;/span>&lt;span class="ln">6&lt;/span>&lt;span class="s">EOF&lt;/span>
+&lt;span class="ln">7&lt;/span>sudo systemctl daemon-reload
+&lt;span class="ln">8&lt;/span>sudo systemctl restart docker
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>阿里云镜像源需要个人注册阿里云账号之后才能使用，这里我已经注册过了。&lt;/p>
+&lt;h3 id="三个概念">三个概念&lt;/h3>
+&lt;blockquote>
+&lt;p>Docker三个基本概念：Registry注册中心，Image镜像，Container容器&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Registry包含多个Repo（仓库）和Tag(标签)，从Registry下载Image的方式是pull &amp;lt;仓库名&amp;gt;:&amp;lt;标签名&amp;gt;，如pull ubuntu:16.04&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Image是一个静态概念，相当于面向对象中的类，类不能直接使用，需要实例化。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Container是一个动态概念，相当于面向对象中的实例化，启动镜像生成容器就是实例化类的过程。只有容器才能被用户使用。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;h3 id="查看命令">查看命令&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>命令&lt;/th>
+&lt;th>描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>docker images&lt;/code>&lt;/td>
+&lt;td>列出本地镜像&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>docker ps&lt;/code>&lt;/td>
+&lt;td>列出容器&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="创建容器">创建容器&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>创建一个新的容器，并进入交互模式的终端&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="ln">1&lt;/span>docker run -it centos:latest /bin/bash
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>后台运行容器，并设置端口映射&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="ln">1&lt;/span> docker run -d -p 3000:80 centos:latest
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>进入一个正在后台运行的容器&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="ln">1&lt;/span>docker attach &lt;span class="o">[&lt;/span>container-id&lt;span class="o">]&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;h3 id="退出容器">退出容器&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>退出容器&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="ln">1&lt;/span>&lt;span class="nb">exit&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>退出容器并保持容器后台运行&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="ln">1&lt;/span>Ctrl + p + q
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;h3 id="从容器创建新的镜像">从容器创建新的镜像&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>首先拿到容器 ID ，然后使用如下命令创建镜像：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="ln">1&lt;/span>docker commit -a &lt;span class="s2">&amp;#34;镜像作者名字&amp;#34;&lt;/span> -m &lt;span class="s2">&amp;#34;提交时的说明文字&amp;#34;&lt;/span> &lt;span class="o">[&lt;/span>container-id&lt;span class="o">]&lt;/span> &lt;span class="o">[&lt;/span>image-name&lt;span class="o">]&lt;/span>:&lt;span class="o">[&lt;/span>tag&lt;span class="o">]&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;h3 id="wordpress-启动方式">WordPress 启动方式&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>创建容器&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="ln">1&lt;/span> docker run -it -p 3000:80 -p 4000:8888 my_wp:v1 /bin/bash
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>软件启动&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="ln">1&lt;/span>/etc/init.d/nginx start
+&lt;span class="ln">2&lt;/span>
+&lt;span class="ln">3&lt;/span>/etc/init.d/mysqld start
+&lt;span class="ln">4&lt;/span>
+&lt;span class="ln">5&lt;/span>/etc/init.d/memcached start
+&lt;span class="ln">6&lt;/span>
+&lt;span class="ln">7&lt;/span>/etc/init.d/php-fpm-72 start
+&lt;span class="ln">8&lt;/span>
+&lt;span class="ln">9&lt;/span>/etc/init.d/bt start
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>退出容器，并保持容器在后台运行&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="ln">1&lt;/span> Ctrl + p + q
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;h2 id="相关文档">相关文档&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;a
+href = "http://www.runoob.com/docker/docker-command-manual.html"
+target="_blank" rel ="noopener"
+>Docker命令大全 - 菜鸟教程&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a
+href = "https://www.daocloud.io/mirror"
+target="_blank" rel ="noopener"
+>daocloud 镜像站&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a
+href = "https://www.yuque.com/grasilife/docker"
+target="_blank" rel ="noopener"
+>Docker — 从入门到实践(语雀)&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;/ul></description></item></channel></rss>

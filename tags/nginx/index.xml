@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>nginx on Clarity</title><link>https://example.com/tags/nginx/</link><description>Recent content in nginx on Clarity</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright © 2018-2021, wencaizhang and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Tue, 18 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/nginx/index.xml" rel="self" type="application/rss+xml"/><item><title>Nginx 常用配置备忘清单 | nginx-cheatsheet</title><link>https://example.com/2021-05-18/nginx-cheatsheet/</link><pubDate>Tue, 18 May 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-05-18/nginx-cheatsheet/</guid><description>
+&lt;p>作为软件开发工程师多多少少都该懂一些 nginx 的使用和配置，下面是 nginx 的几个经典应用场景下的配置写法，记录下来以防遗忘，用到的时候也可以直接过来拷贝。&lt;/p>
+&lt;h2 id="端口监听">端口监听&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-nginx" data-lang="nginx">&lt;span class="ln"> 1&lt;/span>&lt;span class="k">server&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 2&lt;/span> &lt;span class="c1"># Standard HTTP Protocol
+&lt;/span>&lt;span class="ln"> 3&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="c1"># 标准的 HTTP 协议
+&lt;/span>&lt;span class="ln"> 4&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kn">listen&lt;/span> &lt;span class="mi">80&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 5&lt;/span>
+&lt;span class="ln"> 6&lt;/span> &lt;span class="c1"># Standard HTTPS Protocol
+&lt;/span>&lt;span class="ln"> 7&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="c1"># 标准的 HTTPS 协议
+&lt;/span>&lt;span class="ln"> 8&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kn">listen&lt;/span> &lt;span class="mi">443&lt;/span> &lt;span class="s">ssl&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 9&lt;/span>
+&lt;span class="ln">10&lt;/span> &lt;span class="c1"># For http2
+&lt;/span>&lt;span class="ln">11&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kn">listen&lt;/span> &lt;span class="mi">443&lt;/span> &lt;span class="s">ssl&lt;/span> &lt;span class="s">http2&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">12&lt;/span>
+&lt;span class="ln">13&lt;/span> &lt;span class="c1"># Listen on 80 using IPv6
+&lt;/span>&lt;span class="ln">14&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="c1"># 使用 IPv6 监听 80 端口
+&lt;/span>&lt;span class="ln">15&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kn">listen&lt;/span> &lt;span class="s">[::]:80&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">16&lt;/span>
+&lt;span class="ln">17&lt;/span> &lt;span class="c1"># Listen only on using IPv6
+&lt;/span>&lt;span class="ln">18&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="c1"># 仅使用 IPv6 监听 80 端口
+&lt;/span>&lt;span class="ln">19&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kn">listen&lt;/span> &lt;span class="s">[::]:80&lt;/span> &lt;span class="s">ipv6only=on&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">20&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="访问日志">访问日志&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-nginx" data-lang="nginx">&lt;span class="ln">1&lt;/span>&lt;span class="k">server&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">2&lt;/span> &lt;span class="c1"># Relative or full path to log file
+&lt;/span>&lt;span class="ln">3&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="c1"># 为日志文件指定一个相对或绝对路径
+&lt;/span>&lt;span class="ln">4&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kn">access_log&lt;/span> &lt;span class="s">/path/to/file.log&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">5&lt;/span>
+&lt;span class="ln">6&lt;/span> &lt;span class="c1"># Turn &amp;#39;on&amp;#39; or &amp;#39;off&amp;#39;
+&lt;/span>&lt;span class="ln">7&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="c1"># 通过 &amp;#39;on&amp;#39; 或者 &amp;#39;off&amp;#39; 控制是否启用
+&lt;/span>&lt;span class="ln">8&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kn">access_log&lt;/span> &lt;span class="no">on&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">9&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="域名">域名&lt;/h2>
+&lt;p>指定域名和对应的网站根目录位置，&lt;code>server_name&lt;/code> 可以是域名、二级域名，也可以是 ip 地址。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-nginx" data-lang="nginx">&lt;span class="ln"> 1&lt;/span>&lt;span class="k">server&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 2&lt;/span> &lt;span class="c1"># Listen to yourdomain.com
+&lt;/span>&lt;span class="ln"> 3&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="c1"># 监听来自域名 yourdomain.com 的访问
+&lt;/span>&lt;span class="ln"> 4&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kn">server_name&lt;/span> &lt;span class="s">yourdomain.com&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 5&lt;/span>
+&lt;span class="ln"> 6&lt;/span> &lt;span class="c1"># Listen to multiple domains
+&lt;/span>&lt;span class="ln"> 7&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="c1"># 监听来自多个域名的访问
+&lt;/span>&lt;span class="ln"> 8&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kn">server_name&lt;/span> &lt;span class="s">yourdomain.com&lt;/span> &lt;span class="s">www.yourdomain.com&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 9&lt;/span>
+&lt;span class="ln">10&lt;/span> &lt;span class="c1"># Listen to all domains
+&lt;/span>&lt;span class="ln">11&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="c1"># 监听 yourdomain.com 的所有二级域名
+&lt;/span>&lt;span class="ln">12&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kn">server_name&lt;/span> &lt;span class="s">*.yourdomain.com&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">13&lt;/span>
+&lt;span class="ln">14&lt;/span> &lt;span class="c1"># Listen to all top-level domains
+&lt;/span>&lt;span class="ln">15&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="c1"># 监听所有 yourdomain 的顶级域名
+&lt;/span>&lt;span class="ln">16&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kn">server_name&lt;/span> &lt;span class="s">yourdomain.*&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">17&lt;/span>
+&lt;span class="ln">18&lt;/span> &lt;span class="c1"># Listen to unspecified Hostnames (Listens to IP address itself)
+&lt;/span>&lt;span class="ln">19&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="c1"># 不指定域名，监听自身 IP 的访问
+&lt;/span>&lt;span class="ln">20&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kn">server_name&lt;/span> &lt;span class="s">&amp;#34;&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">21&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="静态资源访问">静态资源访问&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-nginx" data-lang="nginx">&lt;span class="ln">1&lt;/span>&lt;span class="k">server&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">2&lt;/span> &lt;span class="kn">listen&lt;/span> &lt;span class="mi">80&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">3&lt;/span> &lt;span class="kn">server_name&lt;/span> &lt;span class="s">yourdomain.com&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">4&lt;/span>
+&lt;span class="ln">5&lt;/span> &lt;span class="kn">location&lt;/span> &lt;span class="s">/&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">6&lt;/span> &lt;span class="kn">root&lt;/span> &lt;span class="s">/path/to/website&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">7&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">8&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="重定向">重定向&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-nginx" data-lang="nginx">&lt;span class="ln">1&lt;/span>&lt;span class="k">server&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">2&lt;/span> &lt;span class="kn">listen&lt;/span> &lt;span class="mi">80&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">3&lt;/span> &lt;span class="kn">server_name&lt;/span> &lt;span class="s">www.yourdomain.com&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">4&lt;/span> &lt;span class="kn">return&lt;/span> &lt;span class="mi">301&lt;/span> &lt;span class="s">http://yourdomain.com&lt;/span>&lt;span class="nv">$request_uri&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">5&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-nginx" data-lang="nginx">&lt;span class="ln">1&lt;/span>&lt;span class="k">server&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">2&lt;/span> &lt;span class="kn">listen&lt;/span> &lt;span class="mi">80&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">3&lt;/span> &lt;span class="kn">server_name&lt;/span> &lt;span class="s">www.yourdomain.com&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">4&lt;/span>
+&lt;span class="ln">5&lt;/span> &lt;span class="kn">location&lt;/span> &lt;span class="s">/redirect-url&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">6&lt;/span> &lt;span class="kn">return&lt;/span> &lt;span class="mi">301&lt;/span> &lt;span class="s">http://otherdomain.com&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">7&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">8&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="反向代理">反向代理&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-nginx" data-lang="nginx">&lt;span class="ln"> 1&lt;/span>&lt;span class="k">server&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 2&lt;/span> &lt;span class="kn">listen&lt;/span> &lt;span class="mi">80&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 3&lt;/span> &lt;span class="kn">server_name&lt;/span> &lt;span class="s">yourdomain.com&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 4&lt;/span>
+&lt;span class="ln"> 5&lt;/span> &lt;span class="kn">location&lt;/span> &lt;span class="s">/&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 6&lt;/span> &lt;span class="kn">proxy_pass&lt;/span> &lt;span class="s">http://0.0.0.0:3000&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 7&lt;/span> &lt;span class="c1"># where 0.0.0.0:3000 is your application server (Ex: node.js) bound on 0.0.0.0 listening on port 3000
+&lt;/span>&lt;span class="ln"> 8&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln"> 9&lt;/span>
+&lt;span class="ln">10&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="负载均衡">负载均衡&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-nginx" data-lang="nginx">&lt;span class="ln"> 1&lt;/span>&lt;span class="k">upstream&lt;/span> &lt;span class="s">node_js&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 2&lt;/span> &lt;span class="kn">server&lt;/span> &lt;span class="n">0.0.0.0&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">3000&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 3&lt;/span> &lt;span class="kn">server&lt;/span> &lt;span class="n">0.0.0.0&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">4000&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 4&lt;/span> &lt;span class="kn">server&lt;/span> &lt;span class="mi">123&lt;/span>&lt;span class="s">.131.121.122&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 5&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln"> 6&lt;/span>
+&lt;span class="ln"> 7&lt;/span>&lt;span class="k">server&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 8&lt;/span> &lt;span class="kn">listen&lt;/span> &lt;span class="mi">80&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 9&lt;/span> &lt;span class="kn">server_name&lt;/span> &lt;span class="s">yourdomain.com&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">10&lt;/span>
+&lt;span class="ln">11&lt;/span> &lt;span class="kn">location&lt;/span> &lt;span class="s">/&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">12&lt;/span> &lt;span class="kn">proxy_pass&lt;/span> &lt;span class="s">http://node_js&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">13&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">14&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="ssl-证书">SSL 证书&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-nginx" data-lang="nginx">&lt;span class="ln"> 1&lt;/span>&lt;span class="k">server&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 2&lt;/span> &lt;span class="kn">listen&lt;/span> &lt;span class="mi">443&lt;/span> &lt;span class="s">ssl&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 3&lt;/span> &lt;span class="kn">server_name&lt;/span> &lt;span class="s">yourdomain.com&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 4&lt;/span>
+&lt;span class="ln"> 5&lt;/span> &lt;span class="kn">ssl&lt;/span> &lt;span class="no">on&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 6&lt;/span>
+&lt;span class="ln"> 7&lt;/span> &lt;span class="kn">ssl_certificate&lt;/span> &lt;span class="s">/path/to/cert.pem&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 8&lt;/span> &lt;span class="kn">ssl_certificate_key&lt;/span> &lt;span class="s">/path/to/privatekey.pem&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 9&lt;/span>
+&lt;span class="ln">10&lt;/span> &lt;span class="kn">ssl_stapling&lt;/span> &lt;span class="no">on&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">11&lt;/span> &lt;span class="kn">ssl_stapling_verify&lt;/span> &lt;span class="no">on&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">12&lt;/span> &lt;span class="kn">ssl_trusted_certificate&lt;/span> &lt;span class="s">/path/to/fullchain.pem&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">13&lt;/span>
+&lt;span class="ln">14&lt;/span> &lt;span class="kn">ssl_protocols&lt;/span> &lt;span class="s">TLSv1&lt;/span> &lt;span class="s">TLSv1.1&lt;/span> &lt;span class="s">TLSv1.2&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">15&lt;/span> &lt;span class="kn">ssl_session_timeout&lt;/span> &lt;span class="s">1h&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">16&lt;/span> &lt;span class="kn">ssl_session_cache&lt;/span> &lt;span class="s">shared:SSL:50m&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">17&lt;/span> &lt;span class="kn">add_header&lt;/span> &lt;span class="s">Strict-Transport-Security&lt;/span> &lt;span class="s">max-age=15768000&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">18&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln">19&lt;/span>
+&lt;span class="ln">20&lt;/span>&lt;span class="c1"># Permanent Redirect for HTTP to HTTPS
+&lt;/span>&lt;span class="ln">21&lt;/span>&lt;span class="c1"># 将 HTTP 访问永久重定向到 HTTPS
+&lt;/span>&lt;span class="ln">22&lt;/span>&lt;span class="c1">&lt;/span>&lt;span class="k">server&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">23&lt;/span> &lt;span class="kn">listen&lt;/span> &lt;span class="mi">80&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">24&lt;/span> &lt;span class="kn">server_name&lt;/span> &lt;span class="s">yourdomain.com&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">25&lt;/span> &lt;span class="kn">return&lt;/span> &lt;span class="mi">301&lt;/span> &lt;span class="s">https://&lt;/span>&lt;span class="nv">$host$request_uri&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">26&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="感谢">感谢&lt;/h2>
+&lt;p>文中用到的配置几乎都出自
+&lt;a
+href = "https://vishnu.hashnode.dev/nginx-cheatsheet"
+target="_blank" rel ="noopener"
+>&lt;a href="https://vishnu.hashnode.dev/nginx-cheatsheet">https://vishnu.hashnode.dev/nginx-cheatsheet&lt;/a>&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+这篇文章，在此基础上经过个人理解添加了一些解释说明，特此说明。&lt;/p></description></item><item><title>Nginx 的安装和基本命令 | Basic Usage of Nginx</title><link>https://example.com/2019-11-16/basic-usage-of-nginx/</link><pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate><guid>https://example.com/2019-11-16/basic-usage-of-nginx/</guid><description>
+&lt;h2 id="安装">安装&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="ln">1&lt;/span>&lt;span class="c1"># ubuntu&lt;/span>
+&lt;span class="ln">2&lt;/span>sudo apt install nginx -y
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="命令">命令&lt;/h2>
+&lt;h3 id="nginx命令">nginx 命令&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">描述&lt;/th>
+&lt;th style="text-align:left">命令&lt;/th>
+&lt;th style="text-align:left">命令二&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">启动&lt;/td>
+&lt;td style="text-align:left">&lt;code>sudo nginx&lt;/code>&lt;/td>
+&lt;td style="text-align:left">&lt;code>sudo /usr/sbin/nginx&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">停止&lt;/td>
+&lt;td style="text-align:left">&lt;code>sudo nginx -s stop&lt;/code>&lt;/td>
+&lt;td style="text-align:left">&lt;code>sudo /usr/sbin/nginx -s stop&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">重启&lt;/td>
+&lt;td style="text-align:left">&lt;code>sudo nginx -s restart&lt;/code>&lt;/td>
+&lt;td style="text-align:left">&lt;code>sudo /usr/sbin/nginx -s restart&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">重载配置文件&lt;/td>
+&lt;td style="text-align:left">&lt;code>sudo nginx -s reload&lt;/code>&lt;/td>
+&lt;td style="text-align:left">&lt;code>sudo /usr/sbin/nginx -s reload&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="nginx目录">nginx 目录&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">描述&lt;/th>
+&lt;th style="text-align:left">命令&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">nginx 安装目录&lt;/td>
+&lt;td style="text-align:left">&lt;code>/usr/sbin/nginx&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">默认网站根目录&lt;/td>
+&lt;td style="text-align:left">&lt;code>/usr/share/nginx/html&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">配置文件&lt;/td>
+&lt;td style="text-align:left">&lt;code>/etc/nginx/nginx.conf &lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="查找nginx安装目录的命令">查找 nginx 安装目录的命令&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">描述&lt;/th>
+&lt;th style="text-align:left">命令&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">查找 nginx 安装目录&lt;/td>
+&lt;td style="text-align:left">&lt;code>which nginx&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">查找 nginx 配置文件&lt;/td>
+&lt;td style="text-align:left">&lt;code>sudo find / -name nginx.conf&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">检测配置文件语法是否正确：&lt;/td>
+&lt;td style="text-align:left">&lt;code>sudo /usr/sbin/nginx -t&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="常见使用场景">常见使用场景&lt;/h2>
+&lt;h3 id="一-静态网站">(一) 静态网站&lt;/h3>
+&lt;p>指定域名和对应的网站根目录位置，&lt;code>server_name&lt;/code> 可以是域名、二级域名，也可以是 ip 地址。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="ln">1&lt;/span>server {
+&lt;span class="ln">2&lt;/span> listen 80;
+&lt;span class="ln">3&lt;/span> server_name demo.example.com;
+&lt;span class="ln">4&lt;/span> location / {
+&lt;span class="ln">5&lt;/span> root /www/demo/;
+&lt;span class="ln">6&lt;/span> index index.html index.htm;
+&lt;span class="ln">7&lt;/span> }
+&lt;span class="ln">8&lt;/span>}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="二-反向代理">(二) 反向代理&lt;/h3>
+&lt;p>场景：&lt;/p>
+&lt;ul>
+&lt;li>解决跨域问题，利用 nginx 来访问其他域名下的接口&lt;/li>
+&lt;li>当 docker 服务的端口映射到宿主机上某个端口（如 8080）时，可以设置二级域名代理 8080 端口。&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="ln"> 1&lt;/span>server {
+&lt;span class="ln"> 2&lt;/span> server_name docker.example.com;
+&lt;span class="ln"> 3&lt;/span> listen 80;
+&lt;span class="ln"> 4&lt;/span>
+&lt;span class="ln"> 5&lt;/span> location / {
+&lt;span class="ln"> 6&lt;/span> proxy_pass http://localhost:8000;
+&lt;span class="ln"> 7&lt;/span> proxy_set_header Host $host;
+&lt;span class="ln"> 8&lt;/span> proxy_set_header X-Forward-For $remote_addr;
+&lt;span class="ln"> 9&lt;/span> }
+&lt;span class="ln">10&lt;/span>}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="三-负载均衡">(三) 负载均衡&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="ln"> 1&lt;/span>upstream backend {
+&lt;span class="ln"> 2&lt;/span> server backend1.example.com weight=5;
+&lt;span class="ln"> 3&lt;/span> server backend2.example.com:8080;
+&lt;span class="ln"> 4&lt;/span> server unix:/tmp/backend3;
+&lt;span class="ln"> 5&lt;/span>}
+&lt;span class="ln"> 6&lt;/span>
+&lt;span class="ln"> 7&lt;/span>server {
+&lt;span class="ln"> 8&lt;/span> location / {
+&lt;span class="ln"> 9&lt;/span> proxy_pass http://backend;
+&lt;span class="ln">10&lt;/span> }
+&lt;span class="ln">11&lt;/span>}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="一些学习资源">一些学习资源&lt;/h2>
+&lt;p>
+&lt;a
+href = "http://www.nginx.cn/doc/"
+target="_blank" rel ="noopener"
+>Nginx中文文档&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/p></description></item></channel></rss>

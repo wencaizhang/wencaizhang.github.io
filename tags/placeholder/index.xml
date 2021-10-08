@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>placeholder on Clarity</title><link>https://example.com/tags/placeholder/</link><description>Recent content in placeholder on Clarity</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright © 2018-2021, wencaizhang and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Sun, 06 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/placeholder/index.xml" rel="self" type="application/rss+xml"/><item><title>设置input的placeholder的字体样式</title><link>https://example.com/2021-06-06/set-styles-of-input-placeholder/</link><pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-06-06/set-styles-of-input-placeholder/</guid><description>
+&lt;p>设置input占位符的样式&lt;/p>
+&lt;p>HTML 代码：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="ln">1&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">input&lt;/span> &lt;span class="na">type&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;text&amp;#34;&lt;/span> &lt;span class="na">placeholder&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;请设置用户名&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>CSS 代码：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-css" data-lang="css">&lt;span class="ln"> 1&lt;/span>&lt;span class="nt">input&lt;/span>&lt;span class="p">::&lt;/span>&lt;span class="nd">-webkit-input-placeholder&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c">/* Chrome/Opera/Safari */&lt;/span>
+&lt;span class="ln"> 2&lt;/span> &lt;span class="k">color&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">red&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 3&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln"> 4&lt;/span>&lt;span class="nt">input&lt;/span>&lt;span class="p">::&lt;/span>&lt;span class="nd">-moz-placeholder&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c">/* Firefox 19+ */&lt;/span>
+&lt;span class="ln"> 5&lt;/span> &lt;span class="k">color&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">red&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 6&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln"> 7&lt;/span>&lt;span class="nt">input&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="nd">-ms-input-placeholder&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c">/* IE 10+ */&lt;/span>
+&lt;span class="ln"> 8&lt;/span> &lt;span class="k">color&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">red&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 9&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln">10&lt;/span>&lt;span class="nt">input&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="nd">-moz-placeholder&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c">/* Firefox 18- */&lt;/span>
+&lt;span class="ln">11&lt;/span> &lt;span class="k">color&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">red&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">12&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>示例：&lt;/p>
+&lt;input type="text" placeholder="请设置用户名">
+&lt;style>
+input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+color: red;
+}
+input::-moz-placeholder { /* Firefox 19+ */
+color: red;
+}
+input:-ms-input-placeholder { /* IE 10+ */
+color: red;
+}
+input:-moz-placeholder { /* Firefox 18- */
+color: red;
+}
+&lt;/style></description></item></channel></rss>

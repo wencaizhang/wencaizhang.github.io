@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>JavaScript on Clarity</title><link>https://example.com/tags/javascript/</link><description>Recent content in JavaScript on Clarity</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright © 2018-2021, wencaizhang and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Wed, 27 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/javascript/index.xml" rel="self" type="application/rss+xml"/><item><title>前端创建并下载文件</title><link>https://example.com/2021-01-27/download-file/</link><pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-01-27/download-file/</guid><description>
+&lt;p>more 利用 HTML5 原生的 &lt;code>download&lt;/code> 属性来下载文本信息&lt;/p>
+&lt;p>代码如下：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln"> 1&lt;/span>&lt;span class="cm">/**
+&lt;/span>&lt;span class="ln"> 2&lt;/span>&lt;span class="cm"> * 前端创建并下载文件
+&lt;/span>&lt;span class="ln"> 3&lt;/span>&lt;span class="cm"> * @param {String} content 文件内容
+&lt;/span>&lt;span class="ln"> 4&lt;/span>&lt;span class="cm"> * @param {String} filename 文件名称
+&lt;/span>&lt;span class="ln"> 5&lt;/span>&lt;span class="cm"> * @param {String} MIME
+&lt;/span>&lt;span class="ln"> 6&lt;/span>&lt;span class="cm"> * MIME类型参考手册 http://www.w3school.com.cn/media/media_mimeref.asp
+&lt;/span>&lt;span class="ln"> 7&lt;/span>&lt;span class="cm"> */&lt;/span>
+&lt;span class="ln"> 8&lt;/span>&lt;span class="kr">export&lt;/span> &lt;span class="kd">function&lt;/span> &lt;span class="nx">downloadFile&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">content&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">filename&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">MIME&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;application/octet-stream&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 9&lt;/span> &lt;span class="c1">// 创建隐藏的可下载链接
+&lt;/span>&lt;span class="ln">10&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">eleLink&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">document&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">createElement&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;a&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">11&lt;/span> &lt;span class="nx">eleLink&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">download&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">filename&lt;/span>
+&lt;span class="ln">12&lt;/span> &lt;span class="nx">eleLink&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">style&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">display&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;none&amp;#39;&lt;/span>
+&lt;span class="ln">13&lt;/span>
+&lt;span class="ln">14&lt;/span> &lt;span class="c1">// 字符内容转变成blob地址
+&lt;/span>&lt;span class="ln">15&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">blob&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="nx">Blob&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="nx">content&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">type&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="nx">MIME&lt;/span> &lt;span class="p">})&lt;/span>
+&lt;span class="ln">16&lt;/span> &lt;span class="nx">eleLink&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">href&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">URL&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">createObjectURL&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">blob&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">17&lt;/span>
+&lt;span class="ln">18&lt;/span> &lt;span class="c1">// 触发点击事件，然后移除
+&lt;/span>&lt;span class="ln">19&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="nb">document&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">body&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">appendChild&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">eleLink&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">20&lt;/span> &lt;span class="nx">eleLink&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">click&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;span class="ln">21&lt;/span> &lt;span class="nb">document&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">body&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">removeChild&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">eleLink&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">22&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>其中，参数 &lt;code>content&lt;/code> 指需要下载的文本或字符串内容，&lt;code>filename&lt;/code> 指下载到系统中的文件名称。&lt;/p>
+&lt;p>代码来源：
+&lt;a
+href = "https://www.zhangxinxu.com/wordpress/2017/07/js-text-string-download-as-html-json-file/"
+target="_blank" rel ="noopener"
+>JS前端创建html或json文件并浏览器导出下载&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/p></description></item><item><title>将正常时间格式转化为时间戳</title><link>https://example.com/2021-01-27/transform-timestamp/</link><pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-01-27/transform-timestamp/</guid><description>
+&lt;p>使用 JavaScript 内置方法将正常时间格式转化为时间戳&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln"> 1&lt;/span>&lt;span class="cm">/**
+&lt;/span>&lt;span class="ln"> 2&lt;/span>&lt;span class="cm"> * 将正常时间格式转化为时间戳
+&lt;/span>&lt;span class="ln"> 3&lt;/span>&lt;span class="cm"> * @param {String} time [正常时间格式，如：2019-04-01 13:10:10]
+&lt;/span>&lt;span class="ln"> 4&lt;/span>&lt;span class="cm"> */&lt;/span>
+&lt;span class="ln"> 5&lt;/span>&lt;span class="kr">export&lt;/span> &lt;span class="kd">function&lt;/span> &lt;span class="nx">getTimestamp&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">time&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 6&lt;/span> &lt;span class="c1">// 没有对 time 做合法性校验
+&lt;/span>&lt;span class="ln"> 7&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="c1">// 假设传入的 time 都是合法的时间格式：2019-04-01 13:10:10
+&lt;/span>&lt;span class="ln"> 8&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">date&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">time&lt;/span> &lt;span class="o">?&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="nb">Date&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">time&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">replace&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sr">/-/g&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;/&amp;#39;&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="o">:&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="nb">Date&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;span class="ln"> 9&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">timestamp&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">date&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">getTime&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="c1">// 13 位数字，精确到毫秒
+&lt;/span>&lt;span class="ln">10&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="nx">timestamp&lt;/span>
+&lt;span class="ln">11&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>检测设备类型</title><link>https://example.com/2021-01-27/detect-device/</link><pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-01-27/detect-device/</guid><description>
+&lt;p>在开发移动端网站时经常需要检查用户端设备类型，以便做出不同的调整。&lt;/p>
+&lt;h2 id="方式一检测手机平板和pc">方式一、检测手机平板和PC&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln"> 1&lt;/span>&lt;span class="kd">function&lt;/span> &lt;span class="nx">detectDevice&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 2&lt;/span> &lt;span class="kd">var&lt;/span> &lt;span class="nx">isMobile&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">isTablet&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">isLaptop&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 3&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nb">window&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">innerWidth&lt;/span> &lt;span class="o">&amp;lt;=&lt;/span> &lt;span class="mi">425&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 4&lt;/span> &lt;span class="nx">isMobile&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">true&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 5&lt;/span> &lt;span class="nx">isTablet&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 6&lt;/span> &lt;span class="nx">isLaptop&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 7&lt;/span> &lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nb">window&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">innerWidth&lt;/span> &lt;span class="o">&amp;lt;=&lt;/span> &lt;span class="mi">768&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 8&lt;/span> &lt;span class="nx">isMobile&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 9&lt;/span> &lt;span class="nx">isTablet&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">true&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">10&lt;/span> &lt;span class="nx">isLaptop&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">11&lt;/span> &lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">12&lt;/span> &lt;span class="nx">isMobile&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">13&lt;/span> &lt;span class="nx">isTablet&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">14&lt;/span> &lt;span class="nx">isLaptop&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">true&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">15&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">16&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln">17&lt;/span>&lt;span class="nx">detectDevice&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="判断是否微信浏览器">判断是否微信浏览器&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln">1&lt;/span>&lt;span class="kd">function&lt;/span> &lt;span class="nx">isWeChat&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">2&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">ua&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">navigator&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">userAgent&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">toLowerCase&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;span class="ln">3&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="nx">ua&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">match&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sr">/MicroMessenger/i&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s2">&amp;#34;micromessenger&amp;#34;&lt;/span>
+&lt;span class="ln">4&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>计算传入的时间戳和当前时间相差了多久</title><link>https://example.com/2021-01-27/get-time-ago/</link><pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-01-27/get-time-ago/</guid><description>
+&lt;p>某些时候我们需要展示某个时间点相差当前时刻多久，例如“一天前”，“一个月前”等。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln"> 1&lt;/span>&lt;span class="cm">/**
+&lt;/span>&lt;span class="ln"> 2&lt;/span>&lt;span class="cm"> * 计算传入的时间戳和当前时间相差了多久
+&lt;/span>&lt;span class="ln"> 3&lt;/span>&lt;span class="cm"> * @param {Number} timestamp [时间戳]
+&lt;/span>&lt;span class="ln"> 4&lt;/span>&lt;span class="cm"> */&lt;/span>
+&lt;span class="ln"> 5&lt;/span>&lt;span class="kr">export&lt;/span> &lt;span class="kd">function&lt;/span> &lt;span class="nx">getTimeDiff&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">timestamp&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 6&lt;/span> &lt;span class="c1">// 如果精确到毫秒，时间戳是 13 位数字
+&lt;/span>&lt;span class="ln"> 7&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="c1">// 这里按照秒来计算，需要将毫秒转换为秒
+&lt;/span>&lt;span class="ln"> 8&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">timestamp&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mi">10&lt;/span> &lt;span class="o">**&lt;/span> &lt;span class="mi">12&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 9&lt;/span> &lt;span class="nx">timestamp&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">timestamp&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="mi">1000&lt;/span>
+&lt;span class="ln">10&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">11&lt;/span>
+&lt;span class="ln">12&lt;/span> &lt;span class="kd">var&lt;/span> &lt;span class="nx">currentStamptime&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">Date&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">parse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">new&lt;/span> &lt;span class="nb">Date&lt;/span>&lt;span class="p">())&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="mi">1000&lt;/span>
+&lt;span class="ln">13&lt;/span> &lt;span class="kd">var&lt;/span> &lt;span class="nx">agoAt&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;刚刚&amp;#39;&lt;/span>
+&lt;span class="ln">14&lt;/span> &lt;span class="kd">var&lt;/span> &lt;span class="nx">diff&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">currentStamptime&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="nx">timestamp&lt;/span>
+&lt;span class="ln">15&lt;/span> &lt;span class="kd">var&lt;/span> &lt;span class="nx">points&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;span class="ln">16&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">value&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">365&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mi">24&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mi">60&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mi">60&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">suffix&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;年前&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">max&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">2&lt;/span> &lt;span class="p">},&lt;/span>
+&lt;span class="ln">17&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">value&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">30&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mi">24&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mi">60&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mi">60&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">suffix&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;月前&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">max&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">11&lt;/span> &lt;span class="p">},&lt;/span>
+&lt;span class="ln">18&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">value&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">7&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mi">24&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mi">60&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mi">60&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">suffix&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;周前&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">max&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">4&lt;/span> &lt;span class="p">},&lt;/span>
+&lt;span class="ln">19&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">value&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">24&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mi">60&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mi">60&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">suffix&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;天前&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">max&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">6&lt;/span> &lt;span class="p">},&lt;/span>
+&lt;span class="ln">20&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">value&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">60&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mi">60&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">suffix&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;小时前&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">max&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">23&lt;/span> &lt;span class="p">},&lt;/span>
+&lt;span class="ln">21&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">value&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">10&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mi">60&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">suffix&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;0分钟前&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">max&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">5&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">22&lt;/span> &lt;span class="p">]&lt;/span>
+&lt;span class="ln">23&lt;/span>
+&lt;span class="ln">24&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="kd">var&lt;/span> &lt;span class="nx">i&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="nx">i&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="nx">points&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">length&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="nx">i&lt;/span>&lt;span class="o">++&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">25&lt;/span> &lt;span class="kd">var&lt;/span> &lt;span class="nx">item&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">points&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nx">i&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;span class="ln">26&lt;/span> &lt;span class="kd">var&lt;/span> &lt;span class="nx">mode&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">Math&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">floor&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">diff&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="nx">item&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">value&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">27&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">mode&lt;/span> &lt;span class="o">&amp;gt;=&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">28&lt;/span> &lt;span class="nx">agoAt&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">Math&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">min&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">mode&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">item&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">max&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nx">item&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">suffix&lt;/span>
+&lt;span class="ln">29&lt;/span> &lt;span class="k">break&lt;/span>
+&lt;span class="ln">30&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">31&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">32&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="nx">agoAt&lt;/span>
+&lt;span class="ln">33&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>转换存储容量大小</title><link>https://example.com/2021-01-27/transform-size/</link><pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-01-27/transform-size/</guid><description>
+&lt;p>我们知道存储容量好几个不同的单位，如 KB、MB、GB 等等。&lt;/p>
+&lt;p>而在反映一块硬盘的具体容量时，总是需要根据其实际大小选用合适的单位，例如我有一块 500GB 的硬盘和一根 4GB 的内存条，就不能说成 0.5GB 的硬盘和 4000MB 的内存条。&lt;/p>
+&lt;p>因此，我们需要一个函数来将一个容量转换为合适的单位来表示&lt;/p>
+&lt;p>转换存储容量大小&lt;/p>
+&lt;p>value 应当是以 b 位单位的
+小于 1 KB，则转化成 B
+小于 1 MB，则转化成 KB
+小于 1 GB，则转化成 MB
+以此类推，目前最大单位 PB
+size: 单位大小，这里是 1000&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln"> 1&lt;/span>&lt;span class="kr">export&lt;/span> &lt;span class="kd">function&lt;/span> &lt;span class="nx">formatStorageSize&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">currValue&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">unit&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;B&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">size&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">1024&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 2&lt;/span>
+&lt;span class="ln"> 3&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">unites&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;B&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;KB&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;MB&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;GB&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;TB&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;PB&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;span class="ln"> 4&lt;/span>
+&lt;span class="ln"> 5&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="o">!&lt;/span>&lt;span class="nx">unites&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">includes&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">unit&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 6&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="nb">Error&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;请输入标准的存储单位&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln"> 7&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln"> 8&lt;/span>
+&lt;span class="ln"> 9&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">powSize&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">n&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">10&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">max&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">unites&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">length&lt;/span>
+&lt;span class="ln">11&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="nx">max&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="nx">n&lt;/span> &lt;span class="o">?&lt;/span> &lt;span class="nb">Math&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">pow&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">size&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">n&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">:&lt;/span> &lt;span class="kc">Infinity&lt;/span>
+&lt;span class="ln">12&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">13&lt;/span>
+&lt;span class="ln">14&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">unitesTable&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">unites&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">map&lt;/span>&lt;span class="p">((&lt;/span>&lt;span class="nx">unit&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">index&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">15&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">16&lt;/span> &lt;span class="nx">suffix&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="nx">unit&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="ln">17&lt;/span> &lt;span class="nx">minValue&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="nx">powSize&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">index&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;span class="ln">18&lt;/span> &lt;span class="nx">maxValue&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="nx">powSize&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">index&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">19&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">20&lt;/span> &lt;span class="p">})&lt;/span>
+&lt;span class="ln">21&lt;/span>
+&lt;span class="ln">22&lt;/span> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">unitesTable&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">23&lt;/span>
+&lt;span class="ln">24&lt;/span> &lt;span class="c1">// 先恢复到以 B 为单位然后进行计算
+&lt;/span>&lt;span class="ln">25&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">value&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">powSize&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">unites&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">indexOf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">unit&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="nx">currValue&lt;/span>
+&lt;span class="ln">26&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">suffix&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">minValue&lt;/span> &lt;span class="p">}&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">unitesTable&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">find&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">item&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="nx">item&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">maxValue&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="nx">value&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">27&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">ret&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">value&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="nx">minValue&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">toFixed&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s1">&amp;#39; &amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nx">suffix&lt;/span>
+&lt;span class="ln">28&lt;/span>
+&lt;span class="ln">29&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="nx">ret&lt;/span>
+&lt;span class="ln">30&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="测试代码">测试代码&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln">1&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>闪耀你的div</title><link>https://example.com/2021-01-27/flash/</link><pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-01-27/flash/</guid><description>
+&lt;p>想让你的网页可以 blingbling 地闪耀吗？&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-css" data-lang="css">&lt;span class="ln"> 1&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">flash-wrap&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 2&lt;/span> &lt;span class="k">position&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">relative&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 3&lt;/span> &lt;span class="k">overflow&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">hidden&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 4&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln"> 5&lt;/span>
+&lt;span class="ln"> 6&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">flash-wrap&lt;/span>&lt;span class="p">::&lt;/span>&lt;span class="nd">after&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 7&lt;/span> &lt;span class="k">content&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 8&lt;/span> &lt;span class="k">position&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">absolute&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 9&lt;/span> &lt;span class="k">left&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">-100&lt;/span>&lt;span class="kt">%&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">10&lt;/span> &lt;span class="k">top&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">11&lt;/span> &lt;span class="k">width&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">100&lt;/span>&lt;span class="kt">%&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">12&lt;/span> &lt;span class="k">height&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">100&lt;/span>&lt;span class="kt">%&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">13&lt;/span> &lt;span class="k">transform&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nf">skewx&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">-25&lt;/span>&lt;span class="kt">deg&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="ln">14&lt;/span> &lt;span class="k">background-image&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;span class="ln">15&lt;/span> &lt;span class="kp">-webkit-&lt;/span>&lt;span class="nb">linear-gradient&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="kt">deg&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nb">rgba&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">255&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">255&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">255&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;span class="ln">16&lt;/span> &lt;span class="nb">rgba&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">255&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">255&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">255&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">.5&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;span class="ln">17&lt;/span> &lt;span class="nb">rgba&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">255&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">255&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">255&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">));&lt;/span>
+&lt;span class="ln">18&lt;/span> &lt;span class="k">z-index&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">10&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">19&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln">20&lt;/span>
+&lt;span class="ln">21&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">flash-wrap&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="nd">hover&lt;/span>&lt;span class="p">::&lt;/span>&lt;span class="nd">after&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">22&lt;/span> &lt;span class="k">animation&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">flash&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="kt">s&lt;/span> &lt;span class="kc">ease&lt;/span> &lt;span class="kc">infinite&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">23&lt;/span> &lt;span class="k">animation-delay&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mf">.5&lt;/span>&lt;span class="kt">s&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">24&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln">25&lt;/span>
+&lt;span class="ln">26&lt;/span>&lt;span class="p">@&lt;/span>&lt;span class="k">keyframes&lt;/span> &lt;span class="nt">flash&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">27&lt;/span> &lt;span class="nt">0&lt;/span>&lt;span class="o">%&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">28&lt;/span> &lt;span class="k">left&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">-100&lt;/span>&lt;span class="kt">%&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">29&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">30&lt;/span>
+&lt;span class="ln">31&lt;/span> &lt;span class="nt">100&lt;/span>&lt;span class="o">%&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">32&lt;/span> &lt;span class="k">left&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">100&lt;/span>&lt;span class="kt">%&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">33&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">34&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>欢迎提示语分享</title><link>https://example.com/2020-12-29/welcome-message/</link><pubDate>Tue, 29 Dec 2020 00:00:00 +0000</pubDate><guid>https://example.com/2020-12-29/welcome-message/</guid><description>
+&lt;p>当用户登录你的系统时，如果能够给出一个友好有趣的提示语，想必更能让你的用户感受到开发者的用心。&lt;/p>
+&lt;p>今天分享一个当用户登入系统的友好提示语：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln"> 1&lt;/span>&lt;span class="kd">function&lt;/span> &lt;span class="nx">timeFix&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 2&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">time&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="nb">Date&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;span class="ln"> 3&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">hour&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">time&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">getHours&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;span class="ln"> 4&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">timeMap&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 5&lt;/span> &lt;span class="mi">9&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;早上好&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="ln"> 6&lt;/span> &lt;span class="mi">11&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;上午好&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="ln"> 7&lt;/span> &lt;span class="mi">13&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;中午好&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="ln"> 8&lt;/span> &lt;span class="mi">20&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;下午好&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="ln"> 9&lt;/span> &lt;span class="mi">24&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;晚上好&amp;#39;&lt;/span>
+&lt;span class="ln">10&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">11&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">key&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">Object&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">keys&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">timeMap&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">find&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">key&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="nx">hour&lt;/span> &lt;span class="o">&amp;lt;=&lt;/span> &lt;span class="nx">key&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">12&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="nx">timeMap&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nx">key&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;span class="ln">13&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln">14&lt;/span>
+&lt;span class="ln">15&lt;/span>&lt;span class="kd">function&lt;/span> &lt;span class="nx">welcome&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">16&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">arr&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;休息一会儿吧&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;准备吃什么呢?&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;要不要打一把 DOTA&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;我猜你可能累了&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;span class="ln">17&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">index&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">Math&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">floor&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">Math&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">random&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="nx">arr&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">length&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">18&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="nx">arr&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nx">index&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;span class="ln">19&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;button id="welcome-btn" class="ui-button" data-type="success" width="100%">点我试试&lt;/button>&lt;/p>
+&lt;script>
+function timeFix () {
+const time = new Date()
+const hour = time.getHours()
+const timeMap = {
+9: '早上好',
+11: '上午好',
+13: '中午好',
+20: '下午好',
+24: '晚上好'
+}
+const key = Object.keys(timeMap).find(key => hour &lt;= key)
+return timeMap[key]
+}
+function welcome () {
+const arr = ['休息一会儿吧', '准备吃什么呢?', '要不要打一把 DOTA', '我猜你可能累了']
+const index = Math.floor(Math.random() * arr.length)
+return arr[index]
+}
+function handleClick () {
+const msg = `${timeFix()}, ${welcome()}`
+console.log(msg)
+if (LightTip) {
+new LightTip().success(msg)
+};
+}
+// handleClick()
+document.getElementById('welcome-btn').addEventListener('click', handleClick)
+&lt;/script></description></item><item><title>总结 JavaScript 中的 this 指向问题</title><link>https://example.com/2019-09-29/this-in-javascript/</link><pubDate>Sun, 29 Sep 2019 00:00:00 +0000</pubDate><guid>https://example.com/2019-09-29/this-in-javascript/</guid><description>
+&lt;p>初学 JavaScript 的时候，时常对于代码中 &lt;code>this&lt;/code> 的值感到困惑，因为 JavaScript 中的 &lt;code>this&lt;/code> 的值总是不确定的，每次都要将 &lt;code>this&lt;/code> 的值打印出来才能放心。&lt;/p>
+&lt;p>实际上 &lt;code>this&lt;/code> 具体指向哪个对象是在函数运行时的环境动态绑定的，而非函数被声明时的环境。&lt;/p>
+&lt;p>尽管如此，总还是有规律可循的，我们可以将 &lt;code>this&lt;/code> 的场景大致分为下面 5 种：&lt;/p>
+&lt;ul>
+&lt;li>作为普通函数调用&lt;/li>
+&lt;li>作为对象的方法调用&lt;/li>
+&lt;li>作为构造器调用&lt;/li>
+&lt;li>通过 &lt;code>call&lt;/code> 和 &lt;code>apply&lt;/code> 调用&lt;/li>
+&lt;li>箭头函数&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>在 ES6 标准新增的箭头函数中的 &lt;code>this&lt;/code> 是由被声明的环境即上下文来确定的。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="情况一作为普通函数调用">情况一：作为普通函数调用&lt;/h2>
+&lt;p>这可能是我们学习过程中最先接触到的一种函数类型。&lt;/p>
+&lt;p>&lt;strong>1) 普通函数：&lt;/strong>&lt;/p>
+&lt;p>当函数作为普通函数或者匿名函数调用时，&lt;code>this&lt;/code> 总是指向全局对象，在浏览器中这个全局对象是 &lt;code>window&lt;/code>，而在 nodejs 中全局对象是 &lt;code>global&lt;/code>，这里讨论的是浏览器端，所有代码都可以在 chrome 开发者工具的 console 面板中执行。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln">1&lt;/span>&lt;span class="nb">window&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">name&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;globalName&amp;#39;&lt;/span>
+&lt;span class="ln">2&lt;/span>
+&lt;span class="ln">3&lt;/span>&lt;span class="kd">function&lt;/span> &lt;span class="nx">printName1&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">4&lt;/span> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">this&lt;/span> &lt;span class="o">===&lt;/span> &lt;span class="nb">window&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">5&lt;/span> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">name&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">6&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln">7&lt;/span>&lt;span class="nx">printName1&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;span class="ln">8&lt;/span>&lt;span class="c1">// true
+&lt;/span>&lt;span class="ln">9&lt;/span>&lt;span class="c1">// &amp;#34;globalName&amp;#34;
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>ES5 规范提出了「严格模式」，启用方式是在整个脚本文件第一行或者函数内第一行添加一条语句 &lt;code>'use strict'&lt;/code> 即可开启严格模式。&lt;/p>
+&lt;p>如果启用「严格模式」，那么 &lt;code>this&lt;/code> 就不再是指向全局对象，而是 &lt;code>undefined&lt;/code> 。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln">1&lt;/span>&lt;span class="kd">function&lt;/span> &lt;span class="nx">printName2&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">2&lt;/span> &lt;span class="s2">&amp;#34;use strict&amp;#34;&lt;/span> &lt;span class="c1">// 启用严格模式
+&lt;/span>&lt;span class="ln">3&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">this&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1">// undefined
+&lt;/span>&lt;span class="ln">4&lt;/span>&lt;span class="c1">&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln">5&lt;/span>
+&lt;span class="ln">6&lt;/span>&lt;span class="nx">printName2&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>2) 匿名函数：&lt;/strong>&lt;/p>
+&lt;p>匿名函数自执行，这种形式封装公用库的时候最常见：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln">1&lt;/span>&lt;span class="nb">window&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">name&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;globalName&amp;#39;&lt;/span>
+&lt;span class="ln">2&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kd">function&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">3&lt;/span> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">this&lt;/span> &lt;span class="o">===&lt;/span> &lt;span class="nb">window&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1">// true
+&lt;/span>&lt;span class="ln">4&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">name&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1">// &amp;#34;globalName&amp;#34;
+&lt;/span>&lt;span class="ln">5&lt;/span>&lt;span class="c1">&lt;/span>&lt;span class="p">})()&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>和普通函数一样，匿名函数中的 &lt;code>this&lt;/code> 也是指向全局对象。&lt;/p>
+&lt;p>作为参数的匿名函数：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln"> 1&lt;/span>&lt;span class="nb">window&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">name&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;globalName&amp;#39;&lt;/span>
+&lt;span class="ln"> 2&lt;/span>
+&lt;span class="ln"> 3&lt;/span>&lt;span class="nx">setTimeout&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kd">function&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 4&lt;/span> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">this&lt;/span> &lt;span class="o">===&lt;/span> &lt;span class="nb">window&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1">// true
+&lt;/span>&lt;span class="ln"> 5&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">name&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1">// &amp;#34;globalName&amp;#34;
+&lt;/span>&lt;span class="ln"> 6&lt;/span>&lt;span class="c1">&lt;/span>&lt;span class="p">},&lt;/span> &lt;span class="mi">100&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln"> 7&lt;/span>
+&lt;span class="ln"> 8&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">].&lt;/span>&lt;span class="nx">forEach&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kd">function&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">item&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 9&lt;/span> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">item&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">name&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">10&lt;/span> &lt;span class="c1">// 1 &amp;#34;globalName&amp;#34;
+&lt;/span>&lt;span class="ln">11&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="c1">// 2 &amp;#34;globalName&amp;#34;
+&lt;/span>&lt;span class="ln">12&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="c1">// 3 &amp;#34;globalName&amp;#34;
+&lt;/span>&lt;span class="ln">13&lt;/span>&lt;span class="c1">&lt;/span>&lt;span class="p">})&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="情况二作为对象的方法调用">情况二：作为对象的方法调用&lt;/h2>
+&lt;p>当函数作为对象当属性方法调用时，&lt;code>this&lt;/code> 总指向这个对象。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln">1&lt;/span>&lt;span class="kd">var&lt;/span> &lt;span class="nx">obj&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">2&lt;/span> &lt;span class="nx">name&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;obj&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="ln">3&lt;/span> &lt;span class="nx">printName&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="kd">function&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">4&lt;/span> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">this&lt;/span> &lt;span class="o">===&lt;/span> &lt;span class="nx">obj&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1">// true
+&lt;/span>&lt;span class="ln">5&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">name&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1">// &amp;#34;obj&amp;#34;
+&lt;/span>&lt;span class="ln">6&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">7&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln">8&lt;/span>
+&lt;span class="ln">9&lt;/span>&lt;span class="nx">obj&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">printName&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>但是如果一个对象的属性方法又赋值给了其他变量，那么 &lt;code>this&lt;/code> 将发生变化，其指向只有在函数执行那一刻才能确定。例如：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln"> 1&lt;/span>&lt;span class="kd">var&lt;/span> &lt;span class="nx">obj&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 2&lt;/span> &lt;span class="nx">name&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;obj&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="ln"> 3&lt;/span> &lt;span class="nx">printName&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="kd">function&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 4&lt;/span> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">this&lt;/span> &lt;span class="o">===&lt;/span> &lt;span class="nx">obj&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1">// true
+&lt;/span>&lt;span class="ln"> 5&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">name&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1">// &amp;#34;obj&amp;#34;
+&lt;/span>&lt;span class="ln"> 6&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln"> 7&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln"> 8&lt;/span>
+&lt;span class="ln"> 9&lt;/span>&lt;span class="kd">var&lt;/span> &lt;span class="nx">myPrintName&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">obj&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">printName&lt;/span>
+&lt;span class="ln">10&lt;/span>&lt;span class="nb">window&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">name&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;globalName&amp;#39;&lt;/span>
+&lt;span class="ln">11&lt;/span>
+&lt;span class="ln">12&lt;/span>&lt;span class="nx">myPrintName&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;span class="ln">13&lt;/span>&lt;span class="c1">// false
+&lt;/span>&lt;span class="ln">14&lt;/span>&lt;span class="c1">// &amp;#34;globalName&amp;#34;
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>当 &lt;code>myPrintName&lt;/code> 执行时，就要按照普通函数来判断 &lt;code>this&lt;/code> 指向了。&lt;/p>
+&lt;p>再来一个例子：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln"> 1&lt;/span>&lt;span class="kd">var&lt;/span> &lt;span class="nx">obj&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 2&lt;/span> &lt;span class="nx">name&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;obj&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="ln"> 3&lt;/span> &lt;span class="nx">printName&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="kd">function&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 4&lt;/span> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">this&lt;/span> &lt;span class="o">===&lt;/span> &lt;span class="nx">obj&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1">// true
+&lt;/span>&lt;span class="ln"> 5&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">name&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1">// &amp;#34;obj&amp;#34;
+&lt;/span>&lt;span class="ln"> 6&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln"> 7&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln"> 8&lt;/span>
+&lt;span class="ln"> 9&lt;/span>&lt;span class="kd">var&lt;/span> &lt;span class="nx">obj2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">10&lt;/span> &lt;span class="nx">name&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;obj2&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="ln">11&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln">12&lt;/span>&lt;span class="nx">obj2&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">printName&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">obj&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">printName&lt;/span>
+&lt;span class="ln">13&lt;/span>
+&lt;span class="ln">14&lt;/span>&lt;span class="nx">obj2&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">printName&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;span class="ln">15&lt;/span>&lt;span class="c1">// false
+&lt;/span>&lt;span class="ln">16&lt;/span>&lt;span class="c1">// &amp;#34;obj2&amp;#34;
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>当 &lt;code>obj2.printName&lt;/code> 执行时，&lt;code>printName&lt;/code> 是作为 &lt;code>obj2&lt;/code> 的属性方法来调用的，因此 &lt;code>this&lt;/code> 指向 &lt;code>obj2&lt;/code> 这个对象。&lt;/p>
+&lt;p>所以说，JavaScript 中的 this 指向无法在定义时判断，只有在其执行时才能判断。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln">1&lt;/span>&lt;span class="kd">var&lt;/span> &lt;span class="nx">printName&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">2&lt;/span> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">this&lt;/span> &lt;span class="o">===&lt;/span> &lt;span class="nb">window&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">3&lt;/span> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">name&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">4&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="情况三作为构造器调用">情况三：作为构造器调用&lt;/h2>
+&lt;p>在 JavaScript 中没有「类」的概念（直到 ES6 才有类的出现），而是把函数作为构造器，通过 new 操作符来生成实例。&lt;/p>
+&lt;p>那么在构造函数中 &lt;code>this&lt;/code> 就指向新生成的实例。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln">1&lt;/span>&lt;span class="kd">var&lt;/span> &lt;span class="nx">MyClass&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kd">function&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">2&lt;/span> &lt;span class="c1">// 给实例添加 name 属性
+&lt;/span>&lt;span class="ln">3&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">name&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;myclass&amp;#39;&lt;/span>
+&lt;span class="ln">4&lt;/span> &lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">printName&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kd">function&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">5&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">name&lt;/span>
+&lt;span class="ln">6&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">7&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln">8&lt;/span>&lt;span class="kd">var&lt;/span> &lt;span class="nx">obj&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="nx">MyClass&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;span class="ln">9&lt;/span>&lt;span class="nx">obj&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">printName&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="c1">// &amp;#34;myclass&amp;#34;
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="情况四显式指定-this">情况四：显式指定 this&lt;/h2>
+&lt;p>前面的几种方法都是被动地根据代码执行时的环境来判断 &lt;code>this&lt;/code> 具体指向哪里，那么有没有办法主动指定 &lt;code>this&lt;/code> 指向呢。&lt;/p>
+&lt;p>答案当然是有的，甚至它们的出场率还相当高。&lt;/p>
+&lt;p>常见的显式指定 &lt;code>this&lt;/code> 的方法主要是 &lt;code>call&lt;/code>，&lt;code>apply&lt;/code> 和 &lt;code>bind&lt;/code> 来，在函数式编程中几乎离不开这三个方法。&lt;/p>
+&lt;p>先定义如下变量：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln">1&lt;/span>&lt;span class="nb">window&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">name&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;globalName&amp;#39;&lt;/span>
+&lt;span class="ln">2&lt;/span>&lt;span class="kd">function&lt;/span> &lt;span class="nx">printName&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">3&lt;/span> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">name&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">4&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln">5&lt;/span>
+&lt;span class="ln">6&lt;/span>&lt;span class="kd">var&lt;/span> &lt;span class="nx">obj1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">name&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;obj1&amp;#39;&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">7&lt;/span>&lt;span class="kd">var&lt;/span> &lt;span class="nx">obj2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">name&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;obj2&amp;#39;&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">8&lt;/span>&lt;span class="kd">var&lt;/span> &lt;span class="nx">obj3&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">name&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;obj3&amp;#39;&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>默认情况 this 指向全局对象 window&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln">1&lt;/span>&lt;span class="nx">printName&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="c1">// &amp;#34;globalName&amp;#34;
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>使用 &lt;code>call&lt;/code> 来改变 &lt;code>this&lt;/code> 指向：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln">1&lt;/span>&lt;span class="nx">printName&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">call&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">obj1&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1">// &amp;#34;obj1&amp;#34;
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>使用 &lt;code>apply&lt;/code> 来改变 &lt;code>this&lt;/code> 指向：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln">1&lt;/span>&lt;span class="nx">printName&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">apply&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">obj2&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1">// &amp;#34;obj2&amp;#34;
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>使用 &lt;code>bind&lt;/code> 来改变 &lt;code>this&lt;/code> 指向：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln">1&lt;/span>&lt;span class="kd">var&lt;/span> &lt;span class="nx">printName2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">printName&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">bind&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">obj3&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">2&lt;/span>&lt;span class="nx">printName2&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="c1">// &amp;#34;obj3&amp;#34;
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>除此之外，还有一些函数也可以修改 this 指向，例如：forEach, map, filter, some, every 等。以 &lt;code>forEach&lt;/code> 为例：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln"> 1&lt;/span>&lt;span class="kd">var&lt;/span> &lt;span class="nx">obj&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">name&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;zwc&amp;#39;&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln"> 2&lt;/span>&lt;span class="kd">var&lt;/span> &lt;span class="nx">arr&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span> &lt;span class="p">]&lt;/span>
+&lt;span class="ln"> 3&lt;/span>
+&lt;span class="ln"> 4&lt;/span>&lt;span class="nx">arr&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">forEach&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kd">function&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">item&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">index&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 5&lt;/span> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">item&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">this&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln"> 6&lt;/span>&lt;span class="p">})&lt;/span>
+&lt;span class="ln"> 7&lt;/span>&lt;span class="c1">// 1 Window
+&lt;/span>&lt;span class="ln"> 8&lt;/span>&lt;span class="c1">// 2 Window
+&lt;/span>&lt;span class="ln"> 9&lt;/span>&lt;span class="c1">&lt;/span>
+&lt;span class="ln">10&lt;/span>&lt;span class="nx">arr&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">forEach&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kd">function&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">item&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">index&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">11&lt;/span> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">item&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">this&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">12&lt;/span>&lt;span class="p">},&lt;/span> &lt;span class="nx">obj&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">13&lt;/span>&lt;span class="c1">// 1 {name: &amp;#34;zwc&amp;#34;}
+&lt;/span>&lt;span class="ln">14&lt;/span>&lt;span class="c1">// 2 {name: &amp;#34;zwc&amp;#34;}
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>forEach&lt;/code> 第一个参数接收一个函数作为迭代器，用来处理数组中每一项元素，这个函数通常是一个匿名函数，函数内部的 &lt;code>this&lt;/code> 指向全局对象。&lt;/p>
+&lt;p>&lt;code>forEach&lt;/code> 第二个参数可以接收一个对象，这个对象就是参数函数中的 &lt;code>this&lt;/code> 指向。&lt;/p>
+&lt;p>根据打印结果可以看到，在 &lt;code>forEach&lt;/code> 的迭代器函数中的 &lt;code>this&lt;/code> 已经指向了 &lt;code>obj&lt;/code> 。&lt;/p>
+&lt;h2 id="情况五es6箭头函数">情况五：ES6箭头函数&lt;/h2>
+&lt;h3 id="箭头函数简介">箭头函数简介&lt;/h3>
+&lt;p>ES6 允许使用「箭头」（&lt;code>=&amp;gt;&lt;/code>）定义函数。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln">1&lt;/span>&lt;span class="kd">var&lt;/span> &lt;span class="nx">f&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">v&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="nx">v&lt;/span>
+&lt;span class="ln">2&lt;/span>
+&lt;span class="ln">3&lt;/span>&lt;span class="c1">// 等同于
+&lt;/span>&lt;span class="ln">4&lt;/span>&lt;span class="c1">&lt;/span>&lt;span class="kd">var&lt;/span> &lt;span class="nx">f&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kd">function&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">v&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">5&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="nx">v&lt;/span>
+&lt;span class="ln">6&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>除了形式更简洁之外，箭头函数没有自己的 &lt;code>this&lt;/code>，而是&lt;strong>从自己作用域链的上一层继承 &lt;code>this&lt;/code>&lt;/strong>。&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>箭头函数总是从自己作用域链的上一层继承 &lt;code>this&lt;/code>。&lt;/strong>&lt;/p>
+&lt;/blockquote>
+&lt;p>神马意思呢？我的理解就是箭头函数内部的 &lt;code>this&lt;/code> 指向永远是箭头函数被定义时所在的作用域的 &lt;code>this&lt;/code>，并且无法修改。&lt;/p>
+&lt;h3 id="无法绑定-this">无法绑定 this&lt;/h3>
+&lt;p>使用 call 来调用箭头函数时，第一个参数会被忽略，也就是说无法修改 this 指向。apply 和 bind 也是同样现象。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln">1&lt;/span>&lt;span class="kd">var&lt;/span> &lt;span class="nx">printName&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">2&lt;/span> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">this&lt;/span> &lt;span class="o">===&lt;/span> &lt;span class="nb">window&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1">// true
+&lt;/span>&lt;span class="ln">3&lt;/span>&lt;span class="c1">&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln">4&lt;/span>
+&lt;span class="ln">5&lt;/span>&lt;span class="kd">var&lt;/span> &lt;span class="nx">obj&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">name&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;obj&amp;#39;&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">6&lt;/span>
+&lt;span class="ln">7&lt;/span>&lt;span class="nx">printName&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">call&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">obj&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="例子一">例子一&lt;/h3>
+&lt;p>来看一个例子，在不使用箭头函数的情况下，我们知道构造器函数内部 this 指向对象实例，而匿名函数的 this 是指向全局对象的，因此想要通过定时器打印对象实例的 &lt;code>age&lt;/code> 属性，只能用一个变量 &lt;code>self&lt;/code> 保存 &lt;code>this&lt;/code> 的引用（即闭包）&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln"> 1&lt;/span>&lt;span class="kd">function&lt;/span> &lt;span class="nx">Person&lt;/span>&lt;span class="p">(){&lt;/span>
+&lt;span class="ln"> 2&lt;/span> &lt;span class="c1">// 构造器函数内部 this 指向对象实例
+&lt;/span>&lt;span class="ln"> 3&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">age&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>
+&lt;span class="ln"> 4&lt;/span> &lt;span class="kd">var&lt;/span> &lt;span class="nx">self&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">this&lt;/span>
+&lt;span class="ln"> 5&lt;/span> &lt;span class="nx">setInterval&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kd">function&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 6&lt;/span> &lt;span class="c1">// 匿名函数中 this 指向全局对象
+&lt;/span>&lt;span class="ln"> 7&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">self&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">age&lt;/span>&lt;span class="o">++&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln"> 8&lt;/span> &lt;span class="p">},&lt;/span> &lt;span class="mi">1000&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln"> 9&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln">10&lt;/span>
+&lt;span class="ln">11&lt;/span>&lt;span class="kd">var&lt;/span> &lt;span class="nx">p&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="nx">Person&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>使用箭头函数之后，因为箭头函数的 &lt;code>this&lt;/code> 继承自其被定义时所在环境的 &lt;code>this&lt;/code>，在本例中这个 this 就是实例对象：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln"> 1&lt;/span>&lt;span class="kd">function&lt;/span> &lt;span class="nx">Person&lt;/span>&lt;span class="p">(){&lt;/span>
+&lt;span class="ln"> 2&lt;/span> &lt;span class="c1">// 构造器函数内部 this 指向对象实例
+&lt;/span>&lt;span class="ln"> 3&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">age&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>
+&lt;span class="ln"> 4&lt;/span> &lt;span class="nx">setInterval&lt;/span>&lt;span class="p">(()&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 5&lt;/span> &lt;span class="c1">// 这里的 this 也指向构造函数的 this
+&lt;/span>&lt;span class="ln"> 6&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">age&lt;/span>&lt;span class="o">++&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln"> 7&lt;/span> &lt;span class="p">},&lt;/span> &lt;span class="mi">1000&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln"> 8&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln"> 9&lt;/span>
+&lt;span class="ln">10&lt;/span>&lt;span class="kd">var&lt;/span> &lt;span class="nx">p&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="nx">Person&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="例子二">例子二&lt;/h3>
+&lt;p>再说一个更实用的例子：在 Vue.js 中使用箭头函数&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln"> 1&lt;/span>&lt;span class="kr">import&lt;/span> &lt;span class="nx">axios&lt;/span> &lt;span class="nx">from&lt;/span> &lt;span class="s1">&amp;#39;axios&amp;#39;&lt;/span>
+&lt;span class="ln"> 2&lt;/span>&lt;span class="kr">export&lt;/span> &lt;span class="k">default&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 3&lt;/span> &lt;span class="nx">methods&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 4&lt;/span> &lt;span class="nx">fetch&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 5&lt;/span> &lt;span class="nx">axios&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">get&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;/userinfo&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln"> 6&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="nx">then&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">resp&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 7&lt;/span> &lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">sayHi&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="c1">// this 指向 vue 实例
+&lt;/span>&lt;span class="ln"> 8&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="p">})&lt;/span>
+&lt;span class="ln"> 9&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="k">catch&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">err&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">10&lt;/span> &lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">sayHi&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="c1">// this 指向 vue 实例
+&lt;/span>&lt;span class="ln">11&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="p">})&lt;/span>
+&lt;span class="ln">12&lt;/span> &lt;span class="p">},&lt;/span>
+&lt;span class="ln">13&lt;/span> &lt;span class="nx">sayHi&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">14&lt;/span> &lt;span class="nx">setTimeout&lt;/span>&lt;span class="p">(()&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">15&lt;/span> &lt;span class="c1">// this 指向 vue 实例
+&lt;/span>&lt;span class="ln">16&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="p">},&lt;/span> &lt;span class="mi">1000&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">17&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">18&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">19&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>使用箭头函数之后，再也无需缓存 vue 实例，像是 &lt;code>var vm = this&lt;/code> 这种代码统统可以消灭掉，嗯，清爽！&lt;/p>
+&lt;h2 id="相关链接">相关链接&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;a
+href = "https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Strict_mode"
+target="_blank" rel ="noopener"
+>严格模式 - MDN&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a
+href = "https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/arrow_functions"
+target="_blank" rel ="noopener"
+>箭头函数 - MDN&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a
+href = "http://es6.ruanyifeng.com/#docs/function#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0"
+target="_blank" rel ="noopener"
+>箭头函数 - ES6 入门&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="总结">总结&lt;/h2>
+&lt;p>在箭头函数出现之前，每一个新函数根据&lt;strong>它是被如何调用的&lt;/strong>来定义这个函数的 &lt;code>this&lt;/code> 值：&lt;/p>
+&lt;ul>
+&lt;li>如果是该函数是一个普通函数或者匿名函数
+&lt;ul>
+&lt;li>在严格模式下的函数调用下，&lt;code>this&lt;/code> 指向 &lt;code>undefined&lt;/code>，&lt;/li>
+&lt;li>在非严格模式的函数调用中，&lt;code>this&lt;/code> 指向全局对象，浏览器中全局对象是 &lt;code>window&lt;/code> ，在 nodejs 中全局对象是 &lt;code>global&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>如果是该函数是一个构造函数，&lt;code>this&lt;/code> 指针指向一个新的对象（实例）&lt;/li>
+&lt;li>如果是该函数是一个对象的方法，则它的&lt;code>this&lt;/code> 指针指向这个对象&lt;/li>
+&lt;li>或者使用 &lt;code>call&lt;/code> &lt;code>apply&lt;/code> 等方法显式指定 &lt;code>this&lt;/code> 的指向&lt;/li>
+&lt;/ul>
+&lt;p>在箭头函数中，则是根据箭头函数上下文决定其 this 指向，且无法修改 &lt;code>this&lt;/code> 指向。&lt;/p>
+&lt;hr>
+&lt;p>本文完，感谢阅读。:stuck_out_tongue_winking_eye:&lt;/p></description></item></channel></rss>

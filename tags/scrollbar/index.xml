@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>scrollbar on Clarity</title><link>https://example.com/tags/scrollbar/</link><description>Recent content in scrollbar on Clarity</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright © 2018-2021, wencaizhang and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Sun, 06 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/scrollbar/index.xml" rel="self" type="application/rss+xml"/><item><title>设置滚动条样式</title><link>https://example.com/2021-06-06/set-styles-of-scrollbar/</link><pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-06-06/set-styles-of-scrollbar/</guid><description>
+&lt;p>设置滚动条样式&lt;/p>
+&lt;p>HTML 代码：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="ln">1&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">p&lt;/span> &lt;span class="na">class&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;scroll-container&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;span class="ln">2&lt;/span> 庭院深深，不知有多深？杨柳依依，飞扬起片片烟雾，一重重帘幕不知有多少层。豪华的车马停在贵族公子寻欢作乐的地方，她登楼向远处望去，却看不见那通向章台的大路。春已至暮，三月的雨伴随着狂风大作，再是重门将黄昏景色掩闭，也无法留住春意。泪眼汪汪问落花可知道我的心意，落花默默不语，纷乱的，零零落落一点一点飞到秋千外。庭院深深，不知有多深？杨柳依依，飞扬起片片烟雾，一重重帘幕不知有多少层。豪华的车马停在贵族公子寻欢作乐的地方，她登楼向远处望去，却看不见那通向章台的大路。春已至暮，三月的雨伴随着狂风大作，再是重门将黄昏景色掩闭，也无法留住春意。泪眼汪汪问落花可知道我的心意，落花默默不语，纷乱的，零零落落一点一点飞到秋千外。庭院深深，不知有多深？杨柳依依，飞扬起片片烟雾，一重重帘幕不知有多少层。豪华的车马停在贵族公子寻欢作乐的地方，她登楼向远处望去，却看不见那通向章台的大路。春已至暮，三月的雨伴随着狂风大作，再是重门将黄昏景色掩闭，也无法留住春意。泪眼汪汪问落花可知道我的心意，落花默默不语，纷乱的，零零落落一点一点飞到秋千外。庭院深深，不知有多深？杨柳依依，飞扬起片片烟雾，一重重帘幕不知有多少层。豪华的车马停在贵族公子寻欢作乐的地方，她登楼向远处望去，却看不见那通向章台的大路。春已至暮，三月的雨伴随着狂风大作，再是重门将黄昏景色掩闭，也无法留住春意。泪眼汪汪问落花可知道我的心意，落花默默不语，纷乱的，零零落落一点一点飞到秋千外。
+&lt;span class="ln">3&lt;/span>&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>CSS 代码：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-css" data-lang="css">&lt;span class="ln">1&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">scroll-container&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">2&lt;/span> &lt;span class="k">width&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">500&lt;/span>&lt;span class="kt">px&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">3&lt;/span> &lt;span class="k">height&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">150&lt;/span>&lt;span class="kt">px&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">4&lt;/span> &lt;span class="k">border&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="kt">px&lt;/span> &lt;span class="kc">solid&lt;/span> &lt;span class="mh">#ddd&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">5&lt;/span> &lt;span class="k">padding&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">15&lt;/span>&lt;span class="kt">px&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">6&lt;/span> &lt;span class="k">overflow&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">auto&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c">/*必须*/&lt;/span>
+&lt;span class="ln">7&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>滚动条样式：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-css" data-lang="css">&lt;span class="ln"> 1&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="nc">scroll-container&lt;/span>&lt;span class="p">::&lt;/span>&lt;span class="nd">-webkit-scrollbar&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 2&lt;/span> &lt;span class="k">width&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">8&lt;/span>&lt;span class="kt">px&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 3&lt;/span> &lt;span class="k">background&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">white&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 4&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln"> 5&lt;/span>
+&lt;span class="ln"> 6&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="nc">scroll-container&lt;/span>&lt;span class="p">::&lt;/span>&lt;span class="nd">-webkit-scrollbar-corner&lt;/span>&lt;span class="o">,&lt;/span>
+&lt;span class="ln"> 7&lt;/span> &lt;span class="c">/* 滚动条角落 */&lt;/span>
+&lt;span class="ln"> 8&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="nc">scroll-container&lt;/span>&lt;span class="p">::&lt;/span>&lt;span class="nd">-webkit-scrollbar-thumb&lt;/span>&lt;span class="o">,&lt;/span>
+&lt;span class="ln"> 9&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="nc">scroll-container&lt;/span>&lt;span class="p">::&lt;/span>&lt;span class="nd">-webkit-scrollbar-track&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c">/*滚动条的轨道*/&lt;/span>
+&lt;span class="ln">10&lt;/span> &lt;span class="k">border-radius&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">4&lt;/span>&lt;span class="kt">px&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">11&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">12&lt;/span>
+&lt;span class="ln">13&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="nc">scroll-container&lt;/span>&lt;span class="p">::&lt;/span>&lt;span class="nd">-webkit-scrollbar-corner&lt;/span>&lt;span class="o">,&lt;/span>
+&lt;span class="ln">14&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="nc">scroll-container&lt;/span>&lt;span class="p">::&lt;/span>&lt;span class="nd">-webkit-scrollbar-track&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">15&lt;/span> &lt;span class="c">/* 滚动条轨道 */&lt;/span>
+&lt;span class="ln">16&lt;/span> &lt;span class="k">background-color&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">rgba&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">180&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">160&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">120&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">0.1&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="ln">17&lt;/span> &lt;span class="k">box-shadow&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">inset&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="kt">px&lt;/span> &lt;span class="nb">rgba&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">180&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">160&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">120&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">0.5&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="ln">18&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">19&lt;/span>
+&lt;span class="ln">20&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="nc">scroll-container&lt;/span>&lt;span class="p">::&lt;/span>&lt;span class="nd">-webkit-scrollbar-thumb&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">21&lt;/span> &lt;span class="c">/* 滚动条手柄 */&lt;/span>
+&lt;span class="ln">22&lt;/span> &lt;span class="k">background-color&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mh">#00adb5&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">23&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>示例：&lt;/p>
+&lt;p class="scroll-container">
+庭院深深，不知有多深？杨柳依依，飞扬起片片烟雾，一重重帘幕不知有多少层。豪华的车马停在贵族公子寻欢作乐的地方，她登楼向远处望去，却看不见那通向章台的大路。春已至暮，三月的雨伴随着狂风大作，再是重门将黄昏景色掩闭，也无法留住春意。泪眼汪汪问落花可知道我的心意，落花默默不语，纷乱的，零零落落一点一点飞到秋千外。庭院深深，不知有多深？杨柳依依，飞扬起片片烟雾，一重重帘幕不知有多少层。豪华的车马停在贵族公子寻欢作乐的地方，她登楼向远处望去，却看不见那通向章台的大路。春已至暮，三月的雨伴随着狂风大作，再是重门将黄昏景色掩闭，也无法留住春意。泪眼汪汪问落花可知道我的心意，落花默默不语，纷乱的，零零落落一点一点飞到秋千外。庭院深深，不知有多深？杨柳依依，飞扬起片片烟雾，一重重帘幕不知有多少层。豪华的车马停在贵族公子寻欢作乐的地方，她登楼向远处望去，却看不见那通向章台的大路。春已至暮，三月的雨伴随着狂风大作，再是重门将黄昏景色掩闭，也无法留住春意。泪眼汪汪问落花可知道我的心意，落花默默不语，纷乱的，零零落落一点一点飞到秋千外。庭院深深，不知有多深？杨柳依依，飞扬起片片烟雾，一重重帘幕不知有多少层。豪华的车马停在贵族公子寻欢作乐的地方，她登楼向远处望去，却看不见那通向章台的大路。春已至暮，三月的雨伴随着狂风大作，再是重门将黄昏景色掩闭，也无法留住春意。泪眼汪汪问落花可知道我的心意，落花默默不语，纷乱的，零零落落一点一点飞到秋千外。
+&lt;/p>
+&lt;style>
+.scroll-container {
+width: 500px;
+height: 150px;
+border: 1px solid #ddd;
+padding: 15px;
+overflow: auto;
+}
+.scroll-container::-webkit-scrollbar {
+width: 8px;
+background: white;
+}
+.scroll-container::-webkit-scrollbar-corner,
+/* 滚动条角落 */
+.scroll-container::-webkit-scrollbar-thumb,
+.scroll-container::-webkit-scrollbar-track {
+border-radius: 4px;
+}
+.scroll-container::-webkit-scrollbar-corner,
+.scroll-container::-webkit-scrollbar-track {
+/* 滚动条轨道 */
+background-color: rgba(180, 160, 120, 0.1);
+box-shadow: inset 0 0 1px rgba(180, 160, 120, 0.5);
+}
+.scroll-container::-webkit-scrollbar-thumb {
+/* 滚动条手柄 */
+background-color: #00adb5;
+}
+&lt;/style></description></item></channel></rss>

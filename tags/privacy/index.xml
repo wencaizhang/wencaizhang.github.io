@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>privacy on Clarity</title><link>https://example.com/tags/privacy/</link><description>Recent content in privacy on Clarity</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright © 2018-2021, wencaizhang and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Sun, 10 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/privacy/index.xml" rel="self" type="application/rss+xml"/><item><title>Rich Content</title><link>https://example.com/2019-03-10/rich-content/</link><pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate><guid>https://example.com/2019-03-10/rich-content/</guid><description>
+&lt;p>Hugo ships with several
+&lt;a
+href = "https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes"
+target="_blank" rel ="noopener"
+>Built-in Shortcodes&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+for rich content, along with a
+&lt;a
+href = "https://gohugo.io/about/hugo-and-gdpr/"
+target="_blank" rel ="noopener"
+>Privacy Config&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.&lt;/p>
+&lt;hr>
+&lt;h2 id="instagram-simple-shortcode">Instagram Simple Shortcode&lt;/h2>
+&lt;br>
+&lt;hr>
+&lt;h2 id="youtube-privacy-enhanced-shortcode">YouTube Privacy Enhanced Shortcode&lt;/h2>
+&lt;br>
+&lt;hr>
+&lt;h2 id="twitter-simple-shortcode">Twitter Simple Shortcode&lt;/h2>
+&lt;br>
+&lt;hr>
+&lt;h2 id="vimeo-simple-shortcode">Vimeo Simple Shortcode&lt;/h2></description></item></channel></rss>

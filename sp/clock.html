@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background: #0d1320;
+        overflow: hidden;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      #timer {
+        text-align: center;
+        font-size: 56vh;
+        line-height: 56vh;
+        font-weight: bold;
+        color: #e2ecfd;
+      }
+      #date {
+        margin-top: 0px;
+        text-align: center;
+        font-size: 28vh;
+        line-height: 28vh;
+
+        font-weight: bold;
+        color: #e2ecfd;
+      }
+      .about {
+        width: 800px;
+        margin: 0 auto;
+        padding-top: 20px;
+        display: flex;
+        align-items: center;
+      }
+      .about .item {
+        color: white;
+        flex: 1;
+        text-align: center;
+      }
+      #hug-sun img {
+        position: relative;
+        width: 300px;
+        height: auto;
+      }
+      .hide {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="about hide">
+      <div class="item">
+        <a target="_blank" href="https://juejin.im/user/1556564194370270">
+          <img style="height:40px;" src="./img/juejin.svg" alt="" />
+        </a>
+      </div>
+      <div class="item">
+        <a target="_blank" href="https://space.bilibili.com/26995758">
+          <img style="height:35px;" src="./img/bili.svg" alt="" />
+        </a>
+      </div>
+      <div class="item">
+        <a target="_blank" href="https://www.zhihu.com/people/woniuppp">
+          <img src="./img/zhihu.svg" alt="" />
+        </a>
+      </div>
+      <div class="item">
+        <a target="_blank" href="https://github.com/shengxinjing">
+          <img style="height:20px;" src="./img/github.svg" alt="" />
+        </a>
+      </div>
+      <div class="item" id="hug-sun">
+        <a target="_blank" href="https://space.bilibili.com/26995758">
+          <img src="./img/hugsun.bmp" alt="" />
+        </a>
+      </div>
+    </div>
+    <div id="date">09月03日</div>
+    <div id="timer">16:27</div>
+
+    <script>
+
+      let showSymbl = true
+      function clock() {
+        const now = new Date()
+        const hour = (now.getHours() + '').padStart(2, '0')
+        const minute = (now.getMinutes() + '').padStart(2, '0')
+        const month = (now.getMonth() + 1 + '').padStart(2, '0')
+        const day = (now.getDate() + '').padStart(2, '0')
+
+        const weeks = '日一二三四五六'.split('')
+        const week = weeks[now.getDay()]
+
+        const SymblColor = showSymbl ? 'inherit' : '#0d1320'
+
+        document.getElementById('date').innerHTML = `${month}-${day} 周${week}`
+        document.getElementById('timer').innerHTML = `${hour}<span style="color:${SymblColor};">:</span>${minute}`
+
+        showSymbl = !showSymbl
+      }
+
+      clock()
+      setInterval(() => {
+        clock()
+      }, 1000)
+
+    </script>
+
+    <script>
+      // var _hmt = _hmt || []
+      // ;(function() {
+      //   var hm = document.createElement('script')
+      //   hm.src = 'https://hm.baidu.com/hm.js?a8baaf55cb517a031547310e64e9ff39'
+      //   var s = document.getElementsByTagName('script')[0]
+      //   s.parentNode.insertBefore(hm, s)
+      // })()
+    </script>
+  </body>
+</html>

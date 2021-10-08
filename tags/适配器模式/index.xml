@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>适配器模式 on Clarity</title><link>https://example.com/tags/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/</link><description>Recent content in 适配器模式 on Clarity</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright © 2018-2021, wencaizhang and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Sat, 12 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/index.xml" rel="self" type="application/rss+xml"/><item><title>适配器模式</title><link>https://example.com/series/design-patterns/adapter-pattern/</link><pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate><guid>https://example.com/series/design-patterns/adapter-pattern/</guid><description>
+&lt;h2 id="背景交代">背景交代&lt;/h2>
+&lt;h2 id="场景一转换数据格式">场景一：转换数据格式&lt;/h2>
+&lt;p>Vue 中的 computed 属性就是现成的一个适配器：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln"> 1&lt;/span>&lt;span class="kr">const&lt;/span> &lt;span class="nx">vm&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="nx">Vue&lt;/span>&lt;span class="p">({&lt;/span>
+&lt;span class="ln"> 2&lt;/span> &lt;span class="nx">data&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 3&lt;/span> &lt;span class="nx">authors&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">[&lt;/span> &lt;span class="s1">&amp;#39;张教授&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;王教授&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;span class="ln"> 4&lt;/span> &lt;span class="p">},&lt;/span>
+&lt;span class="ln"> 5&lt;/span> &lt;span class="nx">computed&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 6&lt;/span> &lt;span class="nx">authorsText&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 7&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">authors&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">join&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;、&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln"> 8&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln"> 9&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">10&lt;/span>&lt;span class="p">})&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>又比如&lt;/p>
+&lt;h2 id="撸起袖子加油干">撸起袖子加油干&lt;/h2></description></item></channel></rss>

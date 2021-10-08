@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>emoji on Clarity</title><link>https://example.com/tags/emoji/</link><description>Recent content in emoji on Clarity</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright © 2018-2021, wencaizhang and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Tue, 05 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/emoji/index.xml" rel="self" type="application/rss+xml"/><item><title>Emoji Support</title><link>https://example.com/2019-03-05/emoji-support/</link><pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate><guid>https://example.com/2019-03-05/emoji-support/</guid><description>
+&lt;p>Emoji can be enabled in a Hugo project in a number of ways.&lt;/p>
+&lt;p>The
+&lt;a
+href = "https://gohugo.io/functions/emojify/"
+target="_blank" rel ="noopener"
+>&lt;code>emojify&lt;/code>&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+function can be called directly in templates or
+&lt;a
+href = "https://gohugo.io/templates/shortcode-templates/#inline-shortcodes"
+target="_blank" rel ="noopener"
+>Inline Shortcodes&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+.&lt;/p>
+&lt;p>To enable emoji globally, set &lt;code>enableEmoji&lt;/code> to &lt;code>true&lt;/code> in your site's
+&lt;a
+href = "https://gohugo.io/getting-started/configuration/"
+target="_blank" rel ="noopener"
+>configuration&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+and then you can type emoji shorthand codes directly in content files; e.g.&lt;/p>
+&lt;p>&lt;span class="nowrap">&lt;span class="emojify">🙈&lt;/span> &lt;code>:see_no_evil:&lt;/code>&lt;/span> &lt;span class="nowrap">&lt;span class="emojify">🙉&lt;/span> &lt;code>:hear_no_evil:&lt;/code>&lt;/span> &lt;span class="nowrap">&lt;span class="emojify">🙊&lt;/span> &lt;code>:speak_no_evil:&lt;/code>&lt;/span>&lt;/p>
+&lt;br>
+&lt;p>The
+&lt;a
+href = "http://www.emoji-cheat-sheet.com/"
+target="_blank" rel ="noopener"
+>Emoji cheat sheet&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+is a useful reference for emoji shorthand codes.&lt;/p>
+&lt;hr>
+&lt;p>&lt;strong>N.B.&lt;/strong> The above steps enable Unicode Standard emoji characters and sequences in Hugo, however the rendering of these glyphs depends on the browser and the platform. To style the emoji you can either use a third party emoji font or a font stack; e.g.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="ln">1&lt;/span>.emoji {
+&lt;span class="ln">2&lt;/span> font-family: Apple Color Emoji, Segoe UI Emoji, NotoColorEmoji, Segoe UI Symbol, Android Emoji, EmojiSymbols;
+&lt;span class="ln">3&lt;/span>}&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

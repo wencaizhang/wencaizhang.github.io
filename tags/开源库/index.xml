@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>开源库 on Clarity</title><link>https://example.com/tags/%E5%BC%80%E6%BA%90%E5%BA%93/</link><description>Recent content in 开源库 on Clarity</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright © 2018-2021, wencaizhang and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Sun, 10 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/%E5%BC%80%E6%BA%90%E5%BA%93/index.xml" rel="self" type="application/rss+xml"/><item><title>推荐 JavaScript 中处理数字计算精度问题的开源库</title><link>https://example.com/2021-01-10/calculate-of-number-in-js/</link><pubDate>Sun, 10 Jan 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-01-10/calculate-of-number-in-js/</guid><description>
+&lt;p>在 JavaScript 中彻底解决你0.1+0.2!==0.3的精度问题，还可以给小数按条件取值。是开发计算项目的必备良品&lt;/p>
+&lt;p>本篇推荐三个可用于 JavaScript 中数字计算不丢失精度的开源库，均由
+&lt;a
+href = "https://github.com/MikeMcl"
+target="_blank" rel ="noopener"
+>MikeMcl&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+开源（给大佬点赞👍），三个库的 API 保持一致，但侧重点不同，下面一一解释。&lt;/p>
+&lt;h2 id="一bigjs">一、big.js&lt;/h2>
+&lt;p>传送门：
+&lt;a
+href = "https://github.com/MikeMcl/big.js"
+target="_blank" rel ="noopener"
+>&lt;a href="https://github.com/MikeMcl/big.js">https://github.com/MikeMcl/big.js&lt;/a>&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/p>
+&lt;p>文档：
+&lt;a
+href = "https://mikemcl.github.io/big.js/"
+target="_blank" rel ="noopener"
+>&lt;a href="https://mikemcl.github.io/big.js/">https://mikemcl.github.io/big.js/&lt;/a>&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/p>
+&lt;p>适合只需要简单计算的项目&lt;/p>
+&lt;h2 id="二bignumberjs">二、bignumber.js&lt;/h2>
+&lt;p>传送门：
+&lt;a
+href = "https://github.com/MikeMcl/bignumber.js"
+target="_blank" rel ="noopener"
+>&lt;a href="https://github.com/MikeMcl/bignumber.js">https://github.com/MikeMcl/bignumber.js&lt;/a>&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/p>
+&lt;p>文档：
+&lt;a
+href = "https://mikemcl.github.io/bignumber.js/"
+target="_blank" rel ="noopener"
+>&lt;a href="https://mikemcl.github.io/bignumber.js/">https://mikemcl.github.io/bignumber.js/&lt;/a>&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/p>
+&lt;p>可以对小数进行向上或向下取值，适合金融类项目&lt;/p>
+&lt;h2 id="三decimaljs">三、decimal.js&lt;/h2>
+&lt;p>传送门：
+&lt;a
+href = "https://github.com/MikeMcl/decimal.js"
+target="_blank" rel ="noopener"
+>&lt;a href="https://github.com/MikeMcl/decimal.js">https://github.com/MikeMcl/decimal.js&lt;/a>&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/p>
+&lt;p>文档：
+&lt;a
+href = "%ef%bc%9ahttp://mikemcl.github.io/decimal.js"
+target="_blank" rel ="noopener"
+>&lt;a href="http://mikemcl.github.io/decimal.js">http://mikemcl.github.io/decimal.js&lt;/a>&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/p>
+&lt;p>decimal.js 提供了很多数学计算相关的函数，例如正弦余弦对数等函数，非常适合数学计算类需要运行很多数学函数的项目。&lt;/p></description></item></channel></rss>

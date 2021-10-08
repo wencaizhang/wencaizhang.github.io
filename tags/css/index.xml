@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>css on Clarity</title><link>https://example.com/tags/css/</link><description>Recent content in css on Clarity</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright © 2018-2021, wencaizhang and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Sun, 06 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/css/index.xml" rel="self" type="application/rss+xml"/><item><title>设置input的placeholder的字体样式</title><link>https://example.com/2021-06-06/set-styles-of-input-placeholder/</link><pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-06-06/set-styles-of-input-placeholder/</guid><description>
+&lt;p>设置input占位符的样式&lt;/p>
+&lt;p>HTML 代码：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="ln">1&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">input&lt;/span> &lt;span class="na">type&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;text&amp;#34;&lt;/span> &lt;span class="na">placeholder&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;请设置用户名&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>CSS 代码：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-css" data-lang="css">&lt;span class="ln"> 1&lt;/span>&lt;span class="nt">input&lt;/span>&lt;span class="p">::&lt;/span>&lt;span class="nd">-webkit-input-placeholder&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c">/* Chrome/Opera/Safari */&lt;/span>
+&lt;span class="ln"> 2&lt;/span> &lt;span class="k">color&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">red&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 3&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln"> 4&lt;/span>&lt;span class="nt">input&lt;/span>&lt;span class="p">::&lt;/span>&lt;span class="nd">-moz-placeholder&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c">/* Firefox 19+ */&lt;/span>
+&lt;span class="ln"> 5&lt;/span> &lt;span class="k">color&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">red&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 6&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln"> 7&lt;/span>&lt;span class="nt">input&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="nd">-ms-input-placeholder&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c">/* IE 10+ */&lt;/span>
+&lt;span class="ln"> 8&lt;/span> &lt;span class="k">color&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">red&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 9&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln">10&lt;/span>&lt;span class="nt">input&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="nd">-moz-placeholder&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c">/* Firefox 18- */&lt;/span>
+&lt;span class="ln">11&lt;/span> &lt;span class="k">color&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">red&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">12&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>示例：&lt;/p>
+&lt;input type="text" placeholder="请设置用户名">
+&lt;style>
+input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+color: red;
+}
+input::-moz-placeholder { /* Firefox 19+ */
+color: red;
+}
+input:-ms-input-placeholder { /* IE 10+ */
+color: red;
+}
+input:-moz-placeholder { /* Firefox 18- */
+color: red;
+}
+&lt;/style></description></item><item><title>设置滚动条样式</title><link>https://example.com/2021-06-06/set-styles-of-scrollbar/</link><pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-06-06/set-styles-of-scrollbar/</guid><description>
+&lt;p>设置滚动条样式&lt;/p>
+&lt;p>HTML 代码：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="ln">1&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">p&lt;/span> &lt;span class="na">class&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;scroll-container&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;span class="ln">2&lt;/span> 庭院深深，不知有多深？杨柳依依，飞扬起片片烟雾，一重重帘幕不知有多少层。豪华的车马停在贵族公子寻欢作乐的地方，她登楼向远处望去，却看不见那通向章台的大路。春已至暮，三月的雨伴随着狂风大作，再是重门将黄昏景色掩闭，也无法留住春意。泪眼汪汪问落花可知道我的心意，落花默默不语，纷乱的，零零落落一点一点飞到秋千外。庭院深深，不知有多深？杨柳依依，飞扬起片片烟雾，一重重帘幕不知有多少层。豪华的车马停在贵族公子寻欢作乐的地方，她登楼向远处望去，却看不见那通向章台的大路。春已至暮，三月的雨伴随着狂风大作，再是重门将黄昏景色掩闭，也无法留住春意。泪眼汪汪问落花可知道我的心意，落花默默不语，纷乱的，零零落落一点一点飞到秋千外。庭院深深，不知有多深？杨柳依依，飞扬起片片烟雾，一重重帘幕不知有多少层。豪华的车马停在贵族公子寻欢作乐的地方，她登楼向远处望去，却看不见那通向章台的大路。春已至暮，三月的雨伴随着狂风大作，再是重门将黄昏景色掩闭，也无法留住春意。泪眼汪汪问落花可知道我的心意，落花默默不语，纷乱的，零零落落一点一点飞到秋千外。庭院深深，不知有多深？杨柳依依，飞扬起片片烟雾，一重重帘幕不知有多少层。豪华的车马停在贵族公子寻欢作乐的地方，她登楼向远处望去，却看不见那通向章台的大路。春已至暮，三月的雨伴随着狂风大作，再是重门将黄昏景色掩闭，也无法留住春意。泪眼汪汪问落花可知道我的心意，落花默默不语，纷乱的，零零落落一点一点飞到秋千外。
+&lt;span class="ln">3&lt;/span>&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>CSS 代码：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-css" data-lang="css">&lt;span class="ln">1&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">scroll-container&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">2&lt;/span> &lt;span class="k">width&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">500&lt;/span>&lt;span class="kt">px&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">3&lt;/span> &lt;span class="k">height&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">150&lt;/span>&lt;span class="kt">px&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">4&lt;/span> &lt;span class="k">border&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="kt">px&lt;/span> &lt;span class="kc">solid&lt;/span> &lt;span class="mh">#ddd&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">5&lt;/span> &lt;span class="k">padding&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">15&lt;/span>&lt;span class="kt">px&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">6&lt;/span> &lt;span class="k">overflow&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">auto&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c">/*必须*/&lt;/span>
+&lt;span class="ln">7&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>滚动条样式：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-css" data-lang="css">&lt;span class="ln"> 1&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="nc">scroll-container&lt;/span>&lt;span class="p">::&lt;/span>&lt;span class="nd">-webkit-scrollbar&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 2&lt;/span> &lt;span class="k">width&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">8&lt;/span>&lt;span class="kt">px&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 3&lt;/span> &lt;span class="k">background&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">white&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 4&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln"> 5&lt;/span>
+&lt;span class="ln"> 6&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="nc">scroll-container&lt;/span>&lt;span class="p">::&lt;/span>&lt;span class="nd">-webkit-scrollbar-corner&lt;/span>&lt;span class="o">,&lt;/span>
+&lt;span class="ln"> 7&lt;/span> &lt;span class="c">/* 滚动条角落 */&lt;/span>
+&lt;span class="ln"> 8&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="nc">scroll-container&lt;/span>&lt;span class="p">::&lt;/span>&lt;span class="nd">-webkit-scrollbar-thumb&lt;/span>&lt;span class="o">,&lt;/span>
+&lt;span class="ln"> 9&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="nc">scroll-container&lt;/span>&lt;span class="p">::&lt;/span>&lt;span class="nd">-webkit-scrollbar-track&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c">/*滚动条的轨道*/&lt;/span>
+&lt;span class="ln">10&lt;/span> &lt;span class="k">border-radius&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">4&lt;/span>&lt;span class="kt">px&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">11&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">12&lt;/span>
+&lt;span class="ln">13&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="nc">scroll-container&lt;/span>&lt;span class="p">::&lt;/span>&lt;span class="nd">-webkit-scrollbar-corner&lt;/span>&lt;span class="o">,&lt;/span>
+&lt;span class="ln">14&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="nc">scroll-container&lt;/span>&lt;span class="p">::&lt;/span>&lt;span class="nd">-webkit-scrollbar-track&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">15&lt;/span> &lt;span class="c">/* 滚动条轨道 */&lt;/span>
+&lt;span class="ln">16&lt;/span> &lt;span class="k">background-color&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">rgba&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">180&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">160&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">120&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">0.1&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="ln">17&lt;/span> &lt;span class="k">box-shadow&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">inset&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="kt">px&lt;/span> &lt;span class="nb">rgba&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">180&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">160&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">120&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">0.5&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="ln">18&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">19&lt;/span>
+&lt;span class="ln">20&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="nc">scroll-container&lt;/span>&lt;span class="p">::&lt;/span>&lt;span class="nd">-webkit-scrollbar-thumb&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">21&lt;/span> &lt;span class="c">/* 滚动条手柄 */&lt;/span>
+&lt;span class="ln">22&lt;/span> &lt;span class="k">background-color&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mh">#00adb5&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">23&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>示例：&lt;/p>
+&lt;p class="scroll-container">
+庭院深深，不知有多深？杨柳依依，飞扬起片片烟雾，一重重帘幕不知有多少层。豪华的车马停在贵族公子寻欢作乐的地方，她登楼向远处望去，却看不见那通向章台的大路。春已至暮，三月的雨伴随着狂风大作，再是重门将黄昏景色掩闭，也无法留住春意。泪眼汪汪问落花可知道我的心意，落花默默不语，纷乱的，零零落落一点一点飞到秋千外。庭院深深，不知有多深？杨柳依依，飞扬起片片烟雾，一重重帘幕不知有多少层。豪华的车马停在贵族公子寻欢作乐的地方，她登楼向远处望去，却看不见那通向章台的大路。春已至暮，三月的雨伴随着狂风大作，再是重门将黄昏景色掩闭，也无法留住春意。泪眼汪汪问落花可知道我的心意，落花默默不语，纷乱的，零零落落一点一点飞到秋千外。庭院深深，不知有多深？杨柳依依，飞扬起片片烟雾，一重重帘幕不知有多少层。豪华的车马停在贵族公子寻欢作乐的地方，她登楼向远处望去，却看不见那通向章台的大路。春已至暮，三月的雨伴随着狂风大作，再是重门将黄昏景色掩闭，也无法留住春意。泪眼汪汪问落花可知道我的心意，落花默默不语，纷乱的，零零落落一点一点飞到秋千外。庭院深深，不知有多深？杨柳依依，飞扬起片片烟雾，一重重帘幕不知有多少层。豪华的车马停在贵族公子寻欢作乐的地方，她登楼向远处望去，却看不见那通向章台的大路。春已至暮，三月的雨伴随着狂风大作，再是重门将黄昏景色掩闭，也无法留住春意。泪眼汪汪问落花可知道我的心意，落花默默不语，纷乱的，零零落落一点一点飞到秋千外。
+&lt;/p>
+&lt;style>
+.scroll-container {
+width: 500px;
+height: 150px;
+border: 1px solid #ddd;
+padding: 15px;
+overflow: auto;
+}
+.scroll-container::-webkit-scrollbar {
+width: 8px;
+background: white;
+}
+.scroll-container::-webkit-scrollbar-corner,
+/* 滚动条角落 */
+.scroll-container::-webkit-scrollbar-thumb,
+.scroll-container::-webkit-scrollbar-track {
+border-radius: 4px;
+}
+.scroll-container::-webkit-scrollbar-corner,
+.scroll-container::-webkit-scrollbar-track {
+/* 滚动条轨道 */
+background-color: rgba(180, 160, 120, 0.1);
+box-shadow: inset 0 0 1px rgba(180, 160, 120, 0.5);
+}
+.scroll-container::-webkit-scrollbar-thumb {
+/* 滚动条手柄 */
+background-color: #00adb5;
+}
+&lt;/style></description></item><item><title>CSS多行文本溢出显示省略号显示点点点...</title><link>https://example.com/2020-06-28/css-text-overflow-ellipsis/</link><pubDate>Sun, 28 Jun 2020 00:00:00 +0000</pubDate><guid>https://example.com/2020-06-28/css-text-overflow-ellipsis/</guid><description>
+&lt;h2 id="一单行省略">一、单行省略&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="ln">1&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">div&lt;/span> &lt;span class="na">class&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;elip w100&amp;#34;&lt;/span> &lt;span class="na">style&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;border: 1px solid #5184f6;&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;span class="ln">2&lt;/span> 两个黄鹂鸣翠柳，一行白鹭上青天。窗含西岭千秋雪，门泊东吴万里船。
+&lt;span class="ln">3&lt;/span>&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">div&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-css" data-lang="css">&lt;span class="ln"> 1&lt;/span>&lt;span class="c">/* 单行文本溢出省略 */&lt;/span>
+&lt;span class="ln"> 2&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">elip&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 3&lt;/span> &lt;span class="k">overflow&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">hidden&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c">/* 隐藏溢出内容 */&lt;/span>
+&lt;span class="ln"> 4&lt;/span> &lt;span class="k">white-space&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">nowrap&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c">/* 不换行，强制文本在一行显示 */&lt;/span>
+&lt;span class="ln"> 5&lt;/span> &lt;span class="k">text-overflow&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">ellipsis&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c">/* 溢出的部分进行省略 */&lt;/span>
+&lt;span class="ln"> 6&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln"> 7&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">w100&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 8&lt;/span> &lt;span class="c">/* 设置宽度，一定不要忘了 */&lt;/span>
+&lt;span class="ln"> 9&lt;/span> &lt;span class="k">width&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">100&lt;/span>&lt;span class="kt">px&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">10&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>效果如下：&lt;/p>
+&lt;style>
+.elip {
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+.w100 {
+width: 100px;
+}
+&lt;/style>
+&lt;div class="elip w100" style="border: 1px solid #5184f6; margin: 1rem 0">
+两个黄鹂鸣翠柳，一行白鹭上青天。窗含西岭千秋雪，门泊东吴万里船。
+&lt;/div>
+&lt;p>要想实现单行文本超出宽度省略，需要满足以下几点&lt;/p>
+&lt;p>只要满足了上面 4 点，单行文本的溢出省略就很容易实现。但现实情况中，除了单行文本外还有很多场景是需要实现多行文本溢出省略的，接下来我们一起来看如何实现这个需求。&lt;/p>
+&lt;h2 id="二多行文本溢出省略">二、多行文本溢出省略&lt;/h2>
+&lt;p>之所以说多行文本溢出省略不容易实现，是因为在 CSS 规范中 &lt;code>text-overflow: ellipsis&lt;/code> 只适用于单行文本，同时并没有适用于多行文本溢出省略的规则。因此我们只能另辟蹊径来实现这个需求。&lt;/p>
+&lt;h3 id="使用浏览器私有属性来实现">使用浏览器私有属性来实现&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-css" data-lang="css">&lt;span class="ln">1&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">box&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">2&lt;/span> &lt;span class="k">width&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">200&lt;/span>&lt;span class="kt">px&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">3&lt;/span> &lt;span class="k">padding&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="cp">!important&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c">/* padding 必须为 0 */&lt;/span>
+&lt;span class="ln">4&lt;/span> &lt;span class="k">overflow&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">hidden&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">5&lt;/span> &lt;span class="k">display&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kp">-webkit-&lt;/span>&lt;span class="n">box&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c">/* 类似于 flexbox 的自适应布局 */&lt;/span>
+&lt;span class="ln">6&lt;/span> &lt;span class="kp">-webkit-&lt;/span>&lt;span class="n">box-orient&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">vertical&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c">/* 元素排列方向：从上到下 */&lt;/span>
+&lt;span class="ln">7&lt;/span> &lt;span class="kp">-webkit-&lt;/span>&lt;span class="n">line-clamp&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">4&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c">/* 第四行后开始省略 */&lt;/span>
+&lt;span class="ln">8&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;style>
+.box {
+width: 200px;
+overflow: hidden;
+display: -webkit-box; /* 类似于 flexbox 的自适应布局 */
+-webkit-box-orient: vertical; /* 元素排列方向：从上到下 */
+-webkit-line-clamp: 4; /* 第四行后开始省略 */
+}
+.border {
+border: 1px solid #ccc;
+}
+.p-0 {
+padding: 0 !important;
+}
+.p-4 {
+padding: 1rem;
+}
+&lt;/style>
+&lt;p>padding 为 0&lt;/p>
+&lt;div class="box border p-0">
+有一天，螃蟹撞到了田螺。田螺说:“蟹蟹，你撞到我了”，螃蟹说:“不用谢”。田螺回道:“谢你妹啊，我是说你撞到我了，你是不是瞎啊”，螃蟹一脸委屈地说:“我不是虾啊，我是螃蟹”
+&lt;p>有一天，螃蟹撞到了田螺。田螺说:“蟹蟹，你撞到我了”，螃蟹说:“不用谢”。田螺回道:“谢你妹啊，我是说你撞到我了，你是不是瞎啊”，螃蟹一脸委屈地说:“我不是虾啊，我是螃蟹”&lt;/p>
+&lt;/div>
+&lt;p>padding 为 1rem&lt;/p>
+&lt;div class="box border p-4">
+有一天，螃蟹撞到了田螺。田螺说:“蟹蟹，你撞到我了”，螃蟹说:“不用谢”。田螺回道:“谢你妹啊，我是说你撞到我了，你是不是瞎啊”，螃蟹一脸委屈地说:“我不是虾啊，我是螃蟹”
+&lt;p>有一天，螃蟹撞到了田螺。田螺说:“蟹蟹，你撞到我了”，螃蟹说:“不用谢”。田螺回道:“谢你妹啊，我是说你撞到我了，你是不是瞎啊”，螃蟹一脸委屈地说:“我不是虾啊，我是螃蟹”&lt;/p>
+&lt;/div>
+&lt;p>其中 &lt;strong>padding 必须保证为 0&lt;/strong>，否则立马破功，这一点很容易被忽略掉，有兴趣的可以测试一下。&lt;/p>
+&lt;p>这种方法的优点是写法简洁明了（相对于使用 js 截取文本），但缺点就是通过私有属性实现，不过经测试在 chrome、firefox、safari 以及移动端和小程序都能生效，所以大部分场景还是可以使用这个方法的。&lt;/p>
+&lt;!--
+### 方法二：双重伪元素
+&lt;p>
+有一天，螃蟹撞到了田螺。田螺说:“蟹蟹，你撞到我了”，螃蟹说:“不用谢”。田螺回道:“谢你妹啊，我是说你撞到我了，你是不是瞎啊”，螃蟹一脸委屈地说:“我不是虾啊，我是螃蟹”
+&lt;/p>
+&lt;style>
+p {
+height: 210px;
+overflow: hidden;
+position: relate
+}
+p::before {
+content: "...";
+}
+&lt;/style>
+https://wencaizhang.github.io/study/p/elip.html
+###
+-->
+&lt;h2 id="三代码总结">三、代码总结&lt;/h2>
+&lt;p>原理搞明白之后，为了更方便地在项目中使用，我整理出来了这段 CSS 代码，其中预设了 5 个 class 样式，类名都是 &lt;code>elip-line-x&lt;/code> 的格式，其中 &lt;code>x&lt;/code> 代表最多可以展示 &lt;code>x&lt;/code> 行文字，超出部分显示省略号点点点，&lt;code>x&lt;/code> 的取值范围是 &lt;code>1-5&lt;/code>。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-css" data-lang="css">&lt;span class="ln"> 1&lt;/span>&lt;span class="c">/* start--文本行数限制--start */&lt;/span>
+&lt;span class="ln"> 2&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">elip-line-1&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 3&lt;/span> &lt;span class="k">overflow&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">hidden&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 4&lt;/span> &lt;span class="k">white-space&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">nowrap&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 5&lt;/span> &lt;span class="k">text-overflow&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">ellipsis&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 6&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln"> 7&lt;/span>
+&lt;span class="ln"> 8&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">elip-line-2&lt;/span>&lt;span class="o">,&lt;/span>
+&lt;span class="ln"> 9&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">elip-line-3&lt;/span>&lt;span class="o">,&lt;/span>
+&lt;span class="ln">10&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">elip-line-4&lt;/span>&lt;span class="o">,&lt;/span>
+&lt;span class="ln">11&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">elip-line-5&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">12&lt;/span> &lt;span class="k">padding&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="cp">!important&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">13&lt;/span> &lt;span class="k">overflow&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">hidden&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">14&lt;/span> &lt;span class="k">word-break&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">break-all&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">15&lt;/span> &lt;span class="k">text-overflow&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">ellipsis&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">16&lt;/span> &lt;span class="k">display&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kp">-webkit-&lt;/span>&lt;span class="n">box&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">17&lt;/span> &lt;span class="kp">-webkit-&lt;/span>&lt;span class="n">box-orient&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">vertical&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">18&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln">19&lt;/span>
+&lt;span class="ln">20&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">elip-line-2&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="kp">-webkit-&lt;/span>&lt;span class="n">line-clamp&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">21&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">elip-line-3&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="kp">-webkit-&lt;/span>&lt;span class="n">line-clamp&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">22&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">elip-line-4&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="kp">-webkit-&lt;/span>&lt;span class="n">line-clamp&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">4&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">23&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">elip-line-5&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="kp">-webkit-&lt;/span>&lt;span class="n">line-clamp&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">5&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">24&lt;/span>&lt;span class="c">/* end--文本行数限制--end */&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>有了上面这段代码，直接给任意元素加上 &lt;code>elip-line-x&lt;/code> 类即可轻松实现最多 &lt;code>x&lt;/code> 行文字显示省略号点点点效果。如果最多显示 5 行不满足你的需求，你也可以根据代码扩展到任意行数。&lt;/p></description></item><item><title>Markdown Syntax Guide</title><link>https://example.com/2019-03-11/markdown-syntax-guide/</link><pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate><guid>https://example.com/2019-03-11/markdown-syntax-guide/</guid><description>
+&lt;p>This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p>
+&lt;h2 id="headings">Headings&lt;/h2>
+&lt;p>The following HTML &lt;code>&amp;lt;h1&amp;gt;&lt;/code>—&lt;code>&amp;lt;h6&amp;gt;&lt;/code> elements represent six levels of section headings. &lt;code>&amp;lt;h1&amp;gt;&lt;/code> is the highest section level while &lt;code>&amp;lt;h6&amp;gt;&lt;/code> is the lowest.&lt;/p>
+&lt;h1 id="h1">H1&lt;/h1>
+&lt;h2 id="h2">H2&lt;/h2>
+&lt;h3 id="h3">H3&lt;/h3>
+&lt;h4 id="h4">H4&lt;/h4>
+&lt;h5 id="h5">H5&lt;/h5>
+&lt;h6 id="h6">H6&lt;/h6>
+&lt;h2 id="paragraph">Paragraph&lt;/h2>
+&lt;p>Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.&lt;/p>
+&lt;p>Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.&lt;/p>
+&lt;h2 id="blockquotes">Blockquotes&lt;/h2>
+&lt;p>The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a &lt;code>footer&lt;/code> or &lt;code>cite&lt;/code> element, and optionally with in-line changes such as annotations and abbreviations.&lt;/p>
+&lt;h4 id="blockquote-without-attribution">Blockquote without attribution&lt;/h4>
+&lt;blockquote>
+&lt;p>Tiam, ad mint andaepu dandae nostion secatur sequo quae.
+&lt;strong>Note&lt;/strong> that you can use &lt;em>Markdown syntax&lt;/em> within a blockquote.&lt;/p>
+&lt;/blockquote>
+&lt;h4 id="blockquote-with-attribution">Blockquote with attribution&lt;/h4>
+&lt;blockquote>
+&lt;p>Don't communicate by sharing memory, share memory by communicating.&lt;br>
+— &lt;cite>Rob Pike&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/cite>&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="tables">Tables&lt;/h2>
+&lt;p>Tables aren't part of the core Markdown spec, but Hugo supports supports them out-of-the-box.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Name&lt;/th>
+&lt;th>Age&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Bob&lt;/td>
+&lt;td>27&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Alice&lt;/td>
+&lt;td>23&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h4 id="inline-markdown-within-tables">Inline Markdown within tables&lt;/h4>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Italics&lt;/th>
+&lt;th>Bold&lt;/th>
+&lt;th>Code&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;em>italics&lt;/em>&lt;/td>
+&lt;td>&lt;strong>bold&lt;/strong>&lt;/td>
+&lt;td>&lt;code>code&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="code-blocks">Code Blocks&lt;/h2>
+&lt;h4 id="code-block-with-backticks">Code block with backticks&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="ln"> 1&lt;/span>&lt;span class="cp">&amp;lt;!doctype html&amp;gt;&lt;/span>
+&lt;span class="ln"> 2&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">html&lt;/span> &lt;span class="na">lang&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;en&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;span class="ln"> 3&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">head&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;span class="ln"> 4&lt;/span> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">meta&lt;/span> &lt;span class="na">charset&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;utf-8&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;span class="ln"> 5&lt;/span> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">title&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>Example HTML5 Document&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">title&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;span class="ln"> 6&lt;/span>&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">head&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;span class="ln"> 7&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">body&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;span class="ln"> 8&lt;/span> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>Test&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;span class="ln"> 9&lt;/span>&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">body&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;span class="ln">10&lt;/span>&lt;span class="c">&amp;lt;!-- this line is extraneous 2Error from server (Forbidden): deployments.apps is forbidden: User &amp;#34;chiptest&amp;#34; cannot create resource &amp;#34;deployments&amp;#34; in API group &amp;#34;apps&amp;#34; in the namespace &amp;#34;default&amp;#34; --&amp;gt;&lt;/span>
+&lt;span class="ln">11&lt;/span>&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">html&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="code-block-indented-with-four-spaces">Code block indented with four spaces&lt;/h4>
+&lt;pre>&lt;code>&amp;lt;!doctype html&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+&amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;
+&amp;lt;title&amp;gt;Example HTML5 Document&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+&amp;lt;p&amp;gt;Test&amp;lt;/p&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;h4 id="code-block-with-hugos-internal-highlight-shortcode">Code block with Hugo's internal highlight shortcode&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="ln"> 1&lt;/span>&lt;span class="cp">&amp;lt;!doctype html&amp;gt;&lt;/span>
+&lt;span class="ln"> 2&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">html&lt;/span> &lt;span class="na">lang&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;en&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;span class="ln"> 3&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">head&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;span class="ln"> 4&lt;/span> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">meta&lt;/span> &lt;span class="na">charset&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;utf-8&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;span class="ln"> 5&lt;/span> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">title&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>Example HTML5 Document&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">title&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;span class="ln"> 6&lt;/span>&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">head&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;span class="ln"> 7&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">body&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;span class="ln"> 8&lt;/span> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>Test&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;span class="ln"> 9&lt;/span>&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">body&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;span class="ln">10&lt;/span>&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">html&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;h2 id="list-types">List Types&lt;/h2>
+&lt;h4 id="ordered-list">Ordered List&lt;/h4>
+&lt;ol>
+&lt;li>First item&lt;/li>
+&lt;li>Second item&lt;/li>
+&lt;li>Third item&lt;/li>
+&lt;/ol>
+&lt;h4 id="unordered-list">Unordered List&lt;/h4>
+&lt;ul>
+&lt;li>List item&lt;/li>
+&lt;li>Another item&lt;/li>
+&lt;li>And another item&lt;/li>
+&lt;/ul>
+&lt;h4 id="nested-list">Nested list&lt;/h4>
+&lt;ul>
+&lt;li>Fruit
+&lt;ul>
+&lt;li>Apple&lt;/li>
+&lt;li>Orange&lt;/li>
+&lt;li>Banana&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Dairy
+&lt;ul>
+&lt;li>Milk&lt;/li>
+&lt;li>Cheese&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="other-elements--abbr-sub-sup-kbd-mark">Other Elements — abbr, sub, sup, kbd, mark&lt;/h2>
+&lt;p>&lt;abbr title="Graphics Interchange Format">GIF&lt;/abbr> is a bitmap image format.&lt;/p>
+&lt;p>H&lt;sub>2&lt;/sub>O&lt;/p>
+&lt;p>X&lt;sup>n&lt;/sup> + Y&lt;sup>n&lt;/sup> = Z&lt;sup>n&lt;/sup>&lt;/p>
+&lt;p>Press &lt;kbd>&lt;kbd>CTRL&lt;/kbd>+&lt;kbd>ALT&lt;/kbd>+&lt;kbd>Delete&lt;/kbd>&lt;/kbd> to end the session.&lt;/p>
+&lt;p>Most &lt;mark>salamanders&lt;/mark> are nocturnal, and hunt for insects, worms, and other small creatures.&lt;/p>
+&lt;section class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1" role="doc-endnote">
+&lt;p>The above quote is excerpted from Rob Pike's
+&lt;a
+href = "https://www.youtube.com/watch?v=PAAkCSZUG1c"
+target="_blank" rel ="noopener"
+>talk&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+during Gopherfest, November 18, 2015.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/section></description></item></channel></rss>

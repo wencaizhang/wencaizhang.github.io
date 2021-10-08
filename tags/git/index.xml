@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>git on Clarity</title><link>https://example.com/tags/git/</link><description>Recent content in git on Clarity</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright © 2018-2021, wencaizhang and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Tue, 03 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/git/index.xml" rel="self" type="application/rss+xml"/><item><title>将两次 Git 提交合并为一次</title><link>https://example.com/2021-08-03/%E5%B0%86%E4%B8%A4%E6%AC%A1-git-%E6%8F%90%E4%BA%A4%E5%90%88%E5%B9%B6%E4%B8%BA%E4%B8%80%E6%AC%A1/</link><pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-08-03/%E5%B0%86%E4%B8%A4%E6%AC%A1-git-%E6%8F%90%E4%BA%A4%E5%90%88%E5%B9%B6%E4%B8%BA%E4%B8%80%E6%AC%A1/</guid><description>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="ln">1&lt;/span>git rebase -i HEAD~2
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>git subtree 使用记录</title><link>https://example.com/series/git/git-subtree/</link><pubDate>Fri, 09 Jul 2021 00:00:00 +0000</pubDate><guid>https://example.com/series/git/git-subtree/</guid><description>
+&lt;p>参考文章：
+&lt;a
+href = "https://segmentfault.com/a/1190000012002151"
+target="_blank" rel ="noopener"
+>git subtree教程&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="ln">1&lt;/span>git subtree push --prefix&lt;span class="o">=&lt;/span>content/posts post master
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>目前主要使用这三个命令即可，分别是添加、更新和推送远程。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="ln">1&lt;/span>git subtree add --prefix&lt;span class="o">=&lt;/span>&amp;lt;prefix&amp;gt; &amp;lt;repository&amp;gt; &amp;lt;ref&amp;gt;
+&lt;span class="ln">2&lt;/span>git subtree pull --prefix&lt;span class="o">=&lt;/span>&amp;lt;prefix&amp;gt; &amp;lt;repository&amp;gt; &amp;lt;ref&amp;gt;
+&lt;span class="ln">3&lt;/span>git subtree push --prefix&lt;span class="o">=&lt;/span>&amp;lt;prefix&amp;gt; &amp;lt;repository&amp;gt; &amp;lt;ref&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>其中 &lt;code>&amp;lt;prefix&amp;gt;&lt;/code> 是子模块的路径，&lt;code>&amp;lt;repository&amp;gt;&lt;/code> 是子模块自身的 git 地址。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="ln">1&lt;/span>&lt;span class="p">{&lt;/span>
+&lt;span class="ln">2&lt;/span> &lt;span class="nt">&amp;#34;scripts&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">3&lt;/span> &lt;span class="nt">&amp;#34;set:posts&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;git remote add posts git@github.com:wencaizhang/wencaizhang.github.io.git&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="ln">4&lt;/span> &lt;span class="nt">&amp;#34;add:posts&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;git subtree add --prefix=content/posts post master &amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="ln">5&lt;/span> &lt;span class="nt">&amp;#34;pull:posts&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;git subtree pull --prefix=content/posts post master &amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="ln">6&lt;/span> &lt;span class="nt">&amp;#34;push:posts&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;git subtree push --prefix=content/posts post master&amp;#34;&lt;/span>
+&lt;span class="ln">7&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">8&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>一个合并分支的新姿势</title><link>https://example.com/series/git/git-merge-squash/</link><pubDate>Fri, 09 Jul 2021 00:00:00 +0000</pubDate><guid>https://example.com/series/git/git-merge-squash/</guid><description>
+&lt;p>Git 是程序员日常开发离不开的工具，合并分支也是多人开发协作过程中必不可少的环节。&lt;/p></description></item></channel></rss>

@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>我的微码 on Clarity</title><link>https://example.com/posts/minicode/</link><description>Recent content in 我的微码 on Clarity</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright © 2018-2021, wencaizhang and the Hugo Authors; all rights reserved.</copyright><atom:link href="https://example.com/posts/minicode/index.xml" rel="self" type="application/rss+xml"/><item><title>设置input的placeholder的字体样式</title><link>https://example.com/2021-06-06/set-styles-of-input-placeholder/</link><pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-06-06/set-styles-of-input-placeholder/</guid><description>
+&lt;p>设置input占位符的样式&lt;/p>
+&lt;p>HTML 代码：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="ln">1&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">input&lt;/span> &lt;span class="na">type&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;text&amp;#34;&lt;/span> &lt;span class="na">placeholder&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;请设置用户名&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>CSS 代码：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-css" data-lang="css">&lt;span class="ln"> 1&lt;/span>&lt;span class="nt">input&lt;/span>&lt;span class="p">::&lt;/span>&lt;span class="nd">-webkit-input-placeholder&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c">/* Chrome/Opera/Safari */&lt;/span>
+&lt;span class="ln"> 2&lt;/span> &lt;span class="k">color&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">red&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 3&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln"> 4&lt;/span>&lt;span class="nt">input&lt;/span>&lt;span class="p">::&lt;/span>&lt;span class="nd">-moz-placeholder&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c">/* Firefox 19+ */&lt;/span>
+&lt;span class="ln"> 5&lt;/span> &lt;span class="k">color&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">red&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 6&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln"> 7&lt;/span>&lt;span class="nt">input&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="nd">-ms-input-placeholder&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c">/* IE 10+ */&lt;/span>
+&lt;span class="ln"> 8&lt;/span> &lt;span class="k">color&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">red&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 9&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln">10&lt;/span>&lt;span class="nt">input&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="nd">-moz-placeholder&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c">/* Firefox 18- */&lt;/span>
+&lt;span class="ln">11&lt;/span> &lt;span class="k">color&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">red&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">12&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>示例：&lt;/p>
+&lt;input type="text" placeholder="请设置用户名">
+&lt;style>
+input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+color: red;
+}
+input::-moz-placeholder { /* Firefox 19+ */
+color: red;
+}
+input:-ms-input-placeholder { /* IE 10+ */
+color: red;
+}
+input:-moz-placeholder { /* Firefox 18- */
+color: red;
+}
+&lt;/style></description></item><item><title>设置滚动条样式</title><link>https://example.com/2021-06-06/set-styles-of-scrollbar/</link><pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-06-06/set-styles-of-scrollbar/</guid><description>
+&lt;p>设置滚动条样式&lt;/p>
+&lt;p>HTML 代码：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="ln">1&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">p&lt;/span> &lt;span class="na">class&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;scroll-container&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;span class="ln">2&lt;/span> 庭院深深，不知有多深？杨柳依依，飞扬起片片烟雾，一重重帘幕不知有多少层。豪华的车马停在贵族公子寻欢作乐的地方，她登楼向远处望去，却看不见那通向章台的大路。春已至暮，三月的雨伴随着狂风大作，再是重门将黄昏景色掩闭，也无法留住春意。泪眼汪汪问落花可知道我的心意，落花默默不语，纷乱的，零零落落一点一点飞到秋千外。庭院深深，不知有多深？杨柳依依，飞扬起片片烟雾，一重重帘幕不知有多少层。豪华的车马停在贵族公子寻欢作乐的地方，她登楼向远处望去，却看不见那通向章台的大路。春已至暮，三月的雨伴随着狂风大作，再是重门将黄昏景色掩闭，也无法留住春意。泪眼汪汪问落花可知道我的心意，落花默默不语，纷乱的，零零落落一点一点飞到秋千外。庭院深深，不知有多深？杨柳依依，飞扬起片片烟雾，一重重帘幕不知有多少层。豪华的车马停在贵族公子寻欢作乐的地方，她登楼向远处望去，却看不见那通向章台的大路。春已至暮，三月的雨伴随着狂风大作，再是重门将黄昏景色掩闭，也无法留住春意。泪眼汪汪问落花可知道我的心意，落花默默不语，纷乱的，零零落落一点一点飞到秋千外。庭院深深，不知有多深？杨柳依依，飞扬起片片烟雾，一重重帘幕不知有多少层。豪华的车马停在贵族公子寻欢作乐的地方，她登楼向远处望去，却看不见那通向章台的大路。春已至暮，三月的雨伴随着狂风大作，再是重门将黄昏景色掩闭，也无法留住春意。泪眼汪汪问落花可知道我的心意，落花默默不语，纷乱的，零零落落一点一点飞到秋千外。
+&lt;span class="ln">3&lt;/span>&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>CSS 代码：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-css" data-lang="css">&lt;span class="ln">1&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">scroll-container&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">2&lt;/span> &lt;span class="k">width&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">500&lt;/span>&lt;span class="kt">px&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">3&lt;/span> &lt;span class="k">height&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">150&lt;/span>&lt;span class="kt">px&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">4&lt;/span> &lt;span class="k">border&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="kt">px&lt;/span> &lt;span class="kc">solid&lt;/span> &lt;span class="mh">#ddd&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">5&lt;/span> &lt;span class="k">padding&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">15&lt;/span>&lt;span class="kt">px&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">6&lt;/span> &lt;span class="k">overflow&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">auto&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c">/*必须*/&lt;/span>
+&lt;span class="ln">7&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>滚动条样式：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-css" data-lang="css">&lt;span class="ln"> 1&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="nc">scroll-container&lt;/span>&lt;span class="p">::&lt;/span>&lt;span class="nd">-webkit-scrollbar&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 2&lt;/span> &lt;span class="k">width&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">8&lt;/span>&lt;span class="kt">px&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 3&lt;/span> &lt;span class="k">background&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">white&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 4&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln"> 5&lt;/span>
+&lt;span class="ln"> 6&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="nc">scroll-container&lt;/span>&lt;span class="p">::&lt;/span>&lt;span class="nd">-webkit-scrollbar-corner&lt;/span>&lt;span class="o">,&lt;/span>
+&lt;span class="ln"> 7&lt;/span> &lt;span class="c">/* 滚动条角落 */&lt;/span>
+&lt;span class="ln"> 8&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="nc">scroll-container&lt;/span>&lt;span class="p">::&lt;/span>&lt;span class="nd">-webkit-scrollbar-thumb&lt;/span>&lt;span class="o">,&lt;/span>
+&lt;span class="ln"> 9&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="nc">scroll-container&lt;/span>&lt;span class="p">::&lt;/span>&lt;span class="nd">-webkit-scrollbar-track&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="c">/*滚动条的轨道*/&lt;/span>
+&lt;span class="ln">10&lt;/span> &lt;span class="k">border-radius&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">4&lt;/span>&lt;span class="kt">px&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">11&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">12&lt;/span>
+&lt;span class="ln">13&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="nc">scroll-container&lt;/span>&lt;span class="p">::&lt;/span>&lt;span class="nd">-webkit-scrollbar-corner&lt;/span>&lt;span class="o">,&lt;/span>
+&lt;span class="ln">14&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="nc">scroll-container&lt;/span>&lt;span class="p">::&lt;/span>&lt;span class="nd">-webkit-scrollbar-track&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">15&lt;/span> &lt;span class="c">/* 滚动条轨道 */&lt;/span>
+&lt;span class="ln">16&lt;/span> &lt;span class="k">background-color&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nb">rgba&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">180&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">160&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">120&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">0.1&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="ln">17&lt;/span> &lt;span class="k">box-shadow&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">inset&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="kt">px&lt;/span> &lt;span class="nb">rgba&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">180&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">160&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">120&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">0.5&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="ln">18&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">19&lt;/span>
+&lt;span class="ln">20&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="nc">scroll-container&lt;/span>&lt;span class="p">::&lt;/span>&lt;span class="nd">-webkit-scrollbar-thumb&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">21&lt;/span> &lt;span class="c">/* 滚动条手柄 */&lt;/span>
+&lt;span class="ln">22&lt;/span> &lt;span class="k">background-color&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mh">#00adb5&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">23&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>示例：&lt;/p>
+&lt;p class="scroll-container">
+庭院深深，不知有多深？杨柳依依，飞扬起片片烟雾，一重重帘幕不知有多少层。豪华的车马停在贵族公子寻欢作乐的地方，她登楼向远处望去，却看不见那通向章台的大路。春已至暮，三月的雨伴随着狂风大作，再是重门将黄昏景色掩闭，也无法留住春意。泪眼汪汪问落花可知道我的心意，落花默默不语，纷乱的，零零落落一点一点飞到秋千外。庭院深深，不知有多深？杨柳依依，飞扬起片片烟雾，一重重帘幕不知有多少层。豪华的车马停在贵族公子寻欢作乐的地方，她登楼向远处望去，却看不见那通向章台的大路。春已至暮，三月的雨伴随着狂风大作，再是重门将黄昏景色掩闭，也无法留住春意。泪眼汪汪问落花可知道我的心意，落花默默不语，纷乱的，零零落落一点一点飞到秋千外。庭院深深，不知有多深？杨柳依依，飞扬起片片烟雾，一重重帘幕不知有多少层。豪华的车马停在贵族公子寻欢作乐的地方，她登楼向远处望去，却看不见那通向章台的大路。春已至暮，三月的雨伴随着狂风大作，再是重门将黄昏景色掩闭，也无法留住春意。泪眼汪汪问落花可知道我的心意，落花默默不语，纷乱的，零零落落一点一点飞到秋千外。庭院深深，不知有多深？杨柳依依，飞扬起片片烟雾，一重重帘幕不知有多少层。豪华的车马停在贵族公子寻欢作乐的地方，她登楼向远处望去，却看不见那通向章台的大路。春已至暮，三月的雨伴随着狂风大作，再是重门将黄昏景色掩闭，也无法留住春意。泪眼汪汪问落花可知道我的心意，落花默默不语，纷乱的，零零落落一点一点飞到秋千外。
+&lt;/p>
+&lt;style>
+.scroll-container {
+width: 500px;
+height: 150px;
+border: 1px solid #ddd;
+padding: 15px;
+overflow: auto;
+}
+.scroll-container::-webkit-scrollbar {
+width: 8px;
+background: white;
+}
+.scroll-container::-webkit-scrollbar-corner,
+/* 滚动条角落 */
+.scroll-container::-webkit-scrollbar-thumb,
+.scroll-container::-webkit-scrollbar-track {
+border-radius: 4px;
+}
+.scroll-container::-webkit-scrollbar-corner,
+.scroll-container::-webkit-scrollbar-track {
+/* 滚动条轨道 */
+background-color: rgba(180, 160, 120, 0.1);
+box-shadow: inset 0 0 1px rgba(180, 160, 120, 0.5);
+}
+.scroll-container::-webkit-scrollbar-thumb {
+/* 滚动条手柄 */
+background-color: #00adb5;
+}
+&lt;/style></description></item><item><title>前端创建并下载文件</title><link>https://example.com/2021-01-27/download-file/</link><pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-01-27/download-file/</guid><description>
+&lt;p>more 利用 HTML5 原生的 &lt;code>download&lt;/code> 属性来下载文本信息&lt;/p>
+&lt;p>代码如下：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln"> 1&lt;/span>&lt;span class="cm">/**
+&lt;/span>&lt;span class="ln"> 2&lt;/span>&lt;span class="cm"> * 前端创建并下载文件
+&lt;/span>&lt;span class="ln"> 3&lt;/span>&lt;span class="cm"> * @param {String} content 文件内容
+&lt;/span>&lt;span class="ln"> 4&lt;/span>&lt;span class="cm"> * @param {String} filename 文件名称
+&lt;/span>&lt;span class="ln"> 5&lt;/span>&lt;span class="cm"> * @param {String} MIME
+&lt;/span>&lt;span class="ln"> 6&lt;/span>&lt;span class="cm"> * MIME类型参考手册 http://www.w3school.com.cn/media/media_mimeref.asp
+&lt;/span>&lt;span class="ln"> 7&lt;/span>&lt;span class="cm"> */&lt;/span>
+&lt;span class="ln"> 8&lt;/span>&lt;span class="kr">export&lt;/span> &lt;span class="kd">function&lt;/span> &lt;span class="nx">downloadFile&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">content&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">filename&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">MIME&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;application/octet-stream&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 9&lt;/span> &lt;span class="c1">// 创建隐藏的可下载链接
+&lt;/span>&lt;span class="ln">10&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">eleLink&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">document&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">createElement&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;a&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">11&lt;/span> &lt;span class="nx">eleLink&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">download&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">filename&lt;/span>
+&lt;span class="ln">12&lt;/span> &lt;span class="nx">eleLink&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">style&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">display&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;none&amp;#39;&lt;/span>
+&lt;span class="ln">13&lt;/span>
+&lt;span class="ln">14&lt;/span> &lt;span class="c1">// 字符内容转变成blob地址
+&lt;/span>&lt;span class="ln">15&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">blob&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="nx">Blob&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="nx">content&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">type&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="nx">MIME&lt;/span> &lt;span class="p">})&lt;/span>
+&lt;span class="ln">16&lt;/span> &lt;span class="nx">eleLink&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">href&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">URL&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">createObjectURL&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">blob&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">17&lt;/span>
+&lt;span class="ln">18&lt;/span> &lt;span class="c1">// 触发点击事件，然后移除
+&lt;/span>&lt;span class="ln">19&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="nb">document&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">body&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">appendChild&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">eleLink&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">20&lt;/span> &lt;span class="nx">eleLink&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">click&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;span class="ln">21&lt;/span> &lt;span class="nb">document&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">body&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">removeChild&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">eleLink&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">22&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>其中，参数 &lt;code>content&lt;/code> 指需要下载的文本或字符串内容，&lt;code>filename&lt;/code> 指下载到系统中的文件名称。&lt;/p>
+&lt;p>代码来源：
+&lt;a
+href = "https://www.zhangxinxu.com/wordpress/2017/07/js-text-string-download-as-html-json-file/"
+target="_blank" rel ="noopener"
+>JS前端创建html或json文件并浏览器导出下载&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
+&lt;/a>
+&lt;/p></description></item><item><title>将正常时间格式转化为时间戳</title><link>https://example.com/2021-01-27/transform-timestamp/</link><pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-01-27/transform-timestamp/</guid><description>
+&lt;p>使用 JavaScript 内置方法将正常时间格式转化为时间戳&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln"> 1&lt;/span>&lt;span class="cm">/**
+&lt;/span>&lt;span class="ln"> 2&lt;/span>&lt;span class="cm"> * 将正常时间格式转化为时间戳
+&lt;/span>&lt;span class="ln"> 3&lt;/span>&lt;span class="cm"> * @param {String} time [正常时间格式，如：2019-04-01 13:10:10]
+&lt;/span>&lt;span class="ln"> 4&lt;/span>&lt;span class="cm"> */&lt;/span>
+&lt;span class="ln"> 5&lt;/span>&lt;span class="kr">export&lt;/span> &lt;span class="kd">function&lt;/span> &lt;span class="nx">getTimestamp&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">time&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 6&lt;/span> &lt;span class="c1">// 没有对 time 做合法性校验
+&lt;/span>&lt;span class="ln"> 7&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="c1">// 假设传入的 time 都是合法的时间格式：2019-04-01 13:10:10
+&lt;/span>&lt;span class="ln"> 8&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">date&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">time&lt;/span> &lt;span class="o">?&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="nb">Date&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">time&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">replace&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sr">/-/g&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;/&amp;#39;&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="o">:&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="nb">Date&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;span class="ln"> 9&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">timestamp&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">date&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">getTime&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="c1">// 13 位数字，精确到毫秒
+&lt;/span>&lt;span class="ln">10&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="nx">timestamp&lt;/span>
+&lt;span class="ln">11&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>检测设备类型</title><link>https://example.com/2021-01-27/detect-device/</link><pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-01-27/detect-device/</guid><description>
+&lt;p>在开发移动端网站时经常需要检查用户端设备类型，以便做出不同的调整。&lt;/p>
+&lt;h2 id="方式一检测手机平板和pc">方式一、检测手机平板和PC&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln"> 1&lt;/span>&lt;span class="kd">function&lt;/span> &lt;span class="nx">detectDevice&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 2&lt;/span> &lt;span class="kd">var&lt;/span> &lt;span class="nx">isMobile&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">isTablet&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">isLaptop&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 3&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nb">window&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">innerWidth&lt;/span> &lt;span class="o">&amp;lt;=&lt;/span> &lt;span class="mi">425&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 4&lt;/span> &lt;span class="nx">isMobile&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">true&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 5&lt;/span> &lt;span class="nx">isTablet&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 6&lt;/span> &lt;span class="nx">isLaptop&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 7&lt;/span> &lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nb">window&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">innerWidth&lt;/span> &lt;span class="o">&amp;lt;=&lt;/span> &lt;span class="mi">768&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 8&lt;/span> &lt;span class="nx">isMobile&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 9&lt;/span> &lt;span class="nx">isTablet&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">true&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">10&lt;/span> &lt;span class="nx">isLaptop&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">11&lt;/span> &lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">12&lt;/span> &lt;span class="nx">isMobile&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">13&lt;/span> &lt;span class="nx">isTablet&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">14&lt;/span> &lt;span class="nx">isLaptop&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">true&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">15&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">16&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln">17&lt;/span>&lt;span class="nx">detectDevice&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="判断是否微信浏览器">判断是否微信浏览器&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln">1&lt;/span>&lt;span class="kd">function&lt;/span> &lt;span class="nx">isWeChat&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">2&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">ua&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">navigator&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">userAgent&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">toLowerCase&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;span class="ln">3&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="nx">ua&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">match&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sr">/MicroMessenger/i&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s2">&amp;#34;micromessenger&amp;#34;&lt;/span>
+&lt;span class="ln">4&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>计算传入的时间戳和当前时间相差了多久</title><link>https://example.com/2021-01-27/get-time-ago/</link><pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-01-27/get-time-ago/</guid><description>
+&lt;p>某些时候我们需要展示某个时间点相差当前时刻多久，例如“一天前”，“一个月前”等。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln"> 1&lt;/span>&lt;span class="cm">/**
+&lt;/span>&lt;span class="ln"> 2&lt;/span>&lt;span class="cm"> * 计算传入的时间戳和当前时间相差了多久
+&lt;/span>&lt;span class="ln"> 3&lt;/span>&lt;span class="cm"> * @param {Number} timestamp [时间戳]
+&lt;/span>&lt;span class="ln"> 4&lt;/span>&lt;span class="cm"> */&lt;/span>
+&lt;span class="ln"> 5&lt;/span>&lt;span class="kr">export&lt;/span> &lt;span class="kd">function&lt;/span> &lt;span class="nx">getTimeDiff&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">timestamp&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 6&lt;/span> &lt;span class="c1">// 如果精确到毫秒，时间戳是 13 位数字
+&lt;/span>&lt;span class="ln"> 7&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="c1">// 这里按照秒来计算，需要将毫秒转换为秒
+&lt;/span>&lt;span class="ln"> 8&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">timestamp&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mi">10&lt;/span> &lt;span class="o">**&lt;/span> &lt;span class="mi">12&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 9&lt;/span> &lt;span class="nx">timestamp&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">timestamp&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="mi">1000&lt;/span>
+&lt;span class="ln">10&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">11&lt;/span>
+&lt;span class="ln">12&lt;/span> &lt;span class="kd">var&lt;/span> &lt;span class="nx">currentStamptime&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">Date&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">parse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">new&lt;/span> &lt;span class="nb">Date&lt;/span>&lt;span class="p">())&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="mi">1000&lt;/span>
+&lt;span class="ln">13&lt;/span> &lt;span class="kd">var&lt;/span> &lt;span class="nx">agoAt&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;刚刚&amp;#39;&lt;/span>
+&lt;span class="ln">14&lt;/span> &lt;span class="kd">var&lt;/span> &lt;span class="nx">diff&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">currentStamptime&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="nx">timestamp&lt;/span>
+&lt;span class="ln">15&lt;/span> &lt;span class="kd">var&lt;/span> &lt;span class="nx">points&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;span class="ln">16&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">value&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">365&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mi">24&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mi">60&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mi">60&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">suffix&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;年前&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">max&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">2&lt;/span> &lt;span class="p">},&lt;/span>
+&lt;span class="ln">17&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">value&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">30&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mi">24&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mi">60&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mi">60&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">suffix&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;月前&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">max&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">11&lt;/span> &lt;span class="p">},&lt;/span>
+&lt;span class="ln">18&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">value&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">7&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mi">24&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mi">60&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mi">60&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">suffix&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;周前&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">max&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">4&lt;/span> &lt;span class="p">},&lt;/span>
+&lt;span class="ln">19&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">value&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">24&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mi">60&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mi">60&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">suffix&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;天前&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">max&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">6&lt;/span> &lt;span class="p">},&lt;/span>
+&lt;span class="ln">20&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">value&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">60&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mi">60&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">suffix&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;小时前&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">max&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">23&lt;/span> &lt;span class="p">},&lt;/span>
+&lt;span class="ln">21&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">value&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">10&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mi">60&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">suffix&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;0分钟前&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">max&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">5&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">22&lt;/span> &lt;span class="p">]&lt;/span>
+&lt;span class="ln">23&lt;/span>
+&lt;span class="ln">24&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="kd">var&lt;/span> &lt;span class="nx">i&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="nx">i&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="nx">points&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">length&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="nx">i&lt;/span>&lt;span class="o">++&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">25&lt;/span> &lt;span class="kd">var&lt;/span> &lt;span class="nx">item&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">points&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nx">i&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;span class="ln">26&lt;/span> &lt;span class="kd">var&lt;/span> &lt;span class="nx">mode&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">Math&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">floor&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">diff&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="nx">item&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">value&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">27&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">mode&lt;/span> &lt;span class="o">&amp;gt;=&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">28&lt;/span> &lt;span class="nx">agoAt&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">Math&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">min&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">mode&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">item&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">max&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nx">item&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">suffix&lt;/span>
+&lt;span class="ln">29&lt;/span> &lt;span class="k">break&lt;/span>
+&lt;span class="ln">30&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">31&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">32&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="nx">agoAt&lt;/span>
+&lt;span class="ln">33&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>转换存储容量大小</title><link>https://example.com/2021-01-27/transform-size/</link><pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-01-27/transform-size/</guid><description>
+&lt;p>我们知道存储容量好几个不同的单位，如 KB、MB、GB 等等。&lt;/p>
+&lt;p>而在反映一块硬盘的具体容量时，总是需要根据其实际大小选用合适的单位，例如我有一块 500GB 的硬盘和一根 4GB 的内存条，就不能说成 0.5GB 的硬盘和 4000MB 的内存条。&lt;/p>
+&lt;p>因此，我们需要一个函数来将一个容量转换为合适的单位来表示&lt;/p>
+&lt;p>转换存储容量大小&lt;/p>
+&lt;p>value 应当是以 b 位单位的
+小于 1 KB，则转化成 B
+小于 1 MB，则转化成 KB
+小于 1 GB，则转化成 MB
+以此类推，目前最大单位 PB
+size: 单位大小，这里是 1000&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln"> 1&lt;/span>&lt;span class="kr">export&lt;/span> &lt;span class="kd">function&lt;/span> &lt;span class="nx">formatStorageSize&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">currValue&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">unit&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;B&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">size&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">1024&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 2&lt;/span>
+&lt;span class="ln"> 3&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">unites&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;B&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;KB&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;MB&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;GB&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;TB&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;PB&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;span class="ln"> 4&lt;/span>
+&lt;span class="ln"> 5&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="o">!&lt;/span>&lt;span class="nx">unites&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">includes&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">unit&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 6&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="nb">Error&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;请输入标准的存储单位&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln"> 7&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln"> 8&lt;/span>
+&lt;span class="ln"> 9&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">powSize&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">n&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">10&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">max&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">unites&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">length&lt;/span>
+&lt;span class="ln">11&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="nx">max&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="nx">n&lt;/span> &lt;span class="o">?&lt;/span> &lt;span class="nb">Math&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">pow&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">size&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">n&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">:&lt;/span> &lt;span class="kc">Infinity&lt;/span>
+&lt;span class="ln">12&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">13&lt;/span>
+&lt;span class="ln">14&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">unitesTable&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">unites&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">map&lt;/span>&lt;span class="p">((&lt;/span>&lt;span class="nx">unit&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">index&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">15&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">16&lt;/span> &lt;span class="nx">suffix&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="nx">unit&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="ln">17&lt;/span> &lt;span class="nx">minValue&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="nx">powSize&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">index&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;span class="ln">18&lt;/span> &lt;span class="nx">maxValue&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="nx">powSize&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">index&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">19&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">20&lt;/span> &lt;span class="p">})&lt;/span>
+&lt;span class="ln">21&lt;/span>
+&lt;span class="ln">22&lt;/span> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">unitesTable&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">23&lt;/span>
+&lt;span class="ln">24&lt;/span> &lt;span class="c1">// 先恢复到以 B 为单位然后进行计算
+&lt;/span>&lt;span class="ln">25&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">value&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">powSize&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">unites&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">indexOf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">unit&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="nx">currValue&lt;/span>
+&lt;span class="ln">26&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">suffix&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">minValue&lt;/span> &lt;span class="p">}&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">unitesTable&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">find&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">item&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="nx">item&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">maxValue&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="nx">value&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">27&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">ret&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">value&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="nx">minValue&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">toFixed&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s1">&amp;#39; &amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nx">suffix&lt;/span>
+&lt;span class="ln">28&lt;/span>
+&lt;span class="ln">29&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="nx">ret&lt;/span>
+&lt;span class="ln">30&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="测试代码">测试代码&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln">1&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>闪耀你的div</title><link>https://example.com/2021-01-27/flash/</link><pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-01-27/flash/</guid><description>
+&lt;p>想让你的网页可以 blingbling 地闪耀吗？&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-css" data-lang="css">&lt;span class="ln"> 1&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">flash-wrap&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 2&lt;/span> &lt;span class="k">position&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">relative&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 3&lt;/span> &lt;span class="k">overflow&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">hidden&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 4&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln"> 5&lt;/span>
+&lt;span class="ln"> 6&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">flash-wrap&lt;/span>&lt;span class="p">::&lt;/span>&lt;span class="nd">after&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 7&lt;/span> &lt;span class="k">content&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 8&lt;/span> &lt;span class="k">position&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">absolute&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 9&lt;/span> &lt;span class="k">left&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">-100&lt;/span>&lt;span class="kt">%&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">10&lt;/span> &lt;span class="k">top&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">11&lt;/span> &lt;span class="k">width&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">100&lt;/span>&lt;span class="kt">%&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">12&lt;/span> &lt;span class="k">height&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">100&lt;/span>&lt;span class="kt">%&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">13&lt;/span> &lt;span class="k">transform&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="nf">skewx&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">-25&lt;/span>&lt;span class="kt">deg&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;span class="ln">14&lt;/span> &lt;span class="k">background-image&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;span class="ln">15&lt;/span> &lt;span class="kp">-webkit-&lt;/span>&lt;span class="nb">linear-gradient&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="kt">deg&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nb">rgba&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">255&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">255&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">255&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;span class="ln">16&lt;/span> &lt;span class="nb">rgba&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">255&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">255&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">255&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">.5&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;span class="ln">17&lt;/span> &lt;span class="nb">rgba&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">255&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">255&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">255&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">));&lt;/span>
+&lt;span class="ln">18&lt;/span> &lt;span class="k">z-index&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">10&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">19&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln">20&lt;/span>
+&lt;span class="ln">21&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">flash-wrap&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="nd">hover&lt;/span>&lt;span class="p">::&lt;/span>&lt;span class="nd">after&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">22&lt;/span> &lt;span class="k">animation&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">flash&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="kt">s&lt;/span> &lt;span class="kc">ease&lt;/span> &lt;span class="kc">infinite&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">23&lt;/span> &lt;span class="k">animation-delay&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mf">.5&lt;/span>&lt;span class="kt">s&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">24&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln">25&lt;/span>
+&lt;span class="ln">26&lt;/span>&lt;span class="p">@&lt;/span>&lt;span class="k">keyframes&lt;/span> &lt;span class="nt">flash&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">27&lt;/span> &lt;span class="nt">0&lt;/span>&lt;span class="o">%&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">28&lt;/span> &lt;span class="k">left&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">-100&lt;/span>&lt;span class="kt">%&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">29&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">30&lt;/span>
+&lt;span class="ln">31&lt;/span> &lt;span class="nt">100&lt;/span>&lt;span class="o">%&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">32&lt;/span> &lt;span class="k">left&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">100&lt;/span>&lt;span class="kt">%&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">33&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">34&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>欢迎提示语分享</title><link>https://example.com/2020-12-29/welcome-message/</link><pubDate>Tue, 29 Dec 2020 00:00:00 +0000</pubDate><guid>https://example.com/2020-12-29/welcome-message/</guid><description>
+&lt;p>当用户登录你的系统时，如果能够给出一个友好有趣的提示语，想必更能让你的用户感受到开发者的用心。&lt;/p>
+&lt;p>今天分享一个当用户登入系统的友好提示语：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln"> 1&lt;/span>&lt;span class="kd">function&lt;/span> &lt;span class="nx">timeFix&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 2&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">time&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="nb">Date&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;span class="ln"> 3&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">hour&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">time&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">getHours&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;span class="ln"> 4&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">timeMap&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 5&lt;/span> &lt;span class="mi">9&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;早上好&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="ln"> 6&lt;/span> &lt;span class="mi">11&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;上午好&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="ln"> 7&lt;/span> &lt;span class="mi">13&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;中午好&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="ln"> 8&lt;/span> &lt;span class="mi">20&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;下午好&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;span class="ln"> 9&lt;/span> &lt;span class="mi">24&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;晚上好&amp;#39;&lt;/span>
+&lt;span class="ln">10&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">11&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">key&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">Object&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">keys&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">timeMap&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">find&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">key&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="nx">hour&lt;/span> &lt;span class="o">&amp;lt;=&lt;/span> &lt;span class="nx">key&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">12&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="nx">timeMap&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nx">key&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;span class="ln">13&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln">14&lt;/span>
+&lt;span class="ln">15&lt;/span>&lt;span class="kd">function&lt;/span> &lt;span class="nx">welcome&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">16&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">arr&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;休息一会儿吧&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;准备吃什么呢?&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;要不要打一把 DOTA&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;我猜你可能累了&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;span class="ln">17&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">index&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">Math&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">floor&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">Math&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">random&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="nx">arr&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">length&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="ln">18&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="nx">arr&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nx">index&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;span class="ln">19&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;button id="welcome-btn" class="ui-button" data-type="success" width="100%">点我试试&lt;/button>&lt;/p>
+&lt;script>
+function timeFix () {
+const time = new Date()
+const hour = time.getHours()
+const timeMap = {
+9: '早上好',
+11: '上午好',
+13: '中午好',
+20: '下午好',
+24: '晚上好'
+}
+const key = Object.keys(timeMap).find(key => hour &lt;= key)
+return timeMap[key]
+}
+function welcome () {
+const arr = ['休息一会儿吧', '准备吃什么呢?', '要不要打一把 DOTA', '我猜你可能累了']
+const index = Math.floor(Math.random() * arr.length)
+return arr[index]
+}
+function handleClick () {
+const msg = `${timeFix()}, ${welcome()}`
+console.log(msg)
+if (LightTip) {
+new LightTip().success(msg)
+};
+}
+// handleClick()
+document.getElementById('welcome-btn').addEventListener('click', handleClick)
+&lt;/script></description></item></channel></rss>

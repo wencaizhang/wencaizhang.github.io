@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CSS on Clarity</title><link>https://example.com/categories/css/</link><description>Recent content in CSS on Clarity</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright © 2018-2021, wencaizhang and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Sun, 28 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/categories/css/index.xml" rel="self" type="application/rss+xml"/><item><title>CSS多行文本溢出显示省略号显示点点点...</title><link>https://example.com/2020-06-28/css-text-overflow-ellipsis/</link><pubDate>Sun, 28 Jun 2020 00:00:00 +0000</pubDate><guid>https://example.com/2020-06-28/css-text-overflow-ellipsis/</guid><description>
+&lt;h2 id="一单行省略">一、单行省略&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="ln">1&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">div&lt;/span> &lt;span class="na">class&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;elip w100&amp;#34;&lt;/span> &lt;span class="na">style&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;border: 1px solid #5184f6;&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;span class="ln">2&lt;/span> 两个黄鹂鸣翠柳，一行白鹭上青天。窗含西岭千秋雪，门泊东吴万里船。
+&lt;span class="ln">3&lt;/span>&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">div&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-css" data-lang="css">&lt;span class="ln"> 1&lt;/span>&lt;span class="c">/* 单行文本溢出省略 */&lt;/span>
+&lt;span class="ln"> 2&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">elip&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 3&lt;/span> &lt;span class="k">overflow&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">hidden&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c">/* 隐藏溢出内容 */&lt;/span>
+&lt;span class="ln"> 4&lt;/span> &lt;span class="k">white-space&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">nowrap&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c">/* 不换行，强制文本在一行显示 */&lt;/span>
+&lt;span class="ln"> 5&lt;/span> &lt;span class="k">text-overflow&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">ellipsis&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c">/* 溢出的部分进行省略 */&lt;/span>
+&lt;span class="ln"> 6&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln"> 7&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">w100&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 8&lt;/span> &lt;span class="c">/* 设置宽度，一定不要忘了 */&lt;/span>
+&lt;span class="ln"> 9&lt;/span> &lt;span class="k">width&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">100&lt;/span>&lt;span class="kt">px&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">10&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>效果如下：&lt;/p>
+&lt;style>
+.elip {
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+.w100 {
+width: 100px;
+}
+&lt;/style>
+&lt;div class="elip w100" style="border: 1px solid #5184f6; margin: 1rem 0">
+两个黄鹂鸣翠柳，一行白鹭上青天。窗含西岭千秋雪，门泊东吴万里船。
+&lt;/div>
+&lt;p>要想实现单行文本超出宽度省略，需要满足以下几点&lt;/p>
+&lt;p>只要满足了上面 4 点，单行文本的溢出省略就很容易实现。但现实情况中，除了单行文本外还有很多场景是需要实现多行文本溢出省略的，接下来我们一起来看如何实现这个需求。&lt;/p>
+&lt;h2 id="二多行文本溢出省略">二、多行文本溢出省略&lt;/h2>
+&lt;p>之所以说多行文本溢出省略不容易实现，是因为在 CSS 规范中 &lt;code>text-overflow: ellipsis&lt;/code> 只适用于单行文本，同时并没有适用于多行文本溢出省略的规则。因此我们只能另辟蹊径来实现这个需求。&lt;/p>
+&lt;h3 id="使用浏览器私有属性来实现">使用浏览器私有属性来实现&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-css" data-lang="css">&lt;span class="ln">1&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">box&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">2&lt;/span> &lt;span class="k">width&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">200&lt;/span>&lt;span class="kt">px&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">3&lt;/span> &lt;span class="k">padding&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="cp">!important&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c">/* padding 必须为 0 */&lt;/span>
+&lt;span class="ln">4&lt;/span> &lt;span class="k">overflow&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">hidden&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">5&lt;/span> &lt;span class="k">display&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kp">-webkit-&lt;/span>&lt;span class="n">box&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c">/* 类似于 flexbox 的自适应布局 */&lt;/span>
+&lt;span class="ln">6&lt;/span> &lt;span class="kp">-webkit-&lt;/span>&lt;span class="n">box-orient&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">vertical&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c">/* 元素排列方向：从上到下 */&lt;/span>
+&lt;span class="ln">7&lt;/span> &lt;span class="kp">-webkit-&lt;/span>&lt;span class="n">line-clamp&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">4&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c">/* 第四行后开始省略 */&lt;/span>
+&lt;span class="ln">8&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;style>
+.box {
+width: 200px;
+overflow: hidden;
+display: -webkit-box; /* 类似于 flexbox 的自适应布局 */
+-webkit-box-orient: vertical; /* 元素排列方向：从上到下 */
+-webkit-line-clamp: 4; /* 第四行后开始省略 */
+}
+.border {
+border: 1px solid #ccc;
+}
+.p-0 {
+padding: 0 !important;
+}
+.p-4 {
+padding: 1rem;
+}
+&lt;/style>
+&lt;p>padding 为 0&lt;/p>
+&lt;div class="box border p-0">
+有一天，螃蟹撞到了田螺。田螺说:“蟹蟹，你撞到我了”，螃蟹说:“不用谢”。田螺回道:“谢你妹啊，我是说你撞到我了，你是不是瞎啊”，螃蟹一脸委屈地说:“我不是虾啊，我是螃蟹”
+&lt;p>有一天，螃蟹撞到了田螺。田螺说:“蟹蟹，你撞到我了”，螃蟹说:“不用谢”。田螺回道:“谢你妹啊，我是说你撞到我了，你是不是瞎啊”，螃蟹一脸委屈地说:“我不是虾啊，我是螃蟹”&lt;/p>
+&lt;/div>
+&lt;p>padding 为 1rem&lt;/p>
+&lt;div class="box border p-4">
+有一天，螃蟹撞到了田螺。田螺说:“蟹蟹，你撞到我了”，螃蟹说:“不用谢”。田螺回道:“谢你妹啊，我是说你撞到我了，你是不是瞎啊”，螃蟹一脸委屈地说:“我不是虾啊，我是螃蟹”
+&lt;p>有一天，螃蟹撞到了田螺。田螺说:“蟹蟹，你撞到我了”，螃蟹说:“不用谢”。田螺回道:“谢你妹啊，我是说你撞到我了，你是不是瞎啊”，螃蟹一脸委屈地说:“我不是虾啊，我是螃蟹”&lt;/p>
+&lt;/div>
+&lt;p>其中 &lt;strong>padding 必须保证为 0&lt;/strong>，否则立马破功，这一点很容易被忽略掉，有兴趣的可以测试一下。&lt;/p>
+&lt;p>这种方法的优点是写法简洁明了（相对于使用 js 截取文本），但缺点就是通过私有属性实现，不过经测试在 chrome、firefox、safari 以及移动端和小程序都能生效，所以大部分场景还是可以使用这个方法的。&lt;/p>
+&lt;!--
+### 方法二：双重伪元素
+&lt;p>
+有一天，螃蟹撞到了田螺。田螺说:“蟹蟹，你撞到我了”，螃蟹说:“不用谢”。田螺回道:“谢你妹啊，我是说你撞到我了，你是不是瞎啊”，螃蟹一脸委屈地说:“我不是虾啊，我是螃蟹”
+&lt;/p>
+&lt;style>
+p {
+height: 210px;
+overflow: hidden;
+position: relate
+}
+p::before {
+content: "...";
+}
+&lt;/style>
+https://wencaizhang.github.io/study/p/elip.html
+###
+-->
+&lt;h2 id="三代码总结">三、代码总结&lt;/h2>
+&lt;p>原理搞明白之后，为了更方便地在项目中使用，我整理出来了这段 CSS 代码，其中预设了 5 个 class 样式，类名都是 &lt;code>elip-line-x&lt;/code> 的格式，其中 &lt;code>x&lt;/code> 代表最多可以展示 &lt;code>x&lt;/code> 行文字，超出部分显示省略号点点点，&lt;code>x&lt;/code> 的取值范围是 &lt;code>1-5&lt;/code>。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-css" data-lang="css">&lt;span class="ln"> 1&lt;/span>&lt;span class="c">/* start--文本行数限制--start */&lt;/span>
+&lt;span class="ln"> 2&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">elip-line-1&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln"> 3&lt;/span> &lt;span class="k">overflow&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">hidden&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 4&lt;/span> &lt;span class="k">white-space&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">nowrap&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 5&lt;/span> &lt;span class="k">text-overflow&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">ellipsis&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln"> 6&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln"> 7&lt;/span>
+&lt;span class="ln"> 8&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">elip-line-2&lt;/span>&lt;span class="o">,&lt;/span>
+&lt;span class="ln"> 9&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">elip-line-3&lt;/span>&lt;span class="o">,&lt;/span>
+&lt;span class="ln">10&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">elip-line-4&lt;/span>&lt;span class="o">,&lt;/span>
+&lt;span class="ln">11&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">elip-line-5&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;span class="ln">12&lt;/span> &lt;span class="k">padding&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="cp">!important&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">13&lt;/span> &lt;span class="k">overflow&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">hidden&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">14&lt;/span> &lt;span class="k">word-break&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">break-all&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">15&lt;/span> &lt;span class="k">text-overflow&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">ellipsis&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">16&lt;/span> &lt;span class="k">display&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kp">-webkit-&lt;/span>&lt;span class="n">box&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">17&lt;/span> &lt;span class="kp">-webkit-&lt;/span>&lt;span class="n">box-orient&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">vertical&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="ln">18&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;span class="ln">19&lt;/span>
+&lt;span class="ln">20&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">elip-line-2&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="kp">-webkit-&lt;/span>&lt;span class="n">line-clamp&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">21&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">elip-line-3&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="kp">-webkit-&lt;/span>&lt;span class="n">line-clamp&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">22&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">elip-line-4&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="kp">-webkit-&lt;/span>&lt;span class="n">line-clamp&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">4&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">23&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">elip-line-5&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="kp">-webkit-&lt;/span>&lt;span class="n">line-clamp&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">5&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;span class="ln">24&lt;/span>&lt;span class="c">/* end--文本行数限制--end */&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>有了上面这段代码，直接给任意元素加上 &lt;code>elip-line-x&lt;/code> 类即可轻松实现最多 &lt;code>x&lt;/code> 行文字显示省略号点点点效果。如果最多显示 5 行不满足你的需求，你也可以根据代码扩展到任意行数。&lt;/p></description></item></channel></rss>
