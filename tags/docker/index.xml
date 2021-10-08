@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>docker on Clarity</title><link>https://example.com/tags/docker/</link><description>Recent content in docker on Clarity</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright © 2018-2021, wencaizhang and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Wed, 29 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/docker/index.xml" rel="self" type="application/rss+xml"/><item><title>用 Docker 快速架设一个 Anki 同步服务器</title><link>https://example.com/2021-09-29/anki-sync-server-with-docker/</link><pubDate>Wed, 29 Sep 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-09-29/anki-sync-server-with-docker/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>docker on Clarity</title><link>/tags/docker/</link><description>Recent content in docker on Clarity</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright © 2018-2021, wencaizhang and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Wed, 29 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/docker/index.xml" rel="self" type="application/rss+xml"/><item><title>用 Docker 快速架设一个 Anki 同步服务器</title><link>/2021-09-29/anki-sync-server-with-docker/</link><pubDate>Wed, 29 Sep 2021 00:00:00 +0000</pubDate><guid>/2021-09-29/anki-sync-server-with-docker/</guid><description>
 &lt;p>Anki 是一个辅助记忆软件，{{ 简介}}。最近打算用它来快速记忆一些知识，但是 Anki 的服务器架设在国外，导致同步速度很慢，为了解决这个问题，我参考
 &lt;a
 href = "https://github.com/ankicommunity/anki-devops-services"
@@ -159,7 +159,7 @@ target="_blank" rel ="noopener"
 &lt;p>示例：增加一个用户 userA&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="ln">1&lt;/span>./ankisyncctl.py adduser userA
 &lt;span class="ln">2&lt;/span>Enter password &lt;span class="k">for&lt;/span> userA:
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Basic Usage of Docker</title><link>https://example.com/2019-11-16/basic-usage-of-docker/</link><pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate><guid>https://example.com/2019-11-16/basic-usage-of-docker/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Basic Usage of Docker</title><link>/2019-11-16/basic-usage-of-docker/</link><pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate><guid>/2019-11-16/basic-usage-of-docker/</guid><description>
 &lt;h2 id="使用脚本快速安装">使用脚本快速安装&lt;/h2>
 &lt;p>&lt;strong>安装 Docker:&lt;/strong>&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="ln">1&lt;/span>curl -fsSL https://get.docker.com -o get-docker.sh &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> sudo sh get-docker.sh

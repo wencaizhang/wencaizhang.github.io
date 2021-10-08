@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>JavaScript on Clarity</title><link>https://example.com/tags/javascript/</link><description>Recent content in JavaScript on Clarity</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright © 2018-2021, wencaizhang and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Wed, 27 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/javascript/index.xml" rel="self" type="application/rss+xml"/><item><title>前端创建并下载文件</title><link>https://example.com/2021-01-27/download-file/</link><pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-01-27/download-file/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>JavaScript on Clarity</title><link>/tags/javascript/</link><description>Recent content in JavaScript on Clarity</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright © 2018-2021, wencaizhang and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Wed, 27 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/javascript/index.xml" rel="self" type="application/rss+xml"/><item><title>前端创建并下载文件</title><link>/2021-01-27/download-file/</link><pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate><guid>/2021-01-27/download-file/</guid><description>
 &lt;p>more 利用 HTML5 原生的 &lt;code>download&lt;/code> 属性来下载文本信息&lt;/p>
 &lt;p>代码如下：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln"> 1&lt;/span>&lt;span class="cm">/**
@@ -30,7 +30,7 @@ href = "https://www.zhangxinxu.com/wordpress/2017/07/js-text-string-download-as-
 target="_blank" rel ="noopener"
 >JS前端创建html或json文件并浏览器导出下载&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
 &lt;/a>
-&lt;/p></description></item><item><title>将正常时间格式转化为时间戳</title><link>https://example.com/2021-01-27/transform-timestamp/</link><pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-01-27/transform-timestamp/</guid><description>
+&lt;/p></description></item><item><title>将正常时间格式转化为时间戳</title><link>/2021-01-27/transform-timestamp/</link><pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate><guid>/2021-01-27/transform-timestamp/</guid><description>
 &lt;p>使用 JavaScript 内置方法将正常时间格式转化为时间戳&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln"> 1&lt;/span>&lt;span class="cm">/**
 &lt;/span>&lt;span class="ln"> 2&lt;/span>&lt;span class="cm"> * 将正常时间格式转化为时间戳
@@ -43,7 +43,7 @@ target="_blank" rel ="noopener"
 &lt;span class="ln"> 9&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">timestamp&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">date&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">getTime&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="c1">// 13 位数字，精确到毫秒
 &lt;/span>&lt;span class="ln">10&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="nx">timestamp&lt;/span>
 &lt;span class="ln">11&lt;/span>&lt;span class="p">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>检测设备类型</title><link>https://example.com/2021-01-27/detect-device/</link><pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-01-27/detect-device/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>检测设备类型</title><link>/2021-01-27/detect-device/</link><pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate><guid>/2021-01-27/detect-device/</guid><description>
 &lt;p>在开发移动端网站时经常需要检查用户端设备类型，以便做出不同的调整。&lt;/p>
 &lt;h2 id="方式一检测手机平板和pc">方式一、检测手机平板和PC&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln"> 1&lt;/span>&lt;span class="kd">function&lt;/span> &lt;span class="nx">detectDevice&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
@@ -68,7 +68,7 @@ target="_blank" rel ="noopener"
 &lt;span class="ln">2&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">ua&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">navigator&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">userAgent&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">toLowerCase&lt;/span>&lt;span class="p">()&lt;/span>
 &lt;span class="ln">3&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="nx">ua&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">match&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sr">/MicroMessenger/i&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s2">&amp;#34;micromessenger&amp;#34;&lt;/span>
 &lt;span class="ln">4&lt;/span>&lt;span class="p">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>计算传入的时间戳和当前时间相差了多久</title><link>https://example.com/2021-01-27/get-time-ago/</link><pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-01-27/get-time-ago/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>计算传入的时间戳和当前时间相差了多久</title><link>/2021-01-27/get-time-ago/</link><pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate><guid>/2021-01-27/get-time-ago/</guid><description>
 &lt;p>某些时候我们需要展示某个时间点相差当前时刻多久，例如“一天前”，“一个月前”等。&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln"> 1&lt;/span>&lt;span class="cm">/**
 &lt;/span>&lt;span class="ln"> 2&lt;/span>&lt;span class="cm"> * 计算传入的时间戳和当前时间相差了多久
@@ -103,7 +103,7 @@ target="_blank" rel ="noopener"
 &lt;span class="ln">31&lt;/span> &lt;span class="p">}&lt;/span>
 &lt;span class="ln">32&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="nx">agoAt&lt;/span>
 &lt;span class="ln">33&lt;/span>&lt;span class="p">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>转换存储容量大小</title><link>https://example.com/2021-01-27/transform-size/</link><pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-01-27/transform-size/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>转换存储容量大小</title><link>/2021-01-27/transform-size/</link><pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate><guid>/2021-01-27/transform-size/</guid><description>
 &lt;p>我们知道存储容量好几个不同的单位，如 KB、MB、GB 等等。&lt;/p>
 &lt;p>而在反映一块硬盘的具体容量时，总是需要根据其实际大小选用合适的单位，例如我有一块 500GB 的硬盘和一根 4GB 的内存条，就不能说成 0.5GB 的硬盘和 4000MB 的内存条。&lt;/p>
 &lt;p>因此，我们需要一个函数来将一个容量转换为合适的单位来表示&lt;/p>
@@ -146,7 +146,7 @@ size: 单位大小，这里是 1000&lt;/p>
 &lt;span class="ln">30&lt;/span>&lt;span class="p">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="测试代码">测试代码&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln">1&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>闪耀你的div</title><link>https://example.com/2021-01-27/flash/</link><pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-01-27/flash/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>闪耀你的div</title><link>/2021-01-27/flash/</link><pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate><guid>/2021-01-27/flash/</guid><description>
 &lt;p>想让你的网页可以 blingbling 地闪耀吗？&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-css" data-lang="css">&lt;span class="ln"> 1&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">flash-wrap&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="ln"> 2&lt;/span> &lt;span class="k">position&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">relative&lt;/span>&lt;span class="p">;&lt;/span>
@@ -182,7 +182,7 @@ size: 单位大小，这里是 1000&lt;/p>
 &lt;span class="ln">32&lt;/span> &lt;span class="k">left&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">100&lt;/span>&lt;span class="kt">%&lt;/span>&lt;span class="p">;&lt;/span>
 &lt;span class="ln">33&lt;/span> &lt;span class="p">}&lt;/span>
 &lt;span class="ln">34&lt;/span>&lt;span class="p">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>欢迎提示语分享</title><link>https://example.com/2020-12-29/welcome-message/</link><pubDate>Tue, 29 Dec 2020 00:00:00 +0000</pubDate><guid>https://example.com/2020-12-29/welcome-message/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>欢迎提示语分享</title><link>/2020-12-29/welcome-message/</link><pubDate>Tue, 29 Dec 2020 00:00:00 +0000</pubDate><guid>/2020-12-29/welcome-message/</guid><description>
 &lt;p>当用户登录你的系统时，如果能够给出一个友好有趣的提示语，想必更能让你的用户感受到开发者的用心。&lt;/p>
 &lt;p>今天分享一个当用户登入系统的友好提示语：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln"> 1&lt;/span>&lt;span class="kd">function&lt;/span> &lt;span class="nx">timeFix&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
@@ -233,7 +233,7 @@ new LightTip().success(msg)
 }
 // handleClick()
 document.getElementById('welcome-btn').addEventListener('click', handleClick)
-&lt;/script></description></item><item><title>总结 JavaScript 中的 this 指向问题</title><link>https://example.com/2019-09-29/this-in-javascript/</link><pubDate>Sun, 29 Sep 2019 00:00:00 +0000</pubDate><guid>https://example.com/2019-09-29/this-in-javascript/</guid><description>
+&lt;/script></description></item><item><title>总结 JavaScript 中的 this 指向问题</title><link>/2019-09-29/this-in-javascript/</link><pubDate>Sun, 29 Sep 2019 00:00:00 +0000</pubDate><guid>/2019-09-29/this-in-javascript/</guid><description>
 &lt;p>初学 JavaScript 的时候，时常对于代码中 &lt;code>this&lt;/code> 的值感到困惑，因为 JavaScript 中的 &lt;code>this&lt;/code> 的值总是不确定的，每次都要将 &lt;code>this&lt;/code> 的值打印出来才能放心。&lt;/p>
 &lt;p>实际上 &lt;code>this&lt;/code> 具体指向哪个对象是在函数运行时的环境动态绑定的，而非函数被声明时的环境。&lt;/p>
 &lt;p>尽管如此，总还是有规律可循的，我们可以将 &lt;code>this&lt;/code> 的场景大致分为下面 5 种：&lt;/p>

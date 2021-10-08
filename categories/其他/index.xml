@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>其他 on Clarity</title><link>https://example.com/categories/%E5%85%B6%E4%BB%96/</link><description>Recent content in 其他 on Clarity</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright © 2018-2021, wencaizhang and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Wed, 21 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/categories/%E5%85%B6%E4%BB%96/index.xml" rel="self" type="application/rss+xml"/><item><title>封装简易 DOM 选择器</title><link>https://example.com/2021-07-21/custom-dom-selector-api/</link><pubDate>Wed, 21 Jul 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-07-21/custom-dom-selector-api/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>其他 on Clarity</title><link>/categories/%E5%85%B6%E4%BB%96/</link><description>Recent content in 其他 on Clarity</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright © 2018-2021, wencaizhang and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Wed, 21 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/%E5%85%B6%E4%BB%96/index.xml" rel="self" type="application/rss+xml"/><item><title>封装简易 DOM 选择器</title><link>/2021-07-21/custom-dom-selector-api/</link><pubDate>Wed, 21 Jul 2021 00:00:00 +0000</pubDate><guid>/2021-07-21/custom-dom-selector-api/</guid><description>
 &lt;p>JavaScript 原生的 DOM 选择器代码写起来太长了，我们像一个简单的办法来简化一下吧。&lt;/p>
 &lt;p>偶然间发现 Chrome 开发工具的 console 面板内置了两个方法 &lt;code>$&lt;/code> 和 &lt;code>$$&lt;/code>，作用和 &lt;code>document.querySelector&lt;/code> 以及 &lt;code>document.querySelectorAll&lt;/code> 这两个方法类似。&lt;/p>
 &lt;p>测试后发现这两个变量只在开发工具的 console 面板中才能使用，如果想要在代码中使用，就需要我们自己来封装了。但是要注意确保不会和 jQuery 的符号 &lt;code>$&lt;/code> 冲突。&lt;/p>
@@ -21,7 +21,7 @@
 &lt;span class="ln">5&lt;/span>&lt;span class="c1">// 方式二
 &lt;/span>&lt;span class="ln">6&lt;/span>&lt;span class="c1">&lt;/span>&lt;span class="kr">const&lt;/span> &lt;span class="nx">$&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">document&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">querySelector&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">bind&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">document&lt;/span>&lt;span class="p">)&lt;/span>
 &lt;span class="ln">7&lt;/span>&lt;span class="kr">const&lt;/span> &lt;span class="nx">$$&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">document&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">querySelectorAll&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">bind&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">document&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>git subtree 使用记录</title><link>https://example.com/series/git/git-subtree/</link><pubDate>Fri, 09 Jul 2021 00:00:00 +0000</pubDate><guid>https://example.com/series/git/git-subtree/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>git subtree 使用记录</title><link>/series/git/git-subtree/</link><pubDate>Fri, 09 Jul 2021 00:00:00 +0000</pubDate><guid>/series/git/git-subtree/</guid><description>
 &lt;p>参考文章：
 &lt;a
 href = "https://segmentfault.com/a/1190000012002151"
@@ -43,8 +43,8 @@ target="_blank" rel ="noopener"
 &lt;span class="ln">6&lt;/span> &lt;span class="nt">&amp;#34;push:posts&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;git subtree push --prefix=content/posts post master&amp;#34;&lt;/span>
 &lt;span class="ln">7&lt;/span> &lt;span class="p">}&lt;/span>
 &lt;span class="ln">8&lt;/span>&lt;span class="p">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>一个合并分支的新姿势</title><link>https://example.com/series/git/git-merge-squash/</link><pubDate>Fri, 09 Jul 2021 00:00:00 +0000</pubDate><guid>https://example.com/series/git/git-merge-squash/</guid><description>
-&lt;p>Git 是程序员日常开发离不开的工具，合并分支也是多人开发协作过程中必不可少的环节。&lt;/p></description></item><item><title>Nginx 常用配置备忘清单 | nginx-cheatsheet</title><link>https://example.com/2021-05-18/nginx-cheatsheet/</link><pubDate>Tue, 18 May 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-05-18/nginx-cheatsheet/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>一个合并分支的新姿势</title><link>/series/git/git-merge-squash/</link><pubDate>Fri, 09 Jul 2021 00:00:00 +0000</pubDate><guid>/series/git/git-merge-squash/</guid><description>
+&lt;p>Git 是程序员日常开发离不开的工具，合并分支也是多人开发协作过程中必不可少的环节。&lt;/p></description></item><item><title>Nginx 常用配置备忘清单 | nginx-cheatsheet</title><link>/2021-05-18/nginx-cheatsheet/</link><pubDate>Tue, 18 May 2021 00:00:00 +0000</pubDate><guid>/2021-05-18/nginx-cheatsheet/</guid><description>
 &lt;p>作为软件开发工程师多多少少都该懂一些 nginx 的使用和配置，下面是 nginx 的几个经典应用场景下的配置写法，记录下来以防遗忘，用到的时候也可以直接过来拷贝。&lt;/p>
 &lt;h2 id="端口监听">端口监听&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-nginx" data-lang="nginx">&lt;span class="ln"> 1&lt;/span>&lt;span class="k">server&lt;/span> &lt;span class="p">{&lt;/span>
@@ -183,7 +183,7 @@ href = "https://vishnu.hashnode.dev/nginx-cheatsheet"
 target="_blank" rel ="noopener"
 >&lt;a href="https://vishnu.hashnode.dev/nginx-cheatsheet">https://vishnu.hashnode.dev/nginx-cheatsheet&lt;/a>&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
 &lt;/a>
-这篇文章，在此基础上经过个人理解添加了一些解释说明，特此说明。&lt;/p></description></item><item><title>推荐 JavaScript 中处理数字计算精度问题的开源库</title><link>https://example.com/2021-01-10/calculate-of-number-in-js/</link><pubDate>Sun, 10 Jan 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-01-10/calculate-of-number-in-js/</guid><description>
+这篇文章，在此基础上经过个人理解添加了一些解释说明，特此说明。&lt;/p></description></item><item><title>推荐 JavaScript 中处理数字计算精度问题的开源库</title><link>/2021-01-10/calculate-of-number-in-js/</link><pubDate>Sun, 10 Jan 2021 00:00:00 +0000</pubDate><guid>/2021-01-10/calculate-of-number-in-js/</guid><description>
 &lt;p>在 JavaScript 中彻底解决你0.1+0.2!==0.3的精度问题，还可以给小数按条件取值。是开发计算项目的必备良品&lt;/p>
 &lt;p>本篇推荐三个可用于 JavaScript 中数字计算不丢失精度的开源库，均由
 &lt;a
@@ -239,7 +239,7 @@ target="_blank" rel ="noopener"
 >&lt;a href="http://mikemcl.github.io/decimal.js">http://mikemcl.github.io/decimal.js&lt;/a>&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
 &lt;/a>
 &lt;/p>
-&lt;p>decimal.js 提供了很多数学计算相关的函数，例如正弦余弦对数等函数，非常适合数学计算类需要运行很多数学函数的项目。&lt;/p></description></item><item><title>给博客搭配随机图片</title><link>https://example.com/2021-01-08/random-image-for-blog/</link><pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-01-08/random-image-for-blog/</guid><description>
+&lt;p>decimal.js 提供了很多数学计算相关的函数，例如正弦余弦对数等函数，非常适合数学计算类需要运行很多数学函数的项目。&lt;/p></description></item><item><title>给博客搭配随机图片</title><link>/2021-01-08/random-image-for-blog/</link><pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate><guid>/2021-01-08/random-image-for-blog/</guid><description>
 &lt;p>每次写文章给博文配图是一件很麻烦的事情，一张张地找，有时候质量还不好，于是乎，我就去寻找了一波背景图api接口，这下妈妈再也不用担心我文章不会配图了，&lt;/p>
 &lt;p>API 调用方式很简单，就是直接把 api 地址当做图片地址来访问，当服务器接收到访问时会自动重定向到一个随机的图片地址。&lt;/p>
 &lt;p>下面列举几个&lt;/p>

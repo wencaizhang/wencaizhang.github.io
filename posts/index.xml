@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Clarity</title><link>https://example.com/posts/</link><description>Recent content in Posts on Clarity</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright © 2018-2021, wencaizhang and the Hugo Authors; all rights reserved.</copyright><atom:link href="https://example.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>用 Docker 快速架设一个 Anki 同步服务器</title><link>https://example.com/2021-09-29/anki-sync-server-with-docker/</link><pubDate>Wed, 29 Sep 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-09-29/anki-sync-server-with-docker/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Clarity</title><link>/posts/</link><description>Recent content in Posts on Clarity</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright © 2018-2021, wencaizhang and the Hugo Authors; all rights reserved.</copyright><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>用 Docker 快速架设一个 Anki 同步服务器</title><link>/2021-09-29/anki-sync-server-with-docker/</link><pubDate>Wed, 29 Sep 2021 00:00:00 +0000</pubDate><guid>/2021-09-29/anki-sync-server-with-docker/</guid><description>
 &lt;p>Anki 是一个辅助记忆软件，{{ 简介}}。最近打算用它来快速记忆一些知识，但是 Anki 的服务器架设在国外，导致同步速度很慢，为了解决这个问题，我参考
 &lt;a
 href = "https://github.com/ankicommunity/anki-devops-services"
@@ -159,7 +159,7 @@ target="_blank" rel ="noopener"
 &lt;p>示例：增加一个用户 userA&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="ln">1&lt;/span>./ankisyncctl.py adduser userA
 &lt;span class="ln">2&lt;/span>Enter password &lt;span class="k">for&lt;/span> userA:
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>echarts</title><link>https://example.com/2021-09-24/echarts-xx/</link><pubDate>Fri, 24 Sep 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-09-24/echarts-xx/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>echarts</title><link>/2021-09-24/echarts-xx/</link><pubDate>Fri, 24 Sep 2021 00:00:00 +0000</pubDate><guid>/2021-09-24/echarts-xx/</guid><description>
 &lt;p>
 &lt;a
 href = "https://blog.csdn.net/qq_38974638/article/details/112390125"
@@ -180,9 +180,9 @@ href = "https://github.com/apache/echarts/issues/6475"
 target="_blank" rel ="noopener"
 >markLine没有tooltip层吗？希望鼠标经过markLine时可以把markLine信息在tooltip中显示。&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
 &lt;/a>
-&lt;/p></description></item><item><title>将两次 Git 提交合并为一次</title><link>https://example.com/2021-08-03/%E5%B0%86%E4%B8%A4%E6%AC%A1-git-%E6%8F%90%E4%BA%A4%E5%90%88%E5%B9%B6%E4%B8%BA%E4%B8%80%E6%AC%A1/</link><pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-08-03/%E5%B0%86%E4%B8%A4%E6%AC%A1-git-%E6%8F%90%E4%BA%A4%E5%90%88%E5%B9%B6%E4%B8%BA%E4%B8%80%E6%AC%A1/</guid><description>
+&lt;/p></description></item><item><title>将两次 Git 提交合并为一次</title><link>/2021-08-03/%E5%B0%86%E4%B8%A4%E6%AC%A1-git-%E6%8F%90%E4%BA%A4%E5%90%88%E5%B9%B6%E4%B8%BA%E4%B8%80%E6%AC%A1/</link><pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate><guid>/2021-08-03/%E5%B0%86%E4%B8%A4%E6%AC%A1-git-%E6%8F%90%E4%BA%A4%E5%90%88%E5%B9%B6%E4%B8%BA%E4%B8%80%E6%AC%A1/</guid><description>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="ln">1&lt;/span>git rebase -i HEAD~2
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>封装日期相关函数</title><link>https://example.com/2021-07-29/%E5%B0%81%E8%A3%85%E6%97%A5%E6%9C%9F%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/</link><pubDate>Thu, 29 Jul 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-07-29/%E5%B0%81%E8%A3%85%E6%97%A5%E6%9C%9F%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>封装日期相关函数</title><link>/2021-07-29/%E5%B0%81%E8%A3%85%E6%97%A5%E6%9C%9F%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/</link><pubDate>Thu, 29 Jul 2021 00:00:00 +0000</pubDate><guid>/2021-07-29/%E5%B0%81%E8%A3%85%E6%97%A5%E6%9C%9F%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/</guid><description>
 &lt;h2 id="获取某年某月共有多少天">获取某年某月共有多少天&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="ln">1&lt;/span>&lt;span class="kd">function&lt;/span> &lt;span class="nx">getDaysCountByMonth&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">year&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">month&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="ln">2&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="k">typeof&lt;/span> &lt;span class="nx">month&lt;/span> &lt;span class="o">!==&lt;/span> &lt;span class="s1">&amp;#39;number&amp;#39;&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="nx">month&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="nx">month&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="mi">12&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
@@ -191,7 +191,7 @@ target="_blank" rel ="noopener"
 &lt;span class="ln">5&lt;/span> &lt;span class="p">}&lt;/span>
 &lt;span class="ln">6&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="nb">Date&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">year&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">month&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">getDate&lt;/span>&lt;span class="p">();&lt;/span>
 &lt;span class="ln">7&lt;/span>&lt;span class="p">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Vue.js 项目中二次封装一个按钮组件</title><link>https://example.com/2021-07-28/%E4%BA%8C%E6%AC%A1%E5%B0%81%E8%A3%85%E4%B8%80%E4%B8%AA%E6%8C%89%E9%92%AE%E7%BB%84%E4%BB%B6/</link><pubDate>Wed, 28 Jul 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-07-28/%E4%BA%8C%E6%AC%A1%E5%B0%81%E8%A3%85%E4%B8%80%E4%B8%AA%E6%8C%89%E9%92%AE%E7%BB%84%E4%BB%B6/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Vue.js 项目中二次封装一个按钮组件</title><link>/2021-07-28/%E4%BA%8C%E6%AC%A1%E5%B0%81%E8%A3%85%E4%B8%80%E4%B8%AA%E6%8C%89%E9%92%AE%E7%BB%84%E4%BB%B6/</link><pubDate>Wed, 28 Jul 2021 00:00:00 +0000</pubDate><guid>/2021-07-28/%E4%BA%8C%E6%AC%A1%E5%B0%81%E8%A3%85%E4%B8%80%E4%B8%AA%E6%8C%89%E9%92%AE%E7%BB%84%E4%BB%B6/</guid><description>
 &lt;h2 id="vue2-中容易被忽略的两个重要的-api-介绍">Vue2 中容易被忽略的两个重要的 API 介绍&lt;/h2>
 &lt;h2 id="vue2-中封装">Vue2 中封装&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="ln"> 1&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">template&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
@@ -246,7 +246,7 @@ href = "https://uniapp.dcloud.io/use?id=%e5%ae%9e%e4%be%8b%e5%b1%9e%e6%80%a7"
 target="_blank" rel ="noopener"
 >实例属性 - uni-app&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
 &lt;/a>
-&lt;/p></description></item><item><title>封装简易 DOM 选择器</title><link>https://example.com/2021-07-21/custom-dom-selector-api/</link><pubDate>Wed, 21 Jul 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-07-21/custom-dom-selector-api/</guid><description>
+&lt;/p></description></item><item><title>封装简易 DOM 选择器</title><link>/2021-07-21/custom-dom-selector-api/</link><pubDate>Wed, 21 Jul 2021 00:00:00 +0000</pubDate><guid>/2021-07-21/custom-dom-selector-api/</guid><description>
 &lt;p>JavaScript 原生的 DOM 选择器代码写起来太长了，我们像一个简单的办法来简化一下吧。&lt;/p>
 &lt;p>偶然间发现 Chrome 开发工具的 console 面板内置了两个方法 &lt;code>$&lt;/code> 和 &lt;code>$$&lt;/code>，作用和 &lt;code>document.querySelector&lt;/code> 以及 &lt;code>document.querySelectorAll&lt;/code> 这两个方法类似。&lt;/p>
 &lt;p>测试后发现这两个变量只在开发工具的 console 面板中才能使用，如果想要在代码中使用，就需要我们自己来封装了。但是要注意确保不会和 jQuery 的符号 &lt;code>$&lt;/code> 冲突。&lt;/p>
@@ -269,7 +269,7 @@ target="_blank" rel ="noopener"
 &lt;span class="ln">5&lt;/span>&lt;span class="c1">// 方式二
 &lt;/span>&lt;span class="ln">6&lt;/span>&lt;span class="c1">&lt;/span>&lt;span class="kr">const&lt;/span> &lt;span class="nx">$&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">document&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">querySelector&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">bind&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">document&lt;/span>&lt;span class="p">)&lt;/span>
 &lt;span class="ln">7&lt;/span>&lt;span class="kr">const&lt;/span> &lt;span class="nx">$$&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">document&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">querySelectorAll&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">bind&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">document&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>解决 uView Parse 富文本解析器 ready 事件触发时机不准确的问题</title><link>https://example.com/2021-07-15/temp/</link><pubDate>Thu, 15 Jul 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-07-15/temp/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>解决 uView Parse 富文本解析器 ready 事件触发时机不准确的问题</title><link>/2021-07-15/temp/</link><pubDate>Thu, 15 Jul 2021 00:00:00 +0000</pubDate><guid>/2021-07-15/temp/</guid><description>
 &lt;p>
 &lt;a
 href = "https://github.com/jin-yufeng/mp-html/issues/195"
@@ -335,7 +335,7 @@ target="_blank" rel ="noopener"
 &lt;span class="ln">44&lt;/span> &lt;span class="p">}&lt;/span>
 &lt;span class="ln">45&lt;/span> &lt;span class="p">}&lt;/span>
 &lt;span class="ln">46&lt;/span>&lt;span class="p">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Nginx 常用配置备忘清单 | nginx-cheatsheet</title><link>https://example.com/2021-05-18/nginx-cheatsheet/</link><pubDate>Tue, 18 May 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-05-18/nginx-cheatsheet/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Nginx 常用配置备忘清单 | nginx-cheatsheet</title><link>/2021-05-18/nginx-cheatsheet/</link><pubDate>Tue, 18 May 2021 00:00:00 +0000</pubDate><guid>/2021-05-18/nginx-cheatsheet/</guid><description>
 &lt;p>作为软件开发工程师多多少少都该懂一些 nginx 的使用和配置，下面是 nginx 的几个经典应用场景下的配置写法，记录下来以防遗忘，用到的时候也可以直接过来拷贝。&lt;/p>
 &lt;h2 id="端口监听">端口监听&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-nginx" data-lang="nginx">&lt;span class="ln"> 1&lt;/span>&lt;span class="k">server&lt;/span> &lt;span class="p">{&lt;/span>
@@ -474,7 +474,7 @@ href = "https://vishnu.hashnode.dev/nginx-cheatsheet"
 target="_blank" rel ="noopener"
 >&lt;a href="https://vishnu.hashnode.dev/nginx-cheatsheet">https://vishnu.hashnode.dev/nginx-cheatsheet&lt;/a>&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
 &lt;/a>
-这篇文章，在此基础上经过个人理解添加了一些解释说明，特此说明。&lt;/p></description></item><item><title>推荐 JavaScript 中处理数字计算精度问题的开源库</title><link>https://example.com/2021-01-10/calculate-of-number-in-js/</link><pubDate>Sun, 10 Jan 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-01-10/calculate-of-number-in-js/</guid><description>
+这篇文章，在此基础上经过个人理解添加了一些解释说明，特此说明。&lt;/p></description></item><item><title>推荐 JavaScript 中处理数字计算精度问题的开源库</title><link>/2021-01-10/calculate-of-number-in-js/</link><pubDate>Sun, 10 Jan 2021 00:00:00 +0000</pubDate><guid>/2021-01-10/calculate-of-number-in-js/</guid><description>
 &lt;p>在 JavaScript 中彻底解决你0.1+0.2!==0.3的精度问题，还可以给小数按条件取值。是开发计算项目的必备良品&lt;/p>
 &lt;p>本篇推荐三个可用于 JavaScript 中数字计算不丢失精度的开源库，均由
 &lt;a
@@ -530,7 +530,7 @@ target="_blank" rel ="noopener"
 >&lt;a href="http://mikemcl.github.io/decimal.js">http://mikemcl.github.io/decimal.js&lt;/a>&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
 &lt;/a>
 &lt;/p>
-&lt;p>decimal.js 提供了很多数学计算相关的函数，例如正弦余弦对数等函数，非常适合数学计算类需要运行很多数学函数的项目。&lt;/p></description></item><item><title>给博客搭配随机图片</title><link>https://example.com/2021-01-08/random-image-for-blog/</link><pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-01-08/random-image-for-blog/</guid><description>
+&lt;p>decimal.js 提供了很多数学计算相关的函数，例如正弦余弦对数等函数，非常适合数学计算类需要运行很多数学函数的项目。&lt;/p></description></item><item><title>给博客搭配随机图片</title><link>/2021-01-08/random-image-for-blog/</link><pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate><guid>/2021-01-08/random-image-for-blog/</guid><description>
 &lt;p>每次写文章给博文配图是一件很麻烦的事情，一张张地找，有时候质量还不好，于是乎，我就去寻找了一波背景图api接口，这下妈妈再也不用担心我文章不会配图了，&lt;/p>
 &lt;p>API 调用方式很简单，就是直接把 api 地址当做图片地址来访问，当服务器接收到访问时会自动重定向到一个随机的图片地址。&lt;/p>
 &lt;p>下面列举几个&lt;/p>
@@ -670,7 +670,7 @@ target="_blank" rel ="noopener"
 >&lt;a href="https://api.ghser.com/random/bg.php">https://api.ghser.com/random/bg.php&lt;/a>&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
 &lt;/a>
 &lt;/li>
-&lt;/ul></description></item><item><title>CSS多行文本溢出显示省略号显示点点点...</title><link>https://example.com/2020-06-28/css-text-overflow-ellipsis/</link><pubDate>Sun, 28 Jun 2020 00:00:00 +0000</pubDate><guid>https://example.com/2020-06-28/css-text-overflow-ellipsis/</guid><description>
+&lt;/ul></description></item><item><title>CSS多行文本溢出显示省略号显示点点点...</title><link>/2020-06-28/css-text-overflow-ellipsis/</link><pubDate>Sun, 28 Jun 2020 00:00:00 +0000</pubDate><guid>/2020-06-28/css-text-overflow-ellipsis/</guid><description>
 &lt;h2 id="一单行省略">一、单行省略&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="ln">1&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">div&lt;/span> &lt;span class="na">class&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;elip w100&amp;#34;&lt;/span> &lt;span class="na">style&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;border: 1px solid #5184f6;&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
 &lt;span class="ln">2&lt;/span> 两个黄鹂鸣翠柳，一行白鹭上青天。窗含西岭千秋雪，门泊东吴万里船。
@@ -786,7 +786,7 @@ https://wencaizhang.github.io/study/p/elip.html
 &lt;span class="ln">22&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">elip-line-4&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="kp">-webkit-&lt;/span>&lt;span class="n">line-clamp&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">4&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="p">}&lt;/span>
 &lt;span class="ln">23&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">elip-line-5&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="kp">-webkit-&lt;/span>&lt;span class="n">line-clamp&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">5&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="p">}&lt;/span>
 &lt;span class="ln">24&lt;/span>&lt;span class="c">/* end--文本行数限制--end */&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>有了上面这段代码，直接给任意元素加上 &lt;code>elip-line-x&lt;/code> 类即可轻松实现最多 &lt;code>x&lt;/code> 行文字显示省略号点点点效果。如果最多显示 5 行不满足你的需求，你也可以根据代码扩展到任意行数。&lt;/p></description></item><item><title>Get the Beginning and Ending in a Unit of Time via Momentjs</title><link>https://example.com/2019-11-19/get-the-beginning-and-ending-in-a-unit-of-time-via-momentjs/</link><pubDate>Tue, 19 Nov 2019 00:00:00 +0000</pubDate><guid>https://example.com/2019-11-19/get-the-beginning-and-ending-in-a-unit-of-time-via-momentjs/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>有了上面这段代码，直接给任意元素加上 &lt;code>elip-line-x&lt;/code> 类即可轻松实现最多 &lt;code>x&lt;/code> 行文字显示省略号点点点效果。如果最多显示 5 行不满足你的需求，你也可以根据代码扩展到任意行数。&lt;/p></description></item><item><title>Get the Beginning and Ending in a Unit of Time via Momentjs</title><link>/2019-11-19/get-the-beginning-and-ending-in-a-unit-of-time-via-momentjs/</link><pubDate>Tue, 19 Nov 2019 00:00:00 +0000</pubDate><guid>/2019-11-19/get-the-beginning-and-ending-in-a-unit-of-time-via-momentjs/</guid><description>
 &lt;blockquote>
 &lt;p>根据 &lt;code>moment.js&lt;/code> 得到一个单位时间或者时间段（如本周，上周，本月，上月，当前季度，上个季度）的开始结束时间&lt;/p>
 &lt;/blockquote>
@@ -1002,7 +1002,7 @@ target="_blank" rel ="noopener"
 &lt;span class="ln">77&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="nx">getDuringTime&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">date&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;quarter&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;YYYY-MM-DD&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
 &lt;span class="ln">78&lt;/span>&lt;span class="p">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;p>本文完，感谢阅读。:stuck_out_tongue_winking_eye:&lt;/p></description></item><item><title>Basic Setup for Ubuntu</title><link>https://example.com/2019-11-17/basic-setup-for-ubuntu/</link><pubDate>Sun, 17 Nov 2019 00:00:00 +0000</pubDate><guid>https://example.com/2019-11-17/basic-setup-for-ubuntu/</guid><description>
+&lt;p>本文完，感谢阅读。:stuck_out_tongue_winking_eye:&lt;/p></description></item><item><title>Basic Setup for Ubuntu</title><link>/2019-11-17/basic-setup-for-ubuntu/</link><pubDate>Sun, 17 Nov 2019 00:00:00 +0000</pubDate><guid>/2019-11-17/basic-setup-for-ubuntu/</guid><description>
 &lt;blockquote>
 &lt;p>Ubuntu 基础设置，包含一些常用软件安装，配置文件修改等等。&lt;/p>
 &lt;/blockquote>
@@ -1196,7 +1196,7 @@ target="_blank" rel ="noopener"
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="ln">1&lt;/span>sudo ln -s /usr/bin/python3 /usr/bin/python
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>注意：避免某些软件需要用的 python3，所以不建议把 python3 的软连接删除&lt;/p>
 &lt;hr>
-&lt;p>本文完，感谢阅读。:stuck_out_tongue_winking_eye:&lt;/p></description></item><item><title>Basic Usage of Docker</title><link>https://example.com/2019-11-16/basic-usage-of-docker/</link><pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate><guid>https://example.com/2019-11-16/basic-usage-of-docker/</guid><description>
+&lt;p>本文完，感谢阅读。:stuck_out_tongue_winking_eye:&lt;/p></description></item><item><title>Basic Usage of Docker</title><link>/2019-11-16/basic-usage-of-docker/</link><pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate><guid>/2019-11-16/basic-usage-of-docker/</guid><description>
 &lt;h2 id="使用脚本快速安装">使用脚本快速安装&lt;/h2>
 &lt;p>&lt;strong>安装 Docker:&lt;/strong>&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="ln">1&lt;/span>curl -fsSL https://get.docker.com -o get-docker.sh &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> sudo sh get-docker.sh
@@ -1333,7 +1333,7 @@ target="_blank" rel ="noopener"
 >Docker — 从入门到实践(语雀)&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
 &lt;/a>
 &lt;/li>
-&lt;/ul></description></item><item><title>Nginx 的安装和基本命令 | Basic Usage of Nginx</title><link>https://example.com/2019-11-16/basic-usage-of-nginx/</link><pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate><guid>https://example.com/2019-11-16/basic-usage-of-nginx/</guid><description>
+&lt;/ul></description></item><item><title>Nginx 的安装和基本命令 | Basic Usage of Nginx</title><link>/2019-11-16/basic-usage-of-nginx/</link><pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate><guid>/2019-11-16/basic-usage-of-nginx/</guid><description>
 &lt;h2 id="安装">安装&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="ln">1&lt;/span>&lt;span class="c1"># ubuntu&lt;/span>
 &lt;span class="ln">2&lt;/span>sudo apt install nginx -y
@@ -1462,7 +1462,7 @@ href = "http://www.nginx.cn/doc/"
 target="_blank" rel ="noopener"
 >Nginx中文文档&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
 &lt;/a>
-&lt;/p></description></item><item><title>总结 JavaScript 中的 this 指向问题</title><link>https://example.com/2019-09-29/this-in-javascript/</link><pubDate>Sun, 29 Sep 2019 00:00:00 +0000</pubDate><guid>https://example.com/2019-09-29/this-in-javascript/</guid><description>
+&lt;/p></description></item><item><title>总结 JavaScript 中的 this 指向问题</title><link>/2019-09-29/this-in-javascript/</link><pubDate>Sun, 29 Sep 2019 00:00:00 +0000</pubDate><guid>/2019-09-29/this-in-javascript/</guid><description>
 &lt;p>初学 JavaScript 的时候，时常对于代码中 &lt;code>this&lt;/code> 的值感到困惑，因为 JavaScript 中的 &lt;code>this&lt;/code> 的值总是不确定的，每次都要将 &lt;code>this&lt;/code> 的值打印出来才能放心。&lt;/p>
 &lt;p>实际上 &lt;code>this&lt;/code> 具体指向哪个对象是在函数运行时的环境动态绑定的，而非函数被声明时的环境。&lt;/p>
 &lt;p>尽管如此，总还是有规律可循的，我们可以将 &lt;code>this&lt;/code> 的场景大致分为下面 5 种：&lt;/p>
@@ -1729,7 +1729,7 @@ target="_blank" rel ="noopener"
 &lt;/ul>
 &lt;p>在箭头函数中，则是根据箭头函数上下文决定其 this 指向，且无法修改 &lt;code>this&lt;/code> 指向。&lt;/p>
 &lt;hr>
-&lt;p>本文完，感谢阅读。:stuck_out_tongue_winking_eye:&lt;/p></description></item><item><title>Markdown Syntax Guide</title><link>https://example.com/2019-03-11/markdown-syntax-guide/</link><pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate><guid>https://example.com/2019-03-11/markdown-syntax-guide/</guid><description>
+&lt;p>本文完，感谢阅读。:stuck_out_tongue_winking_eye:&lt;/p></description></item><item><title>Markdown Syntax Guide</title><link>/2019-03-11/markdown-syntax-guide/</link><pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate><guid>/2019-03-11/markdown-syntax-guide/</guid><description>
 &lt;p>This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p>
 &lt;h2 id="headings">Headings&lt;/h2>
 &lt;p>The following HTML &lt;code>&amp;lt;h1&amp;gt;&lt;/code>—&lt;code>&amp;lt;h6&amp;gt;&lt;/code> elements represent six levels of section headings. &lt;code>&amp;lt;h1&amp;gt;&lt;/code> is the highest section level while &lt;code>&amp;lt;h6&amp;gt;&lt;/code> is the lowest.&lt;/p>
@@ -1875,7 +1875,7 @@ target="_blank" rel ="noopener"
 during Gopherfest, November 18, 2015.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/section></description></item><item><title>Rich Content</title><link>https://example.com/2019-03-10/rich-content/</link><pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate><guid>https://example.com/2019-03-10/rich-content/</guid><description>
+&lt;/section></description></item><item><title>Rich Content</title><link>/2019-03-10/rich-content/</link><pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate><guid>/2019-03-10/rich-content/</guid><description>
 &lt;p>Hugo ships with several
 &lt;a
 href = "https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes"
@@ -1899,7 +1899,7 @@ and a set of Simple Shortcodes that enable static and no-JS versions of various 
 &lt;h2 id="twitter-simple-shortcode">Twitter Simple Shortcode&lt;/h2>
 &lt;br>
 &lt;hr>
-&lt;h2 id="vimeo-simple-shortcode">Vimeo Simple Shortcode&lt;/h2></description></item><item><title>Placeholder Text</title><link>https://example.com/2019-03-09/placeholder-text/</link><pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate><guid>https://example.com/2019-03-09/placeholder-text/</guid><description>
+&lt;h2 id="vimeo-simple-shortcode">Vimeo Simple Shortcode&lt;/h2></description></item><item><title>Placeholder Text</title><link>/2019-03-09/placeholder-text/</link><pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate><guid>/2019-03-09/placeholder-text/</guid><description>
 &lt;p>Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p>
 &lt;p>Redit teque digerit hominumque toris verebor lumina non cervice subde tollit usus habet Arctonque, furores quas nec ferunt. Quoque montibus nunc caluere tempus inhospita parcite confusaque translucet patri vestro qui optatis lumine cognoscere flos nubis! Fronde ipsamque patulos Dryopen deorum.&lt;/p>
 &lt;ol>
@@ -1928,7 +1928,7 @@ target="_blank" rel ="noopener"
 &lt;h2 id="mane-refeci-capiebant-unda-mulcebat">Mane refeci capiebant unda mulcebat&lt;/h2>
 &lt;p>Victa caducifer, malo vulnere contra dicere aurato, ludit regale, voca! Retorsit colit est profanae esse virescere furit nec; iaculi matertera et visa est, viribus. Divesque creatis, tecta novat collumque vulnus est, parvas. &lt;strong>Faces illo pepulere&lt;/strong> tempus adest. Tendit flamma, ab opes virum sustinet, sidus sequendo urbis.&lt;/p>
 &lt;p>Iubar proles corpore raptos vero auctor imperium; sed et huic: manus caeli Lelegas tu lux. Verbis obstitit intus oblectamina fixis linguisque ausus sperare Echionides cornuaque tenent clausit possit. Omnia putatur. Praeteritae refert ausus; ferebant e primus lora nutat, vici quae mea ipse. Et iter nil spectatae vulnus haerentia iuste et exercebat, sui et.&lt;/p>
-&lt;p>Eurytus Hector, materna ipsumque ut Politen, nec, nate, ignari, vernum cohaesit sequitur. Vel &lt;strong>mitis temploque&lt;/strong> vocatus, inque alis, &lt;em>oculos nomen&lt;/em> non silvis corpore coniunx ne displicet illa. Crescunt non unus, vidit visa quantum inmiti flumina mortis facto sic: undique a alios vincula sunt iactata abdita! Suspenderat ego fuit tendit: luna, ante urbem Propoetides &lt;strong>parte&lt;/strong>.&lt;/p></description></item><item><title>Math Typesetting</title><link>https://example.com/2019-03-08/math-typesetting/</link><pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate><guid>https://example.com/2019-03-08/math-typesetting/</guid><description>
+&lt;p>Eurytus Hector, materna ipsumque ut Politen, nec, nate, ignari, vernum cohaesit sequitur. Vel &lt;strong>mitis temploque&lt;/strong> vocatus, inque alis, &lt;em>oculos nomen&lt;/em> non silvis corpore coniunx ne displicet illa. Crescunt non unus, vidit visa quantum inmiti flumina mortis facto sic: undique a alios vincula sunt iactata abdita! Suspenderat ego fuit tendit: luna, ante urbem Propoetides &lt;strong>parte&lt;/strong>.&lt;/p></description></item><item><title>Math Typesetting</title><link>/2019-03-08/math-typesetting/</link><pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate><guid>/2019-03-08/math-typesetting/</guid><description>
 &lt;p>Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.&lt;/p>
 &lt;p>In this example we will be using
 &lt;a
@@ -1966,7 +1966,7 @@ target="_blank" rel ="noopener"
 &lt;p>Block math:
 $$
 \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } }
-$$&lt;/p></description></item><item><title>Emoji Support</title><link>https://example.com/2019-03-05/emoji-support/</link><pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate><guid>https://example.com/2019-03-05/emoji-support/</guid><description>
+$$&lt;/p></description></item><item><title>Emoji Support</title><link>/2019-03-05/emoji-support/</link><pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate><guid>/2019-03-05/emoji-support/</guid><description>
 &lt;p>Emoji can be enabled in a Hugo project in a number of ways.&lt;/p>
 &lt;p>The
 &lt;a

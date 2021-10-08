@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>css on Clarity</title><link>https://example.com/tags/css/</link><description>Recent content in css on Clarity</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright © 2018-2021, wencaizhang and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Sun, 06 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/css/index.xml" rel="self" type="application/rss+xml"/><item><title>设置input的placeholder的字体样式</title><link>https://example.com/2021-06-06/set-styles-of-input-placeholder/</link><pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-06-06/set-styles-of-input-placeholder/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>css on Clarity</title><link>/tags/css/</link><description>Recent content in css on Clarity</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright © 2018-2021, wencaizhang and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Sun, 06 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/css/index.xml" rel="self" type="application/rss+xml"/><item><title>设置input的placeholder的字体样式</title><link>/2021-06-06/set-styles-of-input-placeholder/</link><pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate><guid>/2021-06-06/set-styles-of-input-placeholder/</guid><description>
 &lt;p>设置input占位符的样式&lt;/p>
 &lt;p>HTML 代码：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="ln">1&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">input&lt;/span> &lt;span class="na">type&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;text&amp;#34;&lt;/span> &lt;span class="na">placeholder&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;请设置用户名&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
@@ -30,7 +30,7 @@ color: red;
 input:-moz-placeholder { /* Firefox 18- */
 color: red;
 }
-&lt;/style></description></item><item><title>设置滚动条样式</title><link>https://example.com/2021-06-06/set-styles-of-scrollbar/</link><pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-06-06/set-styles-of-scrollbar/</guid><description>
+&lt;/style></description></item><item><title>设置滚动条样式</title><link>/2021-06-06/set-styles-of-scrollbar/</link><pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate><guid>/2021-06-06/set-styles-of-scrollbar/</guid><description>
 &lt;p>设置滚动条样式&lt;/p>
 &lt;p>HTML 代码：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="ln">1&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">p&lt;/span> &lt;span class="na">class&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;scroll-container&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
@@ -100,7 +100,7 @@ box-shadow: inset 0 0 1px rgba(180, 160, 120, 0.5);
 /* 滚动条手柄 */
 background-color: #00adb5;
 }
-&lt;/style></description></item><item><title>CSS多行文本溢出显示省略号显示点点点...</title><link>https://example.com/2020-06-28/css-text-overflow-ellipsis/</link><pubDate>Sun, 28 Jun 2020 00:00:00 +0000</pubDate><guid>https://example.com/2020-06-28/css-text-overflow-ellipsis/</guid><description>
+&lt;/style></description></item><item><title>CSS多行文本溢出显示省略号显示点点点...</title><link>/2020-06-28/css-text-overflow-ellipsis/</link><pubDate>Sun, 28 Jun 2020 00:00:00 +0000</pubDate><guid>/2020-06-28/css-text-overflow-ellipsis/</guid><description>
 &lt;h2 id="一单行省略">一、单行省略&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="ln">1&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">div&lt;/span> &lt;span class="na">class&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;elip w100&amp;#34;&lt;/span> &lt;span class="na">style&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;border: 1px solid #5184f6;&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
 &lt;span class="ln">2&lt;/span> 两个黄鹂鸣翠柳，一行白鹭上青天。窗含西岭千秋雪，门泊东吴万里船。
@@ -216,7 +216,7 @@ https://wencaizhang.github.io/study/p/elip.html
 &lt;span class="ln">22&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">elip-line-4&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="kp">-webkit-&lt;/span>&lt;span class="n">line-clamp&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">4&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="p">}&lt;/span>
 &lt;span class="ln">23&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">elip-line-5&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="kp">-webkit-&lt;/span>&lt;span class="n">line-clamp&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">5&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="p">}&lt;/span>
 &lt;span class="ln">24&lt;/span>&lt;span class="c">/* end--文本行数限制--end */&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>有了上面这段代码，直接给任意元素加上 &lt;code>elip-line-x&lt;/code> 类即可轻松实现最多 &lt;code>x&lt;/code> 行文字显示省略号点点点效果。如果最多显示 5 行不满足你的需求，你也可以根据代码扩展到任意行数。&lt;/p></description></item><item><title>Markdown Syntax Guide</title><link>https://example.com/2019-03-11/markdown-syntax-guide/</link><pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate><guid>https://example.com/2019-03-11/markdown-syntax-guide/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>有了上面这段代码，直接给任意元素加上 &lt;code>elip-line-x&lt;/code> 类即可轻松实现最多 &lt;code>x&lt;/code> 行文字显示省略号点点点效果。如果最多显示 5 行不满足你的需求，你也可以根据代码扩展到任意行数。&lt;/p></description></item><item><title>Markdown Syntax Guide</title><link>/2019-03-11/markdown-syntax-guide/</link><pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate><guid>/2019-03-11/markdown-syntax-guide/</guid><description>
 &lt;p>This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p>
 &lt;h2 id="headings">Headings&lt;/h2>
 &lt;p>The following HTML &lt;code>&amp;lt;h1&amp;gt;&lt;/code>—&lt;code>&amp;lt;h6&amp;gt;&lt;/code> elements represent six levels of section headings. &lt;code>&amp;lt;h1&amp;gt;&lt;/code> is the highest section level while &lt;code>&amp;lt;h6&amp;gt;&lt;/code> is the lowest.&lt;/p>

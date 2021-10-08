@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>dom on Clarity</title><link>https://example.com/tags/dom/</link><description>Recent content in dom on Clarity</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright © 2018-2021, wencaizhang and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Fri, 24 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/dom/index.xml" rel="self" type="application/rss+xml"/><item><title>echarts</title><link>https://example.com/2021-09-24/echarts-xx/</link><pubDate>Fri, 24 Sep 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-09-24/echarts-xx/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>dom on Clarity</title><link>/tags/dom/</link><description>Recent content in dom on Clarity</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright © 2018-2021, wencaizhang and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Fri, 24 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/dom/index.xml" rel="self" type="application/rss+xml"/><item><title>echarts</title><link>/2021-09-24/echarts-xx/</link><pubDate>Fri, 24 Sep 2021 00:00:00 +0000</pubDate><guid>/2021-09-24/echarts-xx/</guid><description>
 &lt;p>
 &lt;a
 href = "https://blog.csdn.net/qq_38974638/article/details/112390125"
@@ -19,7 +19,7 @@ href = "https://github.com/apache/echarts/issues/6475"
 target="_blank" rel ="noopener"
 >markLine没有tooltip层吗？希望鼠标经过markLine时可以把markLine信息在tooltip中显示。&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
 &lt;/a>
-&lt;/p></description></item><item><title>Git 秘钥</title><link>https://example.com/series/git/ssh/</link><pubDate>Mon, 26 Jul 2021 00:00:00 +0000</pubDate><guid>https://example.com/series/git/ssh/</guid><description>
+&lt;/p></description></item><item><title>Git 秘钥</title><link>/series/git/ssh/</link><pubDate>Mon, 26 Jul 2021 00:00:00 +0000</pubDate><guid>/series/git/ssh/</guid><description>
 &lt;p>
 &lt;a
 href = "https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh"
@@ -40,7 +40,7 @@ href = "https://git-scm.com/book/zh/v2/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9
 target="_blank" rel ="noopener"
 >&lt;a href="https://git-scm.com/book/zh/v2/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84-Git-%E7%94%9F%E6%88%90-SSH-%E5%85%AC%E9%92%A5">https://git-scm.com/book/zh/v2/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84-Git-%E7%94%9F%E6%88%90-SSH-%E5%85%AC%E9%92%A5&lt;/a>&lt;span>&lt;svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="margin: 0; width: .85em;">&lt;path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">&lt;/path> &lt;polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">&lt;/polygon>&lt;/svg>&lt;/span>
 &lt;/a>
-&lt;/p></description></item><item><title>封装简易 DOM 选择器</title><link>https://example.com/2021-07-21/custom-dom-selector-api/</link><pubDate>Wed, 21 Jul 2021 00:00:00 +0000</pubDate><guid>https://example.com/2021-07-21/custom-dom-selector-api/</guid><description>
+&lt;/p></description></item><item><title>封装简易 DOM 选择器</title><link>/2021-07-21/custom-dom-selector-api/</link><pubDate>Wed, 21 Jul 2021 00:00:00 +0000</pubDate><guid>/2021-07-21/custom-dom-selector-api/</guid><description>
 &lt;p>JavaScript 原生的 DOM 选择器代码写起来太长了，我们像一个简单的办法来简化一下吧。&lt;/p>
 &lt;p>偶然间发现 Chrome 开发工具的 console 面板内置了两个方法 &lt;code>$&lt;/code> 和 &lt;code>$$&lt;/code>，作用和 &lt;code>document.querySelector&lt;/code> 以及 &lt;code>document.querySelectorAll&lt;/code> 这两个方法类似。&lt;/p>
 &lt;p>测试后发现这两个变量只在开发工具的 console 面板中才能使用，如果想要在代码中使用，就需要我们自己来封装了。但是要注意确保不会和 jQuery 的符号 &lt;code>$&lt;/code> 冲突。&lt;/p>
