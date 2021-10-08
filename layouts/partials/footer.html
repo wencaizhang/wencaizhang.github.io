@@ -1,0 +1,19 @@
+{{- $s := .Site.Params }}
+{{ $t := .Site.Title }}
+{{- if or .Params.enableMathNotation $s.enableMathNotation }}
+  {{ partialCached "math" . }}
+{{- end }}
+{{- $iconsDir := default "icons/" .Site.Params.iconsDir }}
+{{- $defaultFooterLogo := printf "%s%s" $iconsDir "apple-touch-icon.png"}}
+<footer class="footer">
+  <div class="footer_inner wrap pale">
+    <img src='{{ absURL (default $defaultFooterLogo $s.footerLogo) }}' class="icon icon_2 transparent" alt="{{ $t }}">
+    {{- partialCached "top" .}}
+    <div>
+      <p>
+        {{ T "copyright" }}{{ with $s.since }}&nbsp;{{ . }}-{{ end }}&nbsp;<span class="year"></span>&nbsp;{{ upper $t }}. {{ T "all_rights" }}.
+        感谢&nbsp;<a href="https://www.upyun.com/https.html?utm_source=ruby&amp;utm_medium=Referral&amp;utm_content=httpsad" target="_blank" rel="noopener"><img style="height: 20px;" src="https://l.ruby-china.com/photo/2017/e094bd44-fd71-4ab7-9dcf-f4931f480705.png" alt="又拍云"></a> &nbsp;提供 CDN 支持
+      </p>
+    </div>
+  </div>
+</footer>

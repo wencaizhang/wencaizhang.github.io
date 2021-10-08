@@ -1,0 +1,33 @@
+# set `baseurl` to your root domain
+# if you set it to "/" share icons won't work properly on production
+baseurl = "https://example.com/"  # Include trailing slash
+# title = "Clarity"  # Edit directly from config/_default/languages.toml # alternatively, uncomment this and remove `title` entry from the aforemention file.
+copyright = "Copyright © 2018-2021, wencaizhang and the Hugo Authors; all rights reserved."
+# canonifyurls = true
+paginate = 10
+theme = "hugo-clarity"
+disqusShortname = ""
+
+DefaultContentLanguage = "en"
+# [language]
+# config/_default/languages.toml
+
+# [menus]
+# config/_default/menus/menu.xx.toml
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
+
+[frontmatter]
+	# 修改时间
+	lastmod = ["lastmod", ":git", ":fileModTime", ":default"]
+	# 优先从文件名中获取 date 时间信息
+	date = [":filename", ":default"]
+
+# URL 结构
+[permalinks]
+	posts = "/:year--:month--:day/:slug/"
+	categories = "/categories/:slug/"
+	tags = "/tags/:slug/"

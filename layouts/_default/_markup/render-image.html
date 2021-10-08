@@ -1,0 +1,29 @@
+<div class="image-container" style="text-align: center;">
+  <style>
+    .image_view img {
+      margin: 1em auto;
+    }
+    .image-caption {
+      min-width: 20%;
+      max-width: 80%;
+      text-align: center;
+      display: inline-block;
+      padding: 10px;
+      margin: 0 auto;
+      border-bottom: 1px solid #eee;
+      font-size: 12px;
+      color: #999;
+    }
+  </style>
+  <div class="image_view">
+    <img
+      loading='lazy'
+      src="{{ .Destination | safeURL }}"
+      alt="{{ .Text }}"
+      {{ with .Title}} title="{{ . }}"{{ end }}
+      onerror="this.classList.add('error');"
+    />
+  </div>
+  <div class="image-caption">{{ .Text }}</div>
+</div>
+
