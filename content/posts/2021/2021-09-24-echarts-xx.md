@@ -1,12 +1,12 @@
 ---
-title: echarts
+title: ECharts 使用不完全笔记
 date: 2021-07-24
 draft: false
 categories:
 - git
 tags:
-- dom
-thumbnail: "images/building.png"
+- ECharts
+thumbnail: "https://echarts.apache.org/en/images/index-home-pie.png"
 ---
 
 [ECharts 图例（legend）分两行显示并且初始化设置不选中状态](https://blog.csdn.net/qq_38974638/article/details/112390125)
