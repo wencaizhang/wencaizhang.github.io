@@ -14,6 +14,9 @@ import TailwindCSS from '~/icons/tailwind.svg'
 import Typescript from '~/icons/typescript.svg'
 import Umami from '~/icons/umami.svg'
 import Vercel from '~/icons/vercel.svg'
+import CSS from '~/icons/css.svg'
+import Vue from '~/icons/vue.svg'
+import Webpack from '~/icons/webpack.svg'
 
 export let BrandIconsMap = {
   React,
@@ -32,6 +35,9 @@ export let BrandIconsMap = {
   Vercel,
   Railway,
   Spotify,
+  CSS,
+  Vue,
+  Webpack,
 }
 
 export function BrandIcon(props: { type: keyof typeof BrandIconsMap; className?: string }) {
