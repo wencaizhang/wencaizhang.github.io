@@ -1,6 +1,6 @@
 export let siteMetadata = {
   siteUrl: 'https://www.leohuynh.dev',
-  siteRepo: 'https://github.com/hta218/leohuynh.dev',
+  siteRepo: 'https://github.com/wencaizhang/wencaizhang.github.io/tree/nextjs',
   siteLogo: '/static/images/logo.jpg',
   title: "前端果酱开发历险记- Wencai's coding journey",
   author: 'wencaizhang',
@@ -19,19 +19,19 @@ export let siteMetadata = {
   locale: 'en-US',
   image: '/static/images/logo.jpg',
   socialBanner: '/static/images/logo.jpg',
-  x: 'https://x.com/hta218_',
+  x: 'https://x.com/xxxx',
   profileCover: 'https://static.webjam.cn/images/bg/wew.png',
-  analyticsURL: 'https://analytics.leohuynh.dev/share/jkwRskv0/leohuynh.dev',
+  // analyticsURL: 'https://analytics.leohuynh.dev/share/jkwRskv0/leohuynh.dev',
   analytics: {
     plausibleDataDomain: '',
     simpleAnalytics: false, // true | false
-    umamiWebsiteId: '2df62ae5-7f13-455b-8e54-c15b96ff2b8b',
+    umamiWebsiteId: '',
     googleAnalyticsId: '', // e.g. UA-000000-2 or G-XXXXXXX
   },
   socialAccounts: {
-    github: 'hta218',
-    linkedin: 'hta218',
-    x: 'hta218_',
+    github: 'wencaizhang',
+    linkedin: '',
+    x: '',
     twitter: '',
   },
 }

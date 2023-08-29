@@ -38,12 +38,12 @@ export function BlogLinks() {
           {t('menu_resume_2')}
         </span>
       </Link>
-      <Link href={siteMetadata.analyticsURL} className="hover:underline">
+      {/* <Link href={siteMetadata.analyticsURL} className="hover:underline">
         <Twemoji emoji="bar-chart" />
         <span data-umami-event="home-link-analytics" className="ml-1.5">
           {t('analytics')}
         </span>
-      </Link>
+      </Link> */}
     </div>
   )
 }
