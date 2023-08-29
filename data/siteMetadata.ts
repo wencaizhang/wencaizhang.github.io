@@ -21,7 +21,7 @@ export let siteMetadata = {
   socialBanner: '/static/images/logo.jpg',
   x: 'https://x.com/xxxx',
   profileCover: 'https://static.webjam.cn/images/bg/wew.png',
-  // analyticsURL: 'https://analytics.leohuynh.dev/share/jkwRskv0/leohuynh.dev',
+  analyticsURL: '',
   analytics: {
     plausibleDataDomain: '',
     simpleAnalytics: false, // true | false
