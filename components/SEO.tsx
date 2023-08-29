@@ -29,6 +29,9 @@ export function BlogSeo(props: BlogSeoProps) {
   let router = useRouter()
 
   let { authorDetails, title, summary, date, lastmod, url, images = [] } = props
+  // images 为 null 时赋值为 []
+  images = images || []
+
   let publishedAt = new Date(date).toISOString()
   let modifiedAt = new Date(lastmod || date).toISOString()
   let imagesArr =

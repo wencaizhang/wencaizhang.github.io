@@ -1,0 +1,30 @@
+---
+heading: "逐层向上查找指定类名的父级元素"
+title: "逐层向上查找指定类名的父级元素"
+date: "2023-07-07"
+draft: false
+summary: ""
+type: "Javascript"
+---
+
+import Twemoji from './Twemoji.tsx'
+import { WavingHand } from './homepage/WavingHand.tsx'
+
+
+一个典型场景就是使用事件代理中，需要判断事件源是否是我们需要的元素，如果不是，就需要向上级元素查找，直到找到我们需要的元素。
+
+```js
+// 循环向上级元素查找，直到找到 class 包含 opblock 的元素
+while (
+  target&&
+  target.classList &&
+  !target.classList.contains("opblock")
+) {
+  target = target.parentNode;
+}
+```
+
+
+Cheers! <Twemoji emoji="clinking-beer-mugs" />
+
+

@@ -1,0 +1,23 @@
+---
+heading: "数组工具函数"
+title: "对一个数组进行随机排序"
+date: "2021-10-11"
+type: "Javascript"
+draft: false
+summary: "对一个数组进行随机排序"
+tags: ["javascript", "array", "utilities"]
+---
+
+##### 对一个数组进行随机排序
+
+```js
+const shuffle = arr => arr.sort(() => 0.5 - Math.random());
+```
+
+示例
+
+```js
+shuffle([1, 2, 3, 4, 5]) // [3, 2, 5, 4, 1]
+shuffle([1, 2, 3, 4, 5]) // [3, 1, 5, 4, 2]
+shuffle(['foo', 'bar', 'buzz']) // ['buzz', 'bar', 'foo']
+```

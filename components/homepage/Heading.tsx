@@ -9,7 +9,7 @@ export function Heading() {
       {t('introduction')} <span className="font-medium">{t('name')}</span> - {t('description')}
       <span className="hidden font-medium">{t('location')}</span>
       <span className="absolute ml-1.5 inline-flex pt-[3px]">
-        <Twemoji emoji="flag-vietnam" />
+        {/* <Twemoji emoji="flag-china" /> */}
       </span>
     </h1>
   )

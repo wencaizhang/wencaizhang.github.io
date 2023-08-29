@@ -8,6 +8,7 @@ import { AnalyticsLink } from './AnalyticsLink'
 import { Link } from './Link'
 import { MobileNavToggle } from './MobileNavToggle'
 import { ThemeSwitcher } from './ThemeSwitcher'
+import { siteMetadata } from '~/data/siteMetadata'
 
 export function Header({ navShow, onToggleNav }: { onToggleNav: () => void; navShow: boolean }) {
   let { t } = useTranslation('common')
@@ -20,8 +21,10 @@ export function Header({ navShow, onToggleNav }: { onToggleNav: () => void; navS
           <div className="flex items-center justify-between" data-umami-event="logo">
             <div className="mr-3 flex items-center justify-center">
               <NextImage
-                src="/static/images/logo.jpg"
-                alt="Leo's Blog logo"
+                // src="/static/images/logo.jpg"
+                // alt="Leo's Blog logo"
+                alt={siteMetadata.title}
+                src={siteMetadata.siteLogo}
                 width={45}
                 height={45}
                 className="rounded-full"

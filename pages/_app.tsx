@@ -4,6 +4,9 @@ import 'css/tailwind.css'
 import 'css/twemoji.css'
 import 'css/resume.css'
 
+import 'css/hello.css'
+import 'css/icon.css'
+
 import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
 import { Analytics } from '~/components/analytics'

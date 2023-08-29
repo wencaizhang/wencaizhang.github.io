@@ -11,7 +11,7 @@ export function Greeting() {
 
   return (
     <div className={className}>
-      {t('greeting_message')} <i className="twa twa-waving-hand"></i>
+      {t('greeting_message')} <i className="twa twa-waving-hand wave-hello-emoji"></i>
     </div>
   )
 }

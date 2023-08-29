@@ -1,0 +1,28 @@
+---
+heading: '封装日期相关函数'
+title: "计算两个日期间隔的天数"
+date: "2021-07-29"
+type: "Javascript"
+draft: false
+summary: "Custom hooks to use local storage state"
+tags: ['js', 'momentjs']
+---
+
+import Twemoji from './Twemoji.tsx'
+
+
+计算两个日期之间的间隔的需求挺常见的，比如程序员都熟悉的 GitHub 和 GitLab 的网页端都会显示代码是多少天之前提交的。
+
+这个函数计算两个日期间隔单位是「天」。
+
+
+```js
+function dayDiff (date1, date2) {
+  const ms = 24 * 60 * 60 * 1000;  // 一天转换成毫秒
+  return Math.ceil(Math.abs(date1.getTime() - date2.getTime()) / ms)
+}
+
+dayDiff(new Date("2021-11-3"), new Date("2022-2-1"))  // 90
+```
+
+Happy Coding! <Twemoji emoji="clinking-beer-mugs" />

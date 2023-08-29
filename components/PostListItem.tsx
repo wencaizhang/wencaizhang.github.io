@@ -30,7 +30,9 @@ export function PostListItem({ frontMatter }: { frontMatter: MdxFrontMatter }) {
               ))}
             </div>
           </div>
-          <div className="prose max-w-none text-gray-500 dark:text-gray-400">{summary}</div>
+          <div className="prose max-w-none text-gray-500 dark:text-gray-400 elip-line-3">
+            {summary}
+          </div>
         </div>
       </article>
     </li>

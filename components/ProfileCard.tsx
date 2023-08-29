@@ -3,7 +3,8 @@ import { useTranslation } from 'next-i18next'
 import Image from 'next/image'
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { ProfileCardInfo } from './ProfileInfo'
-import { SpotifyNowPlaying } from './SpotifyNowPlaying'
+// import { SpotifyNowPlaying } from './SpotifyNowPlaying'
+import { siteMetadata } from '~/data/siteMetadata'
 
 export function ProfileCard() {
   let ref = useRef(null)
@@ -62,7 +63,7 @@ export function ProfileCard() {
         )}
       >
         <Image
-          src={'/static/images/logo.jpg'}
+          src={siteMetadata.profileCover}
           alt={t('avatar_description')}
           width={550}
           height={350}
@@ -74,7 +75,7 @@ export function ProfileCard() {
           }}
           priority
         />
-        <SpotifyNowPlaying />
+        {/* <SpotifyNowPlaying /> */}
         <ProfileCardInfo />
         <span className="h-1.5 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"></span>
       </div>

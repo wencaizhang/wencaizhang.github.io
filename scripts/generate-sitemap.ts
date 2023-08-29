@@ -2,7 +2,7 @@ import fs from 'fs'
 import { globby } from 'globby'
 import prettier from 'prettier'
 
-let SITE_URL = 'https://www.leohuynh.dev'
+let SITE_URL = 'https://webjam.cn'
 
 ;(async () => {
   console.log('Generating sitemap...')

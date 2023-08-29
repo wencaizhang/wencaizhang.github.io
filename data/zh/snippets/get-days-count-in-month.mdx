@@ -1,0 +1,23 @@
+---
+heading: '封装日期相关函数'
+title: '获取某年某月共有多少天'
+date: '2021-07-29'
+type: 'Javascript'
+draft: false
+summary: 'Custom hooks to use local storage state'
+tags: ['js', 'momentjs']
+---
+
+import Twemoji from './Twemoji.tsx'
+
+```js
+function getDaysCountInMonth(year, month) {
+  if (typeof month !== 'number' || month < 1 || month > 12) {
+    throw new Error('请输入月份，1-12 之间的数字')
+    return
+  }
+  return new Date(year, month, 0).getDate()
+}
+```
+
+Happy commiting! <Twemoji emoji="clinking-beer-mugs" />

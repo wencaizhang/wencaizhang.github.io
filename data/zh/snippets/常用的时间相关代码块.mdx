@@ -1,0 +1,118 @@
+---
+heading: "时间相关"
+title: "常用的时间相关代码块"
+date: "2023-07-24"
+draft: false
+summary: "中后台管理系统，涉及到数据查询的功能中时间相关的代码逻辑是必不可少的，这里记录一些常用的时间相关的代码块。"
+type: "Javascript"
+---
+
+import Twemoji from './Twemoji.tsx'
+import { WavingHand } from './homepage/WavingHand.tsx'
+
+
+中后台管理系统，涉及到数据查询的功能中时间相关的代码逻辑是必不可少的，这里记录一些常用的时间相关的代码块。
+
+## 时间处理工具库选择
+
+dayjs or momentjs ?
+
+推荐使用 [`Day.js`](https://dayjs.gitee.io/zh-CN/), `Day.js` 相比于 `Moment.js` 使用了不可变数据结构，性能更快，体积仅 2KB, API 设计完全一致。
+
+
+## 常用代码
+
+### 获取最近一段时间
+
+#### 最近24小时
+  
+```js
+const start = moment().subtract(24 'hour')
+const end = moment()
+```
+
+#### 最近 3 天
+  
+```js
+const start = moment().subtract(3, 'day')
+const end = moment()
+```
+
+#### 最近一周
+
+```js
+const start = moment().subtract(7, 'week')
+const end = moment()
+```
+
+#### 最近 30 天
+
+```js
+const start = moment().subtract(30, 'days')
+const end = moment()
+```
+
+#### 最近一个月
+
+要记得，每月的天数不一样，所以不能直接用 30 天来计算。
+
+```js
+const start = moment().subtract(1, 'month')
+const end = moment()
+```
+
+#### 最近一年
+
+```js
+const start = moment().subtract(1, 'year')
+const end = moment()
+```
+
+
+### 一个时间段的起始
+
+
+#### 当天起始时间
+
+```js
+const start = moment().startOf('day')
+const end = moment().endOf('day')
+```
+
+#### 昨天起始时间
+
+```js
+const start = moment().subtract(1, 'day').startOf('day')
+const end = moment().subtract(1, 'day').endOf('day')
+```
+
+#### 本月起始时间
+
+```js
+const start = moment().startOf('month')
+const end = moment().endOf('month')
+```
+
+#### 上个月起始时间
+
+```js
+const start = moment().subtract(1, 'month').startOf('month')
+const end = moment().subtract(1, 'month').endOf('month')
+```
+
+#### 本季度起始时间
+
+```js
+const start = moment().startOf('quarter')
+const end = moment().endOf('quarter')
+```
+
+#### 上个季度起始时间
+
+```js
+const start = moment().subtract(1, 'quarter').startOf('quarter')
+const end = moment().subtract(1, 'quarter').endOf('quarter')
+```
+
+
+Cheers! <Twemoji emoji="clinking-beer-mugs" />

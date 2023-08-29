@@ -2,6 +2,34 @@
 
 My personal over-engineering site on the cloud.
 
+## 一些命令
+
+
+```bash
+npm install
+```
+
+```bash
+npm run dev
+```
+
+```bash
+npm run build
+```
+
+```bash
+npm run serve
+```
+
+
+### 创建文章
+
+使用 `inquirer` 编写的用来创建 blog 文件的脚本。
+
+```bash
+node ./scripts/compose.mjs
+```
+
 ## Motivation
 
 > Sharing is learning!

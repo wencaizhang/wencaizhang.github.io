@@ -8,6 +8,8 @@ export interface Project {
   url?: string
   repo?: string
   builtWith: string[]
+  demo?: string
+  state?: '开发中' | '维护中' | '待发布' | '待更新' | '已弃用'
 }
 
 export type SiteMetaData = typeof siteMetadata & {

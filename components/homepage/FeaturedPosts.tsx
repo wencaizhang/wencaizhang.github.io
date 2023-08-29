@@ -34,7 +34,7 @@ export function FeaturedPosts({ posts }: { posts: BlogFrontMatter[] }) {
                         </h2>
                         <BlogTags tags={tags} />
                       </div>
-                      <div className="prose max-w-none text-gray-500 dark:text-gray-400">
+                      <div className="prose max-w-none text-gray-500 dark:text-gray-400 elip-line-3">
                         {summary}
                       </div>
                     </div>

@@ -1,0 +1,77 @@
+---
+title: "Vue 手动渲染组件"
+date: "2023-07-07"
+draft: false
+summary:  
+tags: [Vue2, Vue3]
+images: []
+---
+
+import Twemoji from './Twemoji.tsx'
+import { WavingHand } from './homepage/WavingHand.tsx'
+
+
+## Vue2 手动渲染组件
+
+```js
+/**
+  * 实例化 Component，挂载到 document，返回实例
+  * @param {*} Component 组件
+  * @param {*} props 向组件传入的 props
+  * @returns 组件实例
+  */
+export function mountComponent (Component, props, options = {}) {
+  const propsData = typeof props === 'object' ? props : {}
+  const Constructor = Vue.extend(Component)
+  const instance = new Constructor({ propsData })
+  instance.$_update = (newProps) => {
+    // 如果组件定义中没有 props 选项，则不存在 $props 属性
+    if (instance.$props) {
+      Object.assign(instance.$props, newProps)
+    }
+  }
+  if (options.el) {
+    // 创建并挂载到 el (会替换 el)
+    instance.$mount(options.el)
+  } else {
+    instance.$mount()
+    document.body.appendChild(instance.$el)
+  }
+  return instance
+}
+```
+
+## Vue3 手动渲染组件
+
+```js
+import { createApp } from 'vue';
+import Antd from 'ant-design-vue';
+import 'ant-design-vue/dist/antd.css';
+
+/**
+  * 实例化 Component，挂载到 document，返回实例
+  * @param {*} Component 组件
+  * @param {*} props 向组件传入的 props
+  * @returns 组件实例
+  */
+export function mountComponent (Component, props, el) {
+  const vm = createApp(Component, props).use(Antd).mount(el)
+  return vm
+}
+```
+
+1. 如何调用组件内部的方法
+2. 如何获取组件内部的数据呢
+3. 如果更新 props
+
+
+```js
+import MyComponent from './MyComponent.vue'
+
+const instance = mountComponent(MyComponent, { foo: 'bar' }, '#app')
+
+instance.$.setupState.showModal()
+```
+
+
+Cheers! <Twemoji emoji="clinking-beer-mugs" />
