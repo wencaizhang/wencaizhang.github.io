@@ -1,8 +1,8 @@
 {
   "site_meta_data": {
     "title": "果酱前端博客 - 前端果酱开发历险记",
-    "author": "wencai",
-    "full_name": "wencaizhang - 张文才",
+    "author": "WebJAM",
+    "full_name": "WebJAM",
     "header_title": "果酱前端博客 - 前端果酱开发历险记",
     "footer_title": "果酱前端博客 - 前端果酱开发历险记",
     "description": "前端果酱开发历险记 - 通过键盘记录一个软件开发工程师的工作和生活",
@@ -18,7 +18,7 @@
   "introduction": "我是",
   "name": "张文才",
   "description": "一个充满激情的软件工程师",
-  "location": "无锡, 中国",
+  "location": "江苏, 中国",
   "bio_1": "I'm aliased as Leo at work.",
   "bio_2": "I'm a learner, builder, and freedom seeker.",
   "bio_3": "I live in Ha Noi, Viet Nam.",

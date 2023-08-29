@@ -3,7 +3,7 @@ export let siteMetadata = {
   siteRepo: 'https://github.com/wencaizhang/wencaizhang.github.io/tree/nextjs',
   siteLogo: '/static/images/logo.jpg',
   title: "前端果酱开发历险记- Wencai's coding journey",
-  author: 'wencaizhang',
+  author: 'WebJAM',
   fullName: 'WebJAM',
   location: '[::1]:443 - China',
   locationIcon: 'flag-vietnam',
