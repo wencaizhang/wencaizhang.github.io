@@ -7,16 +7,59 @@ import { GithubRepo } from './GithubRepo'
 import { Image } from './Image'
 import { Link } from './Link'
 
+import { techstack } from './BrandIcon'
+const stateColors = {
+  开发中: '#66ca82',
+  维护中: '#3975eb',
+  待发布: '#dd703b',
+  待更新: '#f8d57a',
+  已弃用: '#d95e5a',
+}
+function getState(state) {
+  if (!state) {
+    return null
+  }
+
+  const color = stateColors[state]
+
+  return (
+    <span
+      className="absolute left-2 top-2 
+      rounded-full border-0 border-solid px-3 py-1 
+      text-xs text-white"
+      style={{ backgroundColor: color }}
+    >
+      {state}
+    </span>
+  )
+}
+
+function getToolTech(tool: string) {
+  const t = tool.toLowerCase().replaceAll('.', '')
+
+  const theKey = Object.keys(techstack).find((key) => key.includes(t))
+
+  if (!theKey) {
+    return null
+  }
+  const { color } = techstack[t]
+
+  return (
+    <span className="inline-block h-2 w-2 rounded-full" style={{ backgroundColor: color }}></span>
+  )
+}
+
 export function ProjectCard({ project }: ProjectCardProps) {
   let { t } = useTranslation('common')
-  let { title, description, imgSrc, url, repo, builtWith } = project
+  let { title, description, imgSrc, url, repo, builtWith, state } = project
   let { data } = useSWR(`/api/github?repo=${repo}`, fetcher)
   let repository: GithubRepository = data?.repository
   let href = repository?.url || url
 
   return (
     <div className="md p-4 md:w-1/2" style={{ maxWidth: '544px' }}>
-      <div className="flex h-full flex-col overflow-hidden rounded-lg border border-transparent shadow-nextjs border-opacity-60 dark:border-gray-600 dark:hover:border-gray-400">
+      {/* <div className="flex h-full flex-col overflow-hidden rounded-lg border border-transparent shadow-nextjs border-opacity-60 dark:border-gray-600 dark:hover:border-gray-400"> */}
+      <div className="flex h-full flex-col overflow-hidden rounded-md border border-gray-400 border-opacity-60 hover:border-gray-500 dark:border-gray-700 dark:hover:border-gray-600 relative">
         <Image
           alt={title}
           src={imgSrc}
@@ -24,6 +67,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           width={1088}
           height={612}
         />
+        {getState(state)}
         <div className="flex grow flex-col justify-between space-y-6 p-4 md:p-6">
           <div className="space-y-3">
             <h2 className="text-2xl font-bold leading-8 tracking-tight">
@@ -37,13 +81,17 @@ export function ProjectCard({ project }: ProjectCardProps) {
             </h2>
             <div className="max-w-none space-y-2 text-gray-500 dark:text-gray-400">
               <p>{repository?.description || description}</p>
-              <div className="flex flex-wrap space-x-1.5">
-                <span className="shrink-0">{t('projects.built_with')}:</span>
+              <div className="flex flex-wrap gap-2">
+                {/* <span className="shrink-0">{t('projects.built_with')}:</span> */}
                 {builtWith?.map((tool, index) => {
                   return (
-                    <span key={index} className="font-semibold text-gray-600 dark:text-gray-300">
+                    <span
+                      key={index}
+                      // className="font-semibold text-gray-600 dark:text-gray-300"
+                      className="inline-flex items-center gap-1 rounded-full border border-solid border-slate-600 px-3 text-gray-500 dark:text-gray-400 text-sm"
+                    >
                       {tool}
-                      {index !== builtWith.length - 1 && ','}
+                      {getToolTech(tool)}
                     </span>
                   )
                 })}
