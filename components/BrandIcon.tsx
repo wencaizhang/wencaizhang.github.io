@@ -9,6 +9,7 @@ import Node from '~/icons/nodejs.svg'
 import Prisma from '~/icons/prisma.svg'
 import Railway from '~/icons/railway.svg'
 import React from '~/icons/react.svg'
+import Remix from '~/icons/remix.svg'
 import Spotify from '~/icons/spotify.svg'
 import TailwindCSS from '~/icons/tailwind.svg'
 import Typescript from '~/icons/typescript.svg'
@@ -24,6 +25,7 @@ import wordpress from '~/icons/wordpress.svg'
 
 export let BrandIconsMap = {
   React,
+  Remix,
   Git,
   GitHub,
   Javascript,
