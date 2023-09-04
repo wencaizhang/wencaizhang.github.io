@@ -81,7 +81,7 @@ export default function plop(plop) {
       return [
         {
           type: 'add',
-          path: 'data/en/blog/{{filename}}.mdx',
+          path: 'data/zh/blog/{{filename}}.mdx',
           templateFile: 'plop-templates/post.mdx.hbs',
           data() {
             return {
