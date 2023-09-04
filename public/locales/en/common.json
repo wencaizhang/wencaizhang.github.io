@@ -78,7 +78,11 @@
     "work_title": "Work",
     "side_title": "Side projects",
     "learn_more": "Learn more",
-    "built_with": "Built with"
+    "built_with": "Built with",
+    "front_demo": "前台演示",
+    "admin_demo": "后台演示",
+    "no_demo": "暂无演示",
+    "source_code": "源码"
   },
   "pagination": {
     "previous": "Previous",
