@@ -6,7 +6,7 @@ export let siteMetadata = {
   author: 'WebJAM',
   fullName: 'WebJAM',
   location: '[::1]:443 - China',
-  locationIcon: 'flag-vietnam',
+  locationIcon: 'flag-china',
   position: 'Full Stack Web Developer',
   company: '',
   companySite: '',
