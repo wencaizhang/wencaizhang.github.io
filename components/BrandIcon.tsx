@@ -22,6 +22,10 @@ import Nestjs from '~/icons/nestjs.svg'
 import Webpack from '~/icons/webpack.svg'
 import Shopify from '~/icons/shopify.svg'
 import wordpress from '~/icons/wordpress.svg'
+import ffmpeg from '~/icons/ffmpeg.svg'
+import antd from '~/icons/antd.svg'
+import jquery from '~/icons/jquery.svg'
+// import vben from '~/icons/vben.png'
 
 export let BrandIconsMap = {
   React,
@@ -46,6 +50,9 @@ export let BrandIconsMap = {
   Webpack,
   Shopify,
   wordpress,
+  ffmpeg,
+  antd,
+  jquery,
 }
 
 export function BrandIcon(props: { type: keyof typeof BrandIconsMap; className?: string }) {
@@ -62,9 +69,26 @@ export function BrandIcon(props: { type: keyof typeof BrandIconsMap; className?:
 }
 
 export const techstack = {
+  css: {
+    color: '#3375b8',
+  },
+  js: {
+    color: '#f8d849',
+  },
+  javascript: {
+    color: '#f8d849',
+  },
+  'antd pro': {
+    color: '#448ef7',
+    logo: antd,
+  },
   vue: {
     color: '#42b883',
     logo: Vue,
+  },
+  vben: {
+    color: '#a957f0',
+    // logo: vben,
   },
   react: {
     color: '#5496b3',
@@ -101,5 +125,9 @@ export const techstack = {
   wordpress: {
     color: '#235696',
     logo: wordpress,
+  },
+  jquery: {
+    color: '#2d66a7',
+    logo: jquery,
   },
 }
