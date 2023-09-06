@@ -1,0 +1,77 @@
+---
+title: "如何在局域网中把电脑设置成固定 IP"
+date: "2023-08-30"
+draft: false
+summary:  
+images: []
+tags: []
+---
+
+import Twemoji from './Twemoji.tsx'
+import { WavingHand } from './homepage/WavingHand.tsx'
+
+IP 格式内网 IP 都是这样的：
+
+```txt
+IP 地址: 192.168.13.189
+IP 地址: 192.168.13.187
+IP 地址: 192.168.13.94
+IP 地址: 192.168.13.188
+IP 地址: 192.168.13.13
+IP 地址: 192.168.13.183
+IP 地址: 192.168.13.186
+```
+
+都是以 `192.168` 开头，接下来的 `13` 是由路由器控制，可以改成其他值，
+
+say something...
+
+```txt
+192.168.0.0 - 192.168.255.255
+```
+
+
+这个是华为路由器，可以在 ① 处修改路由器的 ip，
+在 ② 处点击加号为你的设备绑定静态 IP
+![](https://static.webjam.cn/images/202308/bg0830230408.webp)
+
+
+这是 TP-Link 路由器，首先在「LAN口设置」中把设置改为手动，然后把 IP 修改为 `13` 段
+
+![](https://static.webjam.cn/images/202308/bg0830230413.webp)
+
+还记得我们的目标吗，我们希望把 `192.168.13.13` 分配给自己的电脑，
+
+然后在「DHCP服务器」中检查「地址池开始地址」和「地址池结束地址」
+
+![](https://static.webjam.cn/images/202308/bg0830230419.webp)
+
+接下来在「应用管理」中找到「IP与MAC绑定」点击进入：
+
+![](https://static.webjam.cn/images/202308/bg0830232435.webp)
+
+最后为你的设备设置一个静态 IP
+
+![](https://static.webjam.cn/images/202308/bg0830232932.webp)
+
+
+## 如果从一开始就不想使用 `13` 段 IP 呢？
+
+在 ① 处改为「手动输入IP」，在 ② 处输入 `192.168.123.1`，保存之后，再回过头来执行上面的步骤绑定你想要的 IP 地址。
+
+![](https://static.webjam.cn/images/202308/bg0831093927.webp)
+
+
+## 总结
+
+1. 修改完成之后，一定要记得先断开网络（拔网线或者关闭 WIFI 连接）再重新连接，这样才能拿到分配到最新 IP 地址。
+2. 检查自己局域网 IP 地址的方式，如果是 MacOS 我这里有一条命令拿去用：
+  ```bash
+  /sbin/ifconfig -a | grep inet | grep -v 127.0.0.1 | grep -v inet6 | awk '{print $2}' | tr -d "addr:"
+  ```
+3. IP 地址中的第三段由路由器决定，**一旦更改会影响所有连接这台路由器的设备的内网 IP**，更改之前要想清楚有什么影响。具体的修改方式大同小异，TP-LINK 的入口是「LAN口设置」，华为路由器的入口是「我要上网」，进入页面后都是先设置为「手动」然后输入自己想要的 IP，然后保存即可。
+
+
+
+
+Cheers! <Twemoji emoji="clinking-beer-mugs" />

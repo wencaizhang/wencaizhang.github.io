@@ -1,0 +1,77 @@
+---
+title: "Anki 同步问题的最新解决方法（2023年）"
+date: "2023-08-31"
+draft: false
+summary:  
+images: []
+tags: []
+---
+
+import Twemoji from './Twemoji.tsx'
+import { WavingHand } from './homepage/WavingHand.tsx'
+
+
+喜大普奔，Anki 从 `2.1.57+` 开始已经内置了一个同步服务器，这下终于可以告别那一言难尽的 AnkiWeb 同步速度了。
+
+这个同步功能需要你在 PC 电脑上启用，这里我介绍两种最简单的启用方法。
+
+首先，根据你的电脑系统安装 Anki（安装方式见[各平台客户端下载地址](#各平台客户端下载地址))，这个软件我估计大家早已经安装了，不过要注意在 `2.1.57` 之后的版本才有同步服务功能，。
+
+然后如果你是 windows 系统，需要打开 `cmd.exe` 执行下面命令
+
+```bash
+set SYNC_USER1=user:pass
+"\Program Files\anki\anki.exe" --syncserver
+```
+
+解释一下：`user` 和 `pass` 分别代表用户名和密码，一般看到这里的都是 Anki 老用户了，肯定在 AnkiWeb 注册过账号，要注意这个命令中不需要你的 AnkiWeb 账号密码，这是两个系统了
+
+如果你是苹果系统，则打开终端 Terminal.app 执行下面命令
+
+```bash
+SYNC_USER1=user:pass /Applications/Anki.app/Contents/MacOS/anki --syncserver
+```
+
+苹果系统的路径一般是不需要改动了，只需要替换上你想使用的用户名和密码即可。
+
+
+默认启用的服务在 `8080` 端口，这个端口在前端的使用频率比较高，所以我改成了 `27701` 端口，命令如下：
+
+```bash
+SYNC_USER1=zwc:123456 SYNC_PORT=27701 /Applications/Anki.app/Contents/MacOS/anki --syncserver
+```
+
+如果你需要使用多个账户或者更多的需求，请查阅官方说明[Sync Server - Anki Manual](https://docs.ankiweb.net/sync-server.html)，里面有更多的启用服务方式，比如 Pip、Cargo 和源码启动。
+
+
+
+
+### 各平台客户端下载地址：
+
+- 电脑（PC和Mac）端：2.1.57及以上。下载地址：[apps.ankiweb.net/downloads/archive/](https://apps.ankiweb.net/downloads/archive/)
+- iOS（iPadOS）端：AnkiMobile 2.0.88及以上
+- Android（HarmonyOS）端：AnkiDroid v2.16alpha77及以上。下载地址：[github.com/ankidroid/Anki-Android/tags](https://link.zhihu.com/?target=https%3A//github.com/ankidroid/Anki-Android/tags)
+
+### 官方文档
+
+官方文档：[Sync Server - Anki Manual](https://docs.ankiweb.net/sync-server.html)
+
+
+## 总结
+
+总结一下，你需要在电脑端安装 `2.1.57` 以上版本的 Anki，然后再命令行启动服务。
+
+然后需要在各个 Anki 软件设置中填写 Anki 同步服务地址，然后你需要在同一个局域网（通俗讲就是连接同一个路由器，不管是网线连接还是WIFI连接）下才能同步成功。
+
+
+
+要注意，同步的时候要保证同步服务在运行中，同步失败的时候先想想是不是电脑已经关机了。因为当你电脑关机这个服务也关掉了，下次开机的时候要记得再次执行上面的命令。
+
+如果电脑在开机状态，而且同步服务也启动了，但仍然同步失败，那你就要检查一下是不是电脑的 IP 发生变化了。这是因为默认情况下路由器给你的电脑分配的 IP 不是固定的，这种情况下只需要再 Anki 设置中把=同步服务地址改成你新的 IP 就好了。
+
+如果不想每次都重复「同步 - 失败 - 检查 IP - 更新地址」这一套麻烦的流程，还有一个解决方案 —— 设置电脑为静态 IP。
+
+
+[如何在局域网中把电脑设置成固定 IP](/blog/2023/configure-static-ip-in-lan/)
+
+Cheers! <Twemoji emoji="clinking-beer-mugs" />

@@ -5,19 +5,45 @@ date: "2023-07-07"
 draft: false
 summary: ""
 type: "Javascript"
+tags: ['dom']
 ---
 
 import Twemoji from './Twemoji.tsx'
 import { WavingHand } from './homepage/WavingHand.tsx'
 
 
+有两种情况，一种是滚动到指定 DOM 的位置，另外一种是滚动到指定高度
+
+## 滚动到指定 DOM 的位置
+
+
 ```js
-document.querySelector("button").scrollIntoView({
-  behavior: "smooth", // 定义动画过渡效果， "auto"或 "smooth" 之一。默认为 "auto"
-  block: "start", // 定义垂直方向的对齐， "start", "center", "end", 或 "nearest"之一。默认为 "start"
-  inline: "nearest", // 定义水平方向的对齐， "start", "center", "end", 或 "nearest"之一。默认为 "nearest"
+function scrollIntoTarget(targetEle: HTMLElement | null) {
+  if (!targetEle) {
+    return;
+  }
+  targetEle.scrollIntoView({
+    behavior: "smooth", // 定义动画过渡效果， "auto"或 "smooth" 之一。默认为 "auto"
+    block: "start", // 定义垂直方向的对齐， "start", "center", "end", 或 "nearest"之一。默认为 "start"
+    inline: "nearest", // 定义水平方向的对齐， "start", "center", "end", 或 "nearest"之一。默认为 "nearest"
+  });
+}
+```
+
+## 滚动到指定高度
+
+```js
+element.scrollTo({
+  top: 100,
+  left: 100,
+  behavior: "smooth",
 });
 ```
 
+
+## Reference
+
+- [Element.scrollIntoView() - Web API 接口参考 | MDN (mozilla.org)](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/scrollIntoView)
+- [Element.scrollTo() - Web API 接口参考 | MDN (mozilla.org)](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/scrollTo)
 
 Cheers! <Twemoji emoji="clinking-beer-mugs" />

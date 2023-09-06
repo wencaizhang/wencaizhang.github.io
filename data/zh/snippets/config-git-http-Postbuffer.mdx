@@ -1,0 +1,35 @@
+---
+heading: "增加 Git 缓冲区大小"
+title: "增加 Git 缓冲区大小"
+date: "2023-09-04"
+draft: false
+summary: ""
+type: "Git"
+---
+
+import Twemoji from './Twemoji.tsx'
+import { WavingHand } from './homepage/WavingHand.tsx'
+
+
+使用 `git clone` 命令下载 github 上的源代码时，有时文件下载到一定百分比时就停止不动， 这是因为我们所下载的文件很大，超过了 git 预先分配的 `Postbuffer` 容量，所以一直卡在那里。
+
+可以使用以下命令查看当前 `Postbuffer` 的数值：
+
+```bash
+git config --list
+```
+
+我们可以根据所下载文件的容量来设置Postbuffer的数值。例如，将Postbuffer的值设为500M（500×1024×1024），在终端输入命令：
+
+```bash
+git config --global http.postBuffer 524288000
+```
+
+然后再检查是否创建成功：
+
+```bash {2} showLineNumbers
+$ git config --list | grep postbuffer
+http.postbuffer=524288000
+```
+
+出现第二行中的结果，就说明创建成功了，此时再执行 `git clone` 就能很顺利地下载代码了。Cheers! <Twemoji emoji="clinking-beer-mugs" />

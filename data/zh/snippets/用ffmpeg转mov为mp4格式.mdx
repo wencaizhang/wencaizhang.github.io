@@ -1,0 +1,34 @@
+---
+heading: "用ffmpeg转mov为mp4格式"
+title: "用ffmpeg转mov为mp4格式"
+date: "2023-09-05"
+draft: false
+summary: ""
+type: "ffmpeg"
+---
+
+import Twemoji from './Twemoji.tsx'
+import { WavingHand } from './homepage/WavingHand.tsx'
+
+
+```bash
+ffmpeg -i old.mov -vcodec libx264 -preset fast -crf 20 -y -vf "scale=1920:-1" -acodec libmp3lame -ab 128k new.mp4
+```
+
+
+- `-i filename (input)`  输入文件名
+- `-y (global)`  覆盖输出文件而不询问
+- `-vf filtergraph (output)` 创建 filtergraph 指定的过滤图，并使用它来过滤流。
+- `-vcodec codec (output)` 设置视频 codec。
+- `-acodec codec (input/output)` 设置音频codec。
+
+
+```bash
+ffmpeg -i  linux-01-命令行操作的魅力.mov \
+-vcodec libx264 -preset fast -crf 20 -y \
+-vf "scale=1920:-1" -acodec libmp3lame -ab 128k  \
+linux-01-命令行操作的魅力.mp4
+```
+
+
+Cheers! <Twemoji emoji="clinking-beer-mugs" />

@@ -1,0 +1,56 @@
+---
+heading: ""
+title: "check_value_in_array"
+date: "2023-09-05"
+draft: false
+summary: ""
+type: "Bash"
+---
+
+import Twemoji from './Twemoji.tsx'
+import { WavingHand } from './homepage/WavingHand.tsx'
+
+
+
+Shell 语法中没有检查一个值是否存在于数组中的方法，所以只能通过循环来遍历数组并检查每个元素是否等于要查找的值。
+
+
+```bash
+# 定义一个函数来检查值是否存在于数组中
+check_value_in_array() {
+    local search_value="$1"  # 要查找的值
+    local array=("${@:2}")  # 从第二个参数开始的所有参数作为数组元素
+
+    # 遍历数组并检查是否存在
+    local found=false
+    for item in "${array[@]}"; do
+        if [ "$item" = "$search_value" ]; then
+            found=true
+            break  # 找到后可以提前结束循环
+        fi
+    done
+
+    # 返回结果
+    if [ "$found" = true ]; then
+        echo "✅ $1 存在于数组 $array 中"
+        return 0  # 找到了
+    else
+        echo "❌ $1 不存在于数组 $array 中"
+        return 1  # 未找到
+    fi
+}
+
+```
+
+```bash
+# 使用函数来检查值是否存在于数组中
+my_array=("apple" "banana" "cherry")
+search_value="banana"
+if check_value_in_array "$search_value" "${my_array[@]}"; then
+    echo "$search_value 存在于数组中"
+else
+    echo "$search_value 不存在于数组中"
+fi
+```
+
+Cheers! <Twemoji emoji="clinking-beer-mugs" />
