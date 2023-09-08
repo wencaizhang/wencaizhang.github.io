@@ -11,10 +11,14 @@ import { getAllTags } from '~/libs/tags.server'
 import type { BlogFrontMatter } from '~/types/mdx'
 import { kebabCase } from '~/utils/string'
 
-export function getStaticPaths({ locale }) {
-  let tags = getAllTags(`${locale}/blog`, `${locale}/snippets`)
+export function getStaticPaths({ locales }: { locales: string[] }) {
+  const allTags = locales.reduce((acc, locale) => {
+    let tags = getAllTags(`${locale}/blog`, `${locale}/snippets`)
+    return Object.assign(acc, tags)
+  }, {})
+
   return {
-    paths: Object.keys(tags).map((tag) => ({
+    paths: Object.keys(allTags).map((tag) => ({
       params: {
         tag,
       },
@@ -32,7 +36,7 @@ export async function getStaticProps({
 }) {
   let allPosts = getAllFilesFrontMatter(`${locale}/blog`, `${locale}/snippets`)
   let filteredPosts = allPosts.filter(
-    (post) => post.draft !== true && post.tags.map((t) => kebabCase(t)).includes(params.tag)
+    (post) => post.draft !== true && (post.tags || []).map((t) => kebabCase(t)).includes(params.tag)
   )
 
   let root = process.cwd()
