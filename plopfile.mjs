@@ -78,10 +78,11 @@ export default function plop(plop) {
       },
     ],
     actions(data) {
+      const currYear = new Date().getFullYear()
       return [
         {
           type: 'add',
-          path: 'data/zh/blog/{{filename}}.mdx',
+          path: `data/zh/blog/${currYear}/{{filename}}.mdx`,
           templateFile: 'plop-templates/post.mdx.hbs',
           data() {
             return {
@@ -94,6 +95,36 @@ export default function plop(plop) {
     },
   })
 
+  const snippetType = [
+    'CSS',
+    'Vue',
+    'Javascript',
+    'Typescript',
+    'Node',
+    'Bash',
+    'React',
+    'Remix',
+    'Git',
+    'antd',
+    'jquery',
+
+    'GitHub',
+    'Liquid',
+    'Markdown',
+    'NextJS',
+    'TailwindCSS',
+    'Prisma',
+    'Umami',
+    'Vercel',
+    'Railway',
+    'Spotify',
+
+    'Webpack',
+    'Shopify',
+    'wordpress',
+    'ffmpeg',
+  ]
+
   plop.setGenerator('snippets', {
     description: '创建「代码块」',
     prompts: [
@@ -101,6 +132,12 @@ export default function plop(plop) {
         type: 'input',
         name: 'name',
         message: '代码块名称',
+      },
+      {
+        type: 'rawlist',
+        choices: snippetType,
+        name: 'type',
+        message: '语言类型',
       },
     ],
     actions(data) {

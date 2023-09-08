@@ -1,13 +1,14 @@
 ---
 {{!-- heading 在列表中显示 --}}
-heading: ""
+heading: "{{ name }}"
 {{!-- title 在代码块页面显示 --}}
 title: "{{ name }}"
 date: "{{ date }}"
 draft: false
 {{!-- summary 在列表页面显示 --}}
 summary: ""
-type: ""
+type: "{{ type }}"
+tags: []
 ---
 
 import Twemoji from './Twemoji.tsx'
