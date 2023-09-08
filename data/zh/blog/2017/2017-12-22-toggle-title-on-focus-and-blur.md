@@ -1,7 +1,7 @@
 ---
 title: 切换浏览器 tab 标签时动态设置网页 
 draft: false
-tags: ['JavaScript']
+tags: ['javascript']
 date: "2017-12-22 21:50:23"
 ---
 

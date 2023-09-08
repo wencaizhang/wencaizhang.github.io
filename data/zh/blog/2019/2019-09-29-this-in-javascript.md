@@ -3,7 +3,7 @@ title: 总结 JavaScript 中的 this 指向问题
 draft: false
 images:
 tags:
-  - JavaScript
+  - javascript
   - this指向
 category: JS API
 date: "2019-09-29 14:49:00"

@@ -2,7 +2,7 @@
 title: js 中使用 let 和 const 的总结 
 draft: false
 tags:
-  - JavaScript
+  - javascript
   - es6
   - let
   - const

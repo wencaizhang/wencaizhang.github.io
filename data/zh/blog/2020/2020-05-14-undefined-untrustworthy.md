@@ -5,8 +5,8 @@ draft: false
 category:
 - JavaScript
 tags:
-- JavaScript
-- undefined
+  - javascript
+  - undefined
 ---
 
 JavaScript 中有六种基本数据类型：`Number`, `String`, `Boolean`, `Undefined`, `Null`, `Symbol`(在 ES6 中新增)，除此之外还有一种复杂数据类型 `Object`。
