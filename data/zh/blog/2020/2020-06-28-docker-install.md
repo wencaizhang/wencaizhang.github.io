@@ -7,6 +7,7 @@ category:
 tags:
 - docker
 - docker-compose
+cover: ["https://static.webjam.cn/images/logos/docker-4.svg"]
 ---
 
 

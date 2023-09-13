@@ -3,6 +3,7 @@ import type { MdxFrontMatter } from '~/types/mdx'
 import { formatDate } from '~/utils/date'
 import { Link } from './Link'
 import { Tag } from './Tag'
+import { BlogCover } from '~/components/blog/BlogCover'
 
 export function PostListItem({ frontMatter }: { frontMatter: MdxFrontMatter }) {
   let { slug, date, title, summary, tags } = frontMatter
@@ -10,8 +11,17 @@ export function PostListItem({ frontMatter }: { frontMatter: MdxFrontMatter }) {
   let lang = i18n.language
   return (
     <li key={slug}>
-      <article className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-        <dl>
+      <article className="space-y-2 xl:grid xl:grid-cols-4 xl:space-y-0">
+        <dl className="xl:col-span-1">
+          <dt className="mb-4 pr-4">
+            <Link
+              href={`/blog/${slug}`}
+              className="block overflow-hidden rounded shadow-lg"
+              aria-label={`Read "${title}"`}
+            >
+              <BlogCover frontMatter={frontMatter} />
+            </Link>
+          </dt>
           <dt className="sr-only">{t('blog.published_on')}</dt>
           <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
             <time dateTime={date}>{formatDate(date, lang)}</time>

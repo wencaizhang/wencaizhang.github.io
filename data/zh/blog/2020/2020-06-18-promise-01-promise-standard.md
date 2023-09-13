@@ -8,6 +8,7 @@ category:
 tags:
 - promise
 - 异步
+cover: ["https://static.webjam.cn/images/logos/js.svg"]
 ---
 
 

@@ -4,7 +4,7 @@ date: "2019-11-16T11:16:00+08:00"
 draft: false 
 toc: true
 summary: Nginx 的安装和基本命令 | Basic Usage of Nginx
-images:
+cover: ["https://static.webjam.cn/images/logos/nginx2.svg"]
 tags:
   - nginx
 ---

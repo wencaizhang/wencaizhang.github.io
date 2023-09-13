@@ -2,7 +2,7 @@
 title: "Basic Usage of Traefik"
 date: "2019-11-16T11:16:00+08:00"
 draft: false
-images:
+cover: ["https://static.webjam.cn/images/logos/traefikio.svg"]
 tags:
   - traefik
   - docker

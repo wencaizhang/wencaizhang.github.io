@@ -4,6 +4,7 @@ import { BlogTags } from '~/components/blog/BlogTags'
 import { FEATURED_POSTS } from '~/constant'
 import type { BlogFrontMatter } from '~/types/mdx'
 import { formatDate } from '~/utils/date'
+import { BlogCover } from '~/components/blog/BlogCover'
 
 export function FeaturedPosts({ posts }: { posts: BlogFrontMatter[] }) {
   let { t, i18n } = useTranslation()
@@ -17,9 +18,18 @@ export function FeaturedPosts({ posts }: { posts: BlogFrontMatter[] }) {
           return (
             <li key={slug} className="py-12">
               <article>
-                <div className="space-y-3 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-                  <dl>
-                    <dt className="sr-only">Published on</dt>
+                <div className="space-y-3 gap-x-2 xl:grid xl:grid-cols-4 xl:space-y-0">
+                  <dl className="xl:col-span-1">
+                    <dt className="mb-4">
+                      <Link
+                        href={`/blog/${slug}`}
+                        className="block overflow-hidden rounded shadow-lg"
+                        aria-label={`Read "${title}"`}
+                      >
+                        <BlogCover frontMatter={frontMatter} />
+                      </Link>
+                    </dt>
+                    <dd className="sr-only">Published on</dd>
                     <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
                       <time dateTime={date}>{formatDate(date, lang)}</time>
                     </dd>

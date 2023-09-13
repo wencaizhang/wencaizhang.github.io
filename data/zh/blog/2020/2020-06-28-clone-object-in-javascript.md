@@ -6,7 +6,7 @@ category:
 - JavaScript
 tags:
   - javascript
-
+cover: ["https://static.webjam.cn/images/logos/js.svg"]
 ---
 
 [toc]

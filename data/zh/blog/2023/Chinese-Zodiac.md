@@ -4,7 +4,7 @@ date: "2023-02-21"
 draft: false
 tags: ["JS", "SVG"]
 summary: "draft"
-images: ["/static/images/img.jpg"]
+cover: ["https://static.webjam.cn/images/logos/zodiac.svg"]
 authors: ["default"]
 ---
 

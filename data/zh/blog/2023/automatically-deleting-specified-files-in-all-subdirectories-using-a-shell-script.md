@@ -4,7 +4,7 @@ date: "2023-03-22"
 tags: ["shell", "bash"]
 draft: false
 summary: "清理系统中不需要的文件是维护系统健康的重要步骤之一。然而，手动删除文件可能会变得十分繁琐，**特别是当这些文件存储在许多子目录中时**。为了解决这个问题，我们可以使用 shell 脚本来高效地清理指定文件。"
-images: ["/static/images/img.jpg"]
+cover: ["https://static.webjam.cn/images/logos/bash.svg"]
 authors: ["default"]
 ---
 

@@ -7,6 +7,7 @@ category:
 tags:
   - 命令行
   - 效率
+cover: ["https://static.webjam.cn/images/logos/terminal.svg"]
 ---
 
 

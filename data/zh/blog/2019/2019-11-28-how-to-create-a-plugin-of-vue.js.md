@@ -2,7 +2,7 @@
 title: "如何创建一个 Vue.js 插件"
 date: "2019-11-28T15:39:43+08:00"
 draft: false
-images:
+cover: ["https://static.webjam.cn/images/logos/vue.svg"]
 tags:
   - vue.js
   - plugin

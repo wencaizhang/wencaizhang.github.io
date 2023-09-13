@@ -4,7 +4,7 @@ date: "2023-03-02"
 tags: ["css", "loading"]
 draft: false
 summary: "draft"
-images: ["https://pic2.zhimg.com/v2-1dcdd2e0f665886914c005e43722abc5.png"]
+cover: ["https://static.webjam.cn/images/logos/css.svg"]
 authors: ["default"]
 ---
 

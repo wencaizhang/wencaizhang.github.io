@@ -7,6 +7,7 @@ tags: [ "前端", "CDN" ]
 category: []
 date: "2020-07-02"
 draft: false
+cover: ["https://static.webjam.cn/images/logos/cdn.svg"]
 ---
 
 

@@ -2,7 +2,7 @@
 title: "Dark Mode on MacOS"
 date: "2019-12-05T10:41:03+08:00"
 draft: false
-images:
+cover: ["https://static.webjam.cn/images/logos/night-mode.svg"]
 tags:
   - 暗黑模式
 ---

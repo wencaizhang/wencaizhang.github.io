@@ -6,6 +6,7 @@ import 'css/resume.css'
 
 import 'css/hello.css'
 import 'css/icon.css'
+import 'css/webgradients.css'
 
 import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'

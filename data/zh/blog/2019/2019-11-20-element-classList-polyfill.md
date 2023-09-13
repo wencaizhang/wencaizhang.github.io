@@ -2,7 +2,7 @@
 title: "Element ClassList Polyfill"
 date: "2019-11-20T15:47:47+08:00"
 draft: false
-images:
+cover: ["https://static.webjam.cn/images/logos/html.svg"]
 tags:
   - classList
   - html5

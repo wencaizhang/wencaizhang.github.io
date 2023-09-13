@@ -6,6 +6,7 @@ tags:
   - es6
   - let
   - const
+cover: ["https://static.webjam.cn/images/logos/js.svg"]
 category: javascript
 date: "2018-10-14 11:51:14"
 ---

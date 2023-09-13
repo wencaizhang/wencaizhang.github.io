@@ -4,7 +4,7 @@ date: "2023-03-22"
 tags: ["shell", "bash"]
 draft: false
 summary: "使用 shell 脚本自动删除所有子目录下的指定目录"
-images: ["/static/images/img.jpg"]
+cover: ["https://static.webjam.cn/images/logos/bash.svg"]
 authors: ["default"]
 ---
 

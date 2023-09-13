@@ -8,7 +8,11 @@ tags:
 - anki
 - docker
 summary: "Anki 是一个辅助记忆软件，最近打算用它来快速记忆一些知识，但是 Anki 的服务器架设在国外，导致同步速度很慢，为了解决这个问题，我参考[文档](https://github.com/ankicommunity/anki-devops-services)打算自己架设一个 Anki 同步服务器。"
-image: ['https://static.webjam.cn/images/anki-sync-server-with-docker.png']
+images: ['https://static.webjam.cn/images/anki-sync-server-with-docker.png']
+cover: [
+  "https://static.webjam.cn/images/logos/docker.svg",
+  "https://static.webjam.cn/images/logos/anki-2.svg",
+]
 ---
 
 

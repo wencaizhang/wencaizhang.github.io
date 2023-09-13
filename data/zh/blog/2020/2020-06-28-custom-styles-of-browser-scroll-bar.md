@@ -7,6 +7,7 @@ category:
 tags:
 - css
 - 滚动条
+cover: ["https://static.webjam.cn/images/logos/css.svg"]
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: 总结 JavaScript 中的 this 指向问题
 draft: false
-images:
+cover: ["https://static.webjam.cn/images/logos/js.svg"]
 tags:
   - javascript
   - this指向

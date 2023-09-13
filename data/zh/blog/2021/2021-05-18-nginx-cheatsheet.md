@@ -7,6 +7,7 @@ category:
 tags:
 - nginx
 - 备忘
+cover: ["https://static.webjam.cn/images/logos/nginx.svg"]
 ---
 
 作为软件开发工程师多多少少都该懂一些 nginx 的使用和配置，下面是 nginx 的几个经典应用场景下的配置写法，记录下来以防遗忘，用到的时候也可以直接过来拷贝。

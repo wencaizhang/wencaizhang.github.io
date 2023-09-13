@@ -4,7 +4,7 @@ date: "2023-02-14"
 tags: ["CSS", "SVG"]
 draft: false
 summary: "draft"
-images: ["/static/images/img.jpg"]
+cover: ["https://static.webjam.cn/images/logos/css.svg"]
 authors: ["default"]
 ---
 

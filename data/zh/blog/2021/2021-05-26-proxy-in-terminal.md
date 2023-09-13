@@ -7,6 +7,7 @@ category:
 tags:
   - 代理
   - 命令行
+cover: ["https://static.webjam.cn/images/logos/terminal.svg"]
 ---
 
 经常在命令行终端下工作的码农们，SS 无法正常工作。

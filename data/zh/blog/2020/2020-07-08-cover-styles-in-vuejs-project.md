@@ -12,6 +12,7 @@ author: wencaizhang
 location: Beijing
 image: 
 featured: true
+cover: ["https://static.webjam.cn/images/logos/vue.svg", "https://static.webjam.cn/images/logos/css.svg"]
 ---
 
 在 Vue.js 组件中使用 scoped 后，父组件的样式将不会渗透到子组件中。不过一个子组件的根节点会同时受其父组件的 scoped CSS 和子组件的 scoped CSS 的影响。这样设计是为了让父组件可以从布局的角度出发，调整其子组件根元素的样式。

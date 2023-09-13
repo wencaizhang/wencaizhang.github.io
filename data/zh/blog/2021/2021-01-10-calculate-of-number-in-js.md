@@ -8,6 +8,7 @@ tags:
 - 其他
 - 工具
 - 开源库
+cover: ["https://static.webjam.cn/images/logos/js.svg"]
 ---
 
 

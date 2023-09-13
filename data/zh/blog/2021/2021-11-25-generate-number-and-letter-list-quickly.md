@@ -6,6 +6,7 @@ category:
 - js
 tags:
 - js
+cover: ["https://static.webjam.cn/images/logos/js.svg"]
 ---
 
 

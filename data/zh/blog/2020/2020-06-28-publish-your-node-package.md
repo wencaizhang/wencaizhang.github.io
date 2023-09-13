@@ -6,6 +6,7 @@ category:
 - Node
 tags:
 - npm
+cover: ["https://static.webjam.cn/images/logos/npm.svg"]
 ---
 
 > NPM 的全称：Node Package(包) Manager(管理器)。

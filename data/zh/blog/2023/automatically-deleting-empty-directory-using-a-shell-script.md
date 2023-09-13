@@ -6,6 +6,7 @@ tags: ["shell", "bash"]
 draft: false
 summary: "本文介绍了使用 shell 脚本自动删除所有空的子目录，主要包括以下几个方面的内容： 最简单的方式：使用 find 命令删除空目录。这种方式的命令非常简单，只需要使用 find $work_dir_name -type d -empty -delete 就能够找到 $work_dir_name 目录下的所有空目录并删除。 进阶的方式：使用 find 命令删除空目录并输出提示信息。这种方式的命令稍微复杂一些，需要使用 -exec 选项执行命令，使用 rmdir 命令删除目录，同时输出删除的目录信息。 终极的方式：编写 shell 脚本，循环查找并删除空目录。这种方式使用 while 循环查找并删除空目录，直到所有的空目录都被删除为止。该脚本同时可以输出删除的目录信息。 对于每种方式，本文都给出了相应的命令和代码示例，并对每种方式进行了详细的解释和说明。此外，本文还介绍了一些基本的 shell 命令和语法，如 -exec、while、-n 等，这些内容对于使用 shell 脚本进行文件操作非常重要。最后，本文也给出了一些技巧和注意事项，帮助读者更好地理解和应用这些命令和代码示例。"
 authors: ["default"]
+cover: ["https://static.webjam.cn/images/logos/bash.svg"]
 ---
 
 

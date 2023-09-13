@@ -2,7 +2,7 @@
 title: "Install Wordpress With Docker"
 date: "2019-11-17T10:59:03+08:00"
 draft: false
-images:
+cover: ["https://static.webjam.cn/images/logos/wordpress.svg"]
 tags:
   - docker
   - wordpress
