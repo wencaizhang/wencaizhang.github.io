@@ -20,6 +20,7 @@ export interface MdxFrontMatter {
   draft?: boolean
   summary: string
   images?: string[] | string
+  cover?: string[] | string
   authors?: string[]
   slug: string
 }
