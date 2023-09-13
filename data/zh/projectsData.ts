@@ -9,8 +9,8 @@ export let projectsData: Project[] = [
     repo: 'https://github.com/wencaizhang',
     url: 'https://xiaowen-mobile.vercel.app/',
     demo: [
-      { name: '移动端', url: 'https://xiaowen-mobile.vercel.app/' },
-      { name: 'PC端', url: 'https://xiaowen-pc.vercel.app/' },
+      { name: '移动端 Demo', url: 'https://xiaowen-mobile.vercel.app/' },
+      { name: 'PC端 Demo', url: 'https://xiaowen-pc.vercel.app/' },
     ],
     builtWith: ['Nextjs', 'Typescript', 'TailwindCSS', 'Typescript'],
     state: '维护中',
@@ -58,6 +58,24 @@ export let projectsData: Project[] = [
     state: '维护中',
   },
   {
+    type: 'work',
+    title: '某楼书网站',
+    description: `这是一个来自菲律宾的楼书网站，使用 Mobilebone、swiper、animate、photo-sphere-viewer.js 开发`,
+    imgSrc: 'https://static.webjam.cn/images/202309/cover-nikeya.webp',
+    repo: 'https://github.com/wencaizhang',
+    url: 'https://github.com/wencaizhang',
+    demo: [{ name: 'Demo 演示', url: 'https://nikeya.vercel.app/#&home' }],
+    builtWith: ['swiper', 'animate', 'Photo Sphere Viewer'],
+    state: '维护中',
+  },
+
+  /**
+   * ********************
+   * ↑↑↑ 上面是商业项目
+   * ↓↓↓ 下面是个人项目
+   * *********************
+   */
+  {
     type: 'self',
     title: 'ActionVue',
     description: '基于 Vue.js 开发的组件库',
@@ -82,33 +100,33 @@ export let projectsData: Project[] = [
   {
     type: 'self',
     title: 'jQuery.zToolTip',
-    description: '造轮子之基于 jquery 的工具提示插件',
+    description: '造轮子之基于 jQuery 的工具提示插件',
     imgSrc: 'https://static.webjam.cn/images/202309/cover-ztooltip.webp',
-    repo: 'https://github.com/wencaizhang/jquery.zToolTip',
-    url: 'https://wencaizhang.github.io/jquery.zToolTip/',
-    demo: [{ name: 'Demo 演示', url: 'https://wencaizhang.github.io/jquery.zToolTip/' }],
+    repo: 'https://github.com/wencaizhang/jQuery.zToolTip',
+    url: 'https://wencaizhang.github.io/jQuery.zToolTip/',
+    demo: [{ name: 'Demo 演示', url: 'https://wencaizhang.github.io/jQuery.zToolTip/' }],
     builtWith: ['jQuery'],
     state: '待更新',
   },
   {
     type: 'self',
     title: 'jQuery.formValidate',
-    description: '造轮子之基于 jquery 的表单验证插件',
+    description: '造轮子之基于 jQuery 的表单验证插件',
     imgSrc: 'https://static.webjam.cn/images/202309/cover-form-validate.webp',
-    repo: 'https://github.com/wencaizhang/jquery.formValidate',
-    url: 'https://wencaizhang.github.io/jquery.formValidate/',
-    demo: [{ name: 'Demo 演示', url: 'https://wencaizhang.github.io/jquery.formValidate/' }],
+    repo: 'https://github.com/wencaizhang/jQuery.formValidate',
+    url: 'https://wencaizhang.github.io/jQuery.formValidate/',
+    demo: [{ name: 'Demo 演示', url: 'https://wencaizhang.github.io/jQuery.formValidate/' }],
     builtWith: ['jQuery'],
     state: '待更新',
   },
   {
     type: 'self',
     title: 'jQuery.lazyload',
-    description: '造轮子之基于 jquery 图片懒加载插件',
+    description: '造轮子之基于 jQuery 图片懒加载插件',
     imgSrc: 'https://static.webjam.cn/images/202309/cover-lazyload.webp',
-    repo: 'https://github.com/wencaizhang/jquery.lazyload',
-    url: 'https://wencaizhang.github.io/jquery.lazyload/',
-    demo: [{ name: 'Demo 演示', url: 'https://wencaizhang.github.io/jquery.lazyload/' }],
+    repo: 'https://github.com/wencaizhang/jQuery.lazyload',
+    url: 'https://wencaizhang.github.io/jQuery.lazyload/',
+    demo: [{ name: 'Demo 演示', url: 'https://wencaizhang.github.io/jQuery.lazyload/' }],
     builtWith: ['jQuery'],
     state: '待更新',
   },

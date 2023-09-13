@@ -108,7 +108,6 @@ function MyButton({ children }) {
   ]
   idx++
   const res = classNameList[idx % classNameList.length]
-  console.log('%c Line:111 🥪 idx', 'color:#ed9ec7', idx)
 
   return (
     <button type="button" className={baseClassName + ' ' + res.btnClassName}>
